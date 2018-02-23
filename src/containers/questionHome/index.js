@@ -5,15 +5,28 @@ import Questionnaire from '../questionnaire';
 import Result from '../result';
 import { Route, Link } from 'react-router-dom'
 import About from '../about'
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  increment,
+  incrementAsync,
+  decrement,
+  decrementAsync
+} from '../../reducers/counter'
+import {setLastAnswer, setName} from '../../actions/questionnaireActions'
 
 
 class QuestionHome extends React.Component {
   constructor(props) {
       super(props);
+      console.log('ECCO i PROPS');
+      console.log(props);
       this.state = {
        counter: 0,
        questionId: 1,
        question: '',
+       dialog:'',
        answerOptions: [],
        answer: '',
        answersCount: {
@@ -21,49 +34,81 @@ class QuestionHome extends React.Component {
          microsoft: 0,
          sony: 0
        },
-       result: ''
+       result: '',
+       width: 0,
+       height: 0,
+       answerType:''
       };
       this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
-
+      this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
+
+
+
     componentWillMount() {
+      // Select the cases INFORMATION | SOLUTION | IDK
+      this.updateWindowDimensions();
+      window.addEventListener('resize', this.updateWindowDimensions);
       console.log('Qui il path:');
       console.log(this.props.location.pathname);
-      // Select the cases INFORMATION | SOLUTION | IDK
+      console.log(this.props);
+
       switch(this.props.location.pathname){
         case "/information":
         this.setState({
+          dialog: quizQuestions[0].dialog,
           question: quizQuestions[0].question,
-          answerOptions: quizQuestions[0].answers
+          answerOptions: quizQuestions[0].answers,
+          answerType:quizQuestions[0].answerType
         });
         break;
         case "/solutions":
         this.setState({
-          question: quizQuestions[2].question,
-          answerOptions: quizQuestions[2].answers
+
+              counter : 2
+
         });
         break;
         case "/idk":
         this.setState({
-          question: quizQuestions[4].question,
-          answerOptions: quizQuestions[4].answers
+
+            counter : 4
+
         });
         break;
         default:
           console.log('Beccato info');
           this.setState({
-            question: quizQuestions[0].question,
-            answerOptions: quizQuestions[0].answers
+              counter : 0
+
           });
         }
-
-
      }
 
+     componentWillUnmount() {
+       window.removeEventListener('resize', this.updateWindowDimensions);
+     }
+
+     updateWindowDimensions() {
+       this.setState({ width: window.innerWidth, height: window.innerHeight});
+     }
+
+
+
      handleAnswerSelected(event) {
+       console.log("Questa è la answer");
+       console.log(event.currentTarget);
+       console.log(event.currentTarget.value);
        this.setUserAnswer(event.currentTarget.value);
 
+       // HERE IT PUTS THE ANSWER IN THE STORE
+       console.log([this.state.questionId,event.currentTarget.id]);
+       this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
+
+       // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
+       if(this.state.questionId === 2){this.props.setName(event.currentTarget.id)}
+       console.log(this.props);
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
        } else {
@@ -82,18 +127,33 @@ class QuestionHome extends React.Component {
        });
      }
 
+     nameCheck(counter){
+       quizQuestions[counter].dialog = quizQuestions[counter].dialog.replace("/name",this.props.counter.name);
+       quizQuestions[counter].question = quizQuestions[counter].question.replace("/name",this.props.counter.name);
+     }
+
+
      setNextQuestion() {
        const counter = this.state.counter + 1;
        const questionId = this.state.questionId + 1;
-
+       increment;
+       console.log("Incrementando");
+       console.log(this.props);
+       console.log(quizQuestions);
+       this.props.increment();
+       // Name replacement in case was submitted
+       if(this.props.counter.name != ''){this.nameCheck(counter)}
        this.setState({
            counter: counter,
            questionId: questionId,
+           dialog: quizQuestions[counter].dialog,
            question: quizQuestions[counter].question,
            answerOptions: quizQuestions[counter].answers,
+           answerType: quizQuestions[counter].answerType,
            answer: ''
        });
      }
+
 
      getResults() {
        const answersCount = this.state.answersCount;
@@ -119,9 +179,12 @@ class QuestionHome extends React.Component {
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
+        dialog = {this.state.dialog}
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
+        windowHeigth={this.state.height}
+        answerType = {this.state.answerType}
       />
     );
   }
@@ -130,24 +193,47 @@ class QuestionHome extends React.Component {
     return (
       <Result quizResult={this.state.result} />
     );
-}
+  }
+
+
 
   render(){
     return(
 
-      <div className="App">
+      <div className="App" style={{height:this.state.height}}>
               <div className="App-header">
-                <h2>React Quiz</h2>
-                <Link to="/about-us">About </Link>
 
               </div>
-               {console.log(this.state.counter)}
-               {this.state.counter==3 ? console.log('Cambia pagina!') : console.log('NO cambia pagina!')}
-                 {this.state.result ? this.renderResult() : this.renderQuiz()}
+               {this.state.counter==13 ? this.props.changePage("report") : console.log('No Cambia pagina!') }
+
+                {this.state.result ? this.renderResult() : this.renderQuiz()}
+                <Link to="/about-us">Why I am asking this? </Link>
+
         </div>
 
     )
   }
 }
 
-export default QuestionHome;
+const mapStateToProps = state => ({
+  counter: state.counter,
+  isIncrementing: state.counter.isIncrementing,
+  isDecrementing: state.counter.isDecrementing
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  increment,
+  incrementAsync,
+  decrement,
+  decrementAsync,
+  setLastAnswer,
+  setName,
+  changePage: (text) => push('/' + text)
+}, dispatch)
+
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionHome)

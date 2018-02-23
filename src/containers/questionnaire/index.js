@@ -1,35 +1,111 @@
 import React from 'react';
 import Question from '../question';
 import QuestionCount from '../questionCounter';
-import AnswerOption from  '../answer';
+import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider} from  '../answer';
 import PropTypes from 'prop-types';
-
+import Dialog from "../dialog";
+import {Grid,Container} from 'semantic-ui-react';
 
 function Questionnaire(props) {
 
   function renderAnswerOptions(key) {
-      return (
-        <AnswerOption
-          key={key.content}
-          answerContent={key.content}
-          answerType={key.type}
-          answer={props.answer}
-          questionId={props.questionId}
-          onAnswerSelected={props.onAnswerSelected}
-        />
-      );
+      console.log("Render answers");
+      console.log(props.answerType);
+
+      switch(props.answerType) {
+          case 'Button':
+          return (
+                    <AnswerButton
+                      key={key.content}
+                      answerContent={key.content}
+                      answerId={key.type}
+                      answerType = {props.answerType}
+                      answer={props.answer}
+                      questionId={props.questionId}
+                      onAnswerSelected={props.onAnswerSelected}
+                    />
+                  );
+
+              break;
+              case "List":
+              return (
+                        <AnswerButton
+                          key={key.content}
+                          answerContent={key.content}
+                          answerId={key.type}
+                          answerType = {props.answerType}
+                          answer={props.answer}
+                          questionId={props.questionId}
+                          onAnswerSelected={props.onAnswerSelected}
+                        />
+                      );
+
+                  break;
+                  case "TextInput":
+                  return (
+                            <AnswerText
+                              key={key.content}
+                              answerContent={key.content}
+                              answerId={key.type}
+                              answerType = {props.answerType}
+                              answer={props.answer}
+                              questionId={props.questionId}
+                              onAnswerSelected={props.onAnswerSelected}
+                            />
+                          );
+
+                      break;
+
+                      case "Spinner":
+                      return (
+                            <AnswerSpinner
+                              answerContent={key}
+                              answerId={key.type}
+                              answerType = {props.answerType}
+                              answer={props.answer}
+                              questionId={props.questionId}
+                              onAnswerSelected={props.onAnswerSelected}
+                            />
+                          );
+
+                      break;
+
+                      case "Slider":
+                      return (
+                            <AnswerSlider
+                              min={key.min}
+                              max={key.max}
+                              answerType = {props.answerType}
+                              answer={props.answer}
+                              questionId={props.questionId}
+                              onAnswerSelected={props.onAnswerSelected}
+                            />
+                          );
+
+                      break;
+          default:
+              console.log("Incorrect Type: " + props.answerType);
+      }
+
+
     }
 
    return (
       <div className="quiz">
+
         <QuestionCount
           counter={props.questionId}
           total={props.questionTotal}
         />
+        <Dialog windowHeigth = {props.windowHeigth}
+          content = {props.dialog}
+          />
         <Question content={props.question} />
-        <ul className="answerOptions">
+        <Container centered className="answerOptions">
+          {console.log("Qui le answer options")}
+          {console.log(props.answerOptions)}
           {props.answerOptions.map(renderAnswerOptions)}
-        </ul>
+        </Container>
       </div>
    );
  }

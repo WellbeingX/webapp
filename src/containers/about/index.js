@@ -7,7 +7,7 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../modules/counter'
+} from '../../reducers/counter'
 
 const About = props => (
   <div>
@@ -18,7 +18,6 @@ const About = props => (
       <button onClick={props.increment} disabled={props.isIncrementing}>Increment</button>
       <button onClick={props.incrementAsync} disabled={props.isIncrementing}>Increment Async</button>
     </p>
-
     <p>
       <button onClick={props.decrement} disabled={props.isDecrementing}>Decrementing</button>
       <button onClick={props.decrementAsync} disabled={props.isDecrementing}>Decrement Async</button>

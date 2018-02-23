@@ -8,7 +8,7 @@ const HeaderUs = () => (
     <Container>
       <Grid style={{paddingTop:10}}>
           <Grid.Column floated='left' width={5}>
-            <h3>Nourish.Life</h3>
+            <h3>BetterSpace</h3>
           </Grid.Column>
           <Grid.Column floated='right' width={5}>
             <Link to="/">Home</Link>

@@ -10,12 +10,13 @@ import './index.css'
 import {Segment } from 'semantic-ui-react'
 
 const target = document.querySelector('#root')
-const backColor = {color:'white', padding:0, margin:0}
+const backColor = {color:'white', padding:0, margin:0, backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`}
+
 
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Segment  inverted color='green' style={backColor}>
+      <Segment   style={backColor}>
         <App />
       </Segment>
     </ConnectedRouter>

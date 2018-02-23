@@ -7,7 +7,7 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../modules/counter'
+} from '../../reducers/counter'
 import { Button, Grid, Header, List, Segment } from 'semantic-ui-react'
 import Question from '../question';
 import QuestionCount from '../questionCounter';

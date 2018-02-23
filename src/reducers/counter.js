@@ -1,15 +1,28 @@
+import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME} from '../actions/questionnaireActions.js'
+
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 
-const initialState = {
-  count: 0,
+export const initialState = {
   isIncrementing: false,
-  isDecrementing: false
+  isDecrementing: false,
+  count: 0,
+  questionId: 1,
+  question: '',
+  answerOptions: [],
+  answer: '',
+  nextQuestion:1,
+  answersCount:[],
+  result: '',
+  name:'',
+  answersArray:[],
+  email: ''
 }
 
 export default (state = initialState, action) => {
+
   switch (action.type) {
     case INCREMENT_REQUESTED:
       return {
@@ -37,6 +50,25 @@ export default (state = initialState, action) => {
         isDecrementing: !state.isDecrementing
       }
 
+      case SET_EMAIL:
+      console.log("Sono arrivato al reducer SET_EMAIL: " + action.data);
+        return {
+          ...state,
+          email: action.data
+        }
+
+      case SET_LAST_ANSWER:
+      var arr = state.answersArray;
+      arr.push(action.data);
+        return {
+          ...state,
+           answersArray: arr
+        }
+      case SET_NAME:
+        return {
+          ...state,
+           name: action.data
+        }
     default:
       return state
   }
