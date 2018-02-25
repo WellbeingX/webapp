@@ -1,5 +1,5 @@
 import React from 'react';
-import quizQuestions from '../api/questQuestionnaire';
+import quizQuestions from '../../api/questQuestionnaire';
 import update from 'react-addons-update';
 import Questionnaire from '../questionnaire';
 import Result from '../result';
@@ -15,7 +15,7 @@ import {
   decrementAsync
 } from '../../reducers/counter'
 import {setLastAnswer, setName} from '../../actions/questionnaireActions'
-
+import ip from 'ip'
 
 class QuestionHome extends React.Component {
   constructor(props) {
@@ -53,6 +53,8 @@ class QuestionHome extends React.Component {
       console.log('Qui il path:');
       console.log(this.props.location.pathname);
       console.log(this.props);
+      
+      this.props.setLastAnswer(['ipAddress',ip.address()])
 
       switch(this.props.location.pathname){
         case "/information":
@@ -141,6 +143,7 @@ class QuestionHome extends React.Component {
        console.log("Incrementando");
        console.log(this.props);
        console.log(quizQuestions);
+
        this.props.increment();
        // Name replacement in case was submitted
        this.nameCheck(counter);

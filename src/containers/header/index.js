@@ -33,8 +33,6 @@ import { Route, Link } from 'react-router-dom'
 
 
     logoSet(){
-      console.log("Header props");
-      console.log(Route);
       if (true){
         return(
         <Grid.Column floated='left' width={5}>
