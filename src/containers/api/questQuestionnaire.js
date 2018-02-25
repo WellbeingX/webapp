@@ -13,7 +13,7 @@ var quizQuestions = [
   },
   {
       dialog: "Great to meet you, /name! ",
-      question: "I have thousands of solutions for you. Can I ask eight initial questions to narrow them down?",
+      question: "I have thousands of solutions for you. Can I ask 10 initial questions to narrow them down?",
       answerType: 'Button',
       answers: [
           {

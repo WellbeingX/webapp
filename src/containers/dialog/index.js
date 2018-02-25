@@ -65,17 +65,23 @@ import ImageBarb from '../../assets/images/home/lady.png';
       spaceStyle ={
         height:100
       }
-
+      dialogWrapperStyle = {
+        position:'absolute', bottom:this.wH/10, width:this.textWidth, marginLeft:this.marginContainer
+      }
+      dialogStyle = {
+        marginTop:this.wH/2
+      }
 
       updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight })
+
         if(window.innerWidth>500 && window.innerWidth<1200){
           console.log("Desktop W:" + window.innerWidth + " H:" + window.innerHeight);
-          this.marginContainer = 100;
 
+          this.textWidth = this.marginContainer*3;
           this.bigBuggleStyle = {...this.bigBuggleStyle,
             width:this.wH*.7,
-            marginLeft:0};
+            marginLeft:50};
 
           this.characterStyleMiddle = {...this.characterStyleMiddle,
               marginLeft:0};
@@ -84,29 +90,59 @@ import ImageBarb from '../../assets/images/home/lady.png';
               backgroundPosition: 'bottom center',
               marginLeft:this.marginContainer};
 
-        }else if(window.innerWidth>1200){
-          console.log("Siamo qua");
+        }else if(window.innerWidth>1200 && window.innerHeight<800){
 
+          this.marginContainer = 200;
           this.bigBuggleStyle = {
             ...this.bigBuggleStyle,
             width:window.innerWidth,
             marginLeft:100,
-          height:this.wH*.9};
+            height:this.wH*.9
+          };
 
           this.bigBuggleStyle2 = {...this.bigBuggleStyle2,
             height:this.wH*.9
           }
 
+          this.dialogStyle = {...this.dialogStyle
+          }
+          this.dialogWrapperStyle = {...this.dialogWrapperStyle,
+          bottom:35
+          }
           this.characterStyle = {...this.characterStyle,
-            height:this.wH*.9
+              height:this.wH*.9,
+              backgroundPosition: 'bottom center',
+              marginLeft:300};
+
+        }else if(window.innerHeight>800){
+          this.marginContainer = 200;
+          var height = 800;
+          this.bigBuggleStyle = {
+            ...this.bigBuggleStyle,
+            width:window.innerWidth,
+            marginLeft:100,
+            height:height
+          };
+
+          this.bigBuggleStyle2 = {...this.bigBuggleStyle2,
+            height:height
           }
 
+          this.dialogStyle = {...this.dialogStyle
+          }
+          this.dialogWrapperStyle = {...this.dialogWrapperStyle,
+          bottom:35
+          }
+          this.characterStyle = {...this.characterStyle,
+              height:height,
+              backgroundPosition: 'bottom center',
+              marginLeft:300};
         }
       }
       middle(){
         return(
           <div style={this.bigBuggleStyle2}>
-            <div style={{position:'absolute', bottom:this.wH/10, width:this.textWidth, marginLeft:this.marginContainer}}>
+            <div style={this.dialogWrapperStyle}>
             </div>
             <div style={this.characterStyleMiddle}>
             </div>
@@ -117,8 +153,8 @@ import ImageBarb from '../../assets/images/home/lady.png';
       side(){
         return(
           <div style={this.bigBuggleStyle2}>
-            <div style={{position:'absolute', bottom:this.wH/10, width:this.textWidth, marginLeft:this.marginContainer}}>
-                <h2 className="dialog" style={{marginTop:this.wH/2 }}>{this.props.content}</h2>
+            <div style={this.dialogWrapperStyle}>
+                <h2 className="dialog" style={this.dialogStyle}>{this.props.content}</h2>
             </div>
             <div style={this.characterStyle}>
             </div>
