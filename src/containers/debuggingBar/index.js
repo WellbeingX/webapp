@@ -18,8 +18,8 @@ class DebuggingBar extends React.Component {
 
   render(){
     return(
-        <div style={{background:'red'}}>
-        ------> Io sono la debuggingBar
+        <div style={{background:'red', fontSize:10}}>
+        DebugginBar
         {this.props.counter.count}--
         {console.log("Qui la bar")}
         {console.log(this.props)}

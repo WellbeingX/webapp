@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Grid, Input, Menu} from 'semantic-ui-react';
+import {Grid, Input, Menu, Dropdown, Select} from 'semantic-ui-react';
 import Slider, { Range } from 'rc-slider';
 
 
@@ -47,10 +47,14 @@ export class AnswerText extends React.Component {
       });
     }
 
+
+
     render(){
       return (
         <div>
-          <Input onChange ={this.handleName} width='300' style={{width:300, fontSize:20}} focus placeholder='Name...'  />
+        {console.log("AnswerText PROPS")}
+          {console.log(this.props)}
+          <Input onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20}} focus placeholder={this.props.answerContent}/>
           <input
             type="button"
             className="customButton"
@@ -69,29 +73,45 @@ export class AnswerText extends React.Component {
 }
 
 
+export class AnswerSpinner extends React.Component {
+      constructor(props){
+        super();
+        this.state={
+          value:'Select...'
+        }
+        this.renderSpinner = this.renderSpinner.bind(this);
+}
 
-export  function AnswerSpinner(props) {
+     renderSpinner(event,data){
+       console.log(data.value);
+        this.setState({
+          value:data.value
+        }
 
-    function renderSpinner(key){
-      return(
-        <Menu.Item
-          name={key.content}
-          id = {key.type}
-          onClick={props.onAnswerSelected}
-        />
       );
     }
 
-    // ERRORE
-    //
+    render(){
     return (
-      <Menu style={{borderRadius:50}}>
-        {props.answerContent.spinner.map(renderSpinner)}
-        </Menu>
-
-    );
+      <div>
+        {console.log("Props answer Select")}
+        {console.log(this.state.value)}
+        <Dropdown style={{ color:'black', borderRadius:50, fontSize:'.8rem', background:'white', padding:15}} placeholder='Select...' onChange={this.renderSpinner} fluid selection options={this.props.answerContent.spinner} />
+        <input
+          type="button"
+          className="customButton"
+          name="radioGroup"
+          value="Next"
+          id={this.state.value}
+          disabled={this.props.answer}
+          onClick={this.props.onAnswerSelected}
+        />
+      </div>
+    );}
   }
-
+  // <Menu style={{borderRadius:50}}>
+  //   {props.answerContent.spinner.map(renderSpinner)}
+  //   </Menu>
 
 
 
@@ -99,7 +119,7 @@ export class AnswerSlider extends React.Component {
         constructor(props){
           super();
           this.state={
-            value:''
+            value:Math.round(props.max/2)
           }
           this.handleValue = this.handleValue.bind(this);
         }

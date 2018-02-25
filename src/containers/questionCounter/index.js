@@ -2,9 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
   function QuestionCount(props) {
+    const questionStart = 2;
+    function renderCounter () {
+      if(props.counter>questionStart){
+        return(
+              <div>
+                Question <span>{props.counter-questionStart}</span> of <span>{props.total-questionStart}</span>
+              </div>
+            )
+      }
+
+    }
+
     return (
+
       <div className="questionCount">
-        Question <span>{props.counter}</span> of <span>{props.total}</span>
+      {renderCounter()}
+
       </div>
     );
   }

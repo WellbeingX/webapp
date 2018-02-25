@@ -9,15 +9,13 @@ import {
   decrementAsync
 } from '../../reducers/counter'
 import { Image,Divider,Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
-import ImageBarb from '../../assets/images/home/Barb.png';
-
 const mainFormat = {  height:300 };
 const backColor = {background: 'green', color:'white' };
-const speechBubbleContainer = {paddingTop:115, height:600, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
-const speechBubble = { textAlign:'left', fontSize:22, fontWeight: 900, color:'white', borderRadius:20, padding:25};
-const speechText = {margin:0}
+const speechBubbleContainer = {paddingTop:0, height:600, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
+const speechBubble = { textAlign:'left', fontSize:'1rem', fontWeight: 900, color:'white', borderRadius:20, padding:0};
+const speechText = {margin:0, color:'white'}
 const inputBarb = { paddingTop:15, paddingBottom:0, marginBottom:0}
-const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:22, fontWeight: 900, marginTop:15, padding:'15 20'}
+const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15 20'}
 const triangle = {width: 0, height: 0, marginTop:-15, marginLeft:50, borderLeft:'30px solid transparent', borderRight:'30px solid transparent',borderTop:'40px solid #fff'}
 
 
@@ -40,41 +38,80 @@ class Home extends Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight/1.2 });
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+    console.log(window.innerHeight);
   }
 
   render() {
+
+    // RESPONSIVE MANAGEMENT
+    var windowHeight = this.state.height;
+    var containerStyle = {paddingTop:0,marginTop:0};
+    var titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.1};
+    // MOBILE
+    if(this.state.width<1200){
+      console.log("Mobile");
+    if (windowHeight< 800) {
+
+      console.log("Eccolo");
+      windowHeight = windowHeight*.7;
+      containerStyle = {paddingTop:windowHeight*.2}
+      titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.2};
+    }else if (windowHeight<1400) {
+      windowHeight = 600;
+      titleStyle = {marginTop:100, height:50};
+
+    }else{
+      windowHeight = 700;
+      titleStyle = {marginTop:150, height:50};
+    }
+  }else{
+    // DESKTOP
+    console.log("Desktop");
+    if (windowHeight< 800) {
+      console.log("Eccolo");
+      windowHeight = 550;
+      containerStyle = {paddingTop:0, marginTop:0}
+      titleStyle = {marginTop:0, height:200};
+    }else if (windowHeight<1400) {
+      windowHeight = 600;
+      titleStyle = {marginTop:100, height:50};
+
+    }else{
+      windowHeight = 1000;
+      titleStyle = {marginTop:150, height:50};
+    }
+  }
+
+
       return(
-    <Container >
-          <Grid  style={speechBubbleContainer} style={{height:this.state.height}} >
-              <Grid.Row style={{marginTop:this.state.height/8}}>
-                  <Grid.Column style={{flex:0}}/>
-                  <Grid.Column style={{flex:15}}>
-                        <div style={speechBubble} >
-                            <p style={speechText}>
-                            If you’re ready to control stress and negative thoughts, you’re ready for Better Space</p>
-                        </div>
-                  </Grid.Column>
-                  <Grid.Column style={{flex:0}}/>
-              </Grid.Row>
+          <Container style={containerStyle}>
+                <Grid  style={speechBubbleContainer} style={{height:windowHeight}} >
+                    <Grid.Row style={titleStyle}>
+                        <Grid.Column style={{flex:0}}/>
+                        <Grid.Column style={{flex:15, padding:0}}>
+                              <div style={speechBubble} >
+                                  <p style={speechText}>
+                                  If you’re ready to control stress and negative thoughts, you’re ready for Better Space</p>
+                              </div>
 
-              <Grid.Row  style={inputBarb} >
+                        </Grid.Column>
+                        <Grid.Column style={{flex:0}}/>
+                    </Grid.Row>
+                    <Grid.Row  style={inputBarb} >
+                        <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
+                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start my journey</Button>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row  style={inputBarb} >
+                    </Grid.Row>
+
+                </Grid>
 
 
-                  <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
-                      <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start my journey</Button>
-                  </Grid.Column>
 
-              </Grid.Row>
-          </Grid>
-
-
-          <Grid style={{color:'black',background:'white', paddingTop:20}}>
-          <h2>More About Nourish.Life </h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...
-          </Grid>
-    </Container>
-  )
+          </Container>
+        )
 
   }
 }

@@ -92,20 +92,22 @@ function Questionnaire(props) {
 
    return (
       <div className="quiz">
-
-        <QuestionCount
-          counter={props.questionId}
-          total={props.questionTotal}
-        />
-        <Dialog windowHeigth = {props.windowHeigth}
+        <Dialog
+          windowHeigth = {props.windowHeigth}
+          windowWidth = {props.windowWidth}
           content = {props.dialog}
           />
-        <Question content={props.question} />
-        <Container centered className="answerOptions">
-          {console.log("Qui le answer options")}
-          {console.log(props.answerOptions)}
-          {props.answerOptions.map(renderAnswerOptions)}
-        </Container>
+          <QuestionCount
+            counter={props.questionId}
+            total={props.questionTotal}
+          />
+
+          <Question content={props.question} />
+          <Container centered className="answerOptions">
+            {console.log("Qui le answer options")}
+            {console.log(props.answerOptions)}
+            {props.answerOptions.map(renderAnswerOptions)}
+          </Container>
       </div>
    );
  }

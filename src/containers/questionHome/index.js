@@ -107,7 +107,7 @@ class QuestionHome extends React.Component {
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
        // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
-       if(this.state.questionId === 2){this.props.setName(event.currentTarget.id)}
+       if(this.state.questionId === 1){this.props.setName(event.currentTarget.id)}
        console.log(this.props);
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
@@ -128,6 +128,7 @@ class QuestionHome extends React.Component {
      }
 
      nameCheck(counter){
+       console.log("controllo nome");
        quizQuestions[counter].dialog = quizQuestions[counter].dialog.replace("/name",this.props.counter.name);
        quizQuestions[counter].question = quizQuestions[counter].question.replace("/name",this.props.counter.name);
      }
@@ -142,7 +143,8 @@ class QuestionHome extends React.Component {
        console.log(quizQuestions);
        this.props.increment();
        // Name replacement in case was submitted
-       if(this.props.counter.name != ''){this.nameCheck(counter)}
+       this.nameCheck(counter);
+
        this.setState({
            counter: counter,
            questionId: questionId,
@@ -184,6 +186,7 @@ class QuestionHome extends React.Component {
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
         windowHeigth={this.state.height}
+        windowWidth={this.state.width}
         answerType = {this.state.answerType}
       />
     );
@@ -200,14 +203,13 @@ class QuestionHome extends React.Component {
   render(){
     return(
 
-      <div className="App" style={{height:this.state.height}}>
+      <div className="App" >
               <div className="App-header">
 
               </div>
                {this.state.counter==13 ? this.props.changePage("report") : console.log('No Cambia pagina!') }
 
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
-                <Link to="/about-us">Why I am asking this? </Link>
 
         </div>
 

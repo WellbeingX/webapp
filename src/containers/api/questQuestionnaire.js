@@ -1,34 +1,19 @@
 var quizQuestions = [
-  {
-      dialog: "Hi, I’m Filipo, your personal finder. I have thousands of solutions for you, from books to films to laughter clubs to therapists. ",
-      question: "Can I ask you eight questions to narrow them down?",
-      answerType: 'Button',
-      answers: [
-          {
-              type: 1,
-              content: "Yes"
-          },
-          {
-              type: 2,
-              content: "Skip"
-          }
-      ],
-      comments:'It is very important to do stuff because you are fat'
-  },
+
   {
       dialog: "",
-      question: " Thanks for choosing to work with my.  What should I call you?(it doesn’t have to be your real name)",
+      question: " Hi, I’m Barbara, your personal assistant. What's your name?",
       answerType: 'TextInput',
       answers: [{
           type: 0,
-          content: ""
+          content: "Name..."
       }
      ],
       comments:''
   },
   {
-      dialog: "Great to meet you, /name! My questions have been put together by clever people, and I’ve then made them a little more human. Remember, you can always skip to a non-personalised directory at any stage.",
-      question: "",
+      dialog: "Great to meet you, /name! ",
+      question: "I have thousands of solutions for you. Can I ask eight initial questions to narrow them down?",
       answerType: 'Button',
       answers: [
           {
@@ -66,38 +51,52 @@ var quizQuestions = [
         spinner: [
           {
               type: "1",
-              content: "<18"
+              text: '<18',
+              value: '<18',
+              key:1
           },
           {
               type: "2",
-              content: "18-24"
+              text: "18-24",
+              value: "18-24",
+              key:2
           },
           {
               type: "3",
-              content: "25-34"
+              text: "25-34",
+              value: "25-34",
+              key:3
           },
           {
               type: "4",
-              content: "35-44"
+              text: "35-44",
+              value: "35-44",
+              key:4
           },
           {
               type: "5",
-              content: "45-54"
+              text: "45-54",
+              value: "45-54",
+              key:5
           },
           {
               type: "6",
-              content: "55-64"
+              text: "55-64",
+              value: "55-64",
+              key:6
           },
           {
               type: "7",
-              content: ">65"
+              content: ">65",
+              value: ">65",
+              key:7
           }
       ],
     }],
       comments:' '
   },
   {
-      dialog: " ",
+      dialog: "",
       question: " Your employment status matters as well….",
       answerType:'Button',
       answers: [
@@ -133,8 +132,8 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: " ",
-      question: "Thinking about the past week, Alfredo, how many days did you engage in over 30 minutes of vigorous physical activity, e.g.brisk walking or cycling?",
+      dialog: "",
+      question: "Thinking about the past week, /name, how many days did you engage in over 30 minutes of vigorous physical activity, e.g.brisk walking or cycling?",
       answerType:'Slider',
       answers: [
           {
@@ -146,7 +145,7 @@ var quizQuestions = [
   }
   ,
   {
-      dialog: " ",
+      dialog: "",
       question: "That food question. In general, how healthy is your overall diet?",
       answerType:'Button',
       answers: [
@@ -174,7 +173,7 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: " ",
+      dialog: "",
       question: "On to sleep. In the past week, how many nights have you had a problem with your sleep?",
       answerType:'Slider',
       answers: [
@@ -186,7 +185,7 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: " ",
+      dialog: "",
       question: "Now for a really nosey one! How often do you wish you had more people to spend time with?",
       answerType:'Button',
       answers: [
@@ -218,7 +217,7 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: " ",
+      dialog: "",
       question: "This may be harder to answer. How satisfied are you with the purpose in your life? Think about what helps you wake up in the morning: work, religion, caring, raising kids etc",
       answerType:'Slider',
       answers: [
@@ -230,8 +229,8 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: " ",
-      question: "Nearly there, Alfredo, we’re on to physical. Is there a health condition or concern that impacts your happiness currently?",
+      dialog: "",
+      question: "Nearly there, /name, we’re on to physical. Is there a health condition or concern that impacts your happiness currently?",
       answerType:'Button',
       answers: [
           {
@@ -247,6 +246,16 @@ var quizQuestions = [
               content: "very much so"
           }
       ],
+      comments:' '
+  },
+  {
+      dialog: "",
+      question: "What's your email?",
+      answerType:'TextInput',
+      answers: [{
+          type: 0,
+          content: "Email..."
+      }],
       comments:' '
   }];
 
