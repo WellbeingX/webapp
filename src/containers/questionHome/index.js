@@ -17,6 +17,7 @@ import {
 import {setLastAnswer, setName} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 
+const nameQuestion=2;
 
 class QuestionHome extends React.Component {
   constructor(props) {
@@ -107,7 +108,7 @@ class QuestionHome extends React.Component {
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
        // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
-       if(this.state.questionId === 1){this.props.setName(event.currentTarget.id)}
+       if(this.state.questionId === nameQuestion){this.props.setName(event.currentTarget.id)}
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
        } else {

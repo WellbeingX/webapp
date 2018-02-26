@@ -11,14 +11,16 @@ import {
 import { Image,Divider,Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
+import ImageGuard from '../../assets/images/home/the_guardian_logo.png';
+import ImageZinc from '../../assets/images/home/zinc.png';
 
 
 const mainFormat = {  height:300 };
 const backColor = {background: 'green', color:'white' };
 const speechBubbleContainer = {paddingTop:0, height:600, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
 const speechBubble = { textAlign:'left', fontSize:'1rem', fontWeight: 900, color:'white', borderRadius:20, padding:0};
-const speechText = {margin:0, color:'white'}
-const inputBarb = { paddingTop:15, paddingBottom:0, marginBottom:0}
+const speechText = {margin:0, color:'white', textAlign:'center'}
+const inputBarb = { paddingTop:80, paddingBottom:0, marginBottom:0}
 const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15 20'}
 const triangle = {width: 0, height: 0, marginTop:-15, marginLeft:50, borderLeft:'30px solid transparent', borderRight:'30px solid transparent',borderTop:'40px solid #fff'}
 
@@ -53,7 +55,7 @@ class Home extends Component {
     var windowHeight = this.state.height;
     var containerStyle = {paddingTop:0,marginTop:0};
     var titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.1};
-    var windowHeightContainer = windowHeight*.6;
+    var windowHeightContainer = windowHeight*.8;
     // MOBILE
     if(this.state.width<1200){
       console.log("Mobile");
@@ -110,7 +112,7 @@ class Home extends Component {
 
                               <div style={speechBubble} >
                                   <p style={speechText}>
-                                  If you’re ready to control stress and negative thoughts, you’re ready for Better Space</p>
+                                  Find your quickest journey to a great state of mind</p>
                               </div>
 
                         </Grid.Column>
@@ -120,10 +122,16 @@ class Home extends Component {
 
                     <Grid.Row  style={inputBarb} >
                         <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
-                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start my journey</Button>
+                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Get started</Button>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row  style={inputBarb} >
+                    <Grid.Row  centered style={inputBarb} >
+                        <Grid.Row centered>
+                        <Image src={ImageGuard} centered style={{padding:10,opacity:.8, width:150, height:60, paddingRight:30}}/>
+                        </Grid.Row>
+                        <Grid.Row centered bottom>
+                        <Image src={ImageZinc} centered style={{padding:10, opacity:1, width:100, height:70, marginTop:7}}/>
+                        </Grid.Row>
                     </Grid.Row>
 
                 </Grid>

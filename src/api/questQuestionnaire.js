@@ -1,19 +1,111 @@
+// PROTOTYPES
+
+// REMEMBER TO CHECK
+// questionCounter -> questionStart
+// questionName -> nameQuestion
+
+// TEXT INPUT
+// {
+//     dialog: "",
+//     question: " Hi, I’m Barbara, your personal assistant. What's your name?",
+//     answerType: 'TextInput',
+//     answers: [{
+//         type: 0,
+//         content: "Name..."
+//     }
+//    ],
+//     comments:''
+// }
+//
+// BUTTON
+// {
+//     dialog: "",
+//     question: " Let’s start with an easy one. What’s you gender?",
+//     answerType: 'Button',
+//     answers: [
+//         {
+//             type: "1",
+//             content: "female"
+//         },
+//         {
+//             type: "2",
+//             content: "male"
+//         }
+//     ],
+//     comments:''
+// }
+//
+// SPINNER
+// {
+//     dialog: "",
+//     question: "...and your age?",
+//     answerType:'Spinner',
+//     answers: [ {
+//       spinner: [
+//         {
+//             type: "1",
+//             text: '<18',
+//             value: '<18',
+//             key:1
+//         },
+//         {
+//             type: "2",
+//             text: "18-24",
+//             value: "18-24",
+//             key:2
+//         }
+//     ],
+//   }],
+//     comments:' '
+// }
+//
+// SLIDER
+// {
+//     dialog: "",
+//     question: "Thinking about the past week, /name, how many days did you engage in over 30 minutes of vigorous physical activity, e.g.brisk walking or cycling?",
+//     answerType:'Slider',
+//     answers: [
+//         {
+//             min: 0,
+//             max: 7
+//         }
+//     ],
+//     comments:' '
+// }
+
+
 var quizQuestions = [
 
   {
       dialog: "",
-      question: " Hi, I’m Barbara, your personal assistant. What's your name?",
-      answerType: 'TextInput',
-      answers: [{
-          type: 0,
-          content: "Name..."
-      }
-     ],
+      question: "Hi, I’m Barbara, your personal wellbeing assistant. My obsession is helping people like you find the things that can boost your state of mind. From books to films, from laughter clubs to therapists. Will you try me out?",
+      answerType: 'Button',
+      answers: [
+          {
+              type: "1",
+              content: "yes"
+          },
+          {
+              type: "2",
+              content: "skip"
+          }
+      ],
       comments:''
   },
   {
-      dialog: "Great to meet you, /name! ",
-      question: "I have thousands of solutions for you. Can I ask 10 initial questions to narrow them down?",
+      dialog: "",
+      question: "Thanks, I’m looking forward to working with you. What should I call you? (it doesn’t need to be your real name)",
+      answerType: 'TextInput',
+      answers: [{
+              type: 0,
+              content: "Name..."
+          }
+         ],
+      comments:''
+  },
+  {
+      dialog: "Ok, /name, we’re motoring.",
+      question: " I have eight questions drawn up experts, and translated into normal english by yours truly. These will help narrow down the options to a useful shortlist.",
       answerType: 'Button',
       answers: [
           {
@@ -25,7 +117,7 @@ var quizQuestions = [
   },
   {
       dialog: "",
-      question: " Let’s start with an easy one. What’s you gender?",
+      question: "Starting with two super easy questions... what’s you gender?",
       answerType: 'Button',
       answers: [
           {
@@ -93,42 +185,6 @@ var quizQuestions = [
           }
       ],
     }],
-      comments:' '
-  },
-  {
-      dialog: "",
-      question: " Your employment status matters as well….",
-      answerType:'Button',
-      answers: [
-          {
-              type: "1",
-              content: "self-employed"
-          },
-          {
-              type: "2",
-              content: "employed"
-          },
-          {
-              type: "3",
-              content: "student"
-          },
-          {
-              type: "4",
-              content: "unemployed"
-          },
-          {
-              type: "5",
-              content: "homemaker"
-          },
-          {
-              type: "6",
-              content: "retired"
-          },
-          {
-              type: "7",
-              content: "other"
-          }
-      ],
       comments:' '
   },
   {
@@ -211,7 +267,7 @@ var quizQuestions = [
           },
           {
               type: "6",
-              content: "not sure"
+              content: "pass"
           }
       ],
       comments:' '
@@ -229,28 +285,8 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: "",
-      question: "Nearly there, /name, we’re on to physical. Is there a health condition or concern that impacts your happiness currently?",
-      answerType:'Button',
-      answers: [
-          {
-              type: "1",
-              content: "not at all"
-          },
-          {
-              type: "2",
-              content: "yes, but not major"
-          },
-          {
-              type: "3",
-              content: "very much so"
-          }
-      ],
-      comments:' '
-  },
-  {
-      dialog: "",
-      question: "What's your email?",
+      dialog: "It has been a pleasure, /name. ",
+      question: "If you sign up below I’ll send you a report, and I’ll keep you updated on relevant tips and solutions.",
       answerType:'TextInput',
       answers: [{
           type: 0,
