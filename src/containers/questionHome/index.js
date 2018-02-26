@@ -15,7 +15,6 @@ import {
   decrementAsync
 } from '../../reducers/counter'
 import {setLastAnswer, setName} from '../../actions/questionnaireActions'
-import ip from 'ip'
 
 class QuestionHome extends React.Component {
   constructor(props) {
@@ -50,11 +49,10 @@ class QuestionHome extends React.Component {
       // Select the cases INFORMATION | SOLUTION | IDK
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions);
-      console.log('Qui il path:');
+      console.log('[questionHome] componentWillMount: Qui il path:');
       console.log(this.props.location.pathname);
-      console.log(this.props);
-      
-      this.props.setLastAnswer(['ipAddress',ip.address()])
+
+
 
       switch(this.props.location.pathname){
         case "/information":
