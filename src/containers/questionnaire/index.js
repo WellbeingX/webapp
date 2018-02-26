@@ -10,8 +10,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 function Questionnaire(props) {
 
   function renderAnswerOptions(key) {
-      console.log("Render answers");
-      console.log(props.answerType);
 
       switch(props.answerType) {
           case 'Button':

@@ -127,8 +127,10 @@ import ImageBarb from '../../assets/images/home/lady.png';
             ...this.bigBuggleStyle,
             width:window.innerWidth,
             marginLeft:100,
-            height:height
+            height:height,
+            marginTop:-height,
           };
+
 
           this.bigBuggleStyle2 = {...this.bigBuggleStyle2,
             height:height
@@ -140,9 +142,16 @@ import ImageBarb from '../../assets/images/home/lady.png';
           bottom:35
           }
           this.characterStyle = {...this.characterStyle,
-              height:height,
-              backgroundPosition: 'bottom center',
+              height:height*.5,
+              backgroundSize: height*.3,
+              backgroundPosition: 'bottom right',
               marginLeft:300};
+          this.characterStyleMiddle = {...this.characterStyleMiddle,
+              height:height*.5,
+              backgroundSize: height*.3,
+              backgroundPosition: 'bottom center',
+              marginLeft:0
+            };
         }
       }
       middle(){

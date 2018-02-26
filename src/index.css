@@ -162,6 +162,7 @@ p{
 
 /* Result Component */
 .result {
+  height: 400px;
   padding: 1.5rem 2.5rem;
 }
 

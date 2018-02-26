@@ -53,21 +53,23 @@ class Home extends Component {
     var windowHeight = this.state.height;
     var containerStyle = {paddingTop:0,marginTop:0};
     var titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.1};
+    var windowHeightContainer = windowHeight*.6;
     // MOBILE
     if(this.state.width<1200){
       console.log("Mobile");
     if (windowHeight< 800) {
 
       console.log("Eccolo");
+
       windowHeight = windowHeight*.7;
       containerStyle = {paddingTop:windowHeight*.2}
       titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.2};
     }else if (windowHeight<1400) {
-      windowHeight = 600;
+      windowHeightContainer = 600;
       titleStyle = {marginTop:100, height:50};
 
     }else{
-      windowHeight = 700;
+      windowHeightContainer = 700;
       titleStyle = {marginTop:150, height:50};
     }
   }else{
@@ -75,15 +77,15 @@ class Home extends Component {
     console.log("Desktop");
     if (windowHeight< 800) {
       console.log("Eccolo");
-      windowHeight = 550;
+      windowHeightContainer = 550;
       containerStyle = {paddingTop:0, marginTop:0}
       titleStyle = {marginTop:0, height:200};
     }else if (windowHeight<1400) {
-      windowHeight = 600;
+      windowHeightContainer = 600;
       titleStyle = {marginTop:100, height:50};
 
     }else{
-      windowHeight = 1000;
+      windowHeightContainer = 1000;
       titleStyle = {marginTop:150, height:50};
     }
   }
@@ -99,7 +101,7 @@ class Home extends Component {
            transitionAppear
            transitionAppearTimeout={500}
           >
-                <Grid  style={speechBubbleContainer} style={{height:windowHeight}} >
+                <Grid  style={speechBubbleContainer} style={{height:windowHeightContainer}} >
 
                     <Grid.Row style={titleStyle}>
 

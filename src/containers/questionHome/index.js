@@ -21,8 +21,6 @@ import ReactGA from 'react-ga';
 class QuestionHome extends React.Component {
   constructor(props) {
       super(props);
-      console.log('ECCO i PROPS');
-      console.log(props);
       this.state = {
        counter: 0,
        questionId: 1,
@@ -51,6 +49,8 @@ class QuestionHome extends React.Component {
       // Select the cases INFORMATION | SOLUTION | IDK
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions);
+
+      // Qui il PAth
       console.log('[questionHome] componentWillMount: Qui il path:');
       console.log(this.props.location.pathname);
       ReactGA.pageview(this.props.location.pathname);
@@ -100,17 +100,14 @@ class QuestionHome extends React.Component {
 
      handleAnswerSelected(event) {
        console.log("Questa è la answer");
-       console.log(event.currentTarget);
-       console.log(event.currentTarget.value);
+
        this.setUserAnswer(event.currentTarget.value);
 
        // HERE IT PUTS THE ANSWER IN THE STORE
-       console.log([this.state.questionId,event.currentTarget.id]);
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
        // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
        if(this.state.questionId === 1){this.props.setName(event.currentTarget.id)}
-       console.log(this.props);
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
        } else {
@@ -142,7 +139,6 @@ class QuestionHome extends React.Component {
        increment;
        console.log("Incrementando");
        console.log(this.props);
-       console.log(quizQuestions);
 
        this.props.increment();
        // Name replacement in case was submitted
@@ -205,7 +201,7 @@ class QuestionHome extends React.Component {
               <div className="App-header">
 
               </div>
-               {this.state.counter==13 ? this.props.changePage("report") : console.log('No Cambia pagina!') }
+
 
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
 
@@ -214,6 +210,9 @@ class QuestionHome extends React.Component {
     )
   }
 }
+
+// {this.state.counter==13 ? this.props.changePage("report") : console.log('No Cambia pagina!') }
+
 
 const mapStateToProps = state => ({
   counter: state.counter,
