@@ -161,12 +161,7 @@ class QuestionHome extends React.Component {
 
 
      getResults() {
-       const answersCount = this.state.answersCount;
-       const answersCountKeys = Object.keys(answersCount);
-       const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
-       const maxAnswerCount = Math.max.apply(null, answersCountValues);
-
-       return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+       return 'Ciao Mamma';
      }
 
      setResults(result) {

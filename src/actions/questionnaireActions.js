@@ -34,7 +34,7 @@ export function setLastAnswer(data){
         // GoogleAnalytics
         ReactGA.event({
             category: 'Questionnaire',
-            action: data,
+            action: data[0].toString(),
         });
 
         // Firebase recording
