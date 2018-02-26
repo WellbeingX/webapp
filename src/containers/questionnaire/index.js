@@ -5,6 +5,7 @@ import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider} from  '../answer';
 import PropTypes from 'prop-types';
 import Dialog from "../dialog";
 import {Grid,Container} from 'semantic-ui-react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 function Questionnaire(props) {
 
@@ -91,6 +92,15 @@ function Questionnaire(props) {
     }
 
    return (
+     <ReactCSSTransitionGroup
+      className="container"
+      component="div"
+      transitionName="fade"
+      transitionEnterTimeout={800}
+      transitionLeaveTimeout={500}
+      transitionAppear
+      transitionAppearTimeout={500}
+    >
       <div className="quiz">
         <Dialog
           windowHeigth = {props.windowHeigth}
@@ -104,11 +114,10 @@ function Questionnaire(props) {
 
           <Question content={props.question} />
           <Container centered className="answerOptions">
-            {console.log("Qui le answer options")}
-            {console.log(props.answerOptions)}
             {props.answerOptions.map(renderAnswerOptions)}
           </Container>
       </div>
+    </ReactCSSTransitionGroup>
    );
  }
 

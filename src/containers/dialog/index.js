@@ -33,7 +33,8 @@ import ImageBarb from '../../assets/images/home/lady.png';
          width:this.wH, height:this.wH,
          marginLeft:-this.marginContainer,
          marginTop:-this.wH,
-         background:'white', color:'rgb(36, 158, 205)',
+         background:'white',
+         color:'rgb(36, 158, 205)',
          opacity:1,
          borderRadius:1000,
          overflow: 'hidden'
@@ -75,6 +76,8 @@ import ImageBarb from '../../assets/images/home/lady.png';
       updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight })
 
+
+        // Big Tablet
         if(window.innerWidth>500 && window.innerWidth<1200){
           console.log("Desktop W:" + window.innerWidth + " H:" + window.innerHeight);
 
@@ -91,6 +94,7 @@ import ImageBarb from '../../assets/images/home/lady.png';
               marginLeft:this.marginContainer};
 
         }else if(window.innerWidth>1200 && window.innerHeight<800){
+          // Small laptops
 
           this.marginContainer = 200;
           this.bigBuggleStyle = {
@@ -115,6 +119,8 @@ import ImageBarb from '../../assets/images/home/lady.png';
               marginLeft:300};
 
         }else if(window.innerHeight>800){
+          // Huge Screens
+
           this.marginContainer = 200;
           var height = 800;
           this.bigBuggleStyle = {

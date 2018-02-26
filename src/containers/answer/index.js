@@ -142,6 +142,7 @@ export class AnswerSlider extends React.Component {
                 </Grid.Row>
                 {this.props.min}
                   <input
+                   className="inputRange"
                    type="range"
                    min={this.props.min}
                    max={this.props.max}

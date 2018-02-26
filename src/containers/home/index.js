@@ -9,6 +9,10 @@ import {
   decrementAsync
 } from '../../reducers/counter'
 import { Image,Divider,Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactGA from 'react-ga';
+
+
 const mainFormat = {  height:300 };
 const backColor = {background: 'green', color:'white' };
 const speechBubbleContainer = {paddingTop:0, height:600, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
@@ -31,6 +35,7 @@ class Home extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    ReactGA.pageview('/');
   }
 
   componentWillUnmount() {
@@ -86,10 +91,21 @@ class Home extends Component {
 
       return(
           <Container style={containerStyle}>
+          <ReactCSSTransitionGroup
+           component="div"
+           transitionName="fade"
+           transitionEnterTimeout={800}
+           transitionLeaveTimeout={500}
+           transitionAppear
+           transitionAppearTimeout={500}
+          >
                 <Grid  style={speechBubbleContainer} style={{height:windowHeight}} >
+
                     <Grid.Row style={titleStyle}>
+
                         <Grid.Column style={{flex:0}}/>
                         <Grid.Column style={{flex:15, padding:0}}>
+
                               <div style={speechBubble} >
                                   <p style={speechText}>
                                   If you’re ready to control stress and negative thoughts, you’re ready for Better Space</p>
@@ -97,7 +113,9 @@ class Home extends Component {
 
                         </Grid.Column>
                         <Grid.Column style={{flex:0}}/>
+
                     </Grid.Row>
+
                     <Grid.Row  style={inputBarb} >
                         <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
                           <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start my journey</Button>
@@ -108,6 +126,7 @@ class Home extends Component {
 
                 </Grid>
 
+                </ReactCSSTransitionGroup>
 
 
           </Container>

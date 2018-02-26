@@ -15,6 +15,8 @@ import {
   decrementAsync
 } from '../../reducers/counter'
 import {setLastAnswer, setName} from '../../actions/questionnaireActions'
+import ReactGA from 'react-ga';
+
 
 class QuestionHome extends React.Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class QuestionHome extends React.Component {
       window.addEventListener('resize', this.updateWindowDimensions);
       console.log('[questionHome] componentWillMount: Qui il path:');
       console.log(this.props.location.pathname);
-
+      ReactGA.pageview(this.props.location.pathname);
 
 
       switch(this.props.location.pathname){

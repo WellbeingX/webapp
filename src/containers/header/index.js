@@ -48,12 +48,12 @@ import { Route, Link } from 'react-router-dom'
 
 
     render() {
-        var styleSVG = {float:'right', marginRight:this.state.width>415 ? -this.state.width*.25 : -this.state.width*.65, height: this.state.width*.25};
+        var styleSVG = {float:'right', marginRight:this.state.width>415 ? -this.state.width*.25 : -this.state.width*.55, height: this.state.width*.25};
         var cX = this.state.width>325 ? this.state.width*.2 : this.state.width*.35;
         var cY = this.state.width*.05;
         var r = this.state.width*.2;
 
-        // MAX WIDTH 980
+        // MIN WIDTH 980
         if (this.state.width>980){
           styleSVG = {float:'right', marginRight:this.state.width>1415 ? -this.state.width*.1 : -this.state.width*.15, height: this.state.width*.25};
         }

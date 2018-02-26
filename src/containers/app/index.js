@@ -10,7 +10,9 @@ import QuestionHome from '../questionHome'
 import EmailRequest from '../emailRequest'
 import FooterHome from '../footerHome'
 import FooterInfo from '../footerInfo'
+import ReactGA from 'react-ga'
 
+ReactGA.initialize('UA-114742931-1');
 const App = () => (
   <div >
 

@@ -1,5 +1,7 @@
 import fire from '../api/fire'
 import ip from 'ip'
+import ReactGA from 'react-ga';
+
 export const SET_EMAIL = 'SET_EMAIL'
 export const SET_LAST_ANSWER = 'SET_LAST_ANSWER'
 export const SET_NAME = 'SET_NAME'
@@ -27,6 +29,15 @@ export function setLastAnswer(data){
         //For this example, I will be retrieving data from a json file
         //Get the sample data in the json file
         //delay the retrieval [Sample reasons only]
+
+
+        // GoogleAnalytics
+        ReactGA.event({
+            category: 'Questionnaire',
+            action: data,
+        });
+
+        // Firebase recording
         var f = [
           data,
           [Date()]
@@ -45,8 +56,7 @@ export function setLastAnswer(data){
                   });
 
 
-        console.log("setLastAnswer Action launched");
-
+                  // Redux
             dispatch({type: SET_LAST_ANSWER, data:data});
 
     };
