@@ -206,11 +206,11 @@ var quizQuestions = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
+              type: "5",
               content: "excellent"
           },
           {
-              type: "2",
+              type: "4",
               content: "very good"
           },
           {
@@ -218,11 +218,11 @@ var quizQuestions = [
               content: "good"
           },
           {
-              type: "4",
+              type: "2",
               content: "fair"
           },
           {
-              type: "5",
+              type: "1",
               content: "poor"
           }
       ],
@@ -286,7 +286,7 @@ var quizQuestions = [
   },
   {
       dialog: "It has been a pleasure, /name. ",
-      question: "If you sign up below I’ll send you a report, and I’ll keep you updated on relevant tips and solutions.",
+      question: "If /name sign up below I’ll send you a report, and I’ll keep you updated on relevant tips and solutions.",
       answerType:'TextInput',
       answers: [{
           type: 0,

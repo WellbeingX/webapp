@@ -15,15 +15,15 @@ export default function FooterHome(){
         <p style={{width:'100%'}}> Better Space is your compass through an ever- expanding and sometimes confusing world of solutions.</p>
 
         <p style={{margin:'auto'}}>
-        <Grid  columns='equal' style={{height:80, padding:20, paddingTop:100, margin:'auto'}}>
+        <Grid  columns='equal' style={{height:60, padding:20, paddingTop:100, margin:'auto'}}>
             <Grid.Column>
-              <Image src={ImageMatch} centered style={{ width:75, height:100}}/>
+              <Image src={ImageMatch} centered style={{ width:65, height:85}}/>
             </Grid.Column>
             <Grid.Column>
-              <Image src={ImageBook} centered style={{ width:75, height:100}}/>
+              <Image src={ImageBook} centered style={{ width:65, height:85}}/>
             </Grid.Column>
             <Grid.Column>
-              <Image src={ImageGo} centered style={{width:75, height:100}}/>
+              <Image src={ImageGo} centered style={{width:65, height:85}}/>
             </Grid.Column>
         </Grid>
         </p>

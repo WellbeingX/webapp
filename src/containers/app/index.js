@@ -7,6 +7,7 @@ import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-reac
 import HeaderUs from '../header'
 import DebuggingBar from '../debuggingBar'
 import QuestionHome from '../questionHome'
+import Directory from '../directory'
 import EmailRequest from '../emailRequest'
 import FooterHome from '../footerHome'
 import FooterInfo from '../footerInfo'
@@ -25,9 +26,8 @@ const App = () => (
             <main>
               <Route exact path="/" component={Home} />
               <Route exact path="/information" component={QuestionHome} />
-              <Route exact path="/solutions" component={QuestionHome} />
+              <Route exact path="/directory" component={Directory} />
               <Route exact path="/idk" component={QuestionHome} />
-              <Route exact path="/directory" component={QuestionHome} />
               <Route exact path="/about-us" component={About} />
               <Route exact path="/report" component={EmailRequest} />
             </main>

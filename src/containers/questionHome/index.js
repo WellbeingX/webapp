@@ -3,6 +3,7 @@ import quizQuestions from '../../api/questQuestionnaire';
 import update from 'react-addons-update';
 import Questionnaire from '../questionnaire';
 import Result from '../result';
+import Directory from '../directory';
 import { Route, Link } from 'react-router-dom'
 import About from '../about'
 import { push } from 'react-router-redux'
@@ -189,7 +190,7 @@ class QuestionHome extends React.Component {
 
   renderResult() {
     return (
-      <Result quizResult={this.state.result} />
+      <Directory quizResult={this.state.result} />
     );
   }
 
