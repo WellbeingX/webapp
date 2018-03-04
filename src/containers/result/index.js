@@ -7,50 +7,108 @@ import PropTypes from 'prop-types';
 
 		//Normalization to 1 bad to 5 good
 		//Comparison
-		console.log(answers[8][0]);
+
 		// 8 Sleep
 		// 0 is good, 7 is bad
 		index=8;
-		if(answers[index][1]<1)result=[...result, ['sleep',5]];
-		else if (answers[index][1]<2)result=[...result, ['sleep',4]];
-		else if (answers[index][1]<3)result=[...result, ['sleep',3]];
-		else if (answers[index][1]<4)result=[...result, ['sleep',2]];
-		else result=[...result, ['sleep',1]];
-		console.log('queto è Result');
-		console.log(result);
+		console.log('esame');
+		console.log(answers[index-1][1]);
+		console.log(answers[index-1][1]==='0');
+		switch (answers[index-1][1]){
+			case '0':
+				result=[...result, ['sleep',5]];
+				break;
+			case '1':
+				result=[...result, ['sleep',4]];
+				break;
+			case '2':
+				result=[...result, ['sleep',3]];
+				break;
+			case '3':
+				result=[...result, ['sleep',2]];
+				break;
+			default:
+				result=[...result, ['sleep',1]];
+		}
 
 		// 6 Exercise
 		// 0 is bad, 7 is good
 		index=6;
-		if(answers[index][1]===0)result=[...result, ['exercise',1]];
-		else if (answers[index][1]===1)result=[...result, ['exercise',2]];
-		else if (answers[index][1]===2)result=[...result, ['exercise',3]];
-		else if (answers[index][1]===3)result=[...result, ['exercise',4]];
-		else result=[...result, ['exercise',5]];
+		switch (answers[index-1][1]){
+			case '0':
+				result=[...result, ['exercise',1]];
+				break;
+			case '1':
+				result=[...result, ['exercise',2]];
+				break;
+			case '2':
+				result=[...result, ['exercise',3]];
+				break;
+			case '3':
+				result=[...result, ['exercise',4]];
+				break;
+			default:
+				result=[...result, ['exercise',5]];
+		}
 
 		// 7 Nutrition
 		index = 7;
-		result = [...result, ['nutrition', answers[index][1] ]];
+		switch (answers[index-1][1]){
+			case '1':
+				result=[...result, ['nutrition',1]];
+				break;
+			case '2':
+				result=[...result, ['nutrition',2]];
+				break;
+			case '3':
+				result=[...result, ['nutrition',3]];
+				break;
+			case '4':
+				result=[...result, ['nutrition',4]];
+				break;
+			default:
+				result=[...result, ['nutrition',5]];
+		}
 
 		// 10 Purpose
 		// 0 is bad, 7 is good
 		index = 10;
-		if(answers[index][1]<3)result=[...result, ['purpose',1]];
-		else if (answers[index][1]<4)result=[...result, ['purpose',2]];
-		else if (answers[index][1]<=5)result=[...result, ['purpose',3]];
-		else if (answers[index][1]<=6)result=[...result, ['purpose',4]];
-		else if (answers[index][1]<=7)result=[...result, ['purpose',5]];
-
+		switch (answers[index-1][1]){
+			case '4':
+				result=[...result, ['purpose',2]];
+				break;
+			case '5':
+				result=[...result, ['purpose',3]];
+				break;
+			case '6':
+				result=[...result, ['purpose',4]];
+				break;
+			case '7':
+				result=[...result, ['purpose',5]];
+				break;
+			default:
+				result=[...result, ['purpose',1]];
+		}
 
 		// 9 Loneliness
 		// 1 is good, 5 is bad, 6 to avoid
 		index = 9;
-		if(answers[index][1]===1)result=[...result, ['loneliness',5]];
-		else if (answers[index][1]===2)result=[...result, ['loneliness',4]];
-		else if (answers[index][1]===3)result=[...result, ['loneliness',3]];
-		else if (answers[index][1]===4)result=[...result, ['loneliness',2]];
-		else if (answers[index][1]===5)result=[...result, ['loneliness',1]];
-
+		switch (answers[index-1][1]){
+			case '1':
+				result=[...result, ['loneliness',5]];
+				break;
+			case '2':
+				result=[...result, ['loneliness',4]];
+				break;
+			case '3':
+				result=[...result, ['loneliness',3]];
+				break;
+			case '4':
+				result=[...result, ['loneliness',2]];
+				break;
+			default:
+				result=[...result, ['loneliness',1]];
+		}
 		console.log(result);
 
 		result.sort(function(a,b ){return a[1]-b[1]});

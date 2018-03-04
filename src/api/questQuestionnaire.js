@@ -78,7 +78,7 @@ var quizQuestions = [
 
   {
       dialog: "",
-      question: "Hi, I’m Barbara, your personal wellbeing assistant. My obsession is helping people like you find the things that can boost your state of mind. From books to films, from laughter clubs to therapists. Will you try me out?",
+      question: "Hi, I’m Barbara. My mission is helping people like you find the things that can boost your state of mind. From books to films, from laughter clubs to therapists. Will you try me out?",
       answerType: 'Button',
       answers: [
           {
@@ -104,7 +104,7 @@ var quizQuestions = [
       comments:''
   },
   {
-      dialog: "Ok, /name, we’re motoring.",
+      dialog: "Ok, /name, let's start.",
       question: " I have eight questions drawn up experts, and translated into normal english by yours truly. These will help narrow down the options to a useful shortlist.",
       answerType: 'Button',
       answers: [

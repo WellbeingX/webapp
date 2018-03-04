@@ -43,14 +43,22 @@ export function setLastAnswer(data){
           [Date()]
         ];
         var ipAddress = '';
-        fetch('//www.stupidwebtools.com/api/my_ip.json').then(function(response) {
+        console.log('Proviamo questo');
+        fetch('//www.geoplugin.net/json.gp?jsoncallback=?').then(function(response) {
+          console.log(response);
+          console.log(JSON.stringify(response, null, 2));
+
                   if (response.status >= 400) {
                     throw new Error("Bad response from server");
                   }
-                return response.json();
+                // return response.json();
                 }).then(function(data){
-                  ipAddress = data.my_ip.ip;
-                  fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {f});
+                  console.log('Ora mando l IP :');
+                  console.log( data);
+                  // ipAddress = data.my_ip.ip;
+                  // fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {f});
+                }).then(function(){
+                  console.log('Dovrebbe essere andato tutto bene');
                 }).catch(function(error) {
                   console.log('There has been a problem with your fetch operation: ' + error.message);
                   });

@@ -15,7 +15,9 @@ function Directory(props){
   function solutionMatching(){
     console.log(props.counter.answersArray);
     var priorities = props.counter.answersArray;
-    if ( !!(priorities) ) priorities= [[1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], ];
+    // console.log('Vediamo se dice giusto');
+    // console.log(!(priorities) );
+    // if ( !!(priorities) ) priorities= [[1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], ];
     var results = Result(priorities);
 
     return [
