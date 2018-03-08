@@ -19,9 +19,9 @@ const mainFormat = {  height:300 };
 const backColor = {background: 'green', color:'white' };
 const speechBubbleContainer = {paddingTop:0, height:600, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
 const speechBubble = { textAlign:'left', fontSize:'1rem', fontWeight: 900, color:'white', borderRadius:20, padding:0};
-const speechText = {margin:0, color:'white', textAlign:'center'}
-const inputBarb = { paddingTop:80, paddingBottom:0, marginBottom:0}
-const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15 20'}
+const speechText = {margin:0, fontSize:'1.1rem', color:'white', textAlign:'center'}
+const inputBarb = { paddingTop:110, paddingBottom:0, marginBottom:0}
+const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15px 55px'}
 const triangle = {width: 0, height: 0, marginTop:-15, marginLeft:50, borderLeft:'30px solid transparent', borderRight:'30px solid transparent',borderTop:'40px solid #fff'}
 
 
@@ -55,17 +55,14 @@ class Home extends Component {
     var windowHeight = this.state.height;
     var containerStyle = {paddingTop:0,marginTop:0};
     var titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.1};
-    var windowHeightContainer = windowHeight*.8;
+    var windowHeightContainer = windowHeight*.7;
     // MOBILE
     if(this.state.width<1200){
       console.log("Mobile");
     if (windowHeight< 800) {
-
-      console.log("Eccolo");
-
       windowHeight = windowHeight*.7;
       containerStyle = {paddingTop:windowHeight*.2}
-      titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.2};
+      titleStyle = {marginTop:0, height:windowHeight*.1};
     }else if (windowHeight<1400) {
       windowHeightContainer = 600;
       titleStyle = {marginTop:100, height:50};
@@ -112,7 +109,7 @@ class Home extends Component {
 
                               <div style={speechBubble} >
                                   <p style={speechText}>
-                                  Find your quickest journey to a great state of mind</p>
+                                  Find the best therapists, apps, products and activities to improve your state of mind</p>
                               </div>
 
                         </Grid.Column>
@@ -122,17 +119,10 @@ class Home extends Component {
 
                     <Grid.Row  style={inputBarb} >
                         <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
-                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Get started</Button>
+                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start</Button>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row  centered style={inputBarb} >
-                        <Grid.Row centered>
-                        <Image src={ImageGuard} centered style={{padding:10,opacity:.8, width:150, height:60, paddingRight:30}}/>
-                        </Grid.Row>
-                        <Grid.Row centered bottom>
-                        <Image src={ImageZinc} centered style={{padding:10, opacity:1, width:100, height:70, marginTop:7}}/>
-                        </Grid.Row>
-                    </Grid.Row>
+
 
                 </Grid>
 
@@ -163,3 +153,14 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Home)
+
+
+
+// <Grid.Row  centered style={inputBarb} >
+//     <Grid.Row centered>
+//     <Image src={ImageGuard} centered style={{padding:10,opacity:.8, width:150, height:60, paddingRight:30}}/>
+//     </Grid.Row>
+//     <Grid.Row centered bottom>
+//     <Image src={ImageZinc} centered style={{padding:10, opacity:1, width:100, height:70, marginTop:7}}/>
+//     </Grid.Row>
+// </Grid.Row>

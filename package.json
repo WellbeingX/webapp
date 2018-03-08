@@ -13,9 +13,11 @@
     "react-ga": "^2.4.1",
     "react-rangeslider": "^2.2.0",
     "react-scripts": "1.1.1",
+    "react-slick": "^0.20.0",
     "semantic-ui": "^2.2.14",
     "semantic-ui-css": "^2.2.14",
-    "semantic-ui-react": "^0.78.2"
+    "semantic-ui-react": "^0.78.2",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
