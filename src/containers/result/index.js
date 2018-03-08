@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 		// 8 Sleep
 		// 0 is good, 7 is bad
-		index=8;
+		index=7;
 		console.log('esame');
 		console.log(answers[index-1][1]);
 		console.log(answers[index-1][1]==='0');
@@ -33,7 +33,7 @@ import PropTypes from 'prop-types';
 
 		// 6 Exercise
 		// 0 is bad, 7 is good
-		index=6;
+		index=9;
 		switch (answers[index-1][1]){
 			case '0':
 				result=[...result, ['exercise',1]];
@@ -52,7 +52,7 @@ import PropTypes from 'prop-types';
 		}
 
 		// 7 Nutrition
-		index = 7;
+		index = 8;
 		switch (answers[index-1][1]){
 			case '1':
 				result=[...result, ['nutrition',1]];
@@ -72,7 +72,7 @@ import PropTypes from 'prop-types';
 
 		// 10 Purpose
 		// 0 is bad, 7 is good
-		index = 10;
+		index = 11;
 		switch (answers[index-1][1]){
 			case '4':
 				result=[...result, ['purpose',2]];
@@ -92,7 +92,7 @@ import PropTypes from 'prop-types';
 
 		// 9 Loneliness
 		// 1 is good, 5 is bad, 6 to avoid
-		index = 9;
+		index = 10;
 		switch (answers[index-1][1]){
 			case '1':
 				result=[...result, ['loneliness',5]];

@@ -77,24 +77,20 @@
 var quizQuestions = [
 
   {
-      dialog: "",
-      question: "Hi, I’m Barbara. My mission is helping people like you find the things that can boost your state of mind. From books to films, from laughter clubs to therapists. Will you try me out?",
+      dialog: "Hi, I’m Barbara.",
+      question: "My job is to help people like you find the right things to boost your state of mind. Will you try me out?",
       answerType: 'Button',
       answers: [
           {
               type: "1",
-              content: "yes"
-          },
-          {
-              type: "2",
-              content: "skip"
+              content: "Yes"
           }
       ],
       comments:''
   },
   {
-      dialog: "",
-      question: "Thanks, I’m looking forward to working with you. What should I call you? (it doesn’t need to be your real name)",
+      dialog: "Thanks! I'm looking forward to working with you.",
+      question: "What should I call you? (it doesn't need to be your real name)",
       answerType: 'TextInput',
       answers: [{
               type: 0,
@@ -104,8 +100,8 @@ var quizQuestions = [
       comments:''
   },
   {
-      dialog: "Ok, /name, let's start.",
-      question: " I have eight questions drawn up experts, and translated into normal english by yours truly. These will help narrow down the options to a useful shortlist.",
+      dialog: "Ok, /name, let's get started!",
+      question: " I have nine short questions drawn up by experts. Answering these will help narrow down your options to a useful shortlist.",
       answerType: 'Button',
       answers: [
           {
@@ -187,50 +183,42 @@ var quizQuestions = [
     }],
       comments:' '
   },
+
   {
       dialog: "",
-      question: "Thinking about the past week, /name, how many days did you engage in over 30 minutes of vigorous physical activity, e.g.brisk walking or cycling?",
-      answerType:'Slider',
-      answers: [
-          {
-              min: 0,
-              max: 7
-          }
-      ],
-      comments:' '
-  }
-  ,
-  {
-      dialog: "",
-      question: "That food question. In general, how healthy is your overall diet?",
+      question: "Which of these words best describes how you currently feel?",
       answerType:'Button',
       answers: [
           {
               type: "5",
-              content: "excellent"
+              content: "low"
           },
           {
               type: "4",
-              content: "very good"
+              content: "anxious"
           },
           {
               type: "3",
-              content: "good"
+              content: "stressed"
           },
           {
               type: "2",
-              content: "fair"
+              content: "unhappy"
           },
           {
               type: "1",
-              content: "poor"
+              content: "annoyed"
+          },
+          {
+              type: "6",
+              content: "none of the above"
           }
       ],
       comments:' '
   },
   {
-      dialog: "",
-      question: "On to sleep. In the past week, how many nights have you had a problem with your sleep?",
+      dialog: "On to sleep.",
+      question: "In the past week, how many nights have you had a problem with your sleep?",
       answerType:'Slider',
       answers: [
           {
@@ -241,8 +229,51 @@ var quizQuestions = [
       comments:' '
   },
   {
+      dialog: "That food question",
+      question: "In general, how healthy is your overall diet?",
+      answerType:'Button',
+      answers: [
+          {
+              type: "5",
+              content: "very healthy"
+          },
+          {
+              type: "4",
+              content: "healthy"
+          },
+          {
+              type: "3",
+              content: "average"
+          },
+          {
+              type: "2",
+              content: "unhealthy"
+          },
+          {
+              type: "1",
+              content: "very unhealthy"
+          }
+      ],
+      comments:' '
+  },
+
+  {
       dialog: "",
-      question: "Now for a really nosey one! How often do you wish you had more people to spend time with?",
+      question: "Thinking about the past week, /name, how many days did you engage in over 30 minutes of vigorous physical activity (e.g. brisk walking, cycling, sports)?",
+      answerType:'Slider',
+      answers: [
+          {
+              min: 0,
+              max: 7
+          }
+      ],
+      comments:' '
+  }
+  ,
+
+  {
+      dialog: "Now for a nosey one!",
+      question: "How often do you wish you had more people to spend time with?",
       answerType:'Button',
       answers: [
           {
@@ -273,8 +304,8 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: "",
-      question: "This may be harder to answer. How satisfied are you with the purpose in your life? Think about what helps you wake up in the morning: work, religion, caring, raising kids etc",
+      dialog: "This may be harder to answer.",
+      question: "Think about what helps you wake up in the morning: work, religion, caring, raising kids etc. How satisfied are you with your life right now?",
       answerType:'Slider',
       answers: [
           {
@@ -285,14 +316,16 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: "It has been a pleasure, /name. ",
-      question: "If /name sign up below I’ll send you a report, and I’ll keep you updated on relevant tips and solutions.",
-      answerType:'TextInput',
+      dialog: "Great!",
+      question: "/name, if you sign up below I'll send you a report, and I'll keep you updated with relevant tips and solutions.",
+      answerType:'Button',
+      answerType: 'TextInput',
       answers: [{
-          type: 0,
-          content: "Email..."
-      }],
-      comments:' '
+              type: 0,
+              content: "Email..."
+          }
+         ],
+      comments:''
   }];
 
 export default quizQuestions;
