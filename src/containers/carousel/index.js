@@ -35,7 +35,7 @@ export default class AutoPlayMethods extends Component {
           </div>
           <div>
             <h3 style={{opacity:.6, fontSize:'.5em', textAlign:'center', textTransform:'uppercase', width:200, margin:'auto', marginTop:20, marginBottom:20 }}>A Zinc company</h3>
-            <Image src={ImageZinc} centered style={{ width:60, height:40,marginBottom:20}}/>
+            <Image src={ImageZinc} centered style={{ width:80, height:60,marginBottom:20}}/>
 
           </div>
         </Slider>

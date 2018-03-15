@@ -1,8 +1,14 @@
 import React from 'react'
 import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
 import { Route, Link } from 'react-router-dom'
-
-
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  increment,
+  incrementAsync,
+  decrement,
+  decrementAsync
+} from '../../reducers/counter'
 
 
   class HeaderUs extends React.Component {
@@ -12,8 +18,9 @@ import { Route, Link } from 'react-router-dom'
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0 };
+      this.state = { width: 0, height: 0, props };
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
     }
 
     componentDidMount() {
@@ -48,11 +55,15 @@ import { Route, Link } from 'react-router-dom'
 
 
     render() {
+
+        var styleWrapper={marginTop:0, paddingTop:0}
         var styleSVG = {float:'right', marginRight:this.state.width>415 ? -this.state.width*.25 : -this.state.width*.55, height: this.state.width*.25};
         var cX = this.state.width>325 ? this.state.width*.2 : this.state.width*.35;
         var cY = this.state.width*.05;
         var r = this.state.width*.2;
-
+        if (this.state.width<350){
+          if(this.props.counter.path==='/information') styleWrapper = { ...styleWrapper, height:150};
+        }
         // MIN WIDTH 980
         if (this.state.width>980){
           styleSVG = {float:'right', marginRight:this.state.width>1415 ? -this.state.width*.1 : -this.state.width*.15, height: this.state.width*.25};
@@ -66,7 +77,7 @@ import { Route, Link } from 'react-router-dom'
         }
 
         return(
-    <div style={{marginTop:0, paddingTop:0}}>
+    <div style={styleWrapper}>
       <Grid className="headerBar" style={{paddingTop:10}}>
           {this.logoSet()}
           <Grid.Column floated='right' width={10}>
@@ -84,7 +95,25 @@ import { Route, Link } from 'react-router-dom'
   )
 }
 }
+const mapStateToProps = state => ({
+  counter: state.counter,
+  isIncrementing: state.counter.isIncrementing,
+  isDecrementing: state.counter.isDecrementing
+})
 
-export default HeaderUs
+const mapDispatchToProps = dispatch => bindActionCreators({
+  increment,
+  incrementAsync,
+  decrement,
+  decrementAsync
+}, dispatch)
+
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HeaderUs)
+
 // <Link to="/">Home</Link>
 // <Link to="/about-us">About </Link>

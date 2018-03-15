@@ -1,4 +1,4 @@
-import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME} from '../actions/questionnaireActions.js'
+import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH} from '../actions/questionnaireActions.js'
 
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
@@ -18,7 +18,8 @@ export const initialState = {
   result: '',
   name:'',
   answersArray:[],
-  email: ''
+  email: '',
+  path:''
 }
 
 export default (state = initialState, action) => {
@@ -64,11 +65,16 @@ export default (state = initialState, action) => {
           ...state,
            answersArray: arr
         }
-      case SET_NAME:
-        return {
-          ...state,
-           name: action.data
-        }
+        case SET_NAME:
+          return {
+            ...state,
+             name: action.data
+          }
+          case SET_PATH:
+            return {
+              ...state,
+               path: action.data
+            }
     default:
       return state
   }

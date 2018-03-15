@@ -15,7 +15,7 @@ import {
   decrement,
   decrementAsync
 } from '../../reducers/counter'
-import {setLastAnswer, setName} from '../../actions/questionnaireActions'
+import {setLastAnswer, setName, setPath} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 
 const nameQuestion=2;
@@ -48,6 +48,9 @@ class QuestionHome extends React.Component {
 
 
     componentWillMount() {
+      window.scrollTo(0, 0);
+      this.props.setPath('/information')
+
       // Select the cases INFORMATION | SOLUTION | IDK
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions);
@@ -98,7 +101,9 @@ class QuestionHome extends React.Component {
        this.setState({ width: window.innerWidth, height: window.innerHeight});
      }
 
-
+     componentDidUpdate() {
+       window.scrollTo(0,0);
+     }
 
      handleAnswerSelected(event) {
        console.log("Questa è la answer");
@@ -172,6 +177,8 @@ class QuestionHome extends React.Component {
 
 
   renderQuiz() {
+    window.scrollTo(0, 0);
+
     return (
       <Questionnaire
         answer={this.state.answer}
@@ -189,6 +196,8 @@ class QuestionHome extends React.Component {
   }
 
   renderResult() {
+    window.scrollTo(0, 0);
+
     return (
       <Directory quizResult={this.state.result} />
     );
@@ -197,6 +206,7 @@ class QuestionHome extends React.Component {
 
 
   render(){
+
     return(
 
       <div className="App" >
@@ -223,12 +233,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
   setLastAnswer,
   setName,
+  increment,
+  setPath,
   changePage: (text) => push('/' + text)
 }, dispatch)
 

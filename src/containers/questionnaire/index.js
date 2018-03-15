@@ -10,6 +10,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 function Questionnaire(props) {
 
   function renderAnswerOptions(key) {
+    window.scrollTo(0, 0);
 
       switch(props.answerType) {
           case 'Button':
@@ -90,6 +91,7 @@ function Questionnaire(props) {
     }
 
    return (
+
      <ReactCSSTransitionGroup
       className="container"
       component="div"

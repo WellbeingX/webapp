@@ -76,7 +76,6 @@ import ImageBarb from '../../assets/images/home/lady.png';
       updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight })
 
-
         // Big Tablet
         if(window.innerWidth>500 && window.innerWidth<1200){
           console.log("Desktop W:" + window.innerWidth + " H:" + window.innerHeight);
@@ -167,8 +166,8 @@ import ImageBarb from '../../assets/images/home/lady.png';
 
       side(){
         return(
-          <div style={this.bigBuggleStyle2}>
-            <div style={this.dialogWrapperStyle}>
+          <div className='bigBuggleStyle2' style={this.bigBuggleStyle2}>
+            <div className='dialogWrapperStyle' style={this.dialogWrapperStyle}>
                 <h2 className="dialog" style={this.dialogStyle}>{this.props.content}</h2>
             </div>
             <div style={this.characterStyle}>

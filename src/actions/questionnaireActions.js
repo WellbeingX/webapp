@@ -5,6 +5,7 @@ import ReactGA from 'react-ga';
 export const SET_EMAIL = 'SET_EMAIL'
 export const SET_LAST_ANSWER = 'SET_LAST_ANSWER'
 export const SET_NAME = 'SET_NAME'
+export const SET_PATH = 'SET_PATH'
 
 
 export function setEmail(data){
@@ -18,6 +19,20 @@ export function setEmail(data){
 
         console.log("setEmail Action launched");
             dispatch({type: SET_EMAIL, data:data});
+
+    };
+}
+
+export function setPath(data){
+    return (dispatch) => {
+
+        //Make API Call
+        //For this example, I will be retrieving data from a json file
+        //Get the sample data in the json file
+        //delay the retrieval [Sample reasons only]
+
+        console.log("setPath Action launched");
+            dispatch({type: SET_PATH, data:data});
 
     };
 }

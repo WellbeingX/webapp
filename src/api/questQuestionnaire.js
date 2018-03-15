@@ -77,7 +77,7 @@
 var quizQuestions = [
 
   {
-      dialog: "Hi, I’m Barbara.",
+      dialog: "Hi, I’m Barbara",
       question: "My job is to help people like you find the right things to boost your state of mind. Will you try me out?",
       answerType: 'Button',
       answers: [
@@ -88,8 +88,9 @@ var quizQuestions = [
       ],
       comments:''
   },
+
   {
-      dialog: "Thanks! I'm looking forward to working with you.",
+      dialog: "Thanks! I'm looking forward to working with you",
       question: "What should I call you? (it doesn't need to be your real name)",
       answerType: 'TextInput',
       answers: [{
@@ -99,9 +100,10 @@ var quizQuestions = [
          ],
       comments:''
   },
+
   {
       dialog: "Ok, /name, let's get started!",
-      question: " I have nine short questions drawn up by experts. Answering these will help narrow down your options to a useful shortlist.",
+      question: " I have nine short questions drawn up by experts. Answering these will help narrow down your options to a useful shortlist",
       answerType: 'Button',
       answers: [
           {
@@ -191,7 +193,7 @@ var quizQuestions = [
       answers: [
           {
               type: "5",
-              content: "low"
+              content: "happy"
           },
           {
               type: "4",
@@ -203,7 +205,7 @@ var quizQuestions = [
           },
           {
               type: "2",
-              content: "unhappy"
+              content: "normal"
           },
           {
               type: "1",
@@ -211,13 +213,13 @@ var quizQuestions = [
           },
           {
               type: "6",
-              content: "none of the above"
+              content: "other"
           }
       ],
       comments:' '
   },
   {
-      dialog: "On to sleep.",
+      dialog: "On to sleep",
       question: "In the past week, how many nights have you had a problem with your sleep?",
       answerType:'Slider',
       answers: [
@@ -304,7 +306,7 @@ var quizQuestions = [
       comments:' '
   },
   {
-      dialog: "This may be harder to answer.",
+      dialog: "This may be harder to answer",
       question: "Think about what helps you wake up in the morning: work, religion, caring, raising kids etc. How satisfied are you with your life right now?",
       answerType:'Slider',
       answers: [
@@ -317,7 +319,7 @@ var quizQuestions = [
   },
   {
       dialog: "Great!",
-      question: "/name, if you sign up below I'll send you a report, and I'll keep you updated with relevant tips and solutions.",
+      question: "/name, if you sign up below I'll send you a report and save your profile!",
       answerType:'Button',
       answerType: 'TextInput',
       answers: [{

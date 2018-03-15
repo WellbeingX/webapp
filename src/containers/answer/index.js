@@ -67,6 +67,8 @@ export class AnswerText extends React.Component {
             onClick={this.props.onAnswerSelected}
           />
 
+          <a onClick={this.props.onAnswerSelected} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
+
           </div>
       );
     }

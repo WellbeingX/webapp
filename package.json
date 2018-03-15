@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^4.10.1",
+    "firebase-tools": "^3.17.5",
     "ip": "^1.1.5",
     "rc-slider": "^8.6.0",
     "react": "^16.2.0",

@@ -39,7 +39,7 @@ h2{
   background:#fff;
   color: #333;
   text-align: center;
-  margin-top:70px;
+  margin-top:40px;
 }
 .inputRange{
 
@@ -129,7 +129,7 @@ p{
   color: #444;
 }
 .backgroundColor{
-  background-color: linear-gradient(-20deg, '#96D0A7', '#249ECD' );
+  background-color: linear-gradient(-20deg, #96D0A7, #249ECD );
 }
 
 .backgroundWhite{
@@ -212,6 +212,29 @@ p{
   z-index:0;
 }
 
+
+.homeFeatIcon{
+
+}
+
+
+div.homeFeatText{
+  padding:0;
+  width: 80%;
+  text-align: left;
+  font-size: .9 rem;
+}
+div.homeFeatIcon{
+  margin:0 20px 0px 0px;
+  width: 80px;
+}
+
+.homeFeatRow{
+  display: flex;
+}
+.homeFeatRow{
+    padding:30px 20px;
+}
 .white:before{
   border-radius: 40px;
   background: linear-gradient( rgba(255,255,255,0),#FFF 75% );
@@ -219,7 +242,6 @@ p{
 
 .landingTextFooter{
   width:100%;
-  position:absolute;
   bottom:0;
   padding: 10px;
   font-size: .8em;
@@ -437,22 +459,91 @@ Input{
 
 .logoReplacementWrapper{
   margin-top:-130px;
-  background: white;
-  height: 100px;
+  background: linear-gradient(-20deg, #96D0A7, #249ECD );
+  height: 200px;
   width: 100%;
   padding-top:40px;
+  z-index:10;
+  position:relative;
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
 }
+
 .logoReplacement{
-  color:#249ECD;
+  color:white;
   font-weight: 900;
+  font-size: 1rem;
 }
 .directoryContainer{
   background:white;
-  /* background: linear-gradient(-20deg, #249ECD, #FFFFFF); */
   padding-bottom: 40px;
 
 }
 
+.directoryFilterBar{
+  background: #DDDDDD;
+  height: 50px;
+  width: 100%;
+}
+
+.directoryHeaderSentence{
+    color:#4C4C4B;
+    padding:30px 20px 20px 5px;
+    font-size: .7em;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #4C4C4B;
+}
+
+.directoryRecommendationTitle{
+  color:#70CACC;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #70CACC;
+  font-size: 1rem;
+}
+
+
+.directoryBarbaraDiv{
+    overflow: hidden;
+    border-bottom: .5px solid #70CACC;
+    padding:20px;
+    height: 110px;
+}
+
+div.ui.grid.directoryBarbaraDiv{
+  margin:0;
+  margin-right: 1rem;
+  margin-top:-30px;
+}
+
+.directoryRecommendationSpace{
+  height: 40px;
+}
+
+
+.directoryCategory{
+  font-size: .5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: .2rem;
+  color:white;
+}
+
+.directoryIcon{
+  margin: auto;
+  padding-top: 8px;
+  background: white;
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
+}
+.directoryNotSelected{
+  background: rgba(255,255,255,.3)
+}
 .directoryCommentWrapper{
   border-radius: 40px;
   background-color:#249ECD;
@@ -474,7 +565,7 @@ Input{
   color: black;
 }
 .solutionWrapper{
-  height: 195px;
+  height: 200px;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-base-color:#ffeaff;
@@ -485,18 +576,46 @@ Input{
 
 
 .solutionContainer{
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin:10px 0px ;
+  padding: 0px 20px;
+  margin:0px 0px ;
   display: inline-block;
   background: white;
   width: 100%;
   height: 150px;
   color:black;
+  padding-right: 0;
+}
+
+.recommendationContainer{
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin:30px 0px;
+  display: inline-block;
+  background: white;
+  width: 100%;
+  height: 670px;
+  color:black;
   -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
   box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
   padding-right: 0;
+}
+.directoryFilterBar{
+  background: #DDDDDD;
+  height: 42px;
+  width: 100%;
+}
+.filterNormal{
+  font-size: .6rem;
+  padding: .5rem;
+}
+.filterHighlight{
+    font-size: .7rem;
+    font-weight: 500;
+}
+.filterFilter{
+    font-size: .7rem;
+    font-weight: 900;
 }
 
 .solutionContainer h2{
@@ -618,3 +737,31 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #ffffff;
 }
+
+
+.CalendarSVG, .AppSVG, .starSVG, .lockSVG{
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+}
+.starSVG, .lockSVG{
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+}
+.CalendarSVG .cls-1{fill:none;}
+.CalendarSVG  .cls-1,.cls-2,.cls-3,.cls-4{stroke:#BABAB9;stroke-miterlimit:10;}
+.CalendarSVG  .cls-1,.cls-3{stroke-width:10px;}
+.CalendarSVG  .cls-2,.cls-4{fill:#BABAB9;}
+.CalendarSVG  .cls-3{fill:#BABAB9;}
+.CalendarSVG  .cls-4{font-size:54px;font-family:Quicksand-Bold, Quicksand;font-weight:700;}
+
+.AppSVG .cls-1{fill:#70cacc;
+  stroke:#70cacc;
+  stroke-miterlimit:10;
+}
+
+.starSVG .cls-1{fill:#F7E006;stroke:#F7E006;stroke-miterlimit:10;}
+
+.lockSVG .cls-1{fill:#3A3A38;stroke:#3A3A38;stroke-miterlimit:10;}
+.lockSVG .cls-2{fill:#f7f9f9;}

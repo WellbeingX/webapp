@@ -6,11 +6,12 @@ import {Grid,  Image} from 'semantic-ui-react'
 export default function DirectorySolution(props){
   console.log('desc length');
   console.log(props.description.length);
+  window.scrollTo(0,0);
 
   return(
         <div className="solutionContainer" href={props.website}>
 
-            <h2>{props.title}</h2>
+            <h2 style={{fontSize:'.6rem'}}>{props.title}</h2>
 
           <Grid columns={2} className='solutionContent' style={{height:'100%', position:'relative'}}>
 

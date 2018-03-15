@@ -22,11 +22,10 @@ const App = () => (
     <HeaderUs/>
 
       <div className="body">
-
-            <main>
+            <main onUpdate={() => window.scrollTo(0, 0)}>
               <Route exact path="/" component={Home} />
               <Route exact path="/information" component={QuestionHome} />
-              <Route exact path="/directory" component={Directory} />
+              <Route exact path="/directory" component={Directory}  />
               <Route exact path="/idk" component={QuestionHome} />
               <Route exact path="/about-us" component={About} />
               <Route exact path="/report" component={EmailRequest} />
