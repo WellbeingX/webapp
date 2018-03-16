@@ -8,12 +8,10 @@ import {
   decrement,
   decrementAsync
 } from '../../reducers/counter'
-import { Image,Divider,Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
+import { Container, Button, Grid } from 'semantic-ui-react'
 import {setPath} from '../../actions/questionnaireActions'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
-import ImageGuard from '../../assets/images/home/the_guardian_logo.png';
-import ImageZinc from '../../assets/images/home/zinc.png';
 import Carousel from '../carousel';
 
 const mainFormat = {  height:300 };

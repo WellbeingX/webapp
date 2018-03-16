@@ -6,10 +6,10 @@ import {Grid,  Image} from 'semantic-ui-react'
 export default function DirectorySolution(props){
   console.log('desc length');
   console.log(props.description.length);
-  window.scrollTo(0,0);
+  var textColor = {color:props.textColor};
 
   return(
-        <div className="solutionContainer" href={props.website}>
+        <div className="solutionContainer" href={props.website}  style={textColor}>
 
             <h2 style={{fontSize:'.6rem'}}>{props.title}</h2>
 
@@ -19,16 +19,16 @@ export default function DirectorySolution(props){
                 <Image centered small src={props.imageURL} style={{width:'100%', height:'100%', background:'grey', borderRadius:20}} />
             </Grid.Column>
 
-            <Grid.Column className='solutionText' style={{padding:'20px 0 0 10px', color:'black', width:'70%', paddingRight:0, paddingBottom:0}}>
-                <Grid.Row style={{position:'absolute', color:'black', width:'100%', height:'50%'}}>
-                  <p className='solutionDescription'>{props.description}</p>
+            <Grid.Column className='solutionText' style={{padding:'20px 0 0 10px', width:'70%', paddingRight:0, paddingBottom:0}}>
+                <Grid.Row style={{position:'absolute', width:'100%', height:'50%'}}>
+                  <p className='solutionDescription' style={textColor}>{props.description}</p>
                 </Grid.Row>
-                <Grid columns={2} style={{bottom:0, color:'black',width:'100%', height:'50%', position:'absolute', bottom:20, right:20}}>
-                    <Grid.Column  style={{bottom:0, color:'black',width:'50%',  height:'100%', paddingLeft:10}}>
-                      <p className='solutionCateg'>{props.categ}</p>
+                <Grid columns={2} style={{bottom:0, width:'100%', height:'50%', position:'absolute', bottom:20, right:20}}>
+                    <Grid.Column  style={{bottom:0 ,width:'50%',  height:'100%', paddingLeft:10}}>
+                      <p style={textColor} className='solutionCateg'>{props.categ}</p>
                     </Grid.Column>
                     <Grid.Column   style={{bottom:0, color:'black',width:'50%', height:'100%', paddingRight:5, textAlign:'right'}}>
-                      <p className='solutionPrice'>{props.price}</p>
+                      <p  style={textColor} className='solutionPrice'>{props.price}</p>
                     </Grid.Column>
                 </Grid>
             </Grid.Column>

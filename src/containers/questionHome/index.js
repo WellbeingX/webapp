@@ -106,7 +106,6 @@ class QuestionHome extends React.Component {
      }
 
      handleAnswerSelected(event) {
-       console.log("Questa è la answer");
 
        this.setUserAnswer(event.currentTarget.value);
 
@@ -114,7 +113,8 @@ class QuestionHome extends React.Component {
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
        // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
-       if(this.state.questionId === nameQuestion){this.props.setName(event.currentTarget.id)}
+
+       if((this.state.questionId === nameQuestion)){this.props.setName(event.currentTarget.id)}
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
        } else {
@@ -177,8 +177,6 @@ class QuestionHome extends React.Component {
 
 
   renderQuiz() {
-    window.scrollTo(0, 0);
-
     return (
       <Questionnaire
         answer={this.state.answer}

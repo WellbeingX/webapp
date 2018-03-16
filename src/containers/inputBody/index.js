@@ -8,10 +8,7 @@ import {
   decrement,
   decrementAsync
 } from '../../reducers/counter'
-import { Button, Grid, Header, List, Segment } from 'semantic-ui-react'
 import Question from '../question';
-import QuestionCount from '../questionCounter';
-import AnswerOption from '../answer';
 
 // RENDER
 const inputBody = props => (
