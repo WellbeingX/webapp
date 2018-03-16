@@ -8,6 +8,9 @@ import resources from '../../api/resources.js'
 import DirectoryHeader from '../directoryHeader'
 import ImageBarb from '../../assets/images/home/lady.png';
 import DirectoryDigital from '../directoryDigital'
+import DirectoryLocal from '../directoryLocal'
+import DirectoryProducts from '../directoryProducts'
+
 
 const characterStyle = {
   height: 170,
@@ -22,69 +25,65 @@ const characterStyle = {
 }
 
 
-function Directory(props){
-  // 1/ Retrieve the data
+  class Directory extends React.Component {
+    constructor(props){
+      super(props);
+      this.state={
+        selected:'Digital'
+      };
+      this.setDigital = this.setDigital.bind(this);
+      this.setLocal = this.setLocal.bind(this);
+      this.setProducts = this.setProducts.bind(this);
 
+    }
 
-  // 2/ Rank priorities
-  // 3/ Choose the right solution
+    setDigital(selection){
+      this.setState({
+        selected:'digital'
+      })
+    }
+    setLocal(selection){
+      this.setState({
+        selected:'Local'
+      })
+    }
+    setProducts(selection){
+      this.setState({
+        selected:'Products'
+      })
+    }
 
-  function solutionMatching(){
-    console.log(props.counter.answersArray);
-    var priorities = props.counter.answersArray;
-    // console.log('Vediamo se dice giusto');
-    // console.log(!(priorities) );
-    if ( !!(priorities) ) priorities= [[1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], ];
-    var results = Result(priorities);
+    renderSolutions(){
+      switch (this.state.selected) {
+        case 'Digital':
+          return (<DirectoryDigital />)
+          break;
+        case 'Local':
+          return (<DirectoryLocal />)
+          break;
+        case 'Products':
+          return (<DirectoryProducts />)
+          break;
+        default:
+          return (<DirectoryDigital />)
+      }
 
-    return [
-      resources.filter(data=>data.label===results[0][0]),
-      resources.filter(data=>data.label===results[1][0]),
-      resources.filter(data=>data.label===results[2][0]),
-    ];
-  }
+    }
 
-  const renderSolutions = (key) => (
-      <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].description} imageURL={key[0].imgURL} website={key[0].website} textColor='black'/>
-    )
-    const renderSolutionsRec = (key) => (
-        <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].comments} imageURL={key[0].imgURL} website={key[0].website} textColor='white'/>
-      )
-
-    window.scrollTo(0,0);
-
-
+    render(){
   return(
     <div className='directoryContainer'>
       <div >
-        <DirectoryHeader />
+        <DirectoryHeader setLocal={this.setLocal} setDigital={this.setDigital} setProducts={this.setProducts} />
       </div>
-      <DirectoryDigital />
 
+      {this.renderSolutions()}
     </div>
 
 
-  )
+  )};
 }
 
-//
-// <div className='directoryTitleWrapper'>
-//   <h2 className='directoryTitle'>Exercise</h2>
-// </div>
-//
-// <div className="solutionWrapper">
-//   <div className="solutionContainer">
-//     <DirectorySolution />
-//   </div>
-//   <div className="solutionContainer">
-//   <DirectorySolution />
-//
-//   </div>
-//   <div className="solutionContainer">
-//   <DirectorySolution />
-//
-//   </div>
-// </div>
 
 
 const mapStateToProps = state => ({

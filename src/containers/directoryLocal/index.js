@@ -68,7 +68,7 @@ function DirectoryDigital(props){
               <div className='recommendationContainer'>
                 <div className='directoryBarbaraWrapper'>
                   <div className='directoryBarbaraWrapperInner'>
-                  <p className='directoryRecommendationTitle'>Suggestions</p>
+                  <p className='directoryRecommendationTitle'>LOCAL</p>
                   <Grid className='directoryBarbaraDiv'>
                     <Grid.Column width={12} style={{padding:0}}>
                       <p className='directoryHeaderSentence'> I have 3 suggestions and other 237 resources </p>
