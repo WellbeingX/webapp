@@ -24,15 +24,15 @@ export default function DirectorySolution(props){
                   <p className='solutionDescription' style={textColor}>{props.description}</p>
                 </Grid.Row>
                 <Grid columns={2} style={{bottom:0, width:'100%', height:'50%', position:'absolute', bottom:20, right:20}}>
-                    <Grid.Column  style={{bottom:0 ,width:'50%',  height:'100%', paddingLeft:10}}>
+                    <Grid.Column  style={{bottom:0 ,width:'50%',  height:'100%', padding:0, paddingLeft:10}}>
                       <p style={textColor} className='solutionCateg'>{props.categ}</p>
                     </Grid.Column>
-                    <Grid.Column   style={{bottom:0, color:'black',width:'50%', height:'100%', paddingRight:5, textAlign:'right'}}>
+                    <Grid.Column   style={{bottom:0, color:'black',width:'50%', height:'100%', paddingRight:5, padding:0, textAlign:'right'}}>
                       <p  style={textColor} className='solutionPrice'>{props.price}</p>
                     </Grid.Column>
                 </Grid>
             </Grid.Column>
-            <a href={props.website} style={{position:'absolute', width:350, height:100, top:0, left: 0,  zIndex: 1}} target='_blank' />
+            <a href={props.website} style={{position:'absolute', width:350, height:100, top:0, left: 0, zIndex: 1}} target='_blank' />
           </Grid>
         </div>
 

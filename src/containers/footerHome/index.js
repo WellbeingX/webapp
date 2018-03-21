@@ -15,33 +15,35 @@ export default function FooterHome(){
         <Grid style={{background:'white', margin:20, textAlign:'center', paddingBottom:50, paddingTop:0}}>
 
           <Grid.Row>
-            <h3 style={{fontFamily:'Quicksand', color:'#70CACC', fontSize:'1.2rem', width:'100%'}}><span style={{opacity:.6}}>Introducing </span> <span style={{opacity:1}}> BetterSpace </span> </h3>
-          </Grid.Row>
-          <Grid.Row style={{paddingTop:0}}>
-            <div >
-                <p className='landingTextFooter' > The platform where you can start an improvement journey and find all your mental wellbeing resources</p>
-            </div>
+            <h3 style={{fontFamily:'Quicksand', paddingTop:20, color:'#70CACC', fontSize:'1.2rem', width:'100%'}}><span style={{opacity:1}}> How it works </span> </h3>
           </Grid.Row>
           <Grid.Row>
-            <h3 style={{fontFamily:'Quicksand', paddingTop:50, color:'#70CACC', fontSize:'1.2rem', width:'100%'}}><span style={{opacity:1}}> How it works </span> </h3>
-          </Grid.Row>
-          <Grid.Row>
+            <Grid.Column style={{width:'70%', padding:0}}>
                 <p className='landingTextFooterHow'> 1. Answer a few questions about yourself</p>
-          </Grid.Row>
-          <Grid.Row>
+            </Grid.Column>
+            <Grid.Column style={{width:'30%', padding:0, marginTop:10}}>
                 <Image src={ImagePic21} centered style={{ width:85, height:105}}/>
+            </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-                <p className='landingTextFooterHow'> 2. Compare therapists, activities, apps and products</p>
-          </Grid.Row>
-          <Grid.Row>
+          <Grid.Column style={{width:'70%', padding:0}}>
+
+                <p className='landingTextFooterHow'> 2. Compare activities, apps, therapists and products</p>
+                </Grid.Column>
+                <Grid.Column style={{width:'30%', padding:0, marginTop:20}}>
                 <Image src={ImagePic22} centered style={{ width:85, height:105}}/>
+                </Grid.Column>
+
           </Grid.Row>
           <Grid.Row>
+          <Grid.Column style={{width:'70%', padding:0}}>
+
                 <p className='landingTextFooterHow'> 3. Select from the personalized shortlist or choose the one you prefer!</p>
-          </Grid.Row>
-          <Grid.Row>
+                </Grid.Column>
+                <Grid.Column style={{width:'30%', padding:0, marginTop:20}}>
                 <Image src={ImagePic23} centered style={{ width:105, height:85}}/>
+                </Grid.Column>
+
           </Grid.Row>
 </Grid>
 
@@ -54,7 +56,7 @@ export default function FooterHome(){
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
                       <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.27 166.5" style={{ fill:'#C67C06', stroke:'#C67C06', strokeMiterlimit:10 , width:50, height:50, marginTop:15}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.27 166.5" style={{ fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10 , width:50, height:50, marginTop:15}}>
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
                               <path class="cls-1" d="M11.75,11.51h0a37.59,37.59,0,0,1,55.39,2.44h0a32.69,32.69,0,0,1,7.2,26.33S37.8,166,37.29,166h0C36.8,166,1,44.92,1,44.92A38.4,38.4,0,0,1,11.75,11.51Z"/>
@@ -75,7 +77,7 @@ export default function FooterHome(){
                     <div   className='homeFeatIcon' >
                       <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 168.5" style={{fill:'#0695F7', stroke:'#0695F7', strokeMiterlimit:10, width:50, height:50, marginTop:15}} >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 168.5" style={{fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10, width:50, height:50, marginTop:15}} >
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
                               <circle class="cls-1" cx="34" cy="19.5" r="19"/>
@@ -112,7 +114,7 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Easy booking</span></h3>
+                      Easy schedule</span></h3>
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you</h3>
                     </div>
                   </div>
@@ -158,7 +160,7 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Only the best</span></h3>
+                      Our experts</span></h3>
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>We work with charities (mind etc..) , research groups (unieversity of ...)  to provide the best in class...</h3>
                     </div>
                   </div>
@@ -190,7 +192,7 @@ export default function FooterHome(){
           </Grid.Row>
 
 
-          <Grid.Row>
+          <Grid.Row style={{paddingBottom:50, textAlign:'center'}}>
             <h3 style={{fontFamily:'Quicksand', paddingTop:50, color:'#70CACC', fontSize:'1.2rem', width:'100%'}}><span style={{opacity:1}}>
             How we work </span> </h3>
             <p className='landingTextFooter'> BetterSpace is free to use, and on our app/site you'll find many solutions that are free - that's a big part of our social mission. Wondering how we pay our bills? We're like the App Store - making a small commission if you buy paid services.</p>
@@ -200,8 +202,10 @@ export default function FooterHome(){
 
 
 
-          <Grid.Row  style={{marginTop: 20,height:80, background:'#249ECD', textAlign:'left'}}>
+          <Grid.Row  >
+            <div className='footerFooterHome'>
               <h2 style={{zIndex:100, color:'white', padding:20}}>BetterSpace</h2>
+            </div>
         </Grid.Row>
       </div>
     </div>

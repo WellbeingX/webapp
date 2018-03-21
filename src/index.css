@@ -146,6 +146,41 @@ p{
   padding: 0;
   list-style: none;
 }
+.landingTitle{
+  text-align:left;
+   font-size:1rem;
+    font-weight: 900;
+     color:white;
+      border-radius:20;
+       padding:0;
+       padding-left: 50px;
+       margin-bottom: -10px;
+}
+p.landingTitle{
+  margin-bottom: -10px;
+}
+
+div.ui.grid.landingWrapper {
+  padding-top:20px;
+  padding-bottom: 50px;
+}
+
+
+.button.ui.button.landingButton{
+  margin:auto;
+  width: 300px;
+  padding:10px 30px;
+  background: rgba(0,0,0,0);
+  border-radius: 40px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-family: Quicksand-Bold;
+  margin-top: 25px;
+  font-size: .8rem;
+}
+
 
 
 
@@ -192,7 +227,12 @@ p{
   background-size: cover;
   height: 450px;
 }
-
+.footerFooterHome{
+  margin-top: 20px;
+  height:80px;
+  background:#4E4E4E;
+  text-align:left;
+}
 .landingIntro:before{
 
 }
@@ -252,6 +292,8 @@ div.homeFeatIcon{
   position:relative;
   bottom:0;
   padding: 10px;
+  text-align: left;
+  font-size: .8rem;
 }
 
 
@@ -767,18 +809,18 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 20px;
 }
 .CalendarSVG .cls-1{fill:none;}
-.CalendarSVG  .cls-1,.cls-2,.cls-3,.cls-4{stroke:#BABAB9;stroke-miterlimit:10;}
+.CalendarSVG  .cls-1,.cls-2,.cls-3,.cls-4{stroke:#70CACC;stroke-miterlimit:10;}
 .CalendarSVG  .cls-1,.cls-3{stroke-width:10px;}
-.CalendarSVG  .cls-2,.cls-4{fill:#BABAB9;}
-.CalendarSVG  .cls-3{fill:#BABAB9;}
+.CalendarSVG  .cls-2,.cls-4{fill:#70CACC;}
+.CalendarSVG  .cls-3{fill:#70CACC;}
 .CalendarSVG  .cls-4{font-size:54px;font-family:Quicksand-Bold, Quicksand;font-weight:700;}
 
-.AppSVG .cls-1{fill:#70cacc;
-  stroke:#70cacc;
+.AppSVG .cls-1{fill:#70CACC;
+  stroke:#70CACC;
   stroke-miterlimit:10;
 }
 
 .starSVG .cls-1{fill:#F7E006;stroke:#F7E006;stroke-miterlimit:10;}
 
-.lockSVG .cls-1{fill:#3A3A38;stroke:#3A3A38;stroke-miterlimit:10;}
-.lockSVG .cls-2{fill:#f7f9f9;}
+.lockSVG .cls-1{fill:#70CACC;stroke:#70CACC;stroke-miterlimit:10;}
+.lockSVG .cls-2{fill:#70CACC;}

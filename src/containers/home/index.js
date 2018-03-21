@@ -16,9 +16,7 @@ import Carousel from '../carousel';
 
 const mainFormat = {  height:300 };
 const backColor = {background: 'green', color:'white' };
-const speechBubbleContainer = {paddingTop:0, height:500, textAlign:'bottom', backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`};
-const speechBubble = { textAlign:'left', fontSize:'1rem', fontWeight: 900, color:'white', borderRadius:20, padding:0};
-const speechText = {margin:0, fontSize:'1rem', color:'white', textAlign:'center'}
+const speechText = {margin:0, fontSize:'1rem', color:'white', textAlign:'left'}
 var inputBarb = { paddingTop:180, paddingBottom:0, marginBottom:0}
 const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15px 55px'}
 const triangle = {width: 0, height: 0, marginTop:-15, marginLeft:50, borderLeft:'30px solid transparent', borderRight:'30px solid transparent',borderTop:'40px solid #fff'}
@@ -55,29 +53,24 @@ class Home extends Component {
     // RESPONSIVE MANAGEMENT
     var windowHeight = this.state.height;
     var containerStyle = {paddingTop:0,marginTop:0};
-    var titleStyle = {marginTop:windowHeight*.1, height:windowHeight*.1};
     var windowHeightContainer = windowHeight*.6;
     // MOBILE
     if(this.state.width<1200){
       console.log("Mobile");
       if (windowHeight< 700) {
         inputBarb = { ...inputBarb,
-                      paddingTop:100}
+                      paddingTop:10}
         windowHeight = windowHeight*.4;
         containerStyle = {paddingTop:windowHeight*.1}
-        titleStyle = {marginTop:0, height:windowHeight*.1};
       }
     else if (windowHeight< 800) {
       windowHeight = windowHeight*.5;
-      containerStyle = {paddingTop:windowHeight*.2}
-      titleStyle = {marginTop:0, height:windowHeight*.1};
+      containerStyle = {paddingTop:10}
     }else if (windowHeight<1400) {
       windowHeightContainer = 600;
-      titleStyle = {marginTop:100, height:50};
 
     }else{
       windowHeightContainer = 700;
-      titleStyle = {marginTop:150, height:50};
     }
   }else{
     // DESKTOP
@@ -86,14 +79,11 @@ class Home extends Component {
       console.log("Eccolo");
       windowHeightContainer = 550;
       containerStyle = {paddingTop:0, marginTop:0}
-      titleStyle = {marginTop:0, height:200};
     }else if (windowHeight<1400) {
       windowHeightContainer = 600;
-      titleStyle = {marginTop:100, height:50};
 
     }else{
       windowHeightContainer = 1000;
-      titleStyle = {marginTop:150, height:50};
     }
   }
 
@@ -108,32 +98,53 @@ class Home extends Component {
            transitionAppear
            transitionAppearTimeout={500}
           >
-                <Grid  style={speechBubbleContainer} style={{height:windowHeightContainer}} >
+                <Grid  className='landingWrapper' >
 
-                    <Grid.Row style={titleStyle}>
+                    <Grid.Row   style={{margin:0, padding:0}}>
 
-                        <Grid.Column style={{flex:0}}/>
-                        <Grid.Column style={{flex:15, padding:0}}>
 
-                              <div style={speechBubble} >
-                                  <p style={speechText}>
-                                    Let me help you to improve your state of mind
-                                  </p>
-                              </div>
+                      <p className='landingTitle' >
+                        I want to...
+                      </p>
 
-                        </Grid.Column>
-                        <Grid.Column style={{flex:0}}/>
 
                     </Grid.Row>
 
-                      <Grid.Row  style={inputBarb} >
-                        <Grid.Column  style={{flex:1, padding:0, marginTop:-0, textAlign:'center'}} >
-                          <Button style={buttonStyle} onClick={() => this.props.changePage("information")} >Start</Button>
-                        </Grid.Column>
-                      </Grid.Row>
-                      <Grid.Row style={{marginBottom:-50}}>
-                        <Carousel />
-                      </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >have clearer thinking</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >be better at coping</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >feel inspired</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat depression</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat addiction</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat anxiety</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >perform better at work</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >feel less lonely</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >be more successful</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >have better sleep</Button>
+                    </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >do more exercise</Button>
+                    </Grid.Row>
+
+
 
 
                 </Grid>
