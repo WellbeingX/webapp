@@ -14,12 +14,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
 import Carousel from '../carousel';
 
-const mainFormat = {  height:300 };
-const backColor = {background: 'green', color:'white' };
-const speechText = {margin:0, fontSize:'1rem', color:'white', textAlign:'left'}
-var inputBarb = { paddingTop:180, paddingBottom:0, marginBottom:0}
-const buttonStyle = {background:'white', color:'#6FC9CB', borderRadius:40, fontSize:'1rem', fontWeight: 900, marginTop:0, padding:'15px 55px'}
-const triangle = {width: 0, height: 0, marginTop:-15, marginLeft:50, borderLeft:'30px solid transparent', borderRight:'30px solid transparent',borderTop:'40px solid #fff'}
 
 
 
@@ -50,46 +44,11 @@ class Home extends Component {
 
   render() {
 
-    // RESPONSIVE MANAGEMENT
-    var windowHeight = this.state.height;
-    var containerStyle = {paddingTop:0,marginTop:0};
-    var windowHeightContainer = windowHeight*.6;
-    // MOBILE
-    if(this.state.width<1200){
-      console.log("Mobile");
-      if (windowHeight< 700) {
-        inputBarb = { ...inputBarb,
-                      paddingTop:10}
-        windowHeight = windowHeight*.4;
-        containerStyle = {paddingTop:windowHeight*.1}
-      }
-    else if (windowHeight< 800) {
-      windowHeight = windowHeight*.5;
-      containerStyle = {paddingTop:10}
-    }else if (windowHeight<1400) {
-      windowHeightContainer = 600;
 
-    }else{
-      windowHeightContainer = 700;
-    }
-  }else{
-    // DESKTOP
-    console.log("Desktop");
-    if (windowHeight< 800) {
-      console.log("Eccolo");
-      windowHeightContainer = 550;
-      containerStyle = {paddingTop:0, marginTop:0}
-    }else if (windowHeight<1400) {
-      windowHeightContainer = 600;
-
-    }else{
-      windowHeightContainer = 1000;
-    }
-  }
 
 
       return(
-          <Container style={containerStyle}>
+          <Container >
           <ReactCSSTransitionGroup
            component="div"
            transitionName="fade"
@@ -102,10 +61,13 @@ class Home extends Component {
 
                     <Grid.Row   style={{margin:0, padding:0}}>
 
+                    <p className='landingTitle' style={{paddingBottom:80, paddingTop:50, marginRight:20}}>
+                      Find the best ways to improve your state of mind
+                    </p>
 
-                      <p className='landingTitle' >
-                        I want to...
-                      </p>
+                    <p className='landingTitle' >
+                      I want to...
+                    </p>
 
 
                     </Grid.Row>

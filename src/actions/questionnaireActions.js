@@ -59,19 +59,19 @@ export function setLastAnswer(data){
         ];
         var ipAddress = '';
         console.log('Proviamo questo');
-        fetch('//www.geoplugin.net/json.gp?jsoncallback=?').then(function(response) {
+        fetch('https://freegeoip.net/json/').then(function(response) {
           console.log(response);
           console.log(JSON.stringify(response, null, 2));
 
                   if (response.status >= 400) {
                     throw new Error("Bad response from server");
                   }
-                // return response.json();
+                return response.json();
                 }).then(function(data){
                   console.log('Ora mando l IP :');
-                  console.log( data);
-                  // ipAddress = data.my_ip.ip;
-                  // fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {f});
+                  console.log( data.ip);
+                  ipAddress = data.ip;
+                  fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {f});
                 }).then(function(){
                   console.log('Dovrebbe essere andato tutto bene');
                 }).catch(function(error) {

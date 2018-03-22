@@ -176,10 +176,11 @@ div.ui.grid.landingWrapper {
   border-color: white;
   border-style: solid;
   color: white;
-  font-family: Quicksand-Bold;
+  font-family: 'Quicksand-Bold', 'Quicksand';
   margin-top: 25px;
   font-size: .8rem;
 }
+
 
 
 
@@ -414,6 +415,14 @@ div.homeFeatIcon{
   margin:15px auto;
   text-align: center;
 }
+
+
+.google-map{
+  height: 200px;
+  width: 100%;
+  z-index:2;
+  position: relative;
+}
 Input{
   margin-bottom:20px;
 }
@@ -436,6 +445,12 @@ Input{
   font-size: .8rem;
   margin:15px auto;
   text-align: center;
+  }
+
+  .button.ui.button.landingButton{
+    width: 220px;
+    padding:10px 0;
+    font-size: .8rem;
   }
 }
 
@@ -637,6 +652,7 @@ div.ui.grid.directoryBarbaraDiv{
   margin-right: -100px;
   height: 250px;
   margin-top: -50px;
+  z-index: 1;
 }
 .directoryBarbaraWrapperInner{
   margin:auto;
@@ -659,6 +675,11 @@ div.ui.grid.directoryBarbaraDiv{
   box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
   padding-right: 0;
 }
+
+.recommendationContainerMap{
+  height: 870px;
+}
+
 .directoryFilterBar{
   background: #DDDDDD;
   height: 42px;
@@ -823,4 +844,4 @@ input[type=range]:focus::-ms-fill-upper {
 .starSVG .cls-1{fill:#F7E006;stroke:#F7E006;stroke-miterlimit:10;}
 
 .lockSVG .cls-1{fill:#70CACC;stroke:#70CACC;stroke-miterlimit:10;}
-.lockSVG .cls-2{fill:#70CACC;}
+.lockSVG .cls-2{fill:#FFF;}

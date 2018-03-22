@@ -68,8 +68,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Local</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you</h3>
+                      Local and personal to you</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you. By answering some confidential questions, we can draw up a shortlist for you to choose from.</h3>
                     </div>
                   </div>
 
@@ -91,8 +91,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Personal</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> By answering some confidential questions, we can draw up a short list for you to choose from. BetterSpace is your guide through an ever-expanding (and sometimes confusing) world of solutions to any mental health issues you may have</h3>
+                      Community</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whatever journey you're on, someone can help. Being a part of our community allows you to share your personal experiences/strategies with other users and get rewarded in credits for helping the community get smarter.</h3>
                     </div>
                   </div>
 
@@ -115,7 +115,7 @@ export default function FooterHome(){
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Easy schedule</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you. Plus, we support Google Calendar, iCal and Outlook Calendar - ensuring that you'll have a seamless experience fitting our recommendations into your schedule.</h3>
                     </div>
                   </div>
 
@@ -141,8 +141,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Measure and track with the App</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you</h3>
+                      Set goals and track progress</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Need immediate feedback? Or do you just like seeing your growth on a chart? BetterSpace is the self-improvement hub for you - track sleep hours, time spent on social activities and more within our app. With support for Apple Health and Google Fit, our app is a centralised solution for all your health tracking needs. </h3>
                     </div>
                   </div>
 
@@ -160,8 +160,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Our experts</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>We work with charities (mind etc..) , research groups (unieversity of ...)  to provide the best in class...</h3>
+                      Curated by experts</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>BetterSpace is your guide through an ever-expanding (and sometimes confusing) world of solutions to any mental health issues you may have. We work with charities (Mind, xyz etc..) and research groups (University of Xyz) to recommend only the best resources and services. </h3>
                     </div>
                   </div>
 
@@ -185,8 +185,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Confidential</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Your confidence is our top priority. You can access your recommendations in anonymity. We’ll only ask you to share information for your benefit, we exercise the highest levels of data privacy.</h3>
+                      Confidentiality</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Your privacy is our top priority. You can access your recommendations in anonymity and, more importantly, we will NEVER share your data without permission. We’ll only ask you to share information for your benefit, we exercise the highest levels of data protection. </h3>
                     </div>
                   </div>
           </Grid.Row>
