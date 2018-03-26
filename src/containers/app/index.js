@@ -1,46 +1,43 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import About from '../about'
-import InputB from '../inputBody';
-import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
-import HeaderUs from '../header'
-import DebuggingBar from '../debuggingBar'
-import QuestionHome from '../questionHome'
-import Directory from '../directory'
-import EmailRequest from '../emailRequest'
-import FooterHome from '../footerHome'
-import FooterInfo from '../footerInfo'
+import HomeDesktop from '../landingDesktop'
+import HomeMobile from '../landingMobile'
 import ReactGA from 'react-ga'
+
 
 ReactGA.initialize('UA-114742931-1');
 
-const App = () => (
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+    ReactGA.pageview('/');
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+    console.log(window.innerHeight);
+  }
+
+  render() {
+    return(
   <div >
 
-    <div style={{backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`}}>
-    <HeaderUs/>
-
-      <div className="body">
-            <main onChange={() => window.scrollTo(0, 0)}>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/information" component={QuestionHome} />
-              <Route exact path="/directory" component={Directory}  />
-              <Route exact path="/idk" component={QuestionHome} />
-              <Route exact path="/about-us" component={About} />
-              <Route exact path="/report" component={EmailRequest} />
-            </main>
-
-
-
-        </div>
-
-      </div>
-      <main>
-        <Route exact path="/" component={FooterHome} />
-        <Route exact path="/information" component={FooterInfo} />
-      </main>
+    {this.state.width>768 ? <HomeDesktop /> : <HomeMobile />}
   </div>
-)
+)};
+}
+
 export default App
 // <DebuggingBar/>

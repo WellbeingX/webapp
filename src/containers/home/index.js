@@ -26,7 +26,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
     this.props.setPath('/')
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);

@@ -48,17 +48,16 @@ export function setLastAnswer(data){
 
         // GoogleAnalytics
         ReactGA.event({
-            category: 'Questionnaire',
+            category: data[0].toString(),
             action: data[0].toString(),
         });
 
         // Firebase recording
-        var f = [
+        var answer = [
           data,
           [Date()]
         ];
         var ipAddress = '';
-        console.log('Proviamo questo');
         fetch('https://freegeoip.net/json/').then(function(response) {
           console.log(response);
           console.log(JSON.stringify(response, null, 2));
@@ -68,12 +67,10 @@ export function setLastAnswer(data){
                   }
                 return response.json();
                 }).then(function(data){
-                  console.log('Ora mando l IP :');
-                  console.log( data.ip);
                   ipAddress = data.ip;
-                  fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {f});
+                  fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {answer});
                 }).then(function(){
-                  console.log('Dovrebbe essere andato tutto bene');
+                  console.log('Answer');
                 }).catch(function(error) {
                   console.log('There has been a problem with your fetch operation: ' + error.message);
                   });
