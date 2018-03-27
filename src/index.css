@@ -169,7 +169,7 @@ div.ui.grid.landingWrapper {
 .button.ui.button.landingButton{
   margin:auto;
   width: 300px;
-  padding:10px 30px;
+  padding:10px 25px;
   background: rgba(0,0,0,0);
   border-radius: 40px;
   border-width: 1px;
@@ -178,7 +178,7 @@ div.ui.grid.landingWrapper {
   color: white;
   font-family: 'Quicksand-Bold', 'Quicksand';
   margin-top: 25px;
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 
@@ -848,6 +848,10 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: 300;
     font-size: .8rem;
 }
+.desktopHeaderHeaderRightElement{
+  margin-left: 50px;
+  color: #aaa;
+}
 
 .desktopHeaderTitle{
   position: absolute;
@@ -866,13 +870,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .desktopHeaderButton{
-  font-size: 1rem;
-  line-height: 8rem;
-  font-weight: 300;
+  font-size: .8rem;
+  line-height: 5rem;
   border-style: solid;
   border-width: 1px;
   border-radius: 100px;
-  padding: 20px 160px;
+  padding: 20px 100px;
   font-weight: 700;
 }
 .desktopFirstSection{
@@ -891,7 +894,10 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .desktopFooter{
+  padding: 50px;
   height: 300px;
+  background: #4d4d4d;
+  font-size: .6rem;
 }
 
 .desktopSectionTitle{
@@ -940,8 +946,16 @@ input[type=range]:focus::-ms-fill-upper {
 .desktopSectionFirstRow{
   display: flex;
   margin-top:25px;
-  padding-right: 100px;
   padding-left: 50px;
+
+}
+
+.desktopSectionSecondRow{
+  display: flex;
+  margin-top:25px;
+  padding: 0px 250px 50px 25px;
+  font-family: 'Helvetica';
+  font-weight: 100;
 }
 .desktopIcon{
   width: 100px;
@@ -966,5 +980,45 @@ input[type=range]:focus::-ms-fill-upper {
   width: 30px;
   height: 40px;
   margin:25px auto;
+}
+
+.desktopContactSection{
+  color: #4d4d4d;
+  padding: 50px;
+}
+.desktopContactInput{
+  margin-left: 50px;
+  width:100%;
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-size: .8rem;
+  padding:10px;
+}
+
+.desktopContactInput input{
+  width: 350px;
+  padding: 10px;
+  border-style: solid;
+  border-color: #70CACC;
+
+}
+
+.desktopContactButton{
+  margin-top: 25px;
+  margin-left: 60px;
+  font-size: .8rem;
+  padding:10px 55px;
+  background: #70CACC;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+
+.desktopFooterLogo{
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+  padding-bottom: 50px;
 
 }

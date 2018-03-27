@@ -9,17 +9,31 @@ import Commitment from '../../assets/svg/commitment.js'
 import Invoice from '../../assets/svg/invoice.js'
 import Manage from '../../assets/svg/manage.js'
 import Prevention from '../../assets/svg/prevention.js'
+import MailChimp from '../mailchimp'
+import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import ScrollableAnchor from 'react-scrollable-anchor'
+
 
 export default class HomeDesktop extends Component {
 
 
 render() {
+
     return (
       <div>
         <div className='desktopHeader'>
           <div className = 'desktopHeaderHeader'>
             BetterSpace
-            <span className='desktopHeaderHeaderRight'>What we do </span>
+            <span className='desktopHeaderHeaderRight'>
+              <a href='#whatwedo'>
+              <span className='desktopHeaderHeaderRightElement'>
+                  What we do
+              </span>
+              </a>
+              <a href='#contact'>
+              <span className='desktopHeaderHeaderRightElement'>Contact</span>
+              </a>
+            </span>
           </div>
           <div className = 'desktopHeaderTitle'>
             Get a better emotional and mental state of mind
@@ -28,8 +42,8 @@ render() {
           </div>
 
         </div>
-
-        <div className='desktopFirstSection'>
+        <ScrollableAnchor id={'section1'} >
+        <div className='desktopFirstSection' id={'whatwedo'} >
           <div className='desktopSectionTitle'>
             We help you find what you need
           </div>
@@ -79,13 +93,14 @@ render() {
           <div className='desktopSectionFooter'>
             Open getbetterspace.com with the mobile
           </div>
-        </div>
+          </div>
+        </ScrollableAnchor>
 
         <div className='desktopSecondSection backgroundColor'>
           <div className='desktopSectionTitle'>
             Our solution for your organization
           </div>
-          <div className='desktopSectionFirstRow'>
+          <div className='desktopSectionSecondRow'>
             <div className='desktopIcon'>
               <Prevention />
             </div>
@@ -97,7 +112,7 @@ render() {
           </div>
 
 
-          <div className='desktopSectionFirstRow'>
+          <div className='desktopSectionSecondRow'>
             <div className='desktopIcon'>
             <Manage />
             </div>
@@ -109,7 +124,7 @@ render() {
           </div>
 
 
-          <div className='desktopSectionFirstRow'>
+          <div className='desktopSectionSecondRow'>
             <div className='desktopIcon'>
               <Invoice />
             </div>
@@ -119,7 +134,7 @@ render() {
               <div className=''>Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you. Plus, we support Google Calendar, iCal and Outlook Calendar - ensuring that you'll have a seamless experience fitting our recommendations into your schedule.</div>
             </div>
           </div>
-          <div className='desktopSectionFirstRow'>
+          <div className='desktopSectionSecondRow'>
             <div className='desktopIcon'>
               <Confidential />
             </div>
@@ -129,7 +144,7 @@ render() {
               <div className=''>Your privacy is our top priority. You can access your recommendations in anonymity and, more importantly, we will NEVER share your data without permission. We’ll only ask you to share information for your benefit, we exercise the highest levels of data protection</div>
             </div>
           </div>
-          <div className='desktopSectionFirstRow'>
+          <div className='desktopSectionSecondRow'>
             <div className='desktopIcon'>
               <Commitment />
 
@@ -141,12 +156,21 @@ render() {
             </div>
           </div>
         </div>
-        <div className='desktopContactSection'>
-
+        <div className='desktopContactSection' id={'contact'} >
+          <div className='desktopSectionTitle'>
+            Contact us to learn more
+          </div>
+          <MailChimp />
 
         </div>
         <div className='desktopFooter'>
+          <div className='desktopFooterLogo'>
+            BetterSpace
 
+          </div>
+
+        Copyright WellbeingX Ltd. 2018. All rights reserved.<br />
+        WellbeingX is registered and incorporated in England and Wales, company registration number 11053000.
 
         </div>
       </div>

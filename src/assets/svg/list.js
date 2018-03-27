@@ -1,37 +1,40 @@
+
 import React from 'react';
 
-const cls1={fill:'#f3f3f3'}
-const cls2={fill:'none', stroke:'#231f20',strokeMiterlimit:'10'}
-const cls3={fill:'#231f20'}
-const cls4={fill:'#151616'}
-const cls5= {fill:'#6abd45', stroke:'#e6e6e5',strokeMiterlimit:'10'}
+const cls1 = {
+  fill:'#f3f3f3'
+}
 
+const cls2 = {
+  fill:'#989898'
+}
+const cls3 = {
+  fill:'#ffd44d'
+}
+const cls4 = {
+  fill:'#63798a'
+}
+const cls5 = {
+  fill:'#38576d'
+}
+const cls6 = {
+  fill:'#cdebf0'
+}
 
 export default function List(props){
 
   return(
-
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 151">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.5 151">
         <g id="Layer_2" data-name="Layer 2">
           <g id="Layer_1-2" data-name="Layer 1">
-            <g id="vFqSSk.tif">
-              <rect style={cls1} width="53" height="151"/>
-              <rect style={cls1} x="53" width="53" height="151"/>
-              <rect style={cls2} x="16" y="61" width="24" height="25"/>
-              <rect style={cls2} x="16" y="96" width="24" height="25"/>
-              <rect style={cls3} x="49" y="27.5" width="40" height="3.94"/>
-              <rect style={cls3} x="49" y="37.34" width="40" height="3.94"/>
-              <rect style={cls3} x="49" y="47.18" width="27" height="3.94"/>
-              <rect style={cls3} x="49" y="61.95" width="40" height="4.43"/>
-              <rect style={cls3} x="49" y="71.79" width="40" height="3.44"/>
-              <rect style={cls4} x="49" y="81.63" width="27" height="3.94"/>
-              <rect style={cls4} x="49" y="97.38" width="40" height="3.94"/>
-              <rect style={cls4} x="49" y="107.22" width="40" height="3.94"/>
-              <rect style={cls4} x="49" y="117.06" width="27" height="3.94"/>
-              <rect style={cls2} x="15.5" y="25.5" width="24" height="25"/>
-            </g>
-            <path style={cls5} d="M29.69,33.67,30,33.4l1.76-1.58h0l.34-.26h0l.64-.57-.07,0,.07.05.81-.87a12.14,12.14,0,0,1,1.91-.8,4.83,4.83,0,0,1,1.47.1,5.3,5.3,0,0,1-.49,1.22A18.76,18.76,0,0,1,35,32.19L32,35.4h0a38.74,38.74,0,0,0-6.65,10l-.26.29L22,47.53c-.65-1.49-1.11-2.82-1.78-4s-1.59-2.33-2.6-3.8a10.1,10.1,0,0,1,2.65-1.29c2-.35,2.2,1.76,3.3,2.85L25,39a.19.19,0,0,0,.15-.21l.94-1.25.25-.28,1.57-1.79-.06-.08.05.09Z"/>
+            <rect style={cls1} x="58.5" width="107" height="151"/>
+            <rect style={cls2} x="75" y="23.5" width="79" height="21"/>
+            <rect style={cls2} x="75" y="63" width="79" height="21"/>
+            <rect style={cls2} x="75" y="98.5" width="53.33" height="21"/>
+            <path style={cls3} d="M34.87,92.52c1.08-.07,2.57-.63,3.17-.13,3,2.49,4.78.83,6.61-1.39.52-.63,1.11-1.2,1.73-1.87-1.68-3.2-3.61-6.26-5-9.57C35.11,64,37.51,49.47,48.47,37S73.94,20.5,89.94,25.12,115.83,41,118.55,57.41c2.52,15.24-2.63,28.13-14.53,38.17-.71.6-1.4,1.22-2.1,1.83l-5.51,3.07c-11.58,5.2-23.22,5.19-34.91.38l-8-4.91L49,100.86c-.1.2-.32.44-.27.59,2.14,6,2.15,6-2.92,10l-5.69-5.55L31.19,96.7Zm43.76,2,1,0c9.12-.38,16.72-3.8,22.38-11.13,6.82-7.55,8.61-16.55,6.43-26.12-2.93-12.85-11.33-21-24.2-23.43-12.4-2.35-22.77,2-30.56,12.11-8.27,10.74-7.56,28.42,1.55,37.55,5.61,7.22,13.12,10.61,22.13,11l.85,0,.19,0Z"/>
+            <path style={cls4} d="M31.19,96.7l8.91,9.19a11.65,11.65,0,0,0-2.33,1.42q-15.55,15.43-31,30.92a23.41,23.41,0,0,1-1.87-1.55c-6.46-6.56-6.47-7.59-.13-13.93q11.9-11.9,23.81-23.8C29.36,98.14,30.3,97.45,31.19,96.7Z"/>
+            <path style={cls5} d="M34.61,123.19c-6,6-12,12-18.21,17.87-1,1-3,1-4.51,1.47l-5.16-4.3q15.5-15.47,31-30.93a11.65,11.65,0,0,1,2.33-1.42l5.69,5.55Z"/>
+            <ellipse style={cls6} cx="78.5" cy="63.5" rx="31.5" ry="31"/>
           </g>
         </g>
       </svg>
