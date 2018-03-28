@@ -77,22 +77,22 @@ import {
         }
 
         return(
-    <div style={styleWrapper}>
-      <Grid className="headerBar" style={{paddingTop:10}}>
-          {this.logoSet()}
-          <Grid.Column floated='right' width={10}>
+                <div style={styleWrapper}>
+                  <Grid className="headerBar" style={{paddingTop:10}}>
+                      {this.logoSet()}
+                      <Grid.Column floated='right' width={10}>
 
-            <div style={{position:'relative', marginTop:-10}}>
-              <svg style={styleSVG}>
+                        <div style={{position:'relative', marginTop:-10}}>
+                          <svg style={styleSVG}>
 
-                  <circle cx={cX} cy={cY} r={r} fill="white" />
+                              <circle cx={cX} cy={cY} r={r} fill="white" />
 
-              </svg>
-            </div>
-          </Grid.Column>
-      </Grid>
-    </div>
-  )
+                          </svg>
+                        </div>
+                      </Grid.Column>
+                  </Grid>
+                </div>
+              )
 }
 }
 const mapStateToProps = state => ({

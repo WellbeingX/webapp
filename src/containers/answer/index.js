@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Grid, Input, Menu, Dropdown, Select} from 'semantic-ui-react';
+import {Grid, Input, Menu, Dropdown, Select, TextArea} from 'semantic-ui-react';
 import Slider, { Range } from 'rc-slider';
 
 
@@ -128,8 +128,6 @@ export class AnswerSlider extends React.Component {
 
 
         handleValue(event){
-          console.log("Slider");
-          console.log(event.target.value);
           this.setState({
             value:event.target.value
           });
@@ -166,4 +164,93 @@ export class AnswerSlider extends React.Component {
                 </div>
 
             );}
+    }
+
+
+
+
+
+
+    export class AnswerFeedback extends React.Component {
+        constructor(props){
+          super();
+          this.state={
+            name:'Sir/Madame',
+            value:3
+          }
+          this.handleValue = this.handleValue.bind(this);
+          this.handleName = this.handleName.bind(this);
+        }
+
+        handleName(event, data){
+          console.log('handleName');
+          console.log(data);
+          console.log(data.value);
+          this.setState({
+            name: data.value
+          });
+        }
+
+        handleValue(event){
+          this.setState({
+            value:event.target.value
+          });
+        }
+
+        render(){
+          return (
+            <div >
+
+
+
+              <TextArea onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20, width:300, height: 100, marginBottom:50, borderStyle:'none', marginTop:-25 }} focus placeholder='Comment'/>
+              <br />
+              <div style={{textAlign:'left', padding: '0rem 1.5rem 0rem 1.5rem', lineHeight:'1rem' }}>
+                <span style={{fontSize: '.8rem', textAlign:'left', fontSize:'.8rem', fontWeight: 700}}>
+                How clear was/were the last page/pages?
+                </span>
+              </div>
+              <Grid.Row style={{marginTop:10}}>
+              <span style={{fontSize: '.5rem'}}>
+                {this.state.value}
+                </span>
+
+              </Grid.Row>
+
+                <input
+                 className="inputRange"
+                 type="range"
+                 min={0}
+                 max={5}
+                 onChange={this.handleValue}
+                 onClick={this.handleValue}
+                 />
+
+                 <br />
+                 <div style={{position:'relative'}}>
+                 <span style={{fontSize:'.5rem', position:'absolute', left:10, marginTop:-50 }} >
+                 Not clear
+                 </span>
+                 <span style={{fontSize:'.5rem', textAlign:'rigth', position:'absolute', right:10, marginTop:-50 }}>
+                 Very clear
+                 </span>
+                 </div>
+              <input
+                type="button"
+                className="customButton"
+                name="radioGroup"
+                value="Send"
+                checked={this.props.answerType === this.props.answer}
+                id={this.state.name + ', clarity:' + this.state.value}
+                disabled={this.props.answer}
+                onChange={this.props.onAnswerSelected}
+                onClick={this.props.onAnswerSelected}
+                style={{marginTop:50}}
+              />
+
+              <a onClick={this.props.onAnswerSelected} id={this.state.name} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
+
+              </div>
+          );
+        }
     }

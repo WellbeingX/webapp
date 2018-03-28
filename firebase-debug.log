@@ -1,0 +1,46 @@
+[debug] [2018-03-28T11:55:44.979Z] ----------------------------------------------------------------------
+[debug] [2018-03-28T11:55:44.981Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-03-28T11:55:44.982Z] CLI Version:   3.17.4
+[debug] [2018-03-28T11:55:44.982Z] Platform:      darwin
+[debug] [2018-03-28T11:55:44.982Z] Node Version:  v8.9.4
+[debug] [2018-03-28T11:55:44.982Z] Time:          Wed Mar 28 2018 13:55:44 GMT+0200 (CEST)
+[debug] [2018-03-28T11:55:44.982Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-28T11:55:44.993Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-28T11:55:44.993Z] > authorizing via signed-in user
+[debug] [2018-03-28T11:55:44.995Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-28T11:55:44.996Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/MM7GLOP2Z5gfAZ8BzWUU5pTLXei05JSgw4lKM_dOnYA',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Mar 28 2018 13:55:44 GMT+0200 (CEST)
+[debug] [2018-03-28T11:55:45.217Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-28T11:55:45.226Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/website-973e0  
+  
+ Wed Mar 28 2018 13:55:45 GMT+0200 (CEST)
+[debug] [2018-03-28T11:55:46.158Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-28T11:55:46.158Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/website-973e0/tokens  
+  
+ Wed Mar 28 2018 13:55:46 GMT+0200 (CEST)
+[debug] [2018-03-28T11:55:46.910Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'website-973e0'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing build directory for upload...
+[debug] [2018-03-28T11:55:48.671Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/website-973e0/uploads/-L8gSiZWhurbyfeiESse?fileCount=29&message=  
+  
+ Wed Mar 28 2018 13:55:48 GMT+0200 (CEST)
+[debug] [2018-03-28T11:56:02.038Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-28T11:56:02.038Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 29 files uploaded successfully
+[debug] [2018-03-28T11:56:02.990Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/website-973e0/releases  
+ { hosting: 
+   { public: 'build',
+     ignore: [ 'firebase.json', '**/.*', '**/node_modules/**' ],
+     version: '-L8gSiZWhurbyfeiESse',
+     prefix: '-L8gSiZWhurbyfeiESse/',
+     manifest: [] } } 
+ Wed Mar 28 2018 13:56:02 GMT+0200 (CEST)

@@ -38,7 +38,9 @@ render() {
           <div className = 'desktopHeaderTitle'>
             Get a better emotional and mental state of mind
             <br />
+            <a href='#whatwedo'>
             <span className='desktopHeaderButton'> Learn more</span>
+            </a>
           </div>
 
         </div>
@@ -101,7 +103,7 @@ render() {
             Our solution for your organization
           </div>
           <div className='desktopSectionSecondRow'>
-            <div className='desktopIcon'>
+            <div className='desktopIconList'>
               <Prevention />
             </div>
 
@@ -113,7 +115,7 @@ render() {
 
 
           <div className='desktopSectionSecondRow'>
-            <div className='desktopIcon'>
+            <div className='desktopIconList'>
             <Manage />
             </div>
 
@@ -125,7 +127,7 @@ render() {
 
 
           <div className='desktopSectionSecondRow'>
-            <div className='desktopIcon'>
+            <div className='desktopIconList'>
               <Invoice />
             </div>
 
@@ -135,7 +137,7 @@ render() {
             </div>
           </div>
           <div className='desktopSectionSecondRow'>
-            <div className='desktopIcon'>
+            <div className='desktopIconList'>
               <Confidential />
             </div>
 
@@ -145,7 +147,7 @@ render() {
             </div>
           </div>
           <div className='desktopSectionSecondRow'>
-            <div className='desktopIcon'>
+            <div className='desktopIconList'>
               <Commitment />
 
             </div>

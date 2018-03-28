@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from '../question';
 import QuestionCount from '../questionCounter';
-import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider} from  '../answer';
+import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback} from  '../answer';
 import PropTypes from 'prop-types';
 import Dialog from "../dialog";
 import {Grid,Container} from 'semantic-ui-react';
@@ -10,7 +10,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 function Questionnaire(props) {
 
   function renderAnswerOptions(key) {
-    window.scrollTo(0, 0);
 
       switch(props.answerType) {
           case 'Button':
@@ -26,63 +25,77 @@ function Questionnaire(props) {
                     />
                   );
 
+          break;
+          case "List":
+          return (
+                    <AnswerButton
+                      key={key.content}
+                      answerContent={key.content}
+                      answerId={key.type}
+                      answerType = {props.answerType}
+                      answer={props.answer}
+                      questionId={props.questionId}
+                      onAnswerSelected={props.onAnswerSelected}
+                    />
+                  );
+
               break;
-              case "List":
-              return (
-                        <AnswerButton
-                          key={key.content}
-                          answerContent={key.content}
-                          answerId={key.type}
-                          answerType = {props.answerType}
-                          answer={props.answer}
-                          questionId={props.questionId}
-                          onAnswerSelected={props.onAnswerSelected}
-                        />
-                      );
+          case "TextInput":
+            return (
+                      <AnswerText
+                        key={key.content}
+                        answerContent={key.content}
+                        answerId={key.type}
+                        answerType = {props.answerType}
+                        answer={props.answer}
+                        questionId={props.questionId}
+                        onAnswerSelected={props.onAnswerSelected}
+                      />
+                    );
 
-                  break;
-                  case "TextInput":
-                  return (
-                            <AnswerText
-                              key={key.content}
-                              answerContent={key.content}
-                              answerId={key.type}
-                              answerType = {props.answerType}
-                              answer={props.answer}
-                              questionId={props.questionId}
-                              onAnswerSelected={props.onAnswerSelected}
-                            />
-                          );
+          break;
 
-                      break;
+          case "Spinner":
+            return (
+                  <AnswerSpinner
+                    answerContent={key}
+                    answerId={key.type}
+                    answerType = {props.answerType}
+                    answer={props.answer}
+                    questionId={props.questionId}
+                    onAnswerSelected={props.onAnswerSelected}
+                  />
+                );
 
-                      case "Spinner":
-                      return (
-                            <AnswerSpinner
-                              answerContent={key}
-                              answerId={key.type}
-                              answerType = {props.answerType}
-                              answer={props.answer}
-                              questionId={props.questionId}
-                              onAnswerSelected={props.onAnswerSelected}
-                            />
-                          );
+          break;
 
-                      break;
+          case "Feedback":
+            return (
+                  <AnswerFeedback
+                    answerContent={key}
+                    answerId={key.type}
+                    answerType = {props.answerType}
+                    answer={props.answer}
+                    questionId={props.questionId}
+                    onAnswerSelected={props.onAnswerSelected}
+                  />
+                );
 
-                      case "Slider":
-                      return (
-                            <AnswerSlider
-                              min={key.min}
-                              max={key.max}
-                              answerType = {props.answerType}
-                              answer={props.answer}
-                              questionId={props.questionId}
-                              onAnswerSelected={props.onAnswerSelected}
-                            />
-                          );
+          break;
 
-                      break;
+          case "Slider":
+            return (
+                  <AnswerSlider
+                    min={key.min}
+                    max={key.max}
+                    answerType = {props.answerType}
+                    answer={props.answer}
+                    questionId={props.questionId}
+                    onAnswerSelected={props.onAnswerSelected}
+                  />
+                );
+
+          break;
           default:
               console.log("Incorrect Type: " + props.answerType);
       }

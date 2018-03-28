@@ -76,6 +76,18 @@
 
 var quizQuestions = [
 
+  {
+      dialog: "BETA-TESTING Feedback",
+      question: "Based on the previous landing page, what do you think this website will provide?",
+      answerType: 'Feedback',
+      answers: [
+          {
+              type: "1",
+              content: "Yes"
+          }
+      ],
+      comments:''
+  },
     {
         dialog: "Hi, I’m Barbara! My job is to help people like you find the right things",
         question: "What should I call you? (it doesn't need to be your real name)",

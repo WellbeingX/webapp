@@ -39,7 +39,6 @@ h2{
   background:#fff;
   color: #333;
   text-align: center;
-  margin-top:40px;
 }
 .inputRange{
 
@@ -194,7 +193,6 @@ div.ui.grid.landingWrapper {
 }
 
 .footerFooterHome{
-  margin-top: 20px;
   height:80px;
   background:#4E4E4E;
   text-align:left;
@@ -440,7 +438,7 @@ Input{
   padding: 0;
   list-style: none;
   text-align: center;
-  padding-bottom: 250px;
+  padding-bottom: 50px;
 }
 @media (max-width: 330px) {
   .answerOptions {
@@ -877,6 +875,8 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 100px;
   padding: 20px 100px;
   font-weight: 700;
+  color: white;
+  border-color: white;
 }
 .desktopFirstSection{
   /* height: 800px; */
@@ -940,7 +940,7 @@ input[type=range]:focus::-ms-fill-upper {
 .desktopSectionFooter{
   height: 10%;
   color: #4d4d4d;
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: center;
 }
 .desktopSectionFirstRow{
@@ -960,19 +960,30 @@ input[type=range]:focus::-ms-fill-upper {
 .desktopIcon{
   width: 100px;
   height: 100px;
-  margin: 25px;
   background:white;
   border-radius: 100%;
 }
 
 .desktopIcon svg{
+  margin-left: 25px;
+  width: 100px;
+  height: 100px;
+
+}
+.desktopIconList{
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  background:white;
+  border-radius: 100%;
+}
+
+.desktopIconList svg{
   padding: 15px;
   width: 100px;
   height: 100px;
 
 }
-
-
 .desktopSectionFirstRowCell{
     width:80%;
 }

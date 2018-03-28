@@ -7,6 +7,7 @@ import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-reac
 import HeaderUs from '../header'
 import DebuggingBar from '../debuggingBar'
 import QuestionHome from '../questionHome'
+import QuestionHomeBeta from '../questionHomeBeta'
 import Directory from '../directory'
 import EmailRequest from '../emailRequest'
 import FooterHome from '../footerHome'
@@ -14,9 +15,9 @@ import FooterInfo from '../footerInfo'
 
 
 const App = () => (
-  <div >
+  <div style={{backgroundImage: 'linear-gradient(-20deg, #96D0A7, #249ECD)'}}>
 
-    <div style={{backgroundImage: `linear-gradient(-20deg, #96D0A7, #249ECD)`}}>
+    <div >
     <HeaderUs/>
 
       <div className="body">
@@ -27,6 +28,7 @@ const App = () => (
               <Route exact path="/idk" component={QuestionHome} />
               <Route exact path="/about-us" component={About} />
               <Route exact path="/report" component={EmailRequest} />
+              <Route exact path="/information-beta" component={QuestionHomeBeta} />
             </main>
 
 

@@ -8,7 +8,7 @@ import {
   decrement,
   decrementAsync
 } from '../../reducers/counter'
-import { Container, Button, Grid } from 'semantic-ui-react'
+import { Container, Button, Grid , Checkbox} from 'semantic-ui-react'
 import {setPath} from '../../actions/questionnaireActions'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
@@ -21,8 +21,9 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = { width: 0, height: 0 , address:'information'};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.handleBeta = this.handleBeta.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +42,13 @@ class Home extends Component {
     console.log(window.innerHeight);
   }
 
+  handleBeta(event, data){
+    console.log(event);
+    console.log(data);
+    if(data.checked) this.setState({address :'information-beta'});
+    else this.setState({address :'information'});
+  }
+
   render() {
 
 
@@ -57,7 +65,6 @@ class Home extends Component {
            transitionAppearTimeout={500}
           >
                 <Grid  className='landingWrapper' >
-
                     <Grid.Row   style={{margin:0, padding:0}}>
 
                     <p className='landingTitle' style={{paddingBottom:80, paddingTop:50, marginRight:20}}>
@@ -72,13 +79,13 @@ class Home extends Component {
                     </Grid.Row>
 
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >have clearer thinking</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address) } >have clearer thinking</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >be better at coping</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address)} >be better at coping</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >feel inspired</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address)} >feel inspired</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
                         <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat depression</Button>
@@ -104,6 +111,9 @@ class Home extends Component {
                     <Grid.Row   style={{margin:0, padding:0}}>
                         <Button className='landingButton'  onClick={() => this.props.changePage("information")} >do more exercise</Button>
                     </Grid.Row>
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                        <Button className='landingButton'  onClick={() => this.props.changePage("beta ")} >go beta</Button>
+                    </Grid.Row>
 
 
 
@@ -111,6 +121,8 @@ class Home extends Component {
                 </Grid>
 
                 </ReactCSSTransitionGroup>
+
+                <Checkbox style={{margin:10}} onChange={this.handleBeta}/> Beta
 
 
           </Container>

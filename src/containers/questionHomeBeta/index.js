@@ -1,5 +1,5 @@
 import React from 'react';
-import quizQuestions from '../../api/questQuestionnaire';
+import quizQuestions from '../../api/questions-beta';
 import update from 'react-addons-update';
 import Questionnaire from '../questionnaire';
 import Result from '../result';
@@ -20,7 +20,7 @@ import ReactGA from 'react-ga';
 
 const nameQuestion=2;
 
-class QuestionHome extends React.Component {
+class QuestionHomeBeta extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -62,7 +62,7 @@ class QuestionHome extends React.Component {
 
 
       switch(this.props.location.pathname){
-        case "/information":
+        case "/information-beta":
         this.setState({
           dialog: quizQuestions[0].dialog,
           question: quizQuestions[0].question,
@@ -243,4 +243,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(QuestionHome)
+)(QuestionHomeBeta)
