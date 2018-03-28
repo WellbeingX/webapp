@@ -111,9 +111,6 @@ class Home extends Component {
                     <Grid.Row   style={{margin:0, padding:0}}>
                         <Button className='landingButton'  onClick={() => this.props.changePage("information")} >do more exercise</Button>
                     </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("beta ")} >go beta</Button>
-                    </Grid.Row>
 
 
 
