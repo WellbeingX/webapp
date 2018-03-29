@@ -45,8 +45,8 @@ class Home extends Component {
   handleBeta(event, data){
     console.log(event);
     console.log(data);
-    if(data.checked) this.setState({address :'information-beta'});
-    else this.setState({address :'information'});
+    if(data.checked) this.setState({address :'information/beta'});
+    else this.setState({address :'information/'});
   }
 
   render() {
@@ -79,37 +79,37 @@ class Home extends Component {
                     </Grid.Row>
 
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address) } >have clearer thinking</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover') } >have clearer thinking</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address)} >be better at coping</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >be better at coping</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address)} >feel inspired</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/improve')} >feel inspired</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat depression</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/recover')} >beat depression</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat addiction</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/recover')} >beat addiction</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >beat anxiety</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >beat anxiety</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >perform better at work</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/improve')} >perform better at work</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >feel less lonely</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >feel less lonely</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >be more successful</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/improve')} >be more successful</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >have better sleep</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >have better sleep</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage("information")} >do more exercise</Button>
+                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/improve')} >do more exercise</Button>
                     </Grid.Row>
 
 
@@ -119,7 +119,7 @@ class Home extends Component {
 
                 </ReactCSSTransitionGroup>
 
-                <Checkbox style={{margin:10}} onChange={this.handleBeta}/> Beta
+                <Checkbox style={{margin:10}} onChange={this.handleBeta} label='Beta' style={{color:'white', fontSize:'.8rem', opacity:.7, paddingBottom:25}} />
 
 
           </Container>

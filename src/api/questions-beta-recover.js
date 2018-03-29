@@ -74,8 +74,20 @@
 // }
 
 
-var quizQuestions = [
+var questionBetaRecover = [
 
+  {
+      dialog: "BETA-TESTING Feedback",
+      question: "Based on the previous landing page, what do you think this website will provide?",
+      answerType: 'Feedback',
+      answers: [
+          {
+              type: "1",
+              content: "Yes"
+          }
+      ],
+      comments:''
+  },
     {
         dialog: "Hi, I’m Barbara! My job is to help people like you find the right things",
         question: "What should I call you? (it doesn't need to be your real name)",
@@ -85,7 +97,7 @@ var quizQuestions = [
                 content: "Name..."
             }
            ],
-        comments:''
+        comments:'name'
     },
   {
       dialog: "",
@@ -169,55 +181,6 @@ var quizQuestions = [
           }
       ],
     }],
-      comments:' '
-  },
-
-  {
-      dialog: "Over the past two weeks...",
-      question: "How many times have you been bothered by having little interest or pleasure in doing things?",
-      answerType:'Button',
-      answers: [
-          {
-              type: "5",
-              content: "nearly every day"
-          },
-          {
-              type: "4",
-              content: "more than half days"
-          },
-          {
-              type: "3",
-              content: "several days"
-          },
-          {
-              type: "2",
-              content: "not at all"
-          }
-      ],
-      comments:' '
-  },
-  {
-      dialog: "Over the past two weeks...",
-      question: "How many times have you been bothered by feeling down, depressed and hopeless?",
-      answerType:'Button',
-      answers: [
-          {
-              type: "5",
-              content: "nearly every day"
-          },
-          {
-              type: "4",
-              content: "more than half days"
-          },
-          {
-              type: "3",
-              content: "several days"
-          },
-          {
-              type: "2",
-              content: "not at all"
-          }
-      ],
       comments:' '
   },
   {
@@ -419,7 +382,7 @@ var quizQuestions = [
       comments:''
   }];
 
-export default quizQuestions;
+export default questionBetaRecover;
 //
 // In the past week, how often have you been thinking clearly? (a five ways to wellbeing question)
 // None of the time

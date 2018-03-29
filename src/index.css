@@ -67,7 +67,7 @@ h2{
   }
   body, html{
     color: '#21ba45';
-    font-size:28px;
+    font-size:20px;
     overflow-x: hidden;
   }
 }
@@ -177,7 +177,7 @@ div.ui.grid.landingWrapper {
   color: white;
   font-family: 'Quicksand-Bold', 'Quicksand';
   margin-top: 25px;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 
@@ -294,6 +294,11 @@ div.homeFeatIcon{
   opacity: 1;
 }
 
+.questionHome{
+}
+.quiz{
+  margin-top: 70px;
+}
 /* Question Component */
 .question, .dialog {
   margin: 0;
@@ -413,7 +418,7 @@ Input{
   .button.ui.button.landingButton{
     width: 220px;
     padding:10px 0;
-    font-size: .8rem;
+    font-size: .7rem;
   }
 }
 
@@ -917,7 +922,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 80%;
 }
 .desktopSectionLeft{
-  background: url("assets/images/home/pic5.jpg") center;
+  background: url("assets/images/home/pic5.png") center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 50%;
@@ -1032,4 +1037,43 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 1rem;
   padding-bottom: 50px;
 
+}
+
+
+@media (max-width: 1080px) {
+
+  .desktopHeaderTitle{
+    margin-left: -120px;
+    height: 300px;
+    width: 350px;
+    margin-top: -100px;
+    top: 50%;
+    left: 25%;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  .desktopHeaderButton{
+    font-size: .8rem;
+    line-height: 5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 100px;
+    padding: 10px 60px;
+    font-weight: 700;
+  }
+  .desktopIcon{
+    width: 10px;
+  }
+  .desktopIcon svg{
+    width: 80px;
+    height: 80px;
+  }
+  .desktopSectionTitle{
+    padding-bottom: 50px;
+  }
+  .desktopSectionSecondRow{
+    padding: 0px 150px 50px 25px;
+  }
 }

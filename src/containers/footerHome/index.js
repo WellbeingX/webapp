@@ -5,7 +5,10 @@ import ImagePic22 from '../../assets/images/home/pic22.png';
 import ImagePic23 from '../../assets/images/home/pic23.png';
 import ImagePic51 from '../../assets/images/home/pic51.png';
 import ImagePic52 from '../../assets/images/home/pic52.png';
-
+import Paper from '../../assets/svg/paper.js'
+import Arrow1 from '../../assets/svg/arrow1.js'
+import People from '../../assets/svg/people.js'
+import List from '../../assets/svg/list.js'
 
 
 export default function FooterHome(){
@@ -17,31 +20,41 @@ export default function FooterHome(){
           <Grid.Row>
             <h3 style={{fontFamily:'Quicksand', paddingTop:20, color:'#70CACC', fontSize:'1.2rem', width:'100%'}}><span style={{opacity:1}}> How it works </span> </h3>
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
                 <p className='landingTextFooterHow'> 1. Answer a few questions about yourself</p>
             </Grid.Column>
-            <Grid.Column style={{width:'30%', padding:0, marginTop:10}}>
-                <Image src={ImagePic21} centered style={{ width:85, height:105}}/>
+            <Grid.Column style={{width:'27%', padding:20, paddingTop:0, marginTop:10}}>
+                <Paper />
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-          <Grid.Column style={{width:'70%', padding:0}}>
+          <Grid.Row  centered style={{ padding:0}}>
+          <Grid.Column  style={{width:'8%', padding:0, paddingTop:0, marginTop:0}}>
+              <Arrow1 />
+          </Grid.Column>
+          </Grid.Row>
+          <Grid.Row style={{ padding:0}}>
+            <Grid.Column style={{width:'70%', padding:0}}>
 
-                <p className='landingTextFooterHow'> 2. Compare activities, apps, therapists and products</p>
-                </Grid.Column>
-                <Grid.Column style={{width:'30%', padding:0, marginTop:20}}>
-                <Image src={ImagePic22} centered style={{ width:85, height:105}}/>
-                </Grid.Column>
+              <p className='landingTextFooterHow'> 2. Compare activities, apps, therapists and products</p>
+            </Grid.Column>
+            <Grid.Column style={{width:'28%', padding:10, paddingTop:0, marginTop:20}}>
+                  <List />
+            </Grid.Column>
 
           </Grid.Row>
-          <Grid.Row>
-          <Grid.Column style={{width:'70%', padding:0}}>
+          <Grid.Row  centered style={{ padding:0, paddingTop:0, marginTop:0}}>
+          <Grid.Column  style={{width:'8%', padding:0, paddingTop:0, marginTop:0}}>
+              <Arrow1 />
+          </Grid.Column>
+          </Grid.Row>
+          <Grid.Row style={{ padding:0}}>
+            <Grid.Column style={{width:'70%', padding:0}}>
 
                 <p className='landingTextFooterHow'> 3. Select from the personalized shortlist or choose the one you prefer!</p>
                 </Grid.Column>
-                <Grid.Column style={{width:'30%', padding:0, marginTop:20}}>
-                <Image src={ImagePic23} centered style={{ width:105, height:85}}/>
+                <Grid.Column style={{width:'30%', padding:20, paddingTop:0, marginTop:20}}>
+                  <People />
                 </Grid.Column>
 
           </Grid.Row>
@@ -114,8 +127,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Easy schedule</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you. Plus, we support Google Calendar, iCal and Outlook Calendar - ensuring that you'll have a seamless experience fitting our recommendations into your schedule.</h3>
+                      Works around your schedule</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>The first step to a better state of mind is finding time for mental activities.  Our integrated booking system supports Google Calendar, iCal and Outlook Calendar - ensuring that you'll have a seamless experience fitting our recommendations into your schedule.</h3>
                     </div>
                   </div>
 

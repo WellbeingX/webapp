@@ -74,7 +74,7 @@
 // }
 
 
-var quizQuestions = [
+var questionBetaImprove = [
 
   {
       dialog: "BETA-TESTING Feedback",
@@ -97,7 +97,7 @@ var quizQuestions = [
                 content: "Name..."
             }
            ],
-        comments:''
+        comments:'name'
     },
   {
       dialog: "",
@@ -431,7 +431,7 @@ var quizQuestions = [
       comments:''
   }];
 
-export default quizQuestions;
+export default questionBetaImprove;
 //
 // In the past week, how often have you been thinking clearly? (a five ways to wellbeing question)
 // None of the time

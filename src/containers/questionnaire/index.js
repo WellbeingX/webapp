@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from '../question';
 import QuestionCount from '../questionCounter';
-import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback} from  '../answer';
+import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback, AnswerMultiple} from  '../answer';
 import PropTypes from 'prop-types';
 import Dialog from "../dialog";
 import {Grid,Container} from 'semantic-ui-react';
@@ -88,6 +88,18 @@ function Questionnaire(props) {
                   <AnswerSlider
                     min={key.min}
                     max={key.max}
+                    answerType = {props.answerType}
+                    answer={props.answer}
+                    questionId={props.questionId}
+                    onAnswerSelected={props.onAnswerSelected}
+                  />
+                );
+
+          break;
+          case "Multiple":
+            return (
+                  <AnswerMultiple
+                    answerContent={key.content}
                     answerType = {props.answerType}
                     answer={props.answer}
                     questionId={props.questionId}

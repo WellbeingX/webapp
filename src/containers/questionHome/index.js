@@ -1,5 +1,8 @@
 import React from 'react';
-import quizQuestions from '../../api/questQuestionnaire';
+import questionBetaRecover from '../../api/questions-beta-recover';
+import questionBetaImprove from '../../api/questions-beta-improve';
+import questionRecover from '../../api/questions-recover';
+import questionImprove from '../../api/questions-improve';
 import update from 'react-addons-update';
 import Questionnaire from '../questionnaire';
 import Result from '../result';
@@ -18,7 +21,8 @@ import {
 import {setLastAnswer, setName, setPath} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 
-const nameQuestion=2;
+var nameQuestion=2;
+var quizQuestions =[];
 
 class QuestionHome extends React.Component {
   constructor(props) {
@@ -38,7 +42,8 @@ class QuestionHome extends React.Component {
        result: '',
        width: 0,
        height: 0,
-       answerType:''
+       answerType:'',
+       comments:''
       };
       this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -46,10 +51,8 @@ class QuestionHome extends React.Component {
 
 
 
-
     componentWillMount() {
-      window.scrollTo(0, 0);
-      this.props.setPath('/information')
+      this.props.setPath(this.props.location.pathname)
 
       // Select the cases INFORMATION | SOLUTION | IDK
       this.updateWindowDimensions();
@@ -62,15 +65,52 @@ class QuestionHome extends React.Component {
 
 
       switch(this.props.location.pathname){
-        case "/information":
+        case "/information/beta/recover":
+        quizQuestions = questionBetaRecover;
         this.setState({
           dialog: quizQuestions[0].dialog,
           question: quizQuestions[0].question,
           answerOptions: quizQuestions[0].answers,
-          answerType:quizQuestions[0].answerType
+          answerType:quizQuestions[0].answerType,
+          comments: quizQuestions[0].comments
+
         });
         break;
-        case "/solutions":
+        case "/information/beta/improve":
+        quizQuestions = questionBetaImprove;
+        this.setState({
+          dialog: quizQuestions[0].dialog,
+          question: quizQuestions[0].question,
+          answerOptions: quizQuestions[0].answers,
+          answerType:quizQuestions[0].answerType,
+          comments: quizQuestions[0].comments
+
+        });
+        break;
+        case "/information/recover":
+        quizQuestions = questionRecover;
+        nameQuestion=1;
+        this.setState({
+          dialog: quizQuestions[0].dialog,
+          question: quizQuestions[0].question,
+          answerOptions: quizQuestions[0].answers,
+          answerType:quizQuestions[0].answerType,
+          comments: quizQuestions[0].comments
+
+        });
+        break;
+        case "/information/improve":
+        quizQuestions = questionImprove;
+        nameQuestion=1;
+        this.setState({
+          dialog: quizQuestions[0].dialog,
+          question: quizQuestions[0].question,
+          answerOptions: quizQuestions[0].answers,
+          answerType:quizQuestions[0].answerType,
+          comments: quizQuestions[0].comments
+        });
+        break;
+        case "/information#":
         this.setState({
 
               counter : 2
@@ -102,7 +142,6 @@ class QuestionHome extends React.Component {
      }
 
      componentDidUpdate() {
-       window.scrollTo(0,0);
      }
 
      handleAnswerSelected(event) {
@@ -112,9 +151,10 @@ class QuestionHome extends React.Component {
        // HERE IT PUTS THE ANSWER IN THE STORE
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
-       // IN CASE OF QUESTION 2, IT"S A NAME AND THEREFORE GOES TO THE PROPS SEPARATELY
+       // NAME CHECK
+       if((this.state.comments === 'name')){
+         this.props.setName(event.currentTarget.id)}
 
-       if((this.state.questionId === nameQuestion)){this.props.setName(event.currentTarget.id)}
        if (this.state.questionId < quizQuestions.length) {
            setTimeout(() => this.setNextQuestion(), 300);
        } else {
@@ -146,7 +186,7 @@ class QuestionHome extends React.Component {
        increment;
        console.log("Incrementando");
        console.log(this.props);
-
+       console.log(this.state);
        this.props.increment();
        // Name replacement in case was submitted
        this.nameCheck(counter);
@@ -158,6 +198,7 @@ class QuestionHome extends React.Component {
            question: quizQuestions[counter].question,
            answerOptions: quizQuestions[counter].answers,
            answerType: quizQuestions[counter].answerType,
+           comments: quizQuestions[counter].comments,
            answer: ''
        });
      }
@@ -194,7 +235,6 @@ class QuestionHome extends React.Component {
   }
 
   renderResult() {
-    window.scrollTo(0, 0);
 
     return (
       <Directory quizResult={this.state.result} />
@@ -207,7 +247,7 @@ class QuestionHome extends React.Component {
 
     return(
 
-      <div className="App" >
+      <div className="questionHome" >
               <div className="App-header">
 
               </div>

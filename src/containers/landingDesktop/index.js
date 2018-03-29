@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-import Paper from '../../assets/svg/paper.js'
-import Arrow1 from '../../assets/svg/arrow1.js'
-import Arrow2 from '../../assets/svg/arrow2.js'
-import People from '../../assets/svg/people.js'
-import List from '../../assets/svg/list.js'
 import Confidential from '../../assets/svg/confidential.js'
 import Commitment from '../../assets/svg/commitment.js'
 import Invoice from '../../assets/svg/invoice.js'
@@ -12,7 +7,10 @@ import Prevention from '../../assets/svg/prevention.js'
 import MailChimp from '../mailchimp'
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import ScrollableAnchor from 'react-scrollable-anchor'
-
+import Arrow1 from '../../assets/svg/arrow1'
+import Paper from '../../assets/svg/paper'
+import List from '../../assets/svg/list'
+import People from '../../assets/svg/people'
 
 export default class HomeDesktop extends Component {
 
