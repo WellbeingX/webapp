@@ -308,7 +308,7 @@ div.homeFeatIcon{
 }
 @media (max-width: 769px) {
   .question{
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
 }
 
@@ -1041,7 +1041,9 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 @media (max-width: 1080px) {
-
+  body{
+    font-size: 20px;
+  }
   .desktopHeaderTitle{
     margin-left: -120px;
     height: 300px;
@@ -1075,5 +1077,16 @@ input[type=range]:focus::-ms-fill-upper {
   }
   .desktopSectionSecondRow{
     padding: 0px 150px 50px 25px;
+  }
+  .desktopSectionLeft{
+    height: 500px;
+  }
+  .desktopSectionFirstRowCell{
+    font-size: .8rem;
+  }
+  .desktopIconArrows{
+    width: 20px;
+    height: 30px;
+    margin: 15px auto;
   }
 }

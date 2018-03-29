@@ -32,6 +32,8 @@ export  function AnswerButton(props) {
     onAnswerSelected: PropTypes.func.isRequired
   };
 
+
+
 export class AnswerText extends React.Component {
     constructor(props){
       super();
@@ -52,8 +54,6 @@ export class AnswerText extends React.Component {
     render(){
       return (
         <div>
-        {console.log("AnswerText PROPS")}
-          {console.log(this.props)}
           <Input onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20}} focus placeholder={this.props.answerContent}/>
           <input
             type="button"
@@ -275,7 +275,6 @@ export class AnswerMultiple extends React.Component {
       return (
         <div >
 
-          {this.props.answerContent.map(this.handleValue)}
 
 
 

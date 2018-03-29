@@ -257,25 +257,6 @@ var questionImprove = [
         }
     ],
     comments:' '
-},{
-    dialog: "",
-    question: "Would you like to hook up with people with similar objectives to you?",
-    answerType:'Multiple',
-    answers: [
-        {
-            type: "1",
-            content: "Yes"
-        },
-        {
-            type: "2",
-            content: "Maybe"
-        },
-        {
-            type: "3",
-            content: "Not really"
-        }
-    ],
-    comments:' '
 },
 {
     dialog: "",
