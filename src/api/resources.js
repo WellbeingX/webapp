@@ -9,7 +9,7 @@ var resources = [
     description:'Improve your sleep with proven techniques developed over 35 years of research',
     imgURL:'https://firebasestorage.googleapis.com/v0/b/website-973e0.appspot.com/o/images%2FSpleepio-logo-2016.png?alt=media&token=1feb215a-52cf-434a-8f25-16482412259f',
     website:'https://www.sleepio.com',
-    comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professort!"'
+    comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
   },
     {
     label:'loneliness',

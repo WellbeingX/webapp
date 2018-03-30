@@ -82,7 +82,7 @@ export default function FooterHome(){
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Local and personal to you</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whether it’s a proven mindfulness app, an energising social activity or a conversation with a top therapist, we’ve got a personalised directory for you. By answering some confidential questions, we can draw up a shortlist for you to choose from.</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Find out what resources are available just where you need them, close to your home, your work or where you are right now.  Whether it’s a proven mindfulness app, an energising social activity, some rewarding voluntary work or a conversation with a top coach, we will create personalised suggestions for you.</h3>
                     </div>
                   </div>
 
@@ -127,8 +127,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Works around your schedule</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>The first step to a better state of mind is finding time for mental activities.  Our integrated booking system supports Google Calendar, iCal and Outlook Calendar - ensuring that you'll have a seamless experience fitting our recommendations into your schedule.</h3>
+                      Works around you</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>The first step to a better state of mind is finding time for mental activities.  Our integrated booking system supports Google Calendar, iCal and Outlook Calendar - ensuring that even if you're always busy or have lots of free time, you'll have a seamless experience fitting our recommendations into your schedule.</h3>
                     </div>
                   </div>
 
@@ -174,7 +174,7 @@ export default function FooterHome(){
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Curated by experts</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>BetterSpace is your guide through an ever-expanding (and sometimes confusing) world of solutions to any mental health issues you may have. We work with charities (Mind, xyz etc..) and research groups (University of Xyz) to recommend only the best resources and services. </h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>BetterSpace is your guide through an ever-expanding (and sometimes confusing) world of solutions to any mental health issues you may have. We work with charities  and research groups to recommend only the best resources and services. </h3>
                     </div>
                   </div>
 

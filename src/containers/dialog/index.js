@@ -51,8 +51,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
         backgroundSize: this.wH/5,
         overflow: 'hidden',
         backgroundPosition: 'bottom right',
-        position:'absolute', bottom:-10, width:this.wW*.95,
-        marginLeft:this.marginContainer
+        position:'absolute', bottom:-6, width:this.wW*.95,
+        marginLeft:this.marginContainer,
+        zIndex:0
       }
       characterStyleMiddle = {
         height:this.wH,
@@ -168,22 +169,23 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
       side(){
         return(
           <div className='bigBuggleStyle2' style={this.bigBuggleStyle2}>
+            <div style={this.characterStyle} />
+
             <div className='dialogWrapperStyle' style={this.dialogWrapperStyle}>
               <ReactCSSTransitionGroup
-               className="container"
                component="div"
                transitionName="dialog"
-               transitionEnterTimeout={1500}
+               transitionEnterTimeout={0}
                transitionLeaveTimeout={500}
                transitionAppear
                transitionAppearTimeout={1200}
               >
 
-                      <h2 className="dialog" style={this.dialogStyle}>{this.props.content}</h2>
+                      <h2 className="dialog" style={this.dialogStyle}>
+                        {this.props.content}
+                      </h2>
 
               </ReactCSSTransitionGroup>
-            </div>
-            <div style={this.characterStyle}>
             </div>
           </div>
         )

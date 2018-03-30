@@ -470,6 +470,8 @@ Input{
     left: 0;
     width: 100%;
     opacity: 1;
+    transition: opacity 1s ease-in;
+
 }
 
 .fade-leave.fade-leave-active {
@@ -485,6 +487,7 @@ Input{
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
+
 
 /* second animation */
 .dialog-enter, .dialog-appear  {
@@ -1110,4 +1113,32 @@ input[type=range]:focus::-ms-fill-upper {
     height: 30px;
     margin: 15px auto;
   }
+}
+
+.classOverlay{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  background:white;
+  z-index: 100000;
+  opacity:1;
+  padding:50px;
+  padding-top:100px;
+  text-align: center;
+  margin-top: -100px;
+}
+.classOverlay p{
+  font-size: .8rem;
+  text-align: center;
+}
+.loader{
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  margin: 3em auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+.loader svg path{
+fill: #FF6700;
 }
