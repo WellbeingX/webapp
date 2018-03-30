@@ -99,7 +99,7 @@ function Questionnaire(props) {
           case "Multiple":
             return (
                   <AnswerMultiple
-                    answerContent={key.content}
+                    answerContent={key}
                     answerType = {props.answerType}
                     answer={props.answer}
                     questionId={props.questionId}
@@ -116,33 +116,36 @@ function Questionnaire(props) {
     }
 
    return (
+     <div>
 
-     <ReactCSSTransitionGroup
-      className="container"
-      component="div"
-      transitionName="fade"
-      transitionEnterTimeout={800}
-      transitionLeaveTimeout={500}
-      transitionAppear
-      transitionAppearTimeout={500}
-    >
       <div className="quiz">
-        <Dialog
-          windowHeigth = {props.windowHeigth}
-          windowWidth = {props.windowWidth}
-          content = {props.dialog}
+          <Dialog
+            windowHeigth = {props.windowHeigth}
+            windowWidth = {props.windowWidth}
+            content = {props.dialog}
           />
           <QuestionCount
             counter={props.questionId}
             total={props.questionTotal}
           />
-
           <Question content={props.question} />
-          <Container centered className="answerOptions">
-            {props.answerOptions.map(renderAnswerOptions)}
-          </Container>
+
+          <ReactCSSTransitionGroup
+           className="container"
+           component="div"
+           transitionName="fade"
+           transitionEnterTimeout={400}
+           transitionLeaveTimeout={200}
+           transitionAppear
+           transitionAppearTimeout={500}
+          >
+            <Container centered className="answerOptions">
+              {props.answerOptions.map(renderAnswerOptions)}
+            </Container>
+          </ReactCSSTransitionGroup>
+
       </div>
-    </ReactCSSTransitionGroup>
+    </div>
    );
  }
 

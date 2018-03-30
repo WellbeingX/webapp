@@ -85,7 +85,6 @@ export class AnswerSpinner extends React.Component {
 }
 
      renderSpinner(event,data){
-       console.log(data.value);
         this.setState({
           value:data.value
         }
@@ -256,30 +255,84 @@ export class AnswerFeedback extends React.Component {
 
 
 
+
+
+export class AnswerMultipleChild extends React.Component {
+  constructor(props){
+    super();
+    this.state={
+      active:false
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event){
+    this.setState({active:!this.state.active});
+    // WHY NEGATIVE FORM I DON'T KNOW
+    this.props.onClick({id:this.props.id, text:this.props.value, state:!this.state.active});
+
+  }
+
+  render(){
+    let className = this.state.active ? 'customButton active' : 'customButton';
+    return (
+      <div >
+
+      <input
+        type="button"
+        className={className}
+        name="radioGroup"
+        value={this.props.value}
+        id={this.props.id}
+        onClick={this.handleClick}
+      />
+
+      </div>
+    );
+  }
+}
+
+
+
 export class AnswerMultiple extends React.Component {
     constructor(props){
       super();
-      this.state={
-        value:3
-      }
+      this.state={multiple:''}
       this.handleValue = this.handleValue.bind(this);
     }
 
-
-
     handleValue(event){
-      console.log(event);
+      let newelement='** id: '+ event.id + ', text: ' + event.text + ', state: ' + event.state;
+      newelement = this.state.multiple + newelement;
+      this.setState({
+        multiple: newelement
+      })
+    }
+    componentDidMount(){
+      console.log('MI SONO MONTATO');
+    }
+    renderButtons(event){
+      return(
+            <AnswerMultipleChild
+              value={event.text}
+              id={event.key}
+              onClick={this.handleValue}
+            />
+          )
     }
 
     render(){
+      console.log(this.state);
+
       return (
         <div >
 
+          {this.props.answerContent.multiple.map(this.renderButtons, this)}
+
+          <a onClick={this.props.onAnswerSelected} id={this.state.multiple} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>next</a>
 
 
-
-
-          </div>
+        </div>
       );
     }
 }

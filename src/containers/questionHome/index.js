@@ -145,7 +145,9 @@ class QuestionHome extends React.Component {
      }
 
      handleAnswerSelected(event) {
-
+       console.log('AnswerSelected is:');
+       console.log(event.currentTarget.id
+       );
        this.setUserAnswer(event.currentTarget.value);
 
        // HERE IT PUTS THE ANSWER IN THE STORE
@@ -230,6 +232,7 @@ class QuestionHome extends React.Component {
         windowHeigth={this.state.height}
         windowWidth={this.state.width}
         answerType = {this.state.answerType}
+        key={this.state.counter}
       />
     );
   }

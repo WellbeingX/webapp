@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ImageBarb from '../../assets/images/home/lady.png';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
   class  Dialog extends React.Component {
@@ -168,7 +169,19 @@ import ImageBarb from '../../assets/images/home/lady.png';
         return(
           <div className='bigBuggleStyle2' style={this.bigBuggleStyle2}>
             <div className='dialogWrapperStyle' style={this.dialogWrapperStyle}>
-                <h2 className="dialog" style={this.dialogStyle}>{this.props.content}</h2>
+              <ReactCSSTransitionGroup
+               className="container"
+               component="div"
+               transitionName="dialog"
+               transitionEnterTimeout={1500}
+               transitionLeaveTimeout={500}
+               transitionAppear
+               transitionAppearTimeout={1200}
+              >
+
+                      <h2 className="dialog" style={this.dialogStyle}>{this.props.content}</h2>
+
+              </ReactCSSTransitionGroup>
             </div>
             <div style={this.characterStyle}>
             </div>

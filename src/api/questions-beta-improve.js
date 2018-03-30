@@ -332,6 +332,163 @@ var questionBetaImprove = [
       comments:' '
   },
   {
+      dialog: "",
+      question: "Which of the following are working at the moment? (Select as many as you want)",
+      answerType:'Multiple',
+      answers: [ {
+        multiple: [
+          {
+              type: "1",
+              text: 'money',
+              value: 'money',
+              key:1
+          },
+          {
+              type: "2",
+              text: "sex",
+              value: "sex",
+              key:2
+          },
+          {
+              type: "3",
+              text: "diet",
+              value: "diet",
+              key:3
+          },
+          {
+              type: "4",
+              text: "exercise",
+              value: "exercise",
+              key:4
+          },
+          {
+              type: "5",
+              text: "work",
+              value: "work",
+              key:5
+          },
+          {
+              type: "6",
+              text: "family",
+              value: "family",
+              key:6
+          },
+          {
+              type: "7",
+              text: "health",
+              value: "health",
+              key:7
+          }
+      ],
+    }],
+      comments:' '
+  },
+
+  {
+      dialog: "",
+      question: "Which of the following are NOT working at the moment?",
+      answerType:'Multiple',
+      answers: [ {
+        multiple: [
+          {
+              type: "1",
+              text: 'money',
+              value: 'money',
+              key:1
+          },
+          {
+              type: "2",
+              text: "sex",
+              value: "sex",
+              key:2
+          },
+          {
+              type: "3",
+              text: "diet",
+              value: "diet",
+              key:3
+          },
+          {
+              type: "4",
+              text: "exercise",
+              value: "exercise",
+              key:4
+          },
+          {
+              type: "5",
+              text: "work",
+              value: "work",
+              key:5
+          },
+          {
+              type: "6",
+              text: "family",
+              value: "family",
+              key:6
+          },
+          {
+              type: "7",
+              text: "health",
+              value: "health",
+              key:7
+          }
+      ],
+    }],
+      comments:' '
+  },
+  {
+      dialog: "",
+      question: "Which of the following do you enjoy doing?",
+      answerType:'Multiple',
+      answers: [ {
+        multiple: [
+          {
+              type: "1",
+              text: 'meeting new people',
+              value: 'meeting new people',
+              key:1
+          },
+          {
+              type: "2",
+              text: "time in nature",
+              value: "time in nature",
+              key:2
+          },
+          {
+              type: "3",
+              text: "using apps",
+              value: "using apps",
+              key:3
+          },
+          {
+              type: "4",
+              text: "reading books",
+              value: "reading books",
+              key:4
+          },
+          {
+              type: "5",
+              text: "social activities",
+              value: "social activities",
+              key:5
+          },
+          {
+              type: "6",
+              text: "music",
+              value: "music",
+              key:6
+          },
+          {
+              type: "7",
+              text: "dance",
+              value: "dance",
+              key:7
+          }
+      ],
+    }],
+      comments:' '
+  },
+  {
       dialog: "Great!",
       question: "/name, if you sign up below I'll send you a report and save your profile!",
       answerType: 'TextInput',
