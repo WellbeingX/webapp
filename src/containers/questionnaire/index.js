@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from '../question';
 import QuestionCount from '../questionCounter';
-import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback, AnswerMultiple} from  '../answer';
+import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback, AnswerMultiple, FeedbackButton} from  '../answer';
 import PropTypes from 'prop-types';
 import Dialog from "../dialog";
 import {Grid,Container} from 'semantic-ui-react';
@@ -108,6 +108,18 @@ function Questionnaire(props) {
                 );
 
           break;
+          case "FeedbackButton":
+            return (
+                  <FeedbackButton
+                    answerContent={key}
+                    answerType = {props.answerType}
+                    answer={props.answer}
+                    questionId={props.questionId}
+                    onAnswerSelected={props.onAnswerSelected}
+                  />
+                );
+
+          break;
           default:
               console.log("Incorrect Type: " + props.answerType);
       }
@@ -115,36 +127,94 @@ function Questionnaire(props) {
 
     }
 
+    function renderAll(){
+      switch(props.answerType) {
+        case 'Feedback':
+          return(
+                  <div className="quiz" style={{color:'white', textAlign:'center', background:'DimGray',  paddingTop:20}}>
+                    BETA-TEST QUESTION
+                    <Question content={props.question} />
+
+                    <ReactCSSTransitionGroup
+                     className="container"
+                     component="div"
+                     transitionName="fade"
+                     transitionEnterTimeout={400}
+                     transitionLeaveTimeout={200}
+                     transitionAppear
+                     transitionAppearTimeout={500}
+                    >
+                      <Container centered className="answerOptions">
+                        {props.answerOptions.map(renderAnswerOptions)}
+                      </Container>
+                    </ReactCSSTransitionGroup>
+                  </div>
+                );
+
+          break;
+          case 'FeedbackButton':
+            return(
+                    <div className="quiz" style={{color:'white', textAlign:'center', background:'DimGray', paddingTop:20}}>
+                      BETA-TEST QUESTION
+                      <Question content={props.question} />
+
+                      <ReactCSSTransitionGroup
+                       className="container"
+                       component="div"
+                       transitionName="fade"
+                       transitionEnterTimeout={400}
+                       transitionLeaveTimeout={200}
+                       transitionAppear
+                       transitionAppearTimeout={500}
+                      >
+                        <Container centered className="answerOptions">
+                          {props.answerOptions.map(renderAnswerOptions)}
+                        </Container>
+                      </ReactCSSTransitionGroup>
+                    </div>
+                  );
+
+            break;
+
+          default:
+            return(
+                    <div className="quiz">
+                      <Dialog
+                        windowHeigth = {props.windowHeigth}
+                        windowWidth = {props.windowWidth}
+                        content = {props.dialog}
+                      />
+                      <QuestionCount
+                        counter={props.questionId}
+                        total={props.questionTotal}
+                      />
+                      <Question content={props.question} />
+
+                      <ReactCSSTransitionGroup
+                       className="container"
+                       component="div"
+                       transitionName="fade"
+                       transitionEnterTimeout={400}
+                       transitionLeaveTimeout={200}
+                       transitionAppear
+                       transitionAppearTimeout={500}
+                      >
+                        <Container centered className="answerOptions">
+                          {props.answerOptions.map(renderAnswerOptions)}
+                        </Container>
+                      </ReactCSSTransitionGroup>
+                    </div>
+                  );
+
+            break;
+
+        }
+      }
+
    return (
      <div>
+      {renderAll()}
 
-      <div className="quiz">
-          <Dialog
-            windowHeigth = {props.windowHeigth}
-            windowWidth = {props.windowWidth}
-            content = {props.dialog}
-          />
-          <QuestionCount
-            counter={props.questionId}
-            total={props.questionTotal}
-          />
-          <Question content={props.question} />
-
-          <ReactCSSTransitionGroup
-           className="container"
-           component="div"
-           transitionName="fade"
-           transitionEnterTimeout={400}
-           transitionLeaveTimeout={200}
-           transitionAppear
-           transitionAppearTimeout={500}
-          >
-            <Container centered className="answerOptions">
-              {props.answerOptions.map(renderAnswerOptions)}
-            </Container>
-          </ReactCSSTransitionGroup>
-
-      </div>
     </div>
    );
  }

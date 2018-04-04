@@ -100,7 +100,7 @@ var isActive =true;
       return(
         <ReactCSSTransitionGroup transitionName='fade'>
           <div className='classOverlay' >
-            <p>Thank you for answering the questions, the website is currently underconstruction and a placeholder page will appear next</p>
+            <p>Thank you for answering the questions, the website is currently under construction and a placeholder page will appear next</p>
 
             <div className="loader loader--style2" title="1">
               <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"

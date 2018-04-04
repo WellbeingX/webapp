@@ -75,9 +75,8 @@
 
 
 var questionBetaImprove = [
-
   {
-      dialog: "BETA-TESTING Feedback",
+      dialog: "BETA-TEST Feedback",
       question: "Based on the previous landing page, what do you think this website will provide?",
       answerType: 'Feedback',
       answers: [
@@ -489,95 +488,125 @@ var questionBetaImprove = [
       comments:' '
   },
   {
-      dialog: "Great!",
-      question: "/name, if you sign up below I'll send you a report and save your profile!",
-      answerType: 'TextInput',
-      answers: [{
-              type: 0,
-              content: "Email..."
-          }
-         ],
-      comments:''
-  },
-  {
-      dialog: "BETA-TESTING Feedback",
-      question: "BETA-TESTING Feedback: Was answering the quesitons easy?",
-      answerType:'Button',
-      answers: [
+      dialog: "BETA-TEST Feedback",
+      question: " Was answering the questions easy?",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
           {
               type: "1",
-              content: "Yes"
+              content: "Yes",
+              text: "Yes",
+              value: "Yes",
+              key:1
           },
           {
               type: "2",
-              content: "Kind of"
+              content: "Kind of",
+              text: "Kind of",
+              value: "Kind of",
+              key:2
           },
           {
               type: "3",
-              content: "No"
+              content: "No",
+              text: "No",
+              value: "No",
+              key:3
           }
-      ],
+        ],
+      }],
       comments:' '
   },
   {
-      dialog: "BETA-TESTING Feedback",
-      question: "BETA-TESTING Feedback: Were there any question you did not understand?",
-      answerType:'Button',
-      answers: [
+      dialog: "BETA-TEST Feedback",
+      question: " Were there any question you did not understand?",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
           {
               type: "1",
-              content: "Yes"
+              content: "Yes",
+              text: "Yes",
+              value: "Yes",
+              key:1
           },
           {
               type: "2",
-              content: "A few"
+              content: "A few",
+              text: "A few",
+              value: "A few",
+              key:2
           },
           {
               type: "3",
-              content: "No"
+              content: "No",
+              text: "No",
+              value: "No",
+              key:3
           }
-      ],
+        ],
+      }],
       comments:' '
   },
   {
-      dialog: "BETA-TESTING Feedback",
-      question: "BETA-TESTING Feedback: Did you like being called by name?",
-      answerType:'Button',
-      answers: [
+      dialog: "BETA-TEST Feedback",
+      question: " Did you like being called by name?",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
           {
               type: "1",
-              content: "Yes"
+              content: "Yes",
+              text: "Yes",
+              value: "Yes",
+              key:1
           },
           {
               type: "2",
-              content: "No"
+              content: "No",
+              text: "No",
+              value: "No",
+              key:2
           }
-      ],
+        ],
+      }],
       comments:' '
   },
   {
-      dialog: "BETA-TESTING Feedback",
-      question: "BETA-TESTING Feedback: Would you ask:",
-      answerType:'Button',
-      answers: [
+      dialog: "BETA-TEST Feedback",
+      question: " Would you ask:",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
           {
               type: "1",
-              content: "Less quesitons"
+              content: "Less quesitons",
+              text: "Less quesitons",
+              value: "Less quesitons",
+              key:1
           },
           {
               type: "2",
-              content: "Same"
+              content: "Same",
+              text: "Same",
+              value: "Same",
+              key:2
           },
           {
               type: "3",
-              content: "More questions"
+              content: "More questions",
+              text: "More questions",
+              value: "More questions",
+              key:3
           }
-      ],
+        ],
+      }],
       comments:' '
   },
   {
-      dialog: "BETA-TESTING Feedback",
-      question: "BETA-TESTING Feedback: What do you expect to see after all the questions?",
+      dialog: "BETA-TEST Feedback",
+      question: " What do you expect to see after all the questions?",
       answerType: 'Feedback',
       answers: [
           {

@@ -181,9 +181,6 @@ export class AnswerFeedback extends React.Component {
     }
 
     handleName(event, data){
-      console.log('handleName');
-      console.log(data);
-      console.log(data.value);
       this.setState({
         name: data.value
       });
@@ -201,7 +198,7 @@ export class AnswerFeedback extends React.Component {
 
 
 
-          <TextArea onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20, width:300, height: 100, marginBottom:50, borderStyle:'none', marginTop:-25 }} focus placeholder='Comment'/>
+          <TextArea onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20, width:250, height: 100, marginBottom:50, borderStyle:'none', marginTop:-10 }} focus placeholder='Comment'/>
           <br />
           <div style={{textAlign:'left', padding: '0rem 1.5rem 0rem 1.5rem', lineHeight:'1rem' }}>
             <span style={{fontSize: '.8rem', textAlign:'left', fontSize:'.8rem', fontWeight: 700}}>
@@ -246,7 +243,7 @@ export class AnswerFeedback extends React.Component {
             style={{marginTop:50}}
           />
 
-          <a onClick={this.props.onAnswerSelected} id={this.state.name} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
+          <a onClick={this.props.onAnswerSelected} id={'Skipped'} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
 
           </div>
       );
@@ -309,7 +306,6 @@ export class AnswerMultiple extends React.Component {
       })
     }
     componentDidMount(){
-      console.log('MI SONO MONTATO');
     }
     renderButtons(event){
       return(
@@ -335,4 +331,68 @@ export class AnswerMultiple extends React.Component {
         </div>
       );
     }
+}
+
+
+export class FeedbackButton extends React.Component {
+
+  constructor(props){
+    super();
+    this.state={multiple:'',
+  text:''}
+    this.handleValue = this.handleValue.bind(this);
+    this.handleName = this.handleName.bind(this);
+
+  }
+
+  handleValue(event){
+    let newelement='** id: '+ event.id + ', text: ' + event.text + ', state: ' + event.state;
+    newelement = this.state.multiple + newelement;
+    this.setState({
+      multiple: newelement
+    })
+  }
+
+
+
+handleName(event, data){
+  this.setState({
+    text: data.value
+  });
+}
+
+  componentDidMount(){
+  }
+  renderButtons(event){
+    return(
+          <AnswerMultipleChild
+            value={event.text}
+            id={event.key}
+            onClick={this.handleValue}
+          />
+        )
+  }
+
+  handleClick(key){
+
+      this.props.onAnswerSelected(key);
+  }
+
+  render(){
+
+    return (
+      <div >
+
+        {this.props.answerContent.multiple.map(this.renderButtons, this)}
+        <br />
+        <Input onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20}} focus placeholder='Why?'/>
+        <br />
+        <a onClick={this.props.onAnswerSelected} id={this.state.multiple + " // comment: " +this.state.text} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>next</a>
+
+
+      </div>
+    );
+  }
+
+
 }

@@ -121,7 +121,6 @@ class Home extends Component {
 
                 <Checkbox style={{margin:10}} onChange={this.handleBeta} label='Beta' style={{color:'white', fontSize:'.8rem', opacity:.7, paddingBottom:25}} />
 
-
           </Container>
         )
 

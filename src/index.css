@@ -168,15 +168,15 @@ div.ui.grid.landingWrapper {
 .button.ui.button.landingButton{
   margin:auto;
   width: 300px;
-  padding:10px 25px;
+  padding:15px 25px;
   background: rgba(0,0,0,0);
-  border-radius: 40px;
+  border-radius: 50px;
   border-width: 1px;
   border-color: white;
   border-style: solid;
   color: white;
   font-family: 'Quicksand-Bold', 'Quicksand';
-  margin-top: 25px;
+  margin-top: 20px;
   font-size: .8rem;
 }
 
@@ -292,6 +292,7 @@ div.homeFeatIcon{
   padding: 1.5rem 2.5rem 0;
   font-size: .6rem;
   opacity: 1;
+  text-align: left;
 }
 
 .questionHome{
@@ -488,7 +489,49 @@ Input{
     transition: opacity 0.3s ease-in-out;
 }
 
+.mobileArrow{
+  width: 5px;
+  height: 40px;
+  margin: 5% auto;
+  border-radius: 3px;
+  background-color: white;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), white 75%);
+  -webkit-animation: 1s soft-blink infinite alternate;
+  animation: 1s soft-blink infinite alternate;
+  position: absolute;
+  top:400px;
+  right:0px;
+  opacity: 0;
+}
 
+
+@-webkit-keyframes soft-blink {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes soft-blink {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.9; }
+}
+
+.mobileArrow:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -7.5px;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 /* second animation */
 .dialog-enter, .dialog-appear  {
     opacity: 0;
@@ -505,6 +548,10 @@ Input{
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
 
+.logo{
+  -webkit-text-stroke: 1px white;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
 
 .logoReplacementWrapper{
   margin-top:-130px;
@@ -866,6 +913,7 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100%;
   top:0;
   z-index: 100;
+  box-shadow: 0 2px 3px 0 hsla(216, 3%, 69%, .25);
 }
 
 .desktopHeaderHeaderRight{

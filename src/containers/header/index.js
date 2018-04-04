@@ -43,12 +43,12 @@ import {
       if (true){
         return(
         <Grid.Column floated='left' width={5}>
-          <h2 style={{zIndex:100, color:'white', padding:20}}>BetterSpace</h2>
+          <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20}}>BetterSpace</h2>
         </Grid.Column>)
       }else{
         return(
         <Grid.Column floated='left' width={5} className="headerLogo">
-          <h2  style={{zIndex:100, color:'#249ECD', padding:20}}>BetterSpace</h2>
+          <h2 className="logo" style={{ fontWeight:'900', zIndex:100, color:'#249ECD', padding:20}}>BetterSpace</h2>
         </Grid.Column>)
       }
     }
