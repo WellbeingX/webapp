@@ -218,6 +218,8 @@ export default function FooterHome(){
           <Grid.Row  >
             <div className='footerFooterHome'>
               <h2 style={{zIndex:100, color:'white', padding:20}}>BetterSpace</h2>
+              <p>Copyright WellbeingX Ltd. 2018. All rights reserved.
+              <br /><br />WellbeingX is registered and incorporated in England and Wales, company registration number 11053000.</p>
             </div>
         </Grid.Row>
       </div>

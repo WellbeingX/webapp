@@ -7,21 +7,28 @@ import Dialog from "../dialog";
 import {Grid,Container} from 'semantic-ui-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-function Questionnaire(props) {
 
-  function renderAnswerOptions(key) {
+class Questionnaire extends React.Component {
+  constructor(props) {
+      super(props);
 
-      switch(props.answerType) {
+    }
+    componentWillMount() {
+
+    }
+
+  renderAnswerOptions(key) {
+      switch(this.props.answerType) {
           case 'Button':
           return (
                     <AnswerButton
                       key={key.content}
                       answerContent={key.content}
                       answerId={key.type}
-                      answerType = {props.answerType}
-                      answer={props.answer}
-                      questionId={props.questionId}
-                      onAnswerSelected={props.onAnswerSelected}
+                      answerType = {this.props.answerType}
+                      answer={this.props.answer}
+                      questionId={this.props.questionId}
+                      onAnswerSelected={this.props.onAnswerSelected}
                     />
                   );
 
@@ -32,10 +39,10 @@ function Questionnaire(props) {
                       key={key.content}
                       answerContent={key.content}
                       answerId={key.type}
-                      answerType = {props.answerType}
-                      answer={props.answer}
-                      questionId={props.questionId}
-                      onAnswerSelected={props.onAnswerSelected}
+                      answerType = {this.props.answerType}
+                      answer={this.props.answer}
+                      questionId={this.props.questionId}
+                      onAnswerSelected={this.props.onAnswerSelected}
                     />
                   );
 
@@ -46,10 +53,10 @@ function Questionnaire(props) {
                         key={key.content}
                         answerContent={key.content}
                         answerId={key.type}
-                        answerType = {props.answerType}
-                        answer={props.answer}
-                        questionId={props.questionId}
-                        onAnswerSelected={props.onAnswerSelected}
+                        answerType = {this.props.answerType}
+                        answer={this.props.answer}
+                        questionId={this.props.questionId}
+                        onAnswerSelected={this.props.onAnswerSelected}
                       />
                     );
 
@@ -60,10 +67,10 @@ function Questionnaire(props) {
                   <AnswerSpinner
                     answerContent={key}
                     answerId={key.type}
-                    answerType = {props.answerType}
-                    answer={props.answer}
-                    questionId={props.questionId}
-                    onAnswerSelected={props.onAnswerSelected}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
                   />
                 );
 
@@ -74,10 +81,10 @@ function Questionnaire(props) {
                   <AnswerFeedback
                     answerContent={key}
                     answerId={key.type}
-                    answerType = {props.answerType}
-                    answer={props.answer}
-                    questionId={props.questionId}
-                    onAnswerSelected={props.onAnswerSelected}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
                   />
                 );
 
@@ -88,10 +95,10 @@ function Questionnaire(props) {
                   <AnswerSlider
                     min={key.min}
                     max={key.max}
-                    answerType = {props.answerType}
-                    answer={props.answer}
-                    questionId={props.questionId}
-                    onAnswerSelected={props.onAnswerSelected}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
                   />
                 );
 
@@ -100,10 +107,10 @@ function Questionnaire(props) {
             return (
                   <AnswerMultiple
                     answerContent={key}
-                    answerType = {props.answerType}
-                    answer={props.answer}
-                    questionId={props.questionId}
-                    onAnswerSelected={props.onAnswerSelected}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
                   />
                 );
 
@@ -112,28 +119,28 @@ function Questionnaire(props) {
             return (
                   <FeedbackButton
                     answerContent={key}
-                    answerType = {props.answerType}
-                    answer={props.answer}
-                    questionId={props.questionId}
-                    onAnswerSelected={props.onAnswerSelected}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
                   />
                 );
 
           break;
           default:
-              console.log("Incorrect Type: " + props.answerType);
+              console.log("Incorrect Type: " + this.props.answerType);
       }
 
 
     }
 
-    function renderAll(){
-      switch(props.answerType) {
+    renderBetaOrNotGeneral(){
+      switch(this.props.answerType) {
         case 'Feedback':
           return(
                   <div className="quiz" style={{color:'white', textAlign:'center', background:'DimGray',  paddingTop:20}}>
                     BETA-TEST QUESTION
-                    <Question content={props.question} />
+                    <Question content={this.props.question} />
 
                     <ReactCSSTransitionGroup
                      className="container"
@@ -145,7 +152,7 @@ function Questionnaire(props) {
                      transitionAppearTimeout={500}
                     >
                       <Container centered className="answerOptions">
-                        {props.answerOptions.map(renderAnswerOptions)}
+                        {this.props.answerOptions.map(this.renderAnswerOptions, this)}
                       </Container>
                     </ReactCSSTransitionGroup>
                   </div>
@@ -156,7 +163,7 @@ function Questionnaire(props) {
             return(
                     <div className="quiz" style={{color:'white', textAlign:'center', background:'DimGray', paddingTop:20}}>
                       BETA-TEST QUESTION
-                      <Question content={props.question} />
+                      <Question content={this.props.question} />
 
                       <ReactCSSTransitionGroup
                        className="container"
@@ -168,7 +175,7 @@ function Questionnaire(props) {
                        transitionAppearTimeout={500}
                       >
                         <Container centered className="answerOptions">
-                          {props.answerOptions.map(renderAnswerOptions)}
+                          {this.props.answerOptions.map(this.renderAnswerOptions, this)}
                         </Container>
                       </ReactCSSTransitionGroup>
                     </div>
@@ -180,15 +187,15 @@ function Questionnaire(props) {
             return(
                     <div className="quiz">
                       <Dialog
-                        windowHeigth = {props.windowHeigth}
-                        windowWidth = {props.windowWidth}
-                        content = {props.dialog}
+                        windowHeigth = {this.props.windowHeigth}
+                        windowWidth = {this.props.windowWidth}
+                        content = {this.props.dialog}
                       />
                       <QuestionCount
-                        counter={props.questionId}
-                        total={props.questionTotal}
+                        counter={this.props.questionId}
+                        total={this.props.questionTotal}
                       />
-                      <Question content={props.question} />
+                      <Question content={this.props.question} />
 
                       <ReactCSSTransitionGroup
                        className="container"
@@ -200,7 +207,7 @@ function Questionnaire(props) {
                        transitionAppearTimeout={500}
                       >
                         <Container centered className="answerOptions">
-                          {props.answerOptions.map(renderAnswerOptions)}
+                          {this.props.answerOptions.map(this.renderAnswerOptions, this)}
                         </Container>
                       </ReactCSSTransitionGroup>
                     </div>
@@ -210,13 +217,13 @@ function Questionnaire(props) {
 
         }
       }
+      render(){
+         return (
+           <div>
+            {this.renderBetaOrNotGeneral()}
+          </div>
+         )};
 
-   return (
-     <div>
-      {renderAll()}
-
-    </div>
-   );
  }
 
 

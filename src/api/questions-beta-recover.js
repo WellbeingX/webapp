@@ -113,7 +113,7 @@ var questionBetaRecover = [
   },
   {
       dialog: "Ok, /name, I have a few questions that will help to match you with the right things",
-      question: "Starting with two super easy questions... what’s you gender?",
+      question: "Starting with two super easy questions... what’s your gender?",
       answerType: 'Button',
       answers: [
           {
@@ -183,6 +183,79 @@ var questionBetaRecover = [
     }],
       comments:' '
   },
+
+    {
+        dialog: "Over the past two weeks...",
+        question: "How many times have you been bothered by having little interest or pleasure in doing things?",
+        answerType:'Button',
+        answers: [
+            {
+                type: "5",
+                content: "nearly every day"
+            },
+            {
+                type: "4",
+                content: "more than half days"
+            },
+            {
+                type: "3",
+                content: "several days"
+            },
+            {
+                type: "2",
+                content: "not at all"
+            }
+        ],
+        comments:' '
+    },
+    {
+        dialog: "Over the past two weeks...",
+        question: "How many times have you been bothered by feeling down, depressed and hopeless?",
+        answerType:'Button',
+        answers: [
+            {
+                type: "5",
+                content: "nearly every day"
+            },
+            {
+                type: "4",
+                content: "more than half days"
+            },
+            {
+                type: "3",
+                content: "several days"
+            },
+            {
+                type: "2",
+                content: "not at all"
+            }
+        ],
+        comments:' '
+    },
+    {
+        dialog: "Life is full of transitions...",
+        question: "Have any of the following happened to you recently?",
+        answerType:'Button',
+        answers: [
+            {
+                type: "1",
+                content: "moved house"
+            },
+            {
+                type: "2",
+                content: "lost job"
+            },
+            {
+                type: "3",
+                content: "bereavement"
+            },
+            {
+                type: "2",
+                content: "not at all"
+            }
+        ],
+        comments:' '
+    },
   {
       dialog: "On to sleep",
       question: "In the past week, how many nights have you had a problem with your sleep?",
@@ -266,18 +339,6 @@ var questionBetaRecover = [
           {
               type: "6",
               content: "pass"
-          }
-      ],
-      comments:' '
-  },
-  {
-      dialog: "This may be harder to answer",
-      question: "Think about what helps you wake up in the morning: work, religion, caring, raising kids etc. How satisfied are you with your life right now?",
-      answerType:'Slider',
-      answers: [
-          {
-              min: 0,
-              max: 7
           }
       ],
       comments:' '
@@ -440,8 +501,39 @@ var questionBetaRecover = [
       comments:' '
   },
   {
+      dialog: "BETA-TEST Feedback",
+      question: " Would you ask:",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
+          {
+              type: "1",
+              content: "Less question",
+              text: "Less question",
+              value: "Less question",
+              key:1
+          },
+          {
+              type: "2",
+              content: "Same",
+              text: "Same",
+              value: "Same",
+              key:2
+          },
+          {
+              type: "3",
+              content: "More questions",
+              text: "More questions",
+              value: "More questions",
+              key:3
+          }
+        ],
+      }],
+      comments:' '
+  },
+  {
       dialog: " BETA-TEST Feedback",
-      question: " Was answering the quesitons easy?",
+      question: " Was answering the questions easy?",
       answerType:'FeedbackButton',
       answers: [ {
         multiple: [

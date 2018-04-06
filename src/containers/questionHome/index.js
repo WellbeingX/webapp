@@ -20,6 +20,8 @@ import {
 } from '../../reducers/counter'
 import {setLastAnswer, setName, setPath} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
+import ScrollToTop from '../scrollToTops'
+
 
 var nameQuestion=2;
 var quizQuestions =[];
@@ -34,11 +36,10 @@ class QuestionHome extends React.Component {
        dialog:'',
        answerOptions: [],
        answer: '',
-       answersCount: {
-         nintendo: 0,
-         microsoft: 0,
-         sony: 0
-       },
+       answerId:1,
+       timeStamp:'',
+       beta:false,
+       journey:'improvement',
        result: '',
        width: 0,
        height: 0,
@@ -52,17 +53,20 @@ class QuestionHome extends React.Component {
 
 
     componentWillMount() {
+      // The current path is stored in the STORE in order to inform every component in which path we are (to be moved to the ROUTER component)
       this.props.setPath(this.props.location.pathname)
-
-      // Select the cases INFORMATION | SOLUTION | IDK
+      window.scrollTo(0, 0);
+      // Listener to the screen size
       this.updateWindowDimensions();
       window.addEventListener('resize', this.updateWindowDimensions);
 
-      // Qui il PAth
+      // Here the PATH is sent to the Google Analytics
       console.log('[questionHome] componentWillMount: Qui il path:');
       console.log(this.props.location.pathname);
       ReactGA.pageview(this.props.location.pathname);
 
+
+      // Depending on the path the user is sent to a different journey, that means different questions
 
       switch(this.props.location.pathname){
         case "/information/beta/recover":
@@ -110,20 +114,6 @@ class QuestionHome extends React.Component {
           comments: quizQuestions[0].comments
         });
         break;
-        case "/information#":
-        this.setState({
-
-              counter : 2
-
-        });
-        break;
-        case "/beta":
-        this.setState({
-
-            counter : 4
-
-        });
-        break;
         default:
           console.log('Beccato info');
           this.setState({
@@ -148,19 +138,18 @@ class QuestionHome extends React.Component {
        console.log('AnswerSelected is:');
        console.log(event.currentTarget.id
        );
-       this.setUserAnswer(event.currentTarget.value);
 
        // HERE IT PUTS THE ANSWER IN THE STORE
        this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
 
-       // NAME CHECK
+       // Here stores the Name in the state in case the question has the comment 'name'
        if((this.state.comments === 'name')){
          this.props.setName(event.currentTarget.id)}
 
        if (this.state.questionId < quizQuestions.length) {
-           setTimeout(() => this.setNextQuestion(), 300);
+           setTimeout(() => this.setNextQuestion(), 0);
        } else {
-           setTimeout(() => this.setResults(this.getResults()), 300);
+           setTimeout(() => this.setResults(this.getResults()), 0);
        }
      }
 
@@ -220,8 +209,10 @@ class QuestionHome extends React.Component {
 
 
   renderQuiz() {
+
     return (
       <Questionnaire
+        scrollUp={this.props.scrollUp}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
@@ -247,17 +238,13 @@ class QuestionHome extends React.Component {
 
 
   render(){
-
     return(
 
       <div className="questionHome" >
-              <div className="App-header">
-
-              </div>
-
-
+            <ScrollToTop>
+                <div className="App-header" />
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
-
+              </ScrollToTop>
         </div>
 
     )

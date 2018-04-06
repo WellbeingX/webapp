@@ -101,7 +101,7 @@ var questionImprove = [
 },
 {
     dialog: "Ok, /name, I have a few questions that will help to match you with the right things",
-    question: "Starting with two super easy questions... what’s you gender?",
+    question: "Starting with two super easy questions... what’s your gender?",
     answerType: 'Button',
     answers: [
         {

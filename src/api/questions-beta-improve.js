@@ -112,7 +112,7 @@ var questionBetaImprove = [
   },
   {
       dialog: "Ok, /name, I have a few questions that will help to match you with the right things",
-      question: "Starting with two super easy questions... what’s you gender?",
+      question: "Starting with two super easy questions... what’s your gender?",
       answerType: 'Button',
       answers: [
           {
@@ -319,18 +319,6 @@ var questionBetaImprove = [
       comments:' '
   },
   {
-      dialog: "This may be harder to answer",
-      question: "Think about what helps you wake up in the morning: work, religion, caring, raising kids etc. How satisfied are you with your life right now?",
-      answerType:'Slider',
-      answers: [
-          {
-              min: 0,
-              max: 7
-          }
-      ],
-      comments:' '
-  },
-  {
       dialog: "",
       question: "Which of the following are working at the moment? (Select as many as you want)",
       answerType:'Multiple',
@@ -489,6 +477,37 @@ var questionBetaImprove = [
   },
   {
       dialog: "BETA-TEST Feedback",
+      question: " Would you ask:",
+      answerType:'FeedbackButton',
+      answers: [ {
+        multiple: [
+          {
+              type: "1",
+              content: "Less question",
+              text: "Less question",
+              value: "Less question",
+              key:1
+          },
+          {
+              type: "2",
+              content: "Same",
+              text: "Same",
+              value: "Same",
+              key:2
+          },
+          {
+              type: "3",
+              content: "More questions",
+              text: "More questions",
+              value: "More questions",
+              key:3
+          }
+        ],
+      }],
+      comments:' '
+  },
+  {
+      dialog: " BETA-TEST Feedback",
       question: " Was answering the questions easy?",
       answerType:'FeedbackButton',
       answers: [ {
@@ -519,7 +538,7 @@ var questionBetaImprove = [
       comments:' '
   },
   {
-      dialog: "BETA-TEST Feedback",
+      dialog: " BETA-TEST Feedback",
       question: " Were there any question you did not understand?",
       answerType:'FeedbackButton',
       answers: [ {
@@ -550,7 +569,7 @@ var questionBetaImprove = [
       comments:' '
   },
   {
-      dialog: "BETA-TEST Feedback",
+      dialog: " BETA-TEST Feedback",
       question: " Did you like being called by name?",
       answerType:'FeedbackButton',
       answers: [ {
@@ -574,38 +593,7 @@ var questionBetaImprove = [
       comments:' '
   },
   {
-      dialog: "BETA-TEST Feedback",
-      question: " Would you ask:",
-      answerType:'FeedbackButton',
-      answers: [ {
-        multiple: [
-          {
-              type: "1",
-              content: "Less quesitons",
-              text: "Less quesitons",
-              value: "Less quesitons",
-              key:1
-          },
-          {
-              type: "2",
-              content: "Same",
-              text: "Same",
-              value: "Same",
-              key:2
-          },
-          {
-              type: "3",
-              content: "More questions",
-              text: "More questions",
-              value: "More questions",
-              key:3
-          }
-        ],
-      }],
-      comments:' '
-  },
-  {
-      dialog: "BETA-TEST Feedback",
+      dialog: " BETA-TEST Feedback",
       question: " What do you expect to see after all the questions?",
       answerType: 'Feedback',
       answers: [
