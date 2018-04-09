@@ -48,8 +48,18 @@ h2{
 .inputRange{
 
 }
+@media (min-width: 1401px) {
+  body{
+    font-size: 22px;
+  }
+  .desktopSectionFirstRowCell{
+    line-height: 1.2rem;
+  }
+  .desktopSectionSubTitle{
+    padding-bottom: .5rem;
 
-
+  }
+}
 @media (max-width: 1400px) {
   h2{
     font-family: 'Quicksand', sans-serif;
@@ -151,15 +161,18 @@ p{
   list-style: none;
 }
 .landingTitle{
-  text-align:left;
-   font-size:1rem;
-    font-weight: 900;
-     color:white;
-      border-radius:20;
-       padding:0;
-       padding-left: 50px;
-       margin-bottom: -10px;
+   text-align:left;
+   font-size:1.1rem;
+   font-weight: 900;
+   color:white;
+   border-radius:20;
+   padding:0;
+   padding-left: 50px;
+   margin-bottom: -10px;
+   font-family: 'Quicksand', sans-serif;
+
 }
+
 p.landingTitle{
   margin-bottom: -10px;
 }

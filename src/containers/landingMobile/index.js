@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch, Redirect } from 'react-router-dom'
 import Home from '../home'
 import About from '../about'
 import InputB from '../inputBody';
@@ -27,15 +27,15 @@ import ScrollToTop from '../scrollToTops'
             <div className="body">
                   <main>
                       <ScrollToTop>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/information/recover" render={()=><QuestionHome location={{pathname:'/information/recover'}} /> }  />
-                        <Route exact path="/information/improve" component={QuestionHome} />
-                        <Route exact path="/information/beta/recover" component={QuestionHome} />
-                        <Route exact path="/information/beta/improve" component={QuestionHome} />
-                        <Route exact path="/directory" component={Directory}  />
-                        <Route exact path="/idk" component={QuestionHome} />
-                        <Route exact path="/about-us" component={About} />
-                        <Route exact path="/report" component={EmailRequest} />
+                        <Switch>
+                          <Route exact path="/" component={Home} />
+                          <Route exact path="/information/recover" render={()=><QuestionHome location={{pathname:'/information/recover'}} /> }  />
+                          <Route exact path="/information/improve" component={QuestionHome} />
+                          <Route exact path="/information/beta/recover" component={QuestionHome} />
+                          <Route exact path="/information/beta/improve" component={QuestionHome} />
+                          <Route exact path="/directory" component={Directory}  />
+                          <Redirect to="/" />
+                        </Switch>
                       </ScrollToTop>
                   </main>
 

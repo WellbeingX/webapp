@@ -68,7 +68,7 @@ class Home extends Component {
                     <Grid.Row   style={{margin:0, padding:0}}>
 
                     <p className='landingTitle' style={{paddingBottom:80, paddingTop:50, marginRight:20}}>
-                      Find the best ways to improve your state of mind
+                      Welcome to BetterSpace
                     </p>
 
                     <p className='landingTitle' >

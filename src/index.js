@@ -12,7 +12,7 @@ const backColor = {color:'white', padding:0, margin:0}
 
 render(
   <Provider store={store}>
-    <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>
+    <ConnectedRouter history={history}>
       <div   style={backColor}>
         <App />
       </div>

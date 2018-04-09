@@ -136,13 +136,12 @@ class QuestionHome extends React.Component {
 
      handleAnswerSelected(event) {
        console.log('AnswerSelected is:');
-       console.log(event.currentTarget.id
-       );
+       console.log(event.currentTarget.id);
 
-       // HERE IT PUTS THE ANSWER IN THE STORE
-       this.props.setLastAnswer([this.state.questionId,event.currentTarget.id])
+       // HERE IT PUTS THE ANSWER IN THE STORE and in FIREBASE
+       this.props.setLastAnswer([this.state.questionId,this.state.question,event.currentTarget.id,event.currentTarget.answer])
 
-       // Here stores the Name in the state in case the question has the comment 'name'
+       // Here stores the Name in the state in case the question has the COMMENT == 'name'
        if((this.state.comments === 'name')){
          this.props.setName(event.currentTarget.id)}
 
