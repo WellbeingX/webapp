@@ -417,7 +417,7 @@ var questionImprove = [
 },
 {
     dialog: "",
-    question: "Would you like to hook up with people with similar objectives to you?",
+    question: "Would you like to hang out with people with similar objectives to you?",
     answerType:'Button',
     answers: [
         {

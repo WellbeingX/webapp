@@ -476,6 +476,26 @@ var questionBetaImprove = [
       comments:' '
   },
   {
+      dialog: "",
+      question: "Would you like to hang out with people with similar objectives to you?",
+      answerType:'Button',
+      answers: [
+          {
+              type: "1",
+              content: "Yes"
+          },
+          {
+              type: "2",
+              content: "Maybe"
+          },
+          {
+              type: "3",
+              content: "Not really"
+          }
+      ],
+      comments:' '
+  },
+  {
       dialog: "BETA-TEST Feedback",
       question: " Would you ask:",
       answerType:'FeedbackButton',

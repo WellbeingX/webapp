@@ -182,7 +182,7 @@ div.ui.grid.landingWrapper {
   margin:auto;
   width: 250px;
   padding:15px 25px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,1);
   border-radius: 50px;
   border-width: 1px;
   border-color: white;
