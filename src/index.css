@@ -208,13 +208,14 @@ div.ui.grid.landingWrapper {
   background: rgba(255,255,255,0);
   text-decoration: underline;
   text-transform: capitalize;
+  opacity:1;
 
 }
 
 .button.ui.button.Active{
-  border-color: orange;
-
-  color: orange;
+  border-color: #249ECD;
+  opacity:.7;
+  /* color: orange; */
 
 }
 
