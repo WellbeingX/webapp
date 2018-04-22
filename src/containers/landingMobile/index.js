@@ -22,7 +22,10 @@ import ScrollToTop from '../scrollToTops'
         <div >
 
           <div style={{backgroundImage: 'linear-gradient(-20deg, #96D0A7, #249ECD)'}}>
-            <HeaderUs/>
+          <main>
+            <Route exact path="/" component={HeaderUs} />
+            <Route path="/information/" component={HeaderUs} />
+          </main>
 
             <div className="body">
                   <main>

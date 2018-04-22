@@ -1,13 +1,13 @@
-import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH} from '../actions/questionnaireActions.js'
+import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH, SET_SESSION_START} from '../actions/questionnaireActions.js'
 
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 
+
 export const initialState = {
-  isIncrementing: false,
-  isDecrementing: false,
+  sessionName: '',
   count: 0,
   questionId: 1,
   question: '',
@@ -25,32 +25,12 @@ export const initialState = {
 export default (state = initialState, action) => {
 
   switch (action.type) {
-    case INCREMENT_REQUESTED:
-      return {
-        ...state,
-        isIncrementing: true
-      }
-
-    case INCREMENT:
-      return {
-        ...state,
-        count: state.count + 1,
-        isIncrementing: !state.isIncrementing
-      }
-
-    case DECREMENT_REQUESTED:
-      return {
-        ...state,
-        isDecrementing: true
-      }
-
-    case DECREMENT:
-      return {
-        ...state,
-        count: state.count - 1,
-        isDecrementing: !state.isDecrementing
-      }
-
+      case SET_SESSION_START:
+        console.log("Assigning this session the name: " + action.data.sessionName);
+        return {
+          ...state,
+          sessionName: action.data.sessionName
+        }
       case SET_EMAIL:
       console.log("Sono arrivato al reducer SET_EMAIL: " + action.data);
         return {

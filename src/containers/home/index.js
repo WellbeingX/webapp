@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../reducers/counter'
 import { Container, Button, Grid , Checkbox} from 'semantic-ui-react'
-import {setPath} from '../../actions/questionnaireActions'
+import {setPath, setSessionStart} from '../../actions/questionnaireActions'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
 import Carousel from '../carousel';
@@ -49,6 +43,13 @@ class Home extends Component {
     else this.setState({address :'information/'});
   }
 
+  handleMainButtons(journey){
+    let sessionName = 'session_' + Date();
+    let sessionType = journey;
+    this.props.setSessionStart({'sessionName':sessionName, 'sessionType':sessionType});
+    this.props.changePage(this.state.address + journey);
+  }
+
   render() {
 
 
@@ -79,37 +80,37 @@ class Home extends Component {
                     </Grid.Row>
 
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover') } >have clearer thinking</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover') } >have clearer thinking</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >be better at coping</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >be better at coping</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/improve')} >feel inspired</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >feel inspired</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/recover')} >beat depression</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat depression</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/recover')} >beat addiction</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat addiction</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >beat anxiety</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat anxiety</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address+ '/improve')} >perform better at work</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >perform better at work</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >feel less lonely</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >feel less lonely</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/improve')} >be more successful</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >be more successful</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/recover')} >have better sleep</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >have better sleep</Button>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.props.changePage(this.state.address + '/improve')} >do more exercise</Button>
+                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >do more exercise</Button>
                     </Grid.Row>
 
 
@@ -128,17 +129,12 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
   setPath,
+  setSessionStart,  
   changePage: (textInput) => push('/' + textInput)
 }, dispatch)
 

@@ -59,7 +59,7 @@ export function setLastAnswer(data){
                 return response.json();
                 }).then(function(data){
                   ipAddress = data.ip;
-                  fire.database().ref('messages/' + ipAddress.split('.').join('') ).push( {answer});
+                  fire.database().ref('messages/' + ipAddress.split('.').join('') + '/' + data.sessionName).push( {answer});
                 }).then(function(){
                   console.log('Answer');
                 }).catch(function(error) {

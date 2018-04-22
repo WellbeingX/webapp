@@ -39,19 +39,7 @@ import {
 
 
 
-    logoSet(){
-      if (true){
-        return(
-        <Grid.Column floated='left' width={5}>
-          <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20}}>BetterSpace</h2>
-        </Grid.Column>)
-      }else{
-        return(
-        <Grid.Column floated='left' width={5} className="headerLogo">
-          <h2 className="logo" style={{ fontWeight:'900', zIndex:100, color:'#249ECD', padding:20}}>BetterSpace</h2>
-        </Grid.Column>)
-      }
-    }
+
 
 
     render() {
@@ -78,19 +66,18 @@ import {
 
         return(
                 <div style={styleWrapper}>
-                  <Grid className="headerBar" style={{paddingTop:10}}>
-                      {this.logoSet()}
-                      <Grid.Column floated='right' width={10}>
 
-                        <div style={{position:'relative', marginTop:-10}}>
-                          <svg style={styleSVG}>
-
-                              <circle cx={cX} cy={cY} r={r} fill="white" />
-
-                          </svg>
+                  <div style={{textAlign:'center', width:'100%', position:'relative'}}>
+                      <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
+                      <div style={{position:'absolute', right:0, width:100, height:100, top:0}}>
+                        <div style={{position:'relative', width:'100%', height:'100%'}}>
+                        <svg style={styleSVG}>
+                          <circle cx={cX} cy={cY} r={r} fill="white" style={{width:100, height:100}}/>
+                        </svg>
                         </div>
-                      </Grid.Column>
-                  </Grid>
+                      </div>
+                  </div>
+
                 </div>
               )
 }
@@ -114,6 +101,26 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HeaderUs)
+
+// <Grid className="headerBar" style={{paddingTop:10}}>
+//     <Grid.Column floated='left' width={5}>
+//         <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20}}>///</h2>
+//     </Grid.Column>
+//     <Grid.Column floated='center' width={5}>
+//         <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
+//     </Grid.Column>
+//
+//     <Grid.Column floated='right' width={5}>
+//
+//       <div style={{position:'relative', marginTop:-10}}>
+//         <svg style={styleSVG}>
+//
+//             <circle cx={cX} cy={cY} r={r} fill="white" />
+//
+//         </svg>
+//       </div>
+//     </Grid.Column>
+// </Grid>
 
 // <Link to="/">Home</Link>
 // <Link to="/about-us">About </Link>

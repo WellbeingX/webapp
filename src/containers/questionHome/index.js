@@ -12,12 +12,6 @@ import About from '../about'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../reducers/counter'
 import {setLastAnswer, setName, setPath} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
@@ -139,7 +133,7 @@ class QuestionHome extends React.Component {
        console.log(event.currentTarget.id);
 
        // HERE IT PUTS THE ANSWER IN THE STORE and in FIREBASE
-       this.props.setLastAnswer([this.state.questionId,this.state.question,event.currentTarget.id,event.currentTarget.answer])
+       this.props.setLastAnswer([this.state.questionId,this.state.question,event.currentTarget.id,event.currentTarget.answer, this.props.counter.sessionName])
 
        // Here stores the Name in the state in case the question has the COMMENT == 'name'
        if((this.state.comments === 'name')){
@@ -173,11 +167,9 @@ class QuestionHome extends React.Component {
      setNextQuestion() {
        const counter = this.state.counter + 1;
        const questionId = this.state.questionId + 1;
-       increment;
        console.log("Incrementando");
        console.log(this.props);
        console.log(this.state);
-       this.props.increment();
        // Name replacement in case was submitted
        this.nameCheck(counter);
 
@@ -262,7 +254,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   setLastAnswer,
   setName,
-  increment,
   setPath,
   changePage: (text) => push('/' + text)
 }, dispatch)
