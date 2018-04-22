@@ -90,7 +90,7 @@ class Home extends Component {
                 <Grid  className='landingWrapper' >
                     <Grid.Row   style={{margin:0, padding:0}}>
                         <p className='landingTitle' style={{ paddingTop:50, marginRight:20}}>
-                          Welcome to BetterSpace
+                          Hi. Tell me about yourself and I'll help you find what to do for your state of mind.
                         </p>
 
                         <p className='landingTitle' >
@@ -133,7 +133,7 @@ class Home extends Component {
                     <HomeButton  label='do more exercise' type="improve" click={this.handleButton}/>
                     </Grid.Row>
 
-                    <Button className='landingButton'  onClick={this.handleButtonNext.bind(this)} > Next </Button>
+                    <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > Next </Button>
 
 
 

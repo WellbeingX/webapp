@@ -22,7 +22,7 @@ export default function FooterHome(){
           </Grid.Row>
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
-                <p className='landingTextFooterHow'> 1. Select one of the above and answer a few questions about yourself</p>
+                <p className='landingTextFooterHow'> 1. Select from above and answer a few questions about yourself</p>
             </Grid.Column>
             <Grid.Column style={{width:'27%', padding:20, paddingTop:0, marginTop:10}}>
                 <Paper />

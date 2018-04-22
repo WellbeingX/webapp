@@ -196,6 +196,21 @@ div.ui.grid.landingWrapper {
   box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
 }
 
+.button.ui.button.landingButtonNext{
+  margin:auto;
+  width: 250px;
+  padding:15px 25px;
+  text-align: center;
+  color: white;
+  font-family: 'Quicksand',sans-serif ;
+  margin-top: 20px;
+  font-size: .8rem;
+  background: rgba(255,255,255,0);
+  text-decoration: underline;
+  text-transform: capitalize;
+
+}
+
 .button.ui.button.landingButtonActive{
   margin:auto;
   width: 250px;
@@ -545,8 +560,7 @@ Input{
 }
 
 .logo{
-  -webkit-text-stroke: 2px white;
-  text-shadow: 0px 0px 2px rgba(255, 255, 255, .1);
+  -webkit-text-stroke: 1.5px white;
 }
 
 .logoReplacementWrapper{
