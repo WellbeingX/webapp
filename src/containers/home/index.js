@@ -6,8 +6,7 @@ import { Container, Button, Grid , Checkbox} from 'semantic-ui-react'
 import {setPath, setSessionStart} from '../../actions/questionnaireActions'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
-import Carousel from '../carousel';
-
+import HomeButton from '../homeButton'
 
 
 
@@ -15,9 +14,10 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 , address:'information'};
+    this.state = { width: 0, height: 0 , address:'information', recover:0, improve:0};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.handleBeta = this.handleBeta.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +50,28 @@ class Home extends Component {
     this.props.changePage(this.state.address + journey);
   }
 
+  handleButton(id, state){
+    console.log(id);
+    switch(id){
+      case 'recover':
+        if(state)this.setState({recover:this.state.recover+1});
+        else this.setState({recover:this.state.recover-1});
+      break;
+      case 'improve':
+        if(state)this.setState({improve:this.state.recover+1});
+        else this.setState({improve:this.state.recover-1});
+      break;
+    }
+    console.log(this.state);
+  }
+
+  handleButtonNext(){
+    if(this.state.recover>0)
+      this.handleMainButtons('/recover');
+    else
+      this.handleMainButtons('/improve');
+  }
+
   render() {
 
 
@@ -67,52 +89,51 @@ class Home extends Component {
           >
                 <Grid  className='landingWrapper' >
                     <Grid.Row   style={{margin:0, padding:0}}>
+                        <p className='landingTitle' style={{ paddingTop:50, marginRight:20}}>
+                          Welcome to BetterSpace
+                        </p>
 
-                    <p className='landingTitle' style={{paddingBottom:80, paddingTop:50, marginRight:20}}>
-                      Welcome to BetterSpace
-                    </p>
-
-                    <p className='landingTitle' >
-                      I want to...
-                    </p>
-
-
+                        <p className='landingTitle' >
+                          I want to:
+                        </p>
                     </Grid.Row>
 
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover') } >have clearer thinking</Button>
+                      <HomeButton  label="have clearer thinking" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >be better at coping</Button>
+                    <HomeButton  label="have better sleep" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >feel inspired</Button>
+                      <HomeButton  label='feel inspired' type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat depression</Button>
+                      <HomeButton  label="beat depression" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat addiction</Button>
+                      <HomeButton  label="beat addiction" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >beat anxiety</Button>
+                      <HomeButton  label="beat anxiety" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >perform better at work</Button>
+                      <HomeButton  label='perform better at work' type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >feel less lonely</Button>
+                        <HomeButton  label="be better at coping" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >be more successful</Button>
+                      <HomeButton  label="feel less lonely" type="recover" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/recover')} >have better sleep</Button>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                        <Button className='landingButton'  onClick={() => this.handleMainButtons('/improve')} >do more exercise</Button>
+                    <HomeButton  label='be more successful' type="improve" click={this.handleButton}/>
                     </Grid.Row>
 
+                    <Grid.Row   style={{margin:0, padding:0}}>
+                    <HomeButton  label='do more exercise' type="improve" click={this.handleButton}/>
+                    </Grid.Row>
+
+                    <Button className='landingButton'  onClick={this.handleButtonNext.bind(this)} > Next </Button>
 
 
 
@@ -134,7 +155,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setPath,
-  setSessionStart,  
+  setSessionStart,
   changePage: (textInput) => push('/' + textInput)
 }, dispatch)
 

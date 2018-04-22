@@ -68,7 +68,7 @@ import {
                 <div style={styleWrapper}>
 
                   <div style={{textAlign:'center', width:'100%', position:'relative'}}>
-                      <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
+                      <h2 className="logo" style={{ fontSize:'1.2rem', fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>Better Space</h2>
                       <div style={{position:'absolute', right:0, width:100, height:100, top:0}}>
                         <div style={{position:'relative', width:'100%', height:'100%'}}>
                         <svg style={styleSVG}>
