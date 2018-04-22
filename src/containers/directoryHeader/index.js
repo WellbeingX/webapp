@@ -74,14 +74,9 @@ class DirectoryHeader extends React.Component {
   return(
       <div className='logoReplacementWrapper'>
       <Container>
-          <p className= 'logoReplacement'>BetterSpace</p>
-          <svg style={this.styleSVG}>
 
-              <circle cx={this.cX} cy={this.cY} r={this.r} fill="white" />
 
-          </svg>
-
-          <Grid columns={3} style={{paddingTop:10}}>
+          <Grid columns={3} style={{paddingTop:75}}>
             <Grid.Column center style={{textAlign:'center', padding:'1rem 0'}} onClick={()=>{this.props.setDigital(); this.setDigital();}}>
                 <div className='directoryIcon' style={{ background: this.state.digital}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 115.49" style={{stroke:this.state.digitalSVG, height:40, marginTop:3, fill:'none', strokeMiterlimit:10, strokeWidth:4}} >

@@ -5,6 +5,7 @@ import About from '../about'
 import InputB from '../inputBody';
 import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
 import HeaderUs from '../header'
+import HeaderWhite from '../headerWhite'
 import DebuggingBar from '../debuggingBar'
 import QuestionHome from '../questionHome'
 import Directory from '../directory'
@@ -24,7 +25,8 @@ import ScrollToTop from '../scrollToTops'
           <div style={{backgroundImage: 'linear-gradient(-20deg, #96D0A7, #249ECD)'}}>
           <main>
             <Route exact path="/" component={HeaderUs} />
-            <Route path="/information/" component={HeaderUs} />
+            <Route exact path="/directory" component={HeaderUs} />
+            <Route path="/information/" component={HeaderWhite} />
           </main>
 
             <div className="body">

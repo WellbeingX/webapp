@@ -9,19 +9,19 @@ import {
   decrement,
   decrementAsync
 } from '../../reducers/counter'
-import BurgerIcon from './burger'
-import HeaderMenu from './headerMenu'
+import BurgerIcon from '../header/burger'
+import HeaderMenu from '../header/headerMenu'
 
 
 
-  class HeaderUs extends React.Component {
+  class HeaderWhite extends React.Component {
 
 
 
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0, marginRight:0, heightCircle:100, widthCircle:100, opacity:1, menu:false, position:'absolute'};
+      this.state = { width: 0, height: 0, marginRight:0, heightCircle:100, widthCircle:100, opacity:0, menu:false, position:'absolute'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.componentDidMount = this.componentDidMount.bind(this);
       this.burgerHandle = this.burgerHandle.bind(this);
@@ -63,7 +63,7 @@ import HeaderMenu from './headerMenu'
       this.setState({
         heightCircle:100,
         widthCircle:100,
-        opacity:1,
+        opacity:0,
         menu:!this.state.menu,
         position:'absolute'
       })
@@ -72,28 +72,26 @@ import HeaderMenu from './headerMenu'
 
     render() {
 
-        var styleWrapper={marginTop:0, paddingTop:0, position:'relative', zIndex:40}
+        var styleWrapper={marginTop:0, paddingTop:0, position:'absolute',top:0, left:0, color:'black', zIndex:50, width:'100%'}
         var styleCircle = {right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, position:'absolute', borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
 
 
         return(
-                <div style={styleWrapper}>
-                  <div style={{position:'absolute',left:20, top:15, zIndex:998}}>
-                    <BurgerIcon onClick={this.burgerHandle}/>
+          <div style={styleWrapper}>
+            <div style={{position:'absolute',left:20, top:15}}>
+              <BurgerIcon onClick={this.burgerHandle} color='#EEE' />
+            </div>
+            <div style={{textAlign:'center', width:'100%', position:'relative'}}>
+                <div style={{position:'absolute', right:0, width:this.state.widthCircle, height:100, top:0}}>
+                  <div style={{position:'relative', width:'100%', height:'100%'}}>
+                    <div style={styleCircle}>
+                      {this.state.menu ? <HeaderMenu close={this.burgerClose}/> : ''}
+                    </div>
                   </div>
-                  <div style={{textAlign:'center', width:'100%', position:'relative'}}>
-
-                      <h2 className="logo" style={{ fontSize:'1.2rem', fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>Better Space</h2>
-                      <div style={{position:'absolute', right:0, width:this.state.widthCircle, height:100, top:0}}>
-                        <div style={{position:'relative', width:'100%', height:'100%'}}>
-                          <div style={styleCircle}>
-                            {this.state.menu ? <HeaderMenu close={this.burgerClose}/> : ''}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-
                 </div>
+            </div>
+
+          </div>
               )
 }
 }
@@ -115,27 +113,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HeaderUs)
-// <circle style={{ transition:'cx 0.5, r 0.5, cy 0.5'}}cx={this.state.cX} cy={this.state.cY} r={this.state.r} fill="white" />
-// <Grid className="headerBar" style={{paddingTop:10}}>
-//     <Grid.Column floated='left' width={5}>
-//         <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20}}>///</h2>
-//     </Grid.Column>
-//     <Grid.Column floated='center' width={5}>
-//         <h2 className="logo" style={{  fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
-//     </Grid.Column>
-//
-//     <Grid.Column floated='right' width={5}>
-//
-//       <div style={{position:'relative', marginTop:-10}}>
-//         <svg style={styleSVG}>
-//
-//             <circle cx={cX} cy={cY} r={r} fill="white" />
-//
-//         </svg>
-//       </div>
-//     </Grid.Column>
-// </Grid>
+)(HeaderWhite)
 
 // <Link to="/">Home</Link>
 // <Link to="/about-us">About </Link>

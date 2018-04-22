@@ -211,22 +211,11 @@ div.ui.grid.landingWrapper {
 
 }
 
-.button.ui.button.landingButtonActive{
-  margin:auto;
-  width: 250px;
-  padding:15px 25px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 50px;
-  border-width: 1px;
+.button.ui.button.Active{
   border-color: orange;
-  border-style: solid;
+
   color: orange;
-  font-family: 'Quicksand',sans-serif ;
-  margin-top: 20px;
-  font-size: .7rem;
-  -webkit-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
-  -moz-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
-  box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
+
 }
 
 
@@ -348,8 +337,7 @@ div.homeFeatIcon{
   text-align: left;
 }
 
-.questionHome{
-}
+
 .quiz{
   margin-top: 70px;
 }
@@ -558,6 +546,28 @@ Input{
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
+/* BURGER */
+.burger-menu,
+.burger-menu.open {
+  display: inline-block;
+  cursor: pointer;
+  left: 20px;
+  top: 15px;
+  z-index: 998;
+  padding: 10px;
+}
+
+.burger-menu .bar1,
+.bar2,
+.bar3 {
+  width: 23px;
+  height: 1.5px;
+  background-color: #FFF;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+
 
 .logo{
   -webkit-text-stroke: 1.5px white;

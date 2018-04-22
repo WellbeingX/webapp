@@ -20,7 +20,7 @@ export default class HomeButton extends Component {
   }
 
   render() {
-    let className = this.state.active ? 'landingButton':'landingButtonActive' ;
+    let className = this.state.active ? 'landingButton':'landingButton Active' ;
 
       return(
         <div style={{margin:'auto', padding:0}}>

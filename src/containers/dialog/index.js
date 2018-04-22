@@ -33,7 +33,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
       bigBuggleStyle = {
          width:this.wH, height:this.wH,
          marginLeft:-this.marginContainer,
-         marginTop:-this.wH,
+         marginTop:-this.wH*.9,
          background:'white',
          color:'rgb(36, 158, 205)',
          opacity:1,

@@ -231,9 +231,9 @@ class QuestionHome extends React.Component {
   render(){
     return(
 
-      <div className="questionHome" >
+      <div >
             <ScrollToTop>
-                <div className="App-header" />
+                <div  />
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
               </ScrollToTop>
         </div>
@@ -242,7 +242,6 @@ class QuestionHome extends React.Component {
   }
 }
 
-// {this.state.counter==13 ? this.props.changePage("report") : console.log('No Cambia pagina!') }
 
 
 const mapStateToProps = state => ({
