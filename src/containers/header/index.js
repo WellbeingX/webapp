@@ -1,6 +1,4 @@
 import React from 'react'
-import { Container, Button, Grid, Header, List, Segment } from 'semantic-ui-react'
-import { Route, Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
@@ -73,7 +71,7 @@ import HeaderMenu from './headerMenu'
     render() {
 
         var styleWrapper={marginTop:0, paddingTop:0, position:'relative', zIndex:40}
-        var styleCircle = {right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, position:'absolute', borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
+        var styleCircle = {right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
 
 
         return(

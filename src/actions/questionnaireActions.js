@@ -35,20 +35,22 @@ export function setPath(data){
 
 export function setLastAnswer(data){
     return (dispatch) => {
+      console.log('qui il log');
+      console.log(data.entry.questionId);
+      console.log(data);
+      // Firebase recording
+      var answer = data;
+      let sessionName = data.sessionName;
+      let questionId = data.entry.questionId;
 
 
         // GoogleAnalytics
         ReactGA.event({
-            category: data[0].toString(),
-            action: data[0].toString()
+            category: data.entry.questionId.toString(),
+            action: data.entry.questionId.toString()
         });
 
-        // Firebase recording
-        var answer = [
-          data,
-          [Date()]
-        ];
-        var ipAddress = '';
+        var ipAddress = '1.1.1.1';
         fetch('https://freegeoip.net/json/').then(function(response) {
           console.log(response);
           console.log(JSON.stringify(response, null, 2));
@@ -59,10 +61,11 @@ export function setLastAnswer(data){
                 return response.json();
                 }).then(function(data){
                   ipAddress = data.ip;
-                  fire.database().ref('messages/' + ipAddress.split('.').join('') + '/' + data.sessionName).push( {answer});
+                  fire.database().ref('messages/' + ipAddress.split('.').join('') + '/' + sessionName + '/' + questionId).set( answer);
                 }).then(function(){
                   console.log('Answer');
                 }).catch(function(error) {
+                  console.log(answer[0]);
                   console.log('There has been a problem with your fetch operation: ' + error.message);
                   });
 
@@ -78,7 +81,7 @@ export function setLastAnswer(data){
 export function setSessionStart(data){
   // This action is sent when the user first clicks on any questionnaire button on the hompege. It records on the DB the session name and the list of questions. Everything indexed under the IP address. Data contains the questions and the session name.
   return (dispatch) => {
-
+    let answer = data;
   // GoogleAnalytics
   ReactGA.event({
       category: 'Homepage',
@@ -96,8 +99,8 @@ export function setSessionStart(data){
             }
           return response.json();
           }).then(function(data){
-            ipAddress = data.ip;
-            fire.database().ref('messages/' + ipAddress.split('.').join('') + '/' + data.sessionName).push( data.questions );
+            ipAddress = data.ip
+            fire.database().ref('messages/' + ipAddress.split('.').join('') + '/ipData').set( [data.country_code, data.zip_code, data.city] );
           }).then(function(){
             console.log('Answer');
           }).catch(function(error) {

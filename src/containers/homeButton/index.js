@@ -16,7 +16,7 @@ export default class HomeButton extends Component {
 
   handleClick(event){
       this.setState({active:!this.state.active});
-          this.props.click(this.props.type, this.state.active);
+          this.props.click(this.props.type, this.state.active, this.props.label);
   }
 
   render() {

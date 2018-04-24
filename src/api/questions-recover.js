@@ -77,7 +77,7 @@
 var questionRecover = [
 
     {
-        dialog: "Hi, I’m Barbara! My job is to help people like you find the right things",
+        dialog: "Hi, I’m Barbara! Can I ask you some questions to improve my suggestions?",
         question: "What should I call you? (it doesn't need to be your real name)",
         answerType: 'TextInput',
         answers: [{
@@ -88,7 +88,7 @@ var questionRecover = [
         comments:'name'
     },
   {
-      dialog: "",
+      dialog: "Nice to meet you /name...",
       question: "What is your email?",
       answerType: 'TextInput',
       answers: [
@@ -100,8 +100,8 @@ var questionRecover = [
       comments:''
   },
   {
-      dialog: "Ok, /name, I have a few questions that will help to match you with the right things",
-      question: "Starting with two super easy questions... what’s your gender?",
+      dialog: "",
+      question: "What’s your gender?",
       answerType: 'Button',
       answers: [
           {
@@ -114,7 +114,11 @@ var questionRecover = [
           },
           {
               type: "3",
-              content: "other"
+              content: "custom"
+          },
+          {
+              type: "4",
+              content: "prefer not to say"
           }
       ],
       comments:''
@@ -163,12 +167,37 @@ var questionRecover = [
           },
           {
               type: "7",
-              content: ">65",
-              value: ">65",
+              content: "65-74",
+              value: "65-74",
               key:7
+          },
+          {
+              type: "8",
+              content: "75-84",
+              value: "75-84",
+              key:8
+          },
+          {
+              type: "9",
+              content: ">85",
+              value: ">85",
+              key:9
           }
       ],
     }],
+      comments:' '
+  },
+
+  {
+      dialog: "I am going to ask you three questions about your feelings",
+      question: "...I need to understand the severity of your mental state",
+      answerType:'Button',
+      answers: [
+          {
+              type: "1",
+              content: "next"
+          }
+      ],
       comments:' '
   },
 
@@ -178,20 +207,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "5",
-              content: "nearly every day"
-          },
-          {
-              type: "4",
-              content: "more than half days"
-          },
-          {
-              type: "3",
-              content: "several days"
+              type: "1",
+              content: "not at all"
           },
           {
               type: "2",
-              content: "not at all"
+              content: "several days"
+          },
+          {
+              type: "3",
+              content: "more than half the days"
+          },
+          {
+              type: "4",
+              content: "nearly every day"
           }
       ],
       comments:' '
@@ -202,20 +231,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "5",
-              content: "nearly every day"
-          },
-          {
-              type: "4",
-              content: "more than half days"
-          },
-          {
-              type: "3",
-              content: "several days"
+              type: "1",
+              content: "not at all"
           },
           {
               type: "2",
-              content: "not at all"
+              content: "several days"
+          },
+          {
+              type: "3",
+              content: "more than half the days"
+          },
+          {
+              type: "4",
+              content: "nearly every day"
           }
       ],
       comments:' '
@@ -227,7 +256,7 @@ var questionRecover = [
       answers: [
           {
               type: "1",
-              content: "moved house"
+              content: "moved home"
           },
           {
               type: "2",
@@ -482,6 +511,12 @@ var questionRecover = [
               type: "7",
               text: "dance",
               value: "dance",
+              key:7
+          },
+          {
+              type: "8",
+              text: "exercise",
+              value: "exercise",
               key:7
           }
       ],

@@ -1,10 +1,5 @@
 import React from 'react';
 import {Grid, Image} from 'semantic-ui-react'
-import ImagePic21 from '../../assets/images/home/pic21.png';
-import ImagePic22 from '../../assets/images/home/pic22.png';
-import ImagePic23 from '../../assets/images/home/pic23.png';
-import ImagePic51 from '../../assets/images/home/pic51.png';
-import ImagePic52 from '../../assets/images/home/pic52.png';
 import Paper from '../../assets/svg/paper.js'
 import Arrow1 from '../../assets/svg/arrow1.js'
 import People from '../../assets/svg/people.js'

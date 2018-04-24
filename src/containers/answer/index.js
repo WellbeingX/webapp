@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Grid, Input, Menu, Dropdown, Select, TextArea} from 'semantic-ui-react';
-import Slider, { Range } from 'rc-slider';
+import {Grid, Input, Dropdown, TextArea} from 'semantic-ui-react';
 
 
 
@@ -38,7 +37,7 @@ export class AnswerText extends React.Component {
     constructor(props){
       super();
       this.state={
-        name:'Sir/Madame'
+        name:''
       }
       this.handleName = this.handleName.bind(this);
     }

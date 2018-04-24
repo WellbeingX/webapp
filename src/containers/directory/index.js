@@ -1,10 +1,6 @@
 import React from 'react';
-import { Container, Grid} from 'semantic-ui-react';
 import { connect } from 'react-redux'
-import DirectorySolution from '../directorySolution';
 import { bindActionCreators } from 'redux'
-import Result from '../result'
-import resources from '../../api/resources.js'
 import DirectoryHeader from '../directoryHeader'
 import ImageBarb from '../../assets/images/home/lady.png';
 import DirectoryDigital from '../directoryDigital'
@@ -12,17 +8,6 @@ import DirectoryLocal from '../directoryLocal'
 import DirectoryProducts from '../directoryProducts'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-const characterStyle = {
-  height: 170,
-  width: 100,
-  background:'no-repeat',
-  backgroundImage: `url(${ImageBarb})`,
-  backgroundSize: 100,
-  overflow: 'hidden',
-  backgroundPosition: 'bottom right',
-  position:'absolute',
-  marginLeft:-40
-}
 
 var isActive =true;
   class Directory extends React.Component {

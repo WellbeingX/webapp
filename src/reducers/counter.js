@@ -39,8 +39,8 @@ export default (state = initialState, action) => {
         }
 
       case SET_LAST_ANSWER:
-      var arr = state.answersArray;
-      arr.push(action.data);
+        var arr = state.answersArray;
+        arr.push(action.data);
         return {
           ...state,
            answersArray: arr
