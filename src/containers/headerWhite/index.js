@@ -19,7 +19,7 @@ import HeaderMenu from '../header/headerMenu'
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0, marginRight:0, heightCircle:100, widthCircle:100, opacity:0, menu:false, position:'absolute'};
+      this.state = { width: 0, height: 0, marginRight:0, heightCircle:100, widthCircle:0, opacity:0, menu:false, position:'absolute'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.componentDidMount = this.componentDidMount.bind(this);
       this.burgerHandle = this.burgerHandle.bind(this);
@@ -53,14 +53,14 @@ import HeaderMenu from '../header/headerMenu'
         widthCircle:800,
         opacity:.95,
         menu:!this.state.menu,
-        position:'fixed'
+        position:'absolute'
       })
     }
 
     burgerClose(){
       this.setState({
         heightCircle:100,
-        widthCircle:100,
+        widthCircle:0,
         opacity:0,
         menu:!this.state.menu,
         position:'absolute'
@@ -71,7 +71,7 @@ import HeaderMenu from '../header/headerMenu'
     render() {
 
         var styleWrapper={marginTop:0, paddingTop:0, position:'absolute',top:0, left:0, color:'black', zIndex:50, width:'100%'}
-        var styleCircle = {right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
+        var styleCircle = {overflowX:'hidden', right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
 
 
         return(
