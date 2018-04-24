@@ -86,9 +86,10 @@ export class AnswerSpinner extends React.Component {
      renderSpinner(event,data){
         this.setState({
           value:data.value
-        }
+          });
 
-      );
+      console.log(data.value);
+      console.log(event);
     }
 
     render(){

@@ -160,6 +160,9 @@ class QuestionHome extends React.Component {
        quizQuestions[counter].question = quizQuestions[counter].question.replace("/name",this.props.counter.name);
      }
 
+     getResults(){
+        return '';
+     }
 
      setNextQuestion() {
        const counter = this.state.counter + 1;

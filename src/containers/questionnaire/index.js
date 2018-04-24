@@ -22,9 +22,9 @@ class Questionnaire extends React.Component {
           case 'Button':
           return (
                     <AnswerButton
-                      key={key.content}
-                      answerContent={key.content}
-                      answerId={key.type}
+                      key={key.key}
+                      answerContent={key.text}
+                      answerId={key.key}
                       answerType = {this.props.answerType}
                       answer={this.props.answer}
                       questionId={this.props.questionId}
@@ -36,11 +36,11 @@ class Questionnaire extends React.Component {
           case "List":
           return (
                     <AnswerButton
-                      key={key.content}
-                      answerContent={key.content}
-                      answerId={key.type}
+                      key={key.key}
+                      answerContent={key.text}
+                      answerId={key.key}
                       answerType = {this.props.answerType}
-                      answer={this.props.answer}
+                      answer={this.props.answerOptions}
                       questionId={this.props.questionId}
                       onAnswerSelected={this.props.onAnswerSelected}
                     />
@@ -50,9 +50,9 @@ class Questionnaire extends React.Component {
           case "TextInput":
             return (
                       <AnswerText
-                        key={key.content}
-                        answerContent={key.content}
-                        answerId={key.type}
+                        key={key.key}
+                        answerContent={key.text}
+                        answerId={key.key}
                         answerType = {this.props.answerType}
                         answer={this.props.answer}
                         questionId={this.props.questionId}
@@ -66,8 +66,7 @@ class Questionnaire extends React.Component {
             return (
                   <AnswerSpinner
                     answerContent={key}
-                    answerId={key.type}
-                    answerType = {this.props.answerType}
+                    answerId={key.key}
                     answer={this.props.answer}
                     questionId={this.props.questionId}
                     onAnswerSelected={this.props.onAnswerSelected}
@@ -80,7 +79,7 @@ class Questionnaire extends React.Component {
             return (
                   <AnswerFeedback
                     answerContent={key}
-                    answerId={key.type}
+                    answerId={key.key}
                     answerType = {this.props.answerType}
                     answer={this.props.answer}
                     questionId={this.props.questionId}

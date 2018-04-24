@@ -11,7 +11,7 @@
 //     answerType: 'TextInput',
 //     answers: [{
 //         type: 0,
-//         content: "Name..."
+//         text: "Name..."
 //     }
 //    ],
 //     comments:''
@@ -24,12 +24,12 @@
 //     answerType: 'Button',
 //     answers: [
 //         {
-//             type: "1",
-//             content: "female"
+//             key: 1,
+//             text: "female"
 //         },
 //         {
-//             type: "2",
-//             content: "male"
+//             key: 2,
+//             text: "male"
 //         }
 //     ],
 //     comments:''
@@ -43,15 +43,15 @@
 //     answers: [ {
 //       spinner: [
 //         {
-//             type: "1",
+//             key: 1,
 //             text: '<18',
-//             value: '<18',
+//             text: '<18',
 //             key:1
 //         },
 //         {
-//             type: "2",
+//             key: 2,
 //             text: "18-24",
-//             value: "18-24",
+//             text: "18-24",
 //             key:2
 //         }
 //     ],
@@ -81,8 +81,8 @@ var questionRecover = [
         question: "What should I call you? (it doesn't need to be your real name)",
         answerType: 'TextInput',
         answers: [{
-                type: 0,
-                content: "Name..."
+                key: 0,
+                text: "Name..."
             }
            ],
         comments:'name'
@@ -93,8 +93,8 @@ var questionRecover = [
       answerType: 'TextInput',
       answers: [
           {
-                  type: 0,
-                  content: "Email..."
+                  key: 0,
+                  text: "Email..."
               }
          ],
       comments:''
@@ -105,20 +105,20 @@ var questionRecover = [
       answerType: 'Button',
       answers: [
           {
-              type: "1",
-              content: "female"
+              key: 0,
+              text: "female"
           },
           {
-              type: "2",
-              content: "male"
+              key: 1,
+              text: "male"
           },
           {
-              type: "3",
-              content: "custom"
+              key: 2,
+              text: "custom"
           },
           {
-              type: "4",
-              content: "prefer not to say"
+              key: 3,
+              text: "prefer not to say"
           }
       ],
       comments:''
@@ -130,57 +130,48 @@ var questionRecover = [
       answers: [ {
         spinner: [
           {
-              type: "1",
               text: '<18',
               value: '<18',
               key:1
           },
           {
-              type: "2",
               text: "18-24",
               value: "18-24",
               key:2
           },
           {
-              type: "3",
               text: "25-34",
               value: "25-34",
               key:3
           },
           {
-              type: "4",
               text: "35-44",
               value: "35-44",
               key:4
           },
           {
-              type: "5",
               text: "45-54",
               value: "45-54",
               key:5
           },
           {
-              type: "6",
               text: "55-64",
               value: "55-64",
               key:6
           },
           {
-              type: "7",
-              content: "65-74",
-              value: "65-74",
+            text: "65-74",
+            value: "65-74",
               key:7
           },
           {
-              type: "8",
-              content: "75-84",
-              value: "75-84",
+            value: "75-84",
+            text: "75-84",
               key:8
           },
           {
-              type: "9",
-              content: ">85",
-              value: ">85",
+            text: ">85",
+            value: ">85",
               key:9
           }
       ],
@@ -194,8 +185,8 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "next"
+              key: 1,
+              text: "next"
           }
       ],
       comments:' '
@@ -207,20 +198,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "not at all"
+              key: 1,
+              text: "not at all"
           },
           {
-              type: "2",
-              content: "several days"
+              key: 2,
+              text: "several days"
           },
           {
-              type: "3",
-              content: "more than half the days"
+              key: 3,
+              text: "more than half the days"
           },
           {
-              type: "4",
-              content: "nearly every day"
+              key: 4,
+              text: "nearly every day"
           }
       ],
       comments:' '
@@ -231,20 +222,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "not at all"
+              key: 1,
+              text: "not at all"
           },
           {
-              type: "2",
-              content: "several days"
+              key: 2,
+              text: "several days"
           },
           {
-              type: "3",
-              content: "more than half the days"
+              key: 3,
+              text: "more than half the days"
           },
           {
-              type: "4",
-              content: "nearly every day"
+              key: 4,
+              text: "nearly every day"
           }
       ],
       comments:' '
@@ -255,20 +246,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "moved home"
+              key: 1,
+              text: "moved home"
           },
           {
-              type: "2",
-              content: "lost job"
+              key: 2,
+              text: "lost job"
           },
           {
-              type: "3",
-              content: "bereavement"
+              key: 3,
+              text: "bereavement"
           },
           {
-              type: "2",
-              content: "not at all"
+              key: 2,
+              text: "not at all"
           }
       ],
       comments:' '
@@ -291,24 +282,24 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "5",
-              content: "very healthy"
+              key: 5,
+              text: "very healthy"
           },
           {
-              type: "4",
-              content: "healthy"
+              key: 4,
+              text: "healthy"
           },
           {
-              type: "3",
-              content: "average"
+              key: 3,
+              text: "average"
           },
           {
-              type: "2",
-              content: "unhealthy"
+              key: 2,
+              text: "unhealthy"
           },
           {
-              type: "1",
-              content: "very unhealthy"
+              key: 1,
+              text: "very unhealthy"
           }
       ],
       comments:' '
@@ -334,28 +325,28 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "never"
+              key: 1,
+              text: "never"
           },
           {
-              type: "2",
-              content: "rarely"
+              key: 2,
+              text: "rarely"
           },
           {
-              type: "3",
-              content: "sometimes"
+              key: 3,
+              text: "sometimes"
           },
           {
-              type: "4",
-              content: "often"
+              key: 4,
+              text: "often"
           },
           {
-              type: "5",
-              content: "almost all the time"
+              key: 5,
+              text: "almost all the time"
           },
           {
-              type: "6",
-              content: "pass"
+              key: 6,
+              text: "pass"
           }
       ],
       comments:' '
@@ -367,45 +358,31 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              type: "1",
               text: 'money',
-              value: 'money',
               key:1
           },
           {
-              type: "2",
               text: "sex",
-              value: "sex",
               key:2
           },
           {
-              type: "3",
               text: "diet",
-              value: "diet",
               key:3
           },
           {
-              type: "4",
               text: "exercise",
-              value: "exercise",
               key:4
           },
           {
-              type: "5",
               text: "work",
-              value: "work",
               key:5
           },
           {
-              type: "6",
               text: "family",
-              value: "family",
               key:6
           },
           {
-              type: "7",
               text: "health",
-              value: "health",
               key:7
           }
       ],
@@ -420,45 +397,31 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              type: "1",
               text: 'money',
-              value: 'money',
               key:1
           },
           {
-              type: "2",
               text: "sex",
-              value: "sex",
               key:2
           },
           {
-              type: "3",
               text: "diet",
-              value: "diet",
               key:3
           },
           {
-              type: "4",
               text: "exercise",
-              value: "exercise",
               key:4
           },
           {
-              type: "5",
               text: "work",
-              value: "work",
               key:5
           },
           {
-              type: "6",
               text: "family",
-              value: "family",
               key:6
           },
           {
-              type: "7",
               text: "health",
-              value: "health",
               key:7
           }
       ],
@@ -472,51 +435,35 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              type: "1",
               text: 'meeting new people',
-              value: 'meeting new people',
               key:1
           },
           {
-              type: "2",
               text: "time in nature",
-              value: "time in nature",
               key:2
           },
           {
-              type: "3",
               text: "using apps",
-              value: "using apps",
               key:3
           },
           {
-              type: "4",
               text: "reading books",
-              value: "reading books",
               key:4
           },
           {
-              type: "5",
               text: "social activities",
-              value: "social activities",
               key:5
           },
           {
-              type: "6",
               text: "music",
-              value: "music",
               key:6
           },
           {
-              type: "7",
               text: "dance",
-              value: "dance",
               key:7
           },
           {
-              type: "8",
               text: "exercise",
-              value: "exercise",
               key:7
           }
       ],
@@ -529,16 +476,16 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              type: "1",
-              content: "Yes"
+              key: 1,
+              text: "Yes"
           },
           {
-              type: "2",
-              content: "Maybe"
+              key: 2,
+              text: "Maybe"
           },
           {
-              type: "3",
-              content: "Not really"
+              key: 3,
+              text: "Not really"
           }
       ],
       comments:' '
