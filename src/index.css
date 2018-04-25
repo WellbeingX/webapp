@@ -1213,3 +1213,9 @@ input[type=range]:focus::-ms-fill-upper {
 .loader svg path{
 fill: #FF6700;
 }
+
+.boxShadow{
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+}

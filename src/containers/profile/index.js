@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import Picture from './picture'
+import Recommendation from './recommendation'
 class Profile extends React.Component {
 
 
@@ -51,11 +52,16 @@ class Profile extends React.Component {
     return(
 
       <div >
-        {this.state.status}<br /><br />
-        {this.state.name}<br />
-        {this.state.email}<br />
-        {this.state.age}<br />
-        {this.state.gender}<br />
+        <div>
+          <Picture name={this.state.name} email={this.state.email} age={this.state.age} gender={this.state.gender}/>
+        </div>
+        <div style={{background:'white', paddingTop:20}}>
+          <Recommendation />
+
+
+          <br />
+
+        </div>
       </div>
 
     )

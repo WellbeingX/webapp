@@ -22,6 +22,7 @@ import Profile from '../profile'
           <main>
             <Route exact path="/" component={HeaderUs} />
             <Route exact path="/directory" component={HeaderUs} />
+            <Route exact path="/profile" component={HeaderUs}  />
             <Route path="/information/" component={HeaderWhite} />
           </main>
 
