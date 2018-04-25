@@ -38,7 +38,7 @@ class QuestionHome extends React.Component {
        width: 0,
        height: 0,
        answerType:'',
-       comments:''
+       label:''
       };
       this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -87,7 +87,7 @@ class QuestionHome extends React.Component {
           question: quizQuestions[0].question,
           answerOptions: quizQuestions[0].answers,
           answerType:quizQuestions[0].answerType,
-          comments: quizQuestions[0].comments
+          label: quizQuestions[0].label
         });
      }
 
@@ -127,13 +127,14 @@ class QuestionHome extends React.Component {
                               questionId: this.state.questionId,
                               question: this.state.question,
                               answerId: event.currentTarget.id,
-                              answer: this.state.answerOptions}
+                              answer: this.state.answerOptions,
+                              questionLabel:this.state.label}
                             };
 
        this.props.setLastAnswer(data2firebase)
 
        // Here stores the Name in the state in case the question has the COMMENT == 'name'
-       if((this.state.comments === 'name')){this.props.setName(event.currentTarget.id)}
+       if((this.state.label === 'name')){this.props.setName(event.currentTarget.id)}
 
        // Moves to the next question and increases the counter
        if (this.state.questionId < quizQuestions.length) {
@@ -171,6 +172,7 @@ class QuestionHome extends React.Component {
        // Name replacement in case existed
        this.nameCheck(counter);
 
+       // Set the next question values, using the index 'counter'
        this.setState({
            counter: counter,
            questionId: questionId,
@@ -178,7 +180,7 @@ class QuestionHome extends React.Component {
            question: quizQuestions[counter].question,
            answerOptions: quizQuestions[counter].answers,
            answerType: quizQuestions[counter].answerType,
-           comments: quizQuestions[counter].comments,
+           label: quizQuestions[counter].label,
            answer: ''
        });
      }

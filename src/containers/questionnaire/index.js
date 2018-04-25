@@ -126,6 +126,20 @@ class Questionnaire extends React.Component {
                 );
 
           break;
+          case 'Instruction':
+          return (
+                    <AnswerButton
+                      key={key.key}
+                      answerContent={key.text}
+                      answerId={key.key}
+                      answerType = {this.props.answerType}
+                      answer={this.props.answer}
+                      questionId={this.props.questionId}
+                      onAnswerSelected={this.props.onAnswerSelected}
+                    />
+                  );
+
+          break;
           default:
               console.log("Incorrect Type: " + this.props.answerType);
       }
@@ -161,7 +175,8 @@ class Questionnaire extends React.Component {
           case 'FeedbackButton':
             return(
                     <div className="quiz" style={{color:'white', textAlign:'center', background:'DimGray', paddingTop:20}}>
-                      BETA-TEST QUESTION
+
+                        BETA-TEST QUESTION
                       <Question content={this.props.question} />
 
                       <ReactCSSTransitionGroup
@@ -172,7 +187,7 @@ class Questionnaire extends React.Component {
                        transitionLeaveTimeout={200}
                        transitionAppear
                        transitionAppearTimeout={500}
-                      >
+                       >
                         <Container centered className="answerOptions">
                           {this.props.answerOptions.map(this.renderAnswerOptions, this)}
                         </Container>
@@ -181,7 +196,23 @@ class Questionnaire extends React.Component {
                   );
 
             break;
+            case 'Instruction':
+            return(
+                    <div style={{  background: 'linear-gradient(-20deg,  #249ECD,#96D0A7 )', height:this.props.windowHeigth, width:this.props.windowWidth, color:'white', position:'fixed'}}>
+                        <div style={{padding:20, paddingTop:100, height:this.props.windowHeigth-200}}>
+                        <h2>{this.props.dialog} </h2>
+                        {this.props.question}
+                        </div>
+                        <Container centered className="answerOptions">
+                          {this.props.answerOptions.map(this.renderAnswerOptions, this)}
+                        </Container>
 
+                    </div>
+
+
+
+            )
+            break;
           default:
             return(
                     <div className="quiz">

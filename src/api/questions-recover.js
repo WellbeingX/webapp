@@ -14,7 +14,7 @@
 //         text: "Name..."
 //     }
 //    ],
-//     comments:''
+//     label:''
 // }
 //
 // BUTTON
@@ -32,7 +32,7 @@
 //             text: "male"
 //         }
 //     ],
-//     comments:''
+//     label:''
 // }
 //
 // SPINNER
@@ -56,7 +56,7 @@
 //         }
 //     ],
 //   }],
-//     comments:' '
+//     label:' '
 // }
 //
 // SLIDER
@@ -70,7 +70,7 @@
 //             max: 7
 //         }
 //     ],
-//     comments:' '
+//     label:' '
 // }
 
 
@@ -85,7 +85,7 @@ var questionRecover = [
                 text: "Name..."
             }
            ],
-        comments:'name'
+        label:'name'
     },
   {
       dialog: "Nice to meet you /name...",
@@ -97,7 +97,7 @@ var questionRecover = [
                   text: "Email..."
               }
          ],
-      comments:''
+      label:'email'
   },
   {
       dialog: "",
@@ -121,7 +121,7 @@ var questionRecover = [
               text: "prefer not to say"
           }
       ],
-      comments:''
+      label:'gender'
   },
   {
       dialog: "",
@@ -176,21 +176,10 @@ var questionRecover = [
           }
       ],
     }],
-      comments:' '
+      label:'age'
   },
 
-  {
-      dialog: "I am going to ask you three questions about your feelings",
-      question: "...I need to understand the severity of your mental state",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "next"
-          }
-      ],
-      comments:' '
-  },
+
 
   {
       dialog: "Over the past two weeks...",
@@ -214,7 +203,7 @@ var questionRecover = [
               text: "nearly every day"
           }
       ],
-      comments:' '
+      label:' '
   },
   {
       dialog: "Over the past two weeks...",
@@ -238,7 +227,7 @@ var questionRecover = [
               text: "nearly every day"
           }
       ],
-      comments:' '
+      label:' '
   },
   {
       dialog: "Life is full of transitions...",
@@ -262,7 +251,7 @@ var questionRecover = [
               text: "not at all"
           }
       ],
-      comments:' '
+      label:' '
   },
   {
       dialog: "On to sleep",
@@ -274,7 +263,7 @@ var questionRecover = [
             max: 7
           }
       ],
-      comments:' '
+      label:' '
   },
   {
       dialog: "That food question",
@@ -302,7 +291,7 @@ var questionRecover = [
               text: "very unhealthy"
           }
       ],
-      comments:' '
+      label:' '
   },
 
   {
@@ -315,7 +304,7 @@ var questionRecover = [
               max: 7
           }
       ],
-      comments:' '
+      label:' '
   }
   ,
 
@@ -349,7 +338,7 @@ var questionRecover = [
               text: "pass"
           }
       ],
-      comments:' '
+      label:' '
   },
   {
       dialog: "",
@@ -387,7 +376,7 @@ var questionRecover = [
           }
       ],
     }],
-      comments:' '
+      label:' '
   },
 
   {
@@ -426,7 +415,7 @@ var questionRecover = [
           }
       ],
     }],
-      comments:' '
+      label:' '
   },
   {
       dialog: "",
@@ -468,7 +457,7 @@ var questionRecover = [
           }
       ],
     }],
-      comments:' '
+      label:' '
   },
   {
       dialog: "",
@@ -488,7 +477,7 @@ var questionRecover = [
               text: "Not really"
           }
       ],
-      comments:' '
+      label:' '
   }
 ];
 

@@ -8,6 +8,7 @@ import Directory from '../directory'
 import FooterHome from '../footerHome'
 import FooterInfo from '../footerInfo'
 import ScrollToTop from '../scrollToTops'
+import Profile from '../profile'
 
 
 
@@ -34,6 +35,7 @@ import ScrollToTop from '../scrollToTops'
                           <Route exact path="/information/beta/recover" component={QuestionHome} />
                           <Route exact path="/information/beta/improve" component={QuestionHome} />
                           <Route exact path="/directory" component={Directory}  />
+                          <Route exact path="/profile" component={Profile}  />
                           <Redirect to="/" />
                         </Switch>
                       </ScrollToTop>

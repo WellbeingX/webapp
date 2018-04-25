@@ -62,6 +62,7 @@ export function setLastAnswer(data){
                 }).then(function(data){
                   ipAddress = data.ip;
                   fire.database().ref('messages/' + ipAddress.split('.').join('') + '/' + sessionName + '/' + questionId).set( answer);
+                  fire.database().ref('messages/' + ipAddress.split('.').join('') + '/latest/' + answer.entry.questionLabel).set( answer);
                 }).then(function(){
                   console.log('Answer');
                 }).catch(function(error) {
