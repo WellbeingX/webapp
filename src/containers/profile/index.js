@@ -3,6 +3,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Picture from './picture'
 import Recommendation from './recommendation'
+import PillarTab from './pillarTab'
+import RadarChart from './radar'
+
+var arrayAnsers =
+[{
+  title:'Mindfulness',
+  score:6,
+  suggestion:'suga...'
+},
+{
+  title:'Sleep',
+  score:'?',
+  suggestion:'dormi...'
+}]
+
 class Profile extends React.Component {
 
 
@@ -48,6 +63,10 @@ class Profile extends React.Component {
       this.setState({profileStatus:'complete'});
       }
     }
+
+    renderPillarTab(val){
+      return(<PillarTab title={val.title} score={val.score} suggestion={val.suggestion}/>)
+    }
   render(){
     return(
 
@@ -55,12 +74,12 @@ class Profile extends React.Component {
         <div>
           <Picture name={this.state.name} email={this.state.email} age={this.state.age} gender={this.state.gender}/>
         </div>
-        <div style={{background:'white', paddingTop:20}}>
-          <Recommendation />
+        <div style={{background:'white', paddingTop:0, marginTop:-1}}>
 
-
+          <RadarChart />
+          <Recommendation suggestion='You should do this, this and that...'/>
           <br />
-
+          {arrayAnsers.map(this.renderPillarTab)}
         </div>
       </div>
 

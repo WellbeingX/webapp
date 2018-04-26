@@ -30,7 +30,7 @@ class Picture extends React.Component {
           </div>
         </div>
         <div style={{textAlign:'center', width:80, position:'absolute', right:50, top:35}}>
-          <div style={{width:80,  border:'#70CACC', borderStyle:'solid', borderRadius:20, borderWidth:1, marginTop:-30, position:'absolute', color:'#70CACC', fontSize:'.5rem'}}>
+          <div style={{width:90,  border:'#70CACC', borderStyle:'solid', borderRadius:20, borderWidth:1, marginTop:-30, position:'absolute', color:'#70CACC', fontSize:'.6rem', padding:'2.5px 5px'}}>
             Edit profile
           </div>
           <div style={{ paddingTop:0}} >

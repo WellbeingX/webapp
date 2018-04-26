@@ -35,8 +35,8 @@ class Recommendation extends React.Component {
 
       <div className='boxShadow' style={{background:'white', position:'relative', padding:20, marginLeft:20, marginRight:20, height:140, borderRadius:20}}>
         <div style={{textAlign:'left', width:'75%', height:'100%'}}>
-          <h2 style={{color:'#70CACC', fontSize:'.8rem', marginBottom:10}}>Recommendations </h2>
-          <p style={{fontSize:'.6rem'}}> You shhould do this and that and whatever </p>
+          <h2 style={{color:'#70CACC', fontSize:'.8rem', marginBottom:10}}>Suggestions </h2>
+          <p style={{fontSize:'.6rem'}}> {this.props.suggestion} </p>
         </div>
         <div style={{ width:'25%', position:'absolute', right:0, height:'100%', top:0, overflow:'hidden',  borderRadius:20}}>
           <div style={characterStyle} />

@@ -1,6 +1,7 @@
 import fire from '../api/fire'
 import ip from 'ip'
 import ReactGA from 'react-ga';
+import Amplify, { API } from 'aws-amplify';
 
 export const SET_EMAIL = 'SET_EMAIL'
 export const SET_LAST_ANSWER = 'SET_LAST_ANSWER'
@@ -74,6 +75,20 @@ export function setLastAnswer(data){
                   // Redux
             dispatch({type: SET_LAST_ANSWER, data:data});
 
+            let apiName = 'BetterSpaceAPI'; // replace this with your api name.
+            let path = 'https://ovrtdwnyv5.execute-api.eu-west-2.amazonaws.com/dev'; //replace this with the path you have configured on your API
+            let myInit = {
+                body: {hello:'hi'}, // replace this with attributes you need
+                headers: {} // OPTIONAL
+            }
+
+            API.post(apiName, path, myInit).then(response => {
+                // Add your code here
+                console.log('AWS running');
+            }).catch(error => {
+              console.log('AWS does not work');
+                console.log(error.response)
+            });
     };
 }
 
