@@ -5,23 +5,27 @@ var data = {
 	labels: ["Mindfulness", "Sleep", "Distress", "Ansia", "Exercise", "Purpose", "Nutrition", 'Social'],
 	datasets: [
 		{
-			label: "My First dataset",
-			fillColor: "rgba(220,220,220,0.2)",
-			strokeColor: "rgba(220,220,220,1)",
-			pointColor: "rgba(220,220,220,1)",
+			label: "Goal",
+			backgroundColor:"rgba(151,209,168,0.2)",
+			fill: true,
+			pointBackgroundColor: "rgba(151,209,168,1)",
+			pointBorderColor: "rgba(151,209,168,1)",
+			borderColor: "rgba(151,209,168,1)",
+			borderWidth:1,
+			pointBorderWidth:1,
 			pointStrokeColor: "#fff",
 			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(220,220,220,1)",
-			data: [65, 59, 90, 81, 56, 55, 40, 40]
+			pointHighlightStroke: "rgba(151,209,168,1)",
+			data: [65, 65, 65, 65, 65, 65, 65, 65]
 		},
 		{
-			label: "My Second dataset",
-			fillColor: "rgba(151,187,205,0.2)",
-			strokeColor: "rgba(151,187,205,1)",
-			pointColor: "rgba(151,187,205,1)",
-			pointStrokeColor: "#fff",
-			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(151,187,205,1)",
+			label: "Myself",
+			backgroundColor:"rgba(38,158,204,0.5)",
+			pointBackgroundColor: "rgba(38,158,204,1)",
+			pointBorderColor: "rgba(38,158,204,1)",
+			borderColor: "rgba(38,158,204,1)",
+			borderWidth:1,
+			pointBorderWidth:1,
 			data: [28, 48, 40, 19, 96, 27, 100, 20]
 		}
 	]
@@ -37,14 +41,18 @@ var options = {
 
 	pointLabels: {display: false},
 	tooltips: {display:false},
-	scale: { ticks: {
+	scale: {
+		ticks: {
 								display:false,
                 min: 0,
                 max: 100,
                 stepSize: 20
             },
 
-						}
+    pointLabels: {
+				      fontSize: 12
+				    }
+		},
 }
 
 
@@ -66,7 +74,7 @@ export default class RadarChart extends React.Component {
   };
   render(){
     return(
-      <div style={{padding:20, margin:'auto', textAlign:'center'}}>
+      <div style={{paddingBottom:20, marginTop:-20, textAlign:'center'}}>
         <Radar data={data} options={options}/>
       </div>
     );}

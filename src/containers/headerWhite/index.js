@@ -1,12 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../reducers/counter'
 import BurgerIcon from '../header/burger'
 import HeaderMenu from '../header/headerMenu'
 
@@ -94,16 +88,11 @@ import HeaderMenu from '../header/headerMenu'
 }
 }
 const mapStateToProps = state => ({
-  counter: state.counter,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+  counter: state.counter
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
+
 }, dispatch)
 
 

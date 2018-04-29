@@ -76,18 +76,7 @@
 
 var questionRecover = [
 
-  {
-      dialog: "This is the title",
-      question: "This is the text of the instruction material, here we should explain why these pieces of inforamtion are important and can help to create mental health strategies",
-      answerType: 'Instruction',
-      answers: [{
-              key: 0,
-              text: "continue"
-          }
-         ],
-      label:'name'
-  },
-  {
+{
       dialog: "Hi, I’m Barbara! Can I ask you some questions to improve my suggestions?",
       question: "What should I call you? (it doesn't need to be your real name)",
       answerType: 'TextInput',
@@ -113,7 +102,7 @@ var questionRecover = [
   {
       dialog: "",
       question: "What’s your gender?",
-      answerType: 'Button',
+      answerType: 'ButtonGender',
       answers: [
           {
               key: 0,

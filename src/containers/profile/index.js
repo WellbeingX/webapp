@@ -9,13 +9,18 @@ import RadarChart from './radar'
 var arrayAnsers =
 [{
   title:'Mindfulness',
-  score:6,
-  suggestion:'suga...'
+  score:'4',
+  suggestion:'Meditation is a very important method to keep your mind clear and safe. You mght want to look at difference way of improving your skills.'
 },
 {
   title:'Sleep',
-  score:'?',
+  score:'2',
   suggestion:'dormi...'
+},
+{
+  title:'Mindfulness',
+  score:'9',
+  suggestion:'banana...'
 }]
 
 class Profile extends React.Component {
@@ -75,6 +80,7 @@ class Profile extends React.Component {
           <Picture name={this.state.name} email={this.state.email} age={this.state.age} gender={this.state.gender}/>
         </div>
         <div style={{background:'white', paddingTop:0, marginTop:-1}}>
+        <h2 style={{color:'grey', fontSize:'.8rem', paddingTop:10, marginLeft:50}}>Dashboard </h2>
 
           <RadarChart />
           <Recommendation suggestion='You should do this, this and that...'/>

@@ -18,9 +18,9 @@ export default ({ open, ...props }) => (
     </div>
     <div style={{position:'relative', left:100, top:100, textAlign:'left' }} >
     <List link>
-    <List.Item as='a'><Link to='/'>Login</Link></List.Item>
+    <List.Item as='a'><Link to='/profile'>Profile</Link></List.Item>
     <List.Item as='a'><Link to='/'>Home</Link></List.Item>
-    <List.Item as='a'><Link to='/Directory'>Resources</Link></List.Item>
+    <List.Item as='a'><Link to='/Directory'>Directory</Link></List.Item>
       <List.Item as='a'>Mission</List.Item>
       <List.Item as='a'>About</List.Item>
     </List>

@@ -8,7 +8,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
       constructor(props) {
         super(props);
-        this.state = { width: 0, height: 0 };
+        this.state = { width: 0, height: 0, characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:200, topBubble:-280, bottomDialog:70, bubbleTop:-300, characterRightCenter:380};
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       }
 
@@ -25,142 +25,49 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 
-      wH = this.props.windowHeigth;
-      wW = this.props.windowWidth>800 ? this.props.windowWidth/2 : this.props.windowWidth;
-      marginContainer = this.wH/6;
-      textWidth = this.wW/1.5;
 
-      bigBuggleStyle = {
-         width:this.wH, height:this.wH,
-         marginLeft:-this.marginContainer,
-         marginTop:-this.wH*.8,
-         background:'white',
-         color:'rgb(36, 158, 205)',
-         opacity:1,
-         borderRadius:1000,
-         overflow: 'hidden'
-      }
-      bigBuggleStyle2 = {
-        position:'relative',height:this.wH
-      }
-
-      characterStyle = {
-        height:this.wH,
-        background:'no-repeat',
-        backgroundImage: `url(${ImageBarb})`,
-        backgroundSize: this.wH/5,
-        overflow: 'hidden',
-        backgroundPosition: 'bottom right',
-        position:'absolute', bottom:-6, width:this.wW*.95,
-        marginLeft:this.marginContainer,
-        zIndex:0
-      }
-      characterStyleMiddle = {
-        height:this.wH,
-        background:'no-repeat',
-        backgroundImage: `url(${ImageBarb})`,
-        backgroundSize: this.wH/5,
-        overflow: 'hidden',
-        backgroundPosition: 'bottom center',
-        position:'absolute', bottom:-10, width:this.wW*.95,
-        marginLeft:this.marginContainer
-      }
-      spaceStyle ={
-        height:100
-      }
-      dialogWrapperStyle = {
-        position:'absolute', bottom:this.wH/10, width:this.textWidth, marginLeft:this.marginContainer
-      }
-      dialogStyle = {
-        marginTop:this.wH/2
-      }
 
       updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight })
 
         // Big Tablet
-        if(window.innerWidth>500 && window.innerWidth<1200){
-          console.log("Desktop W:" + window.innerWidth + " H:" + window.innerHeight);
+        if(window.innerWidth<330){
+          //iPhone SE and small screens
+          this.setState({ characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:200, topBubble:-280, bottomDialog:80, characterRightCenter:380 })
+        }else if(window.innerWidth<380){
+          // iPhone 6 and normale screens
+          console.log('iphone 6');
+          this.setState({
+            characterWidth:130,
+            characterRightMargin:250,
+            dialogWidth:200,
+            dialogLeftMargin:200,
+            topBubble:-250,
+            bottomDialog:70,
+            characterRightCenter:330
 
-          this.textWidth = this.marginContainer*3;
-          this.bigBuggleStyle = {...this.bigBuggleStyle,
-            width:this.wH*.7,
-            marginLeft:50};
+          })
+        }else if(window.innerWidth>379){
+          // iPhone 6 plus
+          console.log('iphone 6 plus');
+          this.setState({
+            characterWidth:130,
+            characterRightMargin:250,
+            dialogWidth:200,
+            dialogLeftMargin:200,
+            topBubble:-250,
+            bottomDialog:80,
+            characterRightCenter:330
 
-          this.characterStyleMiddle = {...this.characterStyleMiddle,
-              marginLeft:0};
-
-          this.characterStyle = { ...this.characterStyle,
-              backgroundPosition: 'bottom center',
-              marginLeft:this.marginContainer};
-
-        }else if(window.innerWidth>1200 && window.innerHeight<800){
-          // Small laptops
-
-          this.marginContainer = 200;
-          this.bigBuggleStyle = {
-            ...this.bigBuggleStyle,
-            width:window.innerWidth,
-            marginLeft:100,
-            height:this.wH*.9
-          };
-
-          this.bigBuggleStyle2 = {...this.bigBuggleStyle2,
-            height:this.wH*.9
-          }
-
-          this.dialogStyle = {...this.dialogStyle
-          }
-          this.dialogWrapperStyle = {...this.dialogWrapperStyle,
-          bottom:35
-          }
-          this.characterStyle = {...this.characterStyle,
-              height:this.wH*.9,
-              backgroundPosition: 'bottom center',
-              marginLeft:300};
-
-        }else if(window.innerHeight>800){
-          // Huge Screens
-
-          this.marginContainer = 200;
-          var height = 800;
-          this.bigBuggleStyle = {
-            ...this.bigBuggleStyle,
-            width:window.innerWidth,
-            marginLeft:100,
-            height:height,
-            marginTop:-height,
-          };
-
-
-          this.bigBuggleStyle2 = {...this.bigBuggleStyle2,
-            height:height
-          }
-
-          this.dialogStyle = {...this.dialogStyle
-          }
-          this.dialogWrapperStyle = {...this.dialogWrapperStyle,
-          bottom:35
-          }
-          this.characterStyle = {...this.characterStyle,
-              height:height*.5,
-              backgroundSize: height*.3,
-              backgroundPosition: 'bottom right',
-              marginLeft:300};
-          this.characterStyleMiddle = {...this.characterStyleMiddle,
-              height:height*.5,
-              backgroundSize: height*.3,
-              backgroundPosition: 'bottom center',
-              marginLeft:0
-            };
+          })
         }
       }
       middle(){
         return(
-          <div style={this.bigBuggleStyle2}>
-            <div style={this.dialogWrapperStyle}>
+          <div style={{borderRadius:'80%', position:'absolute', width:800, height:500, background:'white', top:this.state.bubbleTop, overflow:'hidden', left:-200, color:'rgb(36, 158, 205)'}}>
+            <div style={{position: 'absolute', bottom: this.state.bottomDialog, width:this.state.dialogWidth, left: this.state.dialogLeftMargin}}>
             </div>
-            <div style={this.characterStyleMiddle}>
+            <div style={{height:200, background:'no-repeat', backgroundImage: `url(${ImageBarb})`,backgroundSize: this.state.characterWidth,right:this.state.characterRightCenter,backgroundPosition:'bottom right',position:'absolute', bottom:-6, width:this.state.characterWidth}}>
             </div>
           </div>
         )
@@ -168,10 +75,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
       side(){
         return(
-          <div className='bigBuggleStyle2' style={this.bigBuggleStyle2}>
-            <div style={this.characterStyle} />
+          <div  style={{borderRadius:'80%', position:'absolute', width:800, height:500, background:'white', top:this.state.bubbleTop, overflow:'hidden', left:-200, color:'rgb(36, 158, 205)'}}>
+            <div style={{height:200, background:'no-repeat', backgroundImage: `url(${ImageBarb})`,backgroundSize: this.state.characterWidth,right:this.state.characterRightMargin,backgroundPosition:'bottom right',position:'absolute', bottom:-6, width:this.state.characterWidth}} />
 
-            <div className='dialogWrapperStyle' style={this.dialogWrapperStyle}>
+            <div className='dialogWrapperStyle' style={{position: 'absolute', bottom: this.state.bottomDialog, width:this.state.dialogWidth, left: this.state.dialogLeftMargin}}>
               <ReactCSSTransitionGroup
                component="div"
                transitionName="dialog"
@@ -181,7 +88,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
                transitionAppearTimeout={1200}
               >
 
-                      <h2 className="dialog" style={this.dialogStyle}>
+                      <h2 className="dialog" style={{padding:20}} >
                         {this.props.content}
                       </h2>
 
@@ -196,8 +103,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
       return (
         <div>
-            <div style={this.spaceStyle}></div>
-            <div style={this.bigBuggleStyle}>
+            <div style={{position:'relative',height:180, background:'rgba(0,0,0,0)'}}>
                 {this.props.content===''?  this.middle() : this.side()}
             </div>
         </div>

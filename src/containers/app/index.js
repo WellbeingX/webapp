@@ -34,7 +34,7 @@ class App extends React.Component {
     return(
   <div >
 
-    {this.state.width>700 ? <HomeDesktop /> : <HomeMobile />}
+    {this.state.width>750 ? <HomeDesktop /> : <HomeMobile />}
   </div>
 )};
 }

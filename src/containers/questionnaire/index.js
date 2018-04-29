@@ -19,20 +19,34 @@ class Questionnaire extends React.Component {
 
   renderAnswerOptions(key) {
       switch(this.props.answerType) {
-          case 'Button':
-          return (
-                    <AnswerButton
-                      key={key.key}
-                      answerContent={key.text}
-                      answerId={key.key}
-                      answerType = {this.props.answerType}
-                      answer={this.props.answer}
-                      questionId={this.props.questionId}
-                      onAnswerSelected={this.props.onAnswerSelected}
-                    />
-                  );
+        case 'Button':
+        return (
+                  <AnswerButton
+                    key={key.key}
+                    answerContent={key.text}
+                    answerId={key.key}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
+                  />
+                );
 
-          break;
+        break;
+        case 'ButtonGender':
+        return (
+                  <AnswerButton
+                    key={key.key}
+                    answerContent={key.text}
+                    answerId={key.key}
+                    answerType = {this.props.answerType}
+                    answer={this.props.answer}
+                    questionId={this.props.questionId}
+                    onAnswerSelected={this.props.onAnswerSelected}
+                  />
+                );
+
+        break;
           case "List":
           return (
                     <AnswerButton

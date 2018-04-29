@@ -5,13 +5,17 @@ import {Doughnut} from "react-chartjs-2";
 
 
 var options = {
-  legend: {display: false},
-  label: {display: false},
-  tooltips: {enabled: false},
-  hover: {mode: null}
+  legend: {
+      display: false,
+  },
+  label: {
+    display: false,
+  },
+
+
 }
 
-export default class CircularChart extends React.Component {
+export default class CircularChartPicture extends React.Component {
 
   constructor(props){
     super(props);
@@ -22,8 +26,8 @@ export default class CircularChart extends React.Component {
 
             datasets: [{
               data: [10, 0],
-              borderColor:['rgba(255,255,255,0.2)','rgba(255,255,255,0.2)'],
-              backgroundColor: ['rgba(255,255,255,0)','rgba(255,255,255,1)']
+              borderColor:['rgba(0,0,0,0.2)','rgba(0,0,0,0.2)'],
+              backgroundColor: ['rgba(0,0,0,0)','rgba(0,0,0,0.2)']
              }]
            }
     }
@@ -45,8 +49,8 @@ export default class CircularChart extends React.Component {
 
               datasets: [{
                 data: [10-this.props.score, 0+this.props.score],
-                borderColor:['rgba(255,255,255,0.2)','rgba(255,255,255,0.2)'],
-                backgroundColor: ['rgba(255,255,255,0)','rgba(255,255,255,1)']
+                borderColor:['rgba(0,0,0,0.2)','rgba(0,0,0,0.2)'],
+                backgroundColor: ['rgba(0,0,0,0)','rgba(0,0,0,0.2)']
                }]
              }
       }
@@ -56,9 +60,9 @@ export default class CircularChart extends React.Component {
     this.lancio();
 
     return(
-      <div style={{textAlign:'center', fontSize:'.6rem'}}>
-        <Doughnut data={this.state.data} options={options} />
-        {this.props.score}
+      <div style={{textAlign:'center', fontSize:'.5rem', color:'grey'}}>
+        <Doughnut data={this.state.data} options={options} width={'30%'} height={'10%'}/>
+        <span style={{marginTop:-10}}>Profile completion</span>
       </div>
     );}
 }
