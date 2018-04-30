@@ -69,7 +69,7 @@ export default (state = initialState, action) => {
         case SET_RESET_QUESTIONNAIRE:
           return {
             ...state,
-            questionId: 1
+            questionId: -1
           }
     default:
       return state

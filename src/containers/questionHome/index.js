@@ -12,7 +12,7 @@ import About from '../about'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {setLastAnswer, setName, setPath, setSessionStart, setBackButton} from '../../actions/questionnaireActions'
+import {setLastAnswer, setName, setPath, setSessionStart, setBackButton, setResetQuestionnaire} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
 
@@ -188,6 +188,7 @@ class QuestionHome extends React.Component {
 
 
      setResults(result) {
+       this.props.setResetQuestionnaire();
          if (result.length === 1) {
            this.setState({ result: result[0] });
          } else {
@@ -251,6 +252,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setPath,
   setBackButton,
   setSessionStart,
+  setResetQuestionnaire,
   changePage: (text) => push('/' + text)
 }, dispatch)
 
