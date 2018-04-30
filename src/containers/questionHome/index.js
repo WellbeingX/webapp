@@ -17,7 +17,6 @@ import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
 
 
-var nameQuestion=2;
 var quizQuestions =[];
 
 class QuestionHome extends React.Component {
@@ -141,7 +140,7 @@ class QuestionHome extends React.Component {
        if((this.state.label === 'name')){this.props.setName(event.currentTarget.id)}
 
        // Moves to the next question and increases the counter
-       if (this.state.questionId < quizQuestions.length) {
+       if (this.state.questionId < quizQuestions.length-1) {
            setTimeout(() => this.setNextQuestion(), 0);
        } else {
            setTimeout(() => this.setResults(this.getResults()), 0);
@@ -166,7 +165,6 @@ class QuestionHome extends React.Component {
      }
 
      setNextQuestion() {
-       console.log(this.props.counter.questionId);
        let counter = this.props.counter.questionId-1;
        let questionId = this.props.counter.questionId-1;
        if(counter<0)counter=0;
