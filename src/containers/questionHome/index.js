@@ -12,7 +12,7 @@ import About from '../about'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {setLastAnswer, setName, setPath, setSessionStart} from '../../actions/questionnaireActions'
+import {setLastAnswer, setName, setPath, setSessionStart, setBackButton} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
 
@@ -25,7 +25,7 @@ class QuestionHome extends React.Component {
       super(props);
       this.state = {
        counter: 0,
-       questionId: 1,
+       questionId: props.counter.questionId,
        question: '',
        dialog:'',
        answerOptions: [],
@@ -46,10 +46,10 @@ class QuestionHome extends React.Component {
 
 
 
+
     componentWillMount() {
       // The current path is stored in the STORE in order to inform every component in which path we are (to be moved to the ROUTER component)
       this.props.setPath(this.props.location.pathname)
-
 
 
       // Listener to the screen size
@@ -58,43 +58,34 @@ class QuestionHome extends React.Component {
 
       // Here the PATH is sent to the Google Analytics
       ReactGA.pageview(this.props.location.pathname);
-
-
       // Depending on the path the user is sent to a different journey, that means different questionnaire JSONs
-      switch(this.props.location.pathname){
-        case "/information/beta/recover":
+      if(this.props.location.pathname.includes("/information/beta/recover")){
           quizQuestions = questionBetaRecover;
-        break;
-        case "/information/beta/improve":
+        }else if(this.props.location.pathname.includes("/information/beta/improve")){
           quizQuestions = questionBetaImprove;
-        break;
-        case "/information/recover":
+        }else if(this.props.location.pathname.includes("/information/recover")){
           quizQuestions = questionRecover;
-          nameQuestion=1;
-        break;
-        case "/information/improve":
+        }else if(this.props.location.pathname.includes("/information/improve")){
           quizQuestions = questionImprove;
-          nameQuestion=1;
-        break;
-        default:
-          console.log('Beccato info');
-          this.setState({
-              counter : 0
-          });
+        }else {
+          console.log('Error reading questionnaire questions');
         }
-        this.setState({
-          dialog: quizQuestions[0].dialog,
-          question: quizQuestions[0].question,
-          answerOptions: quizQuestions[0].answers,
-          answerType:quizQuestions[0].answerType,
-          label: quizQuestions[0].label
+        console.log('Problema?');
+        console.log(this.props.counter.questionId);
+        let index = this.props.counter.questionId-1;
+        if(index<0)index=0;
+          this.setState({
+          dialog: quizQuestions[index].dialog,
+          question: quizQuestions[index].question,
+          answerOptions: quizQuestions[index].answers,
+          answerType:quizQuestions[index].answerType,
+          label: quizQuestions[index].label
         });
      }
 
      componentDidMount(){
        //Check if the sessionName was stored
        if(this.props.counter.sessionName==''){
-         console.log('Session Missing');
          let formattedDay = (new Date()).getDate();
          let formattedMonth = (new Date()).getMonth();
          let formattedYear = (new Date()).getYear();
@@ -103,6 +94,9 @@ class QuestionHome extends React.Component {
          let sessionName = 'session_dmy_' + formattedDay + '_' + formattedMonth + '_' + formattedYear + '_mh_' + formattedMin + '_' + formattedHours;
          this.props.setSessionStart({'sessionName':sessionName});
        }
+       // this.setState({questionId:this.props.counter.questionId})
+       window.onpopstate = this.onBackButtonEvent;
+
      }
 
      componentWillUnmount() {
@@ -116,10 +110,20 @@ class QuestionHome extends React.Component {
      componentDidUpdate() {
      }
 
+
+     onBackButtonEvent = (e)=>{
+       // This is the handler for the back button, a little hack, shhould be fixed properly using the router
+      e.preventDefault()
+      this.props.setBackButton()
+     }
+
+
+     // This function replaces the placeholder /name with the name saved in the store
+     nameCheck (text) {return(text.replace("/name" , this.props.counter.name))}
+
+
      handleAnswerSelected(event) {
        // This is the handler that is sent as prop to all the questions, it manages what happens after the user clicks the button that will bring to the next question
-       console.log('AnswerSelected is:');
-       console.log(event.currentTarget.id);
 
        // HERE IT PUTS THE ANSWER IN THE STORE and in FIREBASE
        let data2firebase = {sessionName: this.props.counter.sessionName ,
@@ -155,29 +159,27 @@ class QuestionHome extends React.Component {
        });
      }
 
-     nameCheck(counter){
-       // This function replaces the placeholder /name with the name saved in the store
-       quizQuestions[counter].dialog = quizQuestions[counter].dialog.replace("/name",this.props.counter.name);
-       quizQuestions[counter].question = quizQuestions[counter].question.replace("/name",this.props.counter.name);
-     }
+
 
      getResults(){
         return '';
      }
 
      setNextQuestion() {
-       const counter = this.state.counter + 1;
-       const questionId = this.state.questionId + 1;
+       console.log(this.props.counter.questionId);
+       let counter = this.props.counter.questionId-1;
+       let questionId = this.props.counter.questionId-1;
+       if(counter<0)counter=0;
 
        // Name replacement in case existed
-       this.nameCheck(counter);
+       // this.nameCheck(counter);
 
        // Set the next question values, using the index 'counter'
        this.setState({
            counter: counter,
            questionId: questionId,
-           dialog: quizQuestions[counter].dialog,
-           question: quizQuestions[counter].question,
+           dialog: this.nameCheck(quizQuestions[counter].dialog),
+           question: this.nameCheck(quizQuestions[counter].question),
            answerOptions: quizQuestions[counter].answers,
            answerType: quizQuestions[counter].answerType,
            label: quizQuestions[counter].label,
@@ -243,14 +245,13 @@ class QuestionHome extends React.Component {
 
 const mapStateToProps = state => ({
   counter: state.counter,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setLastAnswer,
   setName,
   setPath,
+  setBackButton,
   setSessionStart,
   changePage: (text) => push('/' + text)
 }, dispatch)

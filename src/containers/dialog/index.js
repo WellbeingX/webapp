@@ -8,7 +8,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
       constructor(props) {
         super(props);
-        this.state = { width: 0, height: 0, characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:200, topBubble:-280, bottomDialog:70, bubbleTop:-300, characterRightCenter:380};
+        this.state = { width: 0, height: 0, characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:220, topBubble:-280, bottomDialog:70, bubbleTop:-300, characterRightCenter:380};
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       }
 
@@ -33,15 +33,14 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
         // Big Tablet
         if(window.innerWidth<330){
           //iPhone SE and small screens
-          this.setState({ characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:200, topBubble:-280, bottomDialog:80, characterRightCenter:380 })
+          this.setState({ characterWidth:100, characterRightMargin:300, dialogWidth:200, dialogLeftMargin:220, topBubble:-280, bottomDialog:80, characterRightCenter:380 })
         }else if(window.innerWidth<380){
           // iPhone 6 and normale screens
-          console.log('iphone 6');
           this.setState({
             characterWidth:130,
             characterRightMargin:250,
-            dialogWidth:200,
-            dialogLeftMargin:200,
+            dialogWidth:220,
+            dialogLeftMargin:220,
             topBubble:-250,
             bottomDialog:70,
             characterRightCenter:330
@@ -49,12 +48,11 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
           })
         }else if(window.innerWidth>379){
           // iPhone 6 plus
-          console.log('iphone 6 plus');
           this.setState({
             characterWidth:130,
             characterRightMargin:250,
             dialogWidth:200,
-            dialogLeftMargin:200,
+            dialogLeftMargin:220,
             topBubble:-250,
             bottomDialog:80,
             characterRightCenter:330

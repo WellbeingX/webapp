@@ -87,16 +87,13 @@ export class AnswerSpinner extends React.Component {
         this.setState({
           value:data.value
           });
-
-      console.log(data.value);
-      console.log(event);
     }
 
     render(){
     return (
       <div>
 
-        <Dropdown style={{ color:'black', borderRadius:50, fontSize:'.8rem', background:'white', padding:15}} placeholder='Select...' onChange={this.renderSpinner} fluid selection options={this.props.answerContent.spinner} />
+        <Dropdown style={{ color:'black', borderRadius:50, fontSize:'.8rem', background:'white', padding:15}} placeholder='Select...' onChange={this.renderSpinner} fluid selection options={this.props.answerContent.spinner} key={this.props.answerContent.keySpinner}/>
         <input
           type="button"
           className="customButton"
@@ -318,7 +315,6 @@ export class AnswerMultiple extends React.Component {
     }
 
     render(){
-      console.log(this.state);
 
       return (
         <div >

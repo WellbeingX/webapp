@@ -2,7 +2,12 @@
 
 var resources = [
   {
+    solutionId:'0001',
     label:'sleep',
+    labels:['sleep','exercise'],
+    genderTag:'male',
+    ageTag:'18-24',
+    platform:'iOS',
     title:'Sleepio',
     price:'FREE',
     categ:'App',

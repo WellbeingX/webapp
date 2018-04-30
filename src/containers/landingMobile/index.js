@@ -9,7 +9,10 @@ import FooterHome from '../footerHome'
 import FooterInfo from '../footerInfo'
 import ScrollToTop from '../scrollToTops'
 import Profile from '../profile'
-
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireActions'
 
 
   class App extends React.Component {
@@ -31,8 +34,8 @@ import Profile from '../profile'
                       <ScrollToTop>
                         <Switch>
                           <Route exact path="/" component={Home} />
-                          <Route exact path="/information/recover" render={()=><QuestionHome location={{pathname:'/information/recover'}} /> }  />
-                          <Route exact path="/information/improve" component={QuestionHome} />
+                          <Route  path="/information/recover" render={()=><QuestionHome location={{pathname:'/information/recover'}} /> }  />
+                          <Route  path="/information/improve" component={QuestionHome} />
                           <Route exact path="/information/beta/recover" component={QuestionHome} />
                           <Route exact path="/information/beta/improve" component={QuestionHome} />
                           <Route exact path="/directory" component={Directory}  />
@@ -56,4 +59,17 @@ import Profile from '../profile'
     }
 
 }
-export default App
+
+const mapStateToProps = state => ({
+  counter:state
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setBackButton,
+  changePage: (textInput) => push('/' + textInput)
+}, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

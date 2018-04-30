@@ -1,4 +1,4 @@
-import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH, SET_SESSION_START} from '../actions/questionnaireActions.js'
+import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH, SET_SESSION_START, SET_BACK_BUTTON, SET_RESET_QUESTIONNAIRE} from '../actions/questionnaireActions.js'
 
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
@@ -9,7 +9,7 @@ export const DECREMENT = 'counter/DECREMENT'
 export const initialState = {
   sessionName: '',
   count: 0,
-  questionId: 1,
+  questionId: 0,
   question: '',
   answerOptions: [],
   answer: '',
@@ -19,42 +19,58 @@ export const initialState = {
   name:'',
   answersArray:[],
   email: '',
-  path:''
+  path:'',
+  pathQuestion:'/inforation/recover'
 }
 
 export default (state = initialState, action) => {
 
   switch (action.type) {
       case SET_SESSION_START:
-        console.log("Assigning this session the name: " + action.data.sessionName);
         return {
           ...state,
           sessionName: action.data.sessionName
         }
       case SET_EMAIL:
-      console.log("Sono arrivato al reducer SET_EMAIL: " + action.data);
         return {
           ...state,
           email: action.data
         }
-
       case SET_LAST_ANSWER:
         var arr = state.answersArray;
         arr.push(action.data);
         return {
           ...state,
-           answersArray: arr
+           answersArray: arr,
+           questionId: state.questionId + 1
         }
         case SET_NAME:
           return {
             ...state,
              name: action.data
           }
-          case SET_PATH:
-            return {
-              ...state,
-               path: action.data
-            }
+        case SET_PATH:
+          return {
+            ...state,
+             path: action.data
+          }
+        case SET_BACK_BUTTON:
+          if(state.questionId>0){
+            var arr = state.answersArray;
+            arr.pop();
+          return {
+            ...state,
+            answersArray: arr,
+            questionId: state.questionId-1
+          }}else{return{
+            ...state,
+            questionId: 0
+          }}
+        case SET_RESET_QUESTIONNAIRE:
+          return {
+            ...state,
+            questionId: 1
+          }
     default:
       return state
   }

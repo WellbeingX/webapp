@@ -21,6 +21,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
+
+    this.handleQuestionnaireBack();
     let formattedDay = (new Date()).getDate();
     let formattedMonth = (new Date()).getMonth();
     let formattedYear = (new Date()).getYear();
@@ -30,7 +32,7 @@ class Home extends Component {
     this.props.setSessionStart({'sessionName':sessionName, 'sessionType':'homepage'});
     this.setState({sessionName: sessionName})
 
-    this.props.setPath('/')
+    // this.props.setPath('/')
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
     ReactGA.pageview('/');
@@ -42,12 +44,14 @@ class Home extends Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight })
-    console.log(window.innerHeight);
+  }
+  handleQuestionnaireBack(){
+    if(this.props.counter.questionId>0){
+      this.props.changePage(this.props.counter.path.substring(1))
+    }
   }
 
   handleBeta(event, data){
-    console.log(event);
-    console.log(data);
     if(data.checked) this.setState({address :'information/beta'});
     else this.setState({address :'information/'});
   }
@@ -57,8 +61,6 @@ class Home extends Component {
   }
 
   handleButton(id, state, label){
-    console.log(id);
-    console.log(label);
     let arrayButton=[];
     switch(id){
       case 'recover':
@@ -86,8 +88,6 @@ class Home extends Component {
 
       break;
     }
-    console.log(this.state);
-    console.log(arrayButton);
   }
 
   handleButtonNext(){
@@ -179,7 +179,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  counter:state
+  counter:state.counter
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
