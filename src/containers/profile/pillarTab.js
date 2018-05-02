@@ -1,21 +1,13 @@
 import React from 'react';
-import ImageBarb from '../../assets/images/home/lady.png';
 import CircularChart from './circular'
 import People from '../../assets/svg/people'
+import Diet from '../../assets/svg/diet'
+import Exercise from '../../assets/svg/exercise'
+import Moon from '../../assets/svg/moon'
+import Social from '../../assets/svg/social'
+import Work from '../../assets/svg/work'
 
-const characterStyle = {
-  height: 140,
-  width: 100,
-  background:'no-repeat',
-  backgroundImage: `url(${ImageBarb})`,
-  backgroundSize: 80,
-  borderRadius:20,
-  overflow: 'hidden',
-  backgroundPosition: 'bottom left',
-  position:'absolute',
-  bottom:0,
-  marginBottom:-10
-}
+
 
 class PillarTab extends React.Component {
 
@@ -39,7 +31,10 @@ class PillarTab extends React.Component {
             title:'Mindfulness',
             sentence:this.props.suggestion,
             score:this.props.score,
-            color:'#70CACC'
+            color:'#70CACC',
+            width:60,
+            marginTop:75,
+            marginLeft:-40
           })
         break;
         case 'Sleep':
@@ -47,12 +42,83 @@ class PillarTab extends React.Component {
             title:'Sleep',
             sentence:this.props.suggestion,
             score:this.props.score,
-            color:'#1C73BB'
+            color:'#1C73BB',
+            width:45,
+            marginTop:90,
+            marginLeft:-25
+          })
+        break;
+        case 'Nutrition':
+          this.setState({
+            title:'Diet',
+            sentence:this.props.suggestion,
+            score:this.props.score,
+            color:'#499167',
+            width:40,
+            marginTop:85,
+            marginLeft:-20
+          })
+        break;
+        case 'Exercise':
+          this.setState({
+            title:'Exercise',
+            sentence:this.props.suggestion,
+            score:this.props.score,
+            color:'#f17300',
+            width:40,
+            marginTop:80,
+            marginLeft:-15
+          })
+        break;
+        case 'Work':
+          this.setState({
+            title:'Occupation',
+            sentence:this.props.suggestion,
+            score:this.props.score,
+            color:'#d3a588',
+            width:45,
+            marginTop:90,
+            marginLeft:-25
+          })
+        break;
+        case 'Social':
+          this.setState({
+            title:'Social',
+            sentence:this.props.suggestion,
+            score:this.props.score,
+            color:'#F8AE39',
+            width:60,
+            marginTop:90,
+            marginLeft:-25
           })
         break;
       }
   }
+  handleImage(){
 
+    switch(this.props.title){
+      case 'Mindfulness':
+      return(<People />);
+      break;
+      case 'Sleep':
+      return(<Moon />);
+      break;
+      case 'Nutrition':
+      return(<Diet />);
+      break;
+      case 'Exercise':
+      return(<Exercise />);
+      break;
+      case 'Social':
+      return(<Social />);
+      break;
+      case 'Work':
+      return(<Work />);
+      break;
+
+    }
+
+  }
 
   render(){
     return(
@@ -68,16 +134,14 @@ class PillarTab extends React.Component {
           </div>
           <div style={{ width:'75%', position:'absolute', right:0, bottom:0, overflow:'hidden', height:'100%',  borderRadius:20}}>
             <p style={{fontSize:'.6rem', color:'white', paddingTop:45, paddingRight:10}}> {this.state.sentence} </p>
-            <div style={{width:90,  borderRadius:20, borderWidth:1, bottom:10, left:0, position:'absolute', color:this.state.color, fontSize:'.6rem', background:'white', textAlign:'center', padding:5}}>
-              Take a test
+            <div style={{width:140,  borderRadius:20, borderWidth:1, bottom:10, right:20, position:'absolute', color:this.state.color, fontSize:'.6rem', background:'white', textAlign:'center', padding:5}}>
+              Further questions
             </div>
-            <div style={{width:90,  borderRadius:20, borderWidth:1, position:'absolute', right:20, bottom:10, color:'white', fontSize:'.6rem', background:'orange', textAlign:'center', padding:5}}>
-              What to do
-            </div>
+
           </div>
 
         </div>
-        <div style={{width:60, marginTop:70, marginLeft:-40}}><People /> </div>
+        <div style={{width:this.state.width, marginTop:this.state.marginTop, marginLeft:this.state.marginLeft}}>{this.handleImage()}</div>
 
       </div>
 

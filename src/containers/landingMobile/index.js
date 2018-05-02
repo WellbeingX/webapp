@@ -4,8 +4,10 @@ import Home from '../home'
 import HeaderUs from '../header'
 import HeaderWhite from '../headerWhite'
 import QuestionHome from '../questionHome'
+import QuestionnaireResult from '../questionnaireResult'
 import Directory from '../directory'
 import FooterHome from '../footerHome'
+import DirectorySelector from '../directorySelector'
 import FooterInfo from '../footerInfo'
 import ScrollToTop from '../scrollToTops'
 import Profile from '../profile'
@@ -27,6 +29,7 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
             <Route exact path="/directory" component={HeaderUs} />
             <Route exact path="/profile" component={HeaderUs}  />
             <Route path="/information/" component={HeaderWhite} />
+            <Route path="/result" component={HeaderWhite} />
           </main>
 
             <div className="body">
@@ -34,12 +37,16 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
                       <ScrollToTop>
                         <Switch>
                           <Route exact path="/" component={Home} />
-                          <Route  path="/information/recover" render={()=><QuestionHome location={{pathname:'/information/recover'}} /> }  />
-                          <Route  path="/information/improve" component={QuestionHome} />
-                          <Route exact path="/information/beta/recover" component={QuestionHome} />
+                          <Route  path="/information/improve" render={()=><QuestionHome location={{pathname:'/information/improve'}} /> }  />
+                          <Route  path="/information/depression" component={QuestionHome} />
+                          <Route  path="/information/anxiety" component={QuestionHome} />
+                          <Route exact path="/information/beta/depression" component={QuestionHome} />
+                          <Route exact path="/information/beta/anxiety" component={QuestionHome} />
                           <Route exact path="/information/beta/improve" component={QuestionHome} />
                           <Route exact path="/directory" component={Directory}  />
                           <Route exact path="/profile" component={Profile}  />
+                          <Route exact path="/result" component={QuestionnaireResult}  />
+                          <Route exact path="/directorySelector" component={DirectorySelector}  />
                           <Redirect to="/" />
                         </Switch>
                       </ScrollToTop>
@@ -54,6 +61,7 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
               <Route exact path="/" component={FooterHome} />
               <Route exact path="/information" component={FooterInfo} />
             </main>
+            <div style={{position:'fixed', height:30, width:'100%', fontSize:'.6rem', zIndex:999, background:'white', color:'grey', textAlign:'center', bottom:0}}> This website is in beta </div>
         </div>
       )
     }

@@ -14,7 +14,7 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 , address:'information', recover:0, improve:0, selected:[], sessionName:''};
+    this.state = { width: 0, height: 0 , address:'information', depression:0, anxiety:0, improve:0, selected:[], sessionName:''};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.handleBeta = this.handleBeta.bind(this);
     this.handleButton = this.handleButton.bind(this);
@@ -63,16 +63,28 @@ class Home extends Component {
   handleButton(id, state, label){
     let arrayButton=[];
     switch(id){
-      case 'recover':
+      case 'depression':
         if(state)
         {
           arrayButton = this.state.selected;
           arrayButton.push(label);
-          this.setState({recover:this.state.recover+1, selected:arrayButton});
+          this.setState({depression:this.state.depression+1, selected:arrayButton});
         }
         else {
           arrayButton = this.state.selected.filter((val)=>val!=label);
-          this.setState({recover:this.state.recover-1, selected:arrayButton});
+          this.setState({depression:this.state.depression-1, selected:arrayButton});
+        }
+      break;
+      case 'anxiety':
+        if(state)
+        {
+          arrayButton = this.state.selected;
+          arrayButton.push(label);
+          this.setState({anxiety:this.state.anxiety+1, selected:arrayButton});
+        }
+        else {
+          arrayButton = this.state.selected.filter((val)=>val!=label);
+          this.setState({anxiety:this.state.anxiety-1, selected:arrayButton});
         }
       break;
       case 'improve':
@@ -91,6 +103,7 @@ class Home extends Component {
   }
 
   handleButtonNext(){
+    console.log(this.state);
     let data2firebase = {sessionName: this.state.sessionName ,
                          entry:{
                            questionId: 0,
@@ -99,10 +112,14 @@ class Home extends Component {
                            answer: this.state.selected}
                          };
     this.props.setLastAnswer(data2firebase)
-    if(this.state.recover>0)
-      this.handleMainButtons('/recover');
-    else
+    if(this.state.depression>0)
+      this.handleMainButtons('/depression');
+    else if(this.state.anxiety>0)
+      this.handleMainButtons('/anxiety');
+    else {
       this.handleMainButtons('/improve');
+
+    }
   }
 
   render() {
@@ -132,37 +149,31 @@ class Home extends Component {
                     </Grid.Row>
 
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="think more clearly" type="recover" click={this.handleButton}/>
+                      <HomeButton  label="sleep better" type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                    <HomeButton  label="sleep better" type="recover" click={this.handleButton}/>
+                    <HomeButton  label="be healthier in body and mind" type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="beat depression" type="recover" click={this.handleButton}/>
+                      <HomeButton  label="manage depression" type="depression" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label='feel inspired' type="improve" click={this.handleButton}/>
+                      <HomeButton  label='manage stress' type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="beat anxiety" type="recover" click={this.handleButton}/>
+                      <HomeButton  label="manage anxiety" type="anxiety" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label='perform better at work' type="improve" click={this.handleButton}/>
+                      <HomeButton  label='improve relationship' type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                        <HomeButton  label="be better at coping" type="recover" click={this.handleButton}/>
+                        <HomeButton  label="feel less lonely" type="improve" click={this.handleButton}/>
                     </Grid.Row>
                     <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="feel less lonely" type="recover" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                    <HomeButton  label='be more successful' type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                    <HomeButton  label='do more exercise' type="improve" click={this.handleButton}/>
+                      <HomeButton  label="find meaningful hobbies" type="improve" click={this.handleButton}/>
                     </Grid.Row>
 
-                    <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > Next </Button>
+                    <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > next </Button>
 
 
 

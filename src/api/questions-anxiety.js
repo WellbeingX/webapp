@@ -77,7 +77,7 @@
 var questionRecover = [
 
     {
-        dialog: "Hi, I’m Barbara! Can I ask you some questions to improve my suggestions?",
+        dialog: "ANXIETYHi, I’m Barbara! Can I ask you some questions to improve my suggestions?",
         question: "What should I call you? (it doesn't need to be your real name)",
         answerType: 'TextInput',
         answers: [{

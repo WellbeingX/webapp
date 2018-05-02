@@ -43,7 +43,7 @@ var isActive =true;
      tick() {
        console.log(this.state.count);
        this.setState({count: (this.state.count + 1)});
-       if (this.state.count == 10 ) this.stopTimer();
+       if (this.state.count == 3 ) this.stopTimer();
      }
      componentWillMount () {
        this.startTimer();

@@ -9,6 +9,9 @@ import {
 } from '../../reducers/counter'
 import BurgerIcon from './burger'
 import HeaderMenu from './headerMenu'
+import Buy from '../../assets/svg/buy'
+import Search from '../../assets/svg/search'
+import { Link } from 'react-router-dom'
 
 
 
@@ -19,7 +22,7 @@ import HeaderMenu from './headerMenu'
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0, marginRight:0, heightCircle:100, widthCircle:100, opacity:1, menu:false, position:'absolute'};
+      this.state = { width: 0, height: 0, marginLeft:0, heightCircle:120, widthCircle:120, opacity:1, menu:false, position:'absolute', zIndex:4};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.componentDidMount = this.componentDidMount.bind(this);
       this.burgerHandle = this.burgerHandle.bind(this);
@@ -53,41 +56,46 @@ import HeaderMenu from './headerMenu'
         widthCircle:800,
         opacity:.95,
         menu:!this.state.menu,
-        position:'fixed'
+        position:'fixed',
+        zIndex:6
       })
     }
 
     burgerClose(){
       this.setState({
-        heightCircle:100,
-        widthCircle:100,
+        heightCircle:120,
+        widthCircle:120,
         opacity:1,
         menu:!this.state.menu,
-        position:'absolute'
+        position:'absolute',
+        zIndex:4
       })
     }
 
 
     render() {
 
-        var styleWrapper={marginTop:0, paddingTop:0, position:'relative', zIndex:40}
-        var styleCircle = {right:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:999, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, borderRadius:'100%',transition:'width 0.5s, height 0.5s,right 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
+        var styleWrapper={marginTop:0, paddingTop:0, position:'relative', zIndex:50}
+        var styleCircle = {left:-this.state.widthCircle*.4, top:-this.state.heightCircle*.4, background:'white', zIndex:this.state.zIndex, marginRight:0, height: this.state.heightCircle, width:this.state.widthCircle, borderRadius:'100%',transition:'width 0.5s, height 0.5s,left 0.5s, top 0.5s, opacity 0.8s', opacity:this.state.opacity, position:this.state.position };
 
 
         return(
                 <div style={styleWrapper}>
-                  <div style={{position:'absolute',left:20, top:15, zIndex:998}}>
+                  <div style={{position:'absolute',left:15, opacity:0, top:15, zIndex:5}}>
                     <BurgerIcon onClick={this.burgerHandle}/>
                   </div>
                   <div style={{textAlign:'center', width:'100%', position:'relative'}}>
 
-                      <h2 className="logo" style={{ fontSize:'1.2rem', fontWeight:'900', zIndex:100, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
-                      <div style={{position:'absolute', right:0, width:this.state.widthCircle, height:100, top:0}}>
+                      <h2 className="logo" style={{ fontSize:'1.2rem', fontWeight:'900', zIndex:this.state.zIndex, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
+                      <div style={{position:'absolute', left:0, width:this.state.widthCircle, height:120, top:0}}>
                         <div style={{position:'relative', width:'100%', height:'100%'}}>
                           <div style={styleCircle}>
                             {this.state.menu ? <HeaderMenu close={this.burgerClose}/> : ''}
                           </div>
                         </div>
+                      </div>
+                      <div style={{position:'absolute', top:27, right:20, width:20, height:20, zIndex:201, cursor:'pointer'}}>
+                        <Link to='/directorySelector'> <Search /> </Link>
                       </div>
                   </div>
 

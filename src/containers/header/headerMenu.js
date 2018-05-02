@@ -3,8 +3,9 @@ import { List } from 'semantic-ui-react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router-dom'
 
+
 export default ({ open, ...props }) => (
-  <div style={{color:'black', position:'fixed', top:20 ,left:-10, fontSize:'1rem'}}>
+  <div style={{color:'black', position:'fixed', top:20 ,left:-10, fontSize:'1rem', zIndex:204}}>
   <ReactCSSTransitionGroup
    component="div"
    transitionName="fade"
@@ -13,12 +14,11 @@ export default ({ open, ...props }) => (
    transitionAppear
    transitionAppearTimeout={1200}
   >
-    <div style={{position:'relative' }} onClick={props.close}>
+    <div style={{position:'relative' , zIndex:104}} onClick={props.close}>
       X
     </div>
     <div style={{position:'relative', left:100, top:100, textAlign:'left' }} >
     <List link>
-    <List.Item as='a'><Link to='/profile'>Profile</Link></List.Item>
     <List.Item as='a'><Link to='/'>Home</Link></List.Item>
     <List.Item as='a'><Link to='/Directory'>Directory</Link></List.Item>
       <List.Item as='a'>Mission</List.Item>

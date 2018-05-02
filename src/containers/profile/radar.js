@@ -2,7 +2,7 @@ import React from 'react';
 import {Radar} from "react-chartjs-2";
 
 var data = {
-	labels: ["Mindfulness", "Sleep", "Distress", "Ansia", "Exercise", "Purpose", "Nutrition", 'Social'],
+	labels: ["Mindfulness", "Sleep", "Exercise", "Purpose", "Nutrition", 'Social'],
 	datasets: [
 		{
 			label: "Goal",
@@ -16,7 +16,7 @@ var data = {
 			pointStrokeColor: "#fff",
 			pointHighlightFill: "#fff",
 			pointHighlightStroke: "rgba(151,209,168,1)",
-			data: [65, 65, 65, 65, 65, 65, 65, 65]
+			data: [65, 65, 65, 65, 65, 65]
 		},
 		{
 			label: "Myself",
@@ -26,7 +26,7 @@ var data = {
 			borderColor: "rgba(38,158,204,1)",
 			borderWidth:1,
 			pointBorderWidth:1,
-			data: [28, 48, 40, 19, 96, 27, 100, 20]
+			data: [40, 19, 56, 27, 80, 20]
 		}
 	]
 };

@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Picture from './picture'
-import Recommendation from './recommendation'
-import PillarTab from './pillarTab'
-import RadarChart from './radar'
+import Recommendation from '../profile/recommendation'
+import PillarTab from '../profile/pillarTab'
+import { Link } from 'react-router-dom'
 
 var arrayAnsers =
 [{
@@ -38,7 +37,7 @@ var arrayAnsers =
   suggestion:'Clean food is a good rule, additionally there is tremendous healing, rebalancing and revitalising power in fruits, vegetables and superfoods'
 }]
 
-class Profile extends React.Component {
+class QuestionnaireResult extends React.Component {
 
 
   constructor(props){
@@ -87,21 +86,45 @@ class Profile extends React.Component {
     renderPillarTab(val){
       return(<PillarTab title={val.title} score={val.score} suggestion={val.suggestion}/>)
     }
+    toDirectoryHandler(){
+      console.log("click!");
+    }
   render(){
     return(
 
       <div >
-        <div>
-          <Picture name={this.state.name} email={this.state.email} age={this.state.age} gender={this.state.gender}/>
-        </div>
-        <div style={{background:'white', paddingTop:0, marginTop:-1}}>
-        <h2 style={{color:'grey', fontSize:'.8rem', paddingTop:10, marginLeft:50}}>Dashboard </h2>
+        <Link to='/directory'>
+          <div style={{position:'fixed', top:20, right:20, color:'white', zIndex:10, width:100,  borderRadius:20, borderWidth:1, fontSize:'.6rem', background:'orange', textAlign:'center', padding:5, cursor:'pointer'}} onClick={this.toDirectoryHandler}>
+            What to do >
+          </div>
+        </Link>
 
-          <RadarChart />
-          <Recommendation suggestion='You should do this, this and that...'/>
-          <br />
+        <div style={{background:'white', paddingTop:80, marginTop:-1}}>
+
           {arrayAnsers.map(this.renderPillarTab)}
+          <Recommendation />
+
+          <div style={{
+            position:'relative',
+            borderRadius:20,
+            borderWidth:1,
+            fontSize:'.6rem',
+            background:'white',
+            margin:'auto',
+            width:120,
+            textAlign:'center',
+            padding:5,
+            cursor:'pointer',
+            borderColor:'#70CACC',
+            color:'#70CACC',
+            borderStyle:'solid',
+            marginTop:20,
+            marginBottom:20 }} onClick={this.toDirectoryHandler}>
+            Create a profile
+          </div>
+
         </div>
+
       </div>
 
     )
@@ -119,4 +142,4 @@ class Profile extends React.Component {
   export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Profile)
+  )(QuestionnaireResult)

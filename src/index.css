@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
-
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke:1px transparent;
 }
 
 /* BACKGROUND: `linear-gradient(-20deg, #96D0A7, #249ECD)` */
@@ -20,7 +21,8 @@ html{
 body {
   height: 100%;
   overflow-x: hidden;
-
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke:1px transparent;
 }
 
 h2{
@@ -182,7 +184,7 @@ div.ui.grid.landingWrapper {
 
 .button.ui.button.landingButton{
   margin:auto;
-  width: 250px;
+  width: 300px;
   padding:15px 25px;
   background: rgba(255,255,255,1);
   border-radius: 50px;
@@ -209,7 +211,6 @@ div.ui.grid.landingWrapper {
   font-size: .8rem;
   background: rgba(255,255,255,0);
   text-decoration: underline;
-  text-transform: capitalize;
   opacity:1;
 
 }
@@ -465,7 +466,7 @@ Input{
   }
 
   .button.ui.button.landingButton{
-    width: 220px;
+    width: 260px;
     padding:10px 0;
     font-size: .7rem;
   }
@@ -556,8 +557,8 @@ Input{
   cursor: pointer;
   left: 20px;
   top: 15px;
-  z-index: 998;
   padding: 10px;
+
 }
 
 .burger-menu .bar1,
@@ -565,7 +566,7 @@ Input{
 .bar3 {
   width: 23px;
   height: 1.5px;
-  background-color: #FFF;
+  background-color: grey;
   margin: 5px 0;
   transition: 0.4s;
 }

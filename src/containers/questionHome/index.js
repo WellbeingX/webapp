@@ -1,12 +1,15 @@
 import React from 'react';
-import questionBetaRecover from '../../api/questions-beta-recover';
+import questionBetaDepression from '../../api/questions-beta-depression';
+import questionBetaAnxiety from '../../api/questions-beta-anxiety';
 import questionBetaImprove from '../../api/questions-beta-improve';
-import questionRecover from '../../api/questions-recover';
+import questionDepression from '../../api/questions-depression';
+import questionAnxiety from '../../api/questions-anxiety';
 import questionImprove from '../../api/questions-improve';
 import update from 'react-addons-update';
 import Questionnaire from '../questionnaire';
 import Result from '../result';
 import Directory from '../directory';
+import QuestionnaireResult from '../questionnaireResult';
 import { Route, Link } from 'react-router-dom'
 import About from '../about'
 import { push } from 'react-router-redux'
@@ -58,19 +61,21 @@ class QuestionHome extends React.Component {
       // Here the PATH is sent to the Google Analytics
       ReactGA.pageview(this.props.location.pathname);
       // Depending on the path the user is sent to a different journey, that means different questionnaire JSONs
-      if(this.props.location.pathname.includes("/information/beta/recover")){
-          quizQuestions = questionBetaRecover;
+      if(this.props.location.pathname.includes("/information/beta/depression")){
+          quizQuestions = questionBetaDepression;
+        }else if(this.props.location.pathname.includes("/information/beta/anxiety")){
+          quizQuestions = questionBetaAnxiety;
         }else if(this.props.location.pathname.includes("/information/beta/improve")){
           quizQuestions = questionBetaImprove;
-        }else if(this.props.location.pathname.includes("/information/recover")){
-          quizQuestions = questionRecover;
+        }else if(this.props.location.pathname.includes("/information/depression")){
+          quizQuestions = questionDepression;
+        }else if(this.props.location.pathname.includes("/information/anxiety")){
+          quizQuestions = questionAnxiety;
         }else if(this.props.location.pathname.includes("/information/improve")){
           quizQuestions = questionImprove;
         }else {
           console.log('Error reading questionnaire questions');
         }
-        console.log('Problema?');
-        console.log(this.props.counter.questionId);
         let index = this.props.counter.questionId-1;
         if(index<0)index=0;
           this.setState({
@@ -218,9 +223,11 @@ class QuestionHome extends React.Component {
   }
 
   renderResult() {
-
+    // this.props.changePage('profile')
     return (
-      <Directory quizResult={this.state.result} />
+      // <Profile />
+      // <Directory quizResult={this.state.result} />
+      <QuestionnaireResult />
     );
   }
 
