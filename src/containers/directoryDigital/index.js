@@ -7,7 +7,16 @@ import Result from '../result'
 import resources from '../../api/resources.js'
 import DirectoryHeader from '../directoryHeader'
 import ImageBarb from '../../assets/images/home/lady.png';
+import Suggestions from './suggestions'
+import SolutionRow from './solutionRow'
 
+const titles = [
+  'For a rested mind',
+  'For a stronger mind',
+  'For a relaxed mind',
+  'For a focused mind',
+  'For a nourished mind'
+]
 const characterStyle = {
   height: 170,
   width: 100,
@@ -46,18 +55,20 @@ function DirectoryDigital(props){
   const renderSolutions = (key) => (
       <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].description} imageURL={key[0].imgURL} website={key[0].website} textColor='black'/>
     )
-    const renderSolutionsRec = (key) => (
+  const renderSolutionsRec = (key) => (
         <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].comments} imageURL={key[0].imgURL} website={key[0].website} textColor='white'/>
       )
 
-    window.scrollTo(0,0);
-
+  const renderRow = (key) =>(
+      <SolutionRow title={key} solutions={solutionMatching()} />
+    )
 
   return(
 
-      <Container >
+      <div >
         <div id='top'> </div>
-        <div style={{paddingTop:30}}>
+        <div style={{paddingTop:10}}>
+          <Container>
             <div className='directoryFilterBar'>
               <p className="filterNormal">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 42" style={{height:15, paddingRight:15, fill:'none', stroke:'#525254', strokeMiterlimit:10, strokeWidth:4}}>
@@ -65,36 +76,13 @@ function DirectoryDigital(props){
               </svg>
               <span className="filterFilter">Filter</span> by <span className="filterHighlight">price</span> and <span className="filterHighlight">category</span> </p>
             </div>
-              <div className='recommendationContainer'>
-                <div className='directoryBarbaraWrapper'>
-                  <div className='directoryBarbaraWrapperInner'>
-                  <p className='directoryRecommendationTitle'>Suggestions</p>
-                  <Grid className='directoryBarbaraDiv'>
-                    <Grid.Column width={12} style={{padding:0}}>
-                      <p className='directoryHeaderSentence'> I have 3 suggestions and other 237 resources </p>
-                    </Grid.Column>
-                    <Grid.Column width={4} style={{padding:0}}>
-                        <div style={characterStyle}>  </div>
-                      </Grid.Column>
-                  </Grid>
-                  </div>
-                  </div>
-                <div className='directoryRecommendationSpace' />
-                {solutionMatching().map(renderSolutionsRec)}
-              </div>
-              <p>For a rested mind</p>
-              {solutionMatching().map(renderSolutions)}
-              <p>For a stronger mind</p>
-              {solutionMatching().map(renderSolutions)}
-              <p>For a relaxed mind</p>
-              {solutionMatching().map(renderSolutions)}
-              <p>For a focused mind</p>
-              {solutionMatching().map(renderSolutions)}
-              <p>For a nourished mind</p>
-              {solutionMatching().map(renderSolutions)}
 
+            <Suggestions solutionMatching = {solutionMatching()} />
+            </Container>
+              {titles.map(renderRow)}
+              
         </div>
-      </Container>
+      </div>
 
 
 

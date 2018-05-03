@@ -1,39 +1,30 @@
 import React from 'react'
-import {Grid,  Image} from 'semantic-ui-react'
+import {Image} from 'semantic-ui-react'
 
 
 
 export default function DirectorySolution(props){
-  console.log('desc length');
-  console.log(props.description.length);
-  var textColor = {color:props.textColor};
 
   return(
-        <div className="solutionContainer" href={props.website}  style={textColor}>
+        <div href={props.website}  className='' style={{color:props.textColor, display:'inline-block', width:250, height:130, background:'white', borderRadius:20, position:'relative', marginRight:20, fontFamily:'Roboto'}}>
+        <div style={{position:'absolute', width:250, height:130}}>
+              <h2 style={{fontSize:'.6rem', left:110, top:10, color:'black', fontSize:'.8rem', position: 'absolute', fontFamily:'Roboto', fontWeight:400}}>{props.title}</h2>
 
-            <h2 style={{fontSize:'.6rem'}}>{props.title}</h2>
+              <Image src={props.imageURL} style={{width:80, height:80, background:'grey', left:10, borderRadius:20, bottom:25, position: 'absolute'}} />
 
-          <Grid columns={2} className='solutionContent' style={{height:'100%', position:'relative'}}>
+              <div style={{ width:130, height:65, right:10, top:35 , lineHeight:'.6rem', color:'grey', fontSize:'.52rem', height:100, position:'absolute'}}>
+              <div style={{position:'relative', height:65, width:'100%',   whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto' }}>
+              {props.description}
+              </div>
+              </div>
 
-            <Grid.Column  className='solutionImage' style={{padding:'20px 0 0 20px', width:'30%', height:100}}>
-                <Image centered small src={props.imageURL} style={{width:'100%', height:'100%', background:'grey', borderRadius:20}} />
-            </Grid.Column>
+              <p  style={{position:'absolute',bottom:20, left:110, color:'grey' , fontSize:'.6rem', margin:0, fontFamily:'Roboto'}}>{props.categ}</p>
 
-            <Grid.Column className='solutionText' style={{padding:'20px 0 0 10px', width:'70%', paddingRight:0, paddingBottom:0}}>
-                <Grid.Row style={{position:'absolute', width:'100%', height:'50%'}}>
-                  <p className='solutionDescription' style={textColor}>{props.description}</p>
-                </Grid.Row>
-                <Grid columns={2} style={{width:'100%', height:'50%', position:'absolute', bottom:20, right:20}}>
-                    <Grid.Column  style={{bottom:0 ,width:'50%',  height:'100%', padding:0, paddingLeft:10}}>
-                      <p style={textColor} className='solutionCateg'>{props.categ}</p>
-                    </Grid.Column>
-                    <Grid.Column   style={{bottom:0, color:'black',width:'50%', height:'100%', paddingRight:5, padding:0, textAlign:'right'}}>
-                      <p  style={textColor} className='solutionPrice'>{props.price}</p>
-                    </Grid.Column>
-                </Grid>
-            </Grid.Column>
-            <a href={props.website} style={{position:'absolute', width:350, height:100, top:0, left: 0, zIndex: 1}} target='_blank' > </a>
-          </Grid>
+              <p   style={{position:'absolute',bottom:20, right:10, color:'grey' , fontSize:'.6rem', margin:0, fontFamily:'Roboto'}}>{props.price}</p>
+              <div style={{height:0, width:'53%', margin:0, background:'#ddd', right:10, bottom:98, position:'absolute'}} />
+
+          </div>
+            <a href={props.website} style={{position:'absolute', width:'100%', height:100, top:0, left: 0, zIndex: 1}} target='_blank' > </a>
         </div>
 
 

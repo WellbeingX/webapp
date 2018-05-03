@@ -168,7 +168,7 @@ p{
    color:white;
    padding: 25px;
    margin-bottom: -10px;
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'Roboto', sans-serif;
 
 }
 
@@ -728,7 +728,7 @@ div.ui.grid.directoryBarbaraDiv{
   overflow: hidden;
   border-radius: 20px;
   background:rgb(112, 201, 203);
-  margin:30px 0px;
+  margin:10px 0px;
   display: inline-block;
   width: 100%;
   height: 670px;
@@ -1219,4 +1219,10 @@ fill: #FF6700;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+}
+body ::-webkit-scrollbar, body::-webkit-scrollbar-button, body::-webkit-scrollbar-track, body::-webkit-scrollbar-track-piece, body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-corner {
+    width: 0em;
+    background: rgba(0,0,0,0);
+    border-radius: 0px;
+  height: 0px;
 }
