@@ -134,7 +134,7 @@ class PillarTab extends React.Component {
           </div>
           <div style={{ width:'75%', position:'absolute', right:0, bottom:0, overflow:'hidden', height:'100%',  borderRadius:20}}>
             <p style={{fontSize:'.6rem', color:'white', paddingTop:45, paddingRight:10}}> {this.state.sentence} </p>
-            <div style={{width:140,  borderRadius:20, borderWidth:1, bottom:10, right:20, position:'absolute', color:this.state.color, fontSize:'.6rem', background:'white', textAlign:'center', padding:5}}>
+            <div style={{width:140,  borderRadius:20, borderWidth:1, bottom:10, right:20, position:'absolute', color:'white', fontSize:'.6rem', background:'rgba(0,0,0,0)', textAlign:'center', padding:5,  textDecoration: 'underline', cursor:'pointer'}}>
               Further questions
             </div>
 

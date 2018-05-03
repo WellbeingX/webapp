@@ -18,7 +18,7 @@ import { connect } from 'react-redux'
 import {setLastAnswer, setName, setPath, setSessionStart, setBackButton, setResetQuestionnaire} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
-
+import {MatrixWeightsDepression, MatrixWeightsAnxiety, MatrixWeightsImprovement} from '../../api/matrixWeights';
 
 var quizQuestions =[];
 
@@ -193,23 +193,76 @@ class QuestionHome extends React.Component {
 
 
      setResults(result) {
+       // loaderAppear();
+       console.log('Qua tutti i print');
+       console.log(this.state);
+       console.log(this.props.counter);
+       setTimeout(() => this.setState({ result:true }), 3000);
        this.props.setResetQuestionnaire();
-         if (result.length === 1) {
-           this.setState({ result: result[0] });
-         } else {
-           this.setState({ result: 'Undetermined' });
-         }
+
+     }
+
+     scoresQuestionnaire(){
+       let arrayScore=[];
+       let answer;
+       let i=0;
+       console.log(this.props.counter.answersArray);
+       switch(this.props.counter.path){
+         case '/information/improve':
+         console.log('sono in improve');
+         console.log(this.props.counter.answersArray.length)
+           for(i=0; i<this.props.counter.answersArray.length; i++){
+             let answer = this.props.counter.answersArray[i]
+             if(Number.isInteger(answer.entry.answerId-0)){
+               arrayScore[answer.entry.questionId] = (MatrixWeightsImprovement[answer.entry.questionId][answer.entry.answerId])
+               console.log(arrayScore);
+             }
+           }
+         break;
+         case '/information/depression':
+         for(i=0; i<this.props.counter.answersArray.length; i++){
+           let answer = this.props.counter.answersArray[i]
+           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
+           }
+         break;
+         case '/information/anxiety':
+         for(i=0; i<this.props.counter.answersArray.length; i++){
+           let answer = this.props.counter.answersArray[i]
+           arrayScore[answer.entry.questionId] = (MatrixWeightsAnxiety[answer.entry.questionId,answer.entry.answerId])
+           }
+         break;
+         case '/information/beta/improve':
+         for(i=0; i<this.props.counter.answersArray.length; i++){
+           let answer = this.props.counter.answersArray[i]
+           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
+           }
+         break;
+         case '/information/beta/depression':
+         for(i=0; i<this.props.counter.answersArray.length; i++){
+           let answer = this.props.counter.answersArray[i]
+           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
+           }
+         break;
+         case '/information/beta/anxiety':
+         for(i=0; i<this.props.counter.answersArray.length; i++){
+           let answer = this.props.counter.answersArray[i]
+           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
+           }
+         break;
+       }
+       console.log(arrayScore);
+       return [3,5,4,7,1,8];
      }
 
 
   renderQuiz() {
-
+    console.log(this.props.counter.questionId);
     return (
       <Questionnaire
         scrollUp={this.props.scrollUp}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
+        questionId={this.props.counter.questionId}
         dialog = {this.state.dialog}
         question={this.state.question}
         questionTotal={quizQuestions.length}
@@ -227,7 +280,7 @@ class QuestionHome extends React.Component {
     return (
       // <Profile />
       // <Directory quizResult={this.state.result} />
-      <QuestionnaireResult />
+      <QuestionnaireResult scores={this.scoresQuestionnaire()} />
     );
   }
 

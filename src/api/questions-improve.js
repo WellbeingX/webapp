@@ -103,7 +103,7 @@ var questionRecover = [
 
     {
         dialog: "Thinking about the past week...",
-        question: "How many days did you engage in over 30 minutes of vigorous physical activity (e.g. brisk walking, cycling, sports)?",
+        question: "How many days did you do over 30 minutes of vigorous physical activity? (e.g. brisk walking, cycling, sports)",
         answerType:'Slider',
         answers: [
             {
@@ -169,10 +169,67 @@ var questionRecover = [
           }
       ],
       label:' '
+  }
+  ,{
+      dialog: "",
+      question: "How satisfied are you with your sense of purpose in your life? Consider work, religion, raising children etc",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "extremely dissatisfied"
+          },
+          {
+              key: 2,
+              text: "dissatisfied"
+          },
+          {
+              key: 3,
+              text: "about OK"
+          },
+          {
+              key: 4,
+              text: "satisfied"
+          },
+          {
+              key: 5,
+              text: "very satisfied"
+          }
+      ],
+      label:' '
   },
   {
       dialog: "",
-      question: "Which of the following do you enjoy doing?",
+      question: "How often would you describe yourself as feeling relaxed and thinking clearly?",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "never"
+          },
+          {
+              key: 2,
+              text: "rarely"
+          },
+          {
+              key: 3,
+              text: "some of the time"
+          },
+          {
+              key: 4,
+              text: "often"
+          },
+          {
+              key: 5,
+              text: "all of the time"
+          }
+      ],
+      label:' '
+  },
+
+  {
+      dialog: "",
+      question: "Which of the following do you find useful or enjoyable?",
       answerType:'Multiple',
       answers: [ {
         multiple: [

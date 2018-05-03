@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
   function QuestionCount(props) {
-    const questionStart = 3;
+    const questionStart = 1
+    ;
     function renderCounter () {
       if(props.counter>questionStart){
         return(

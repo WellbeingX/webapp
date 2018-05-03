@@ -5,35 +5,35 @@ import Recommendation from '../profile/recommendation'
 import PillarTab from '../profile/pillarTab'
 import { Link } from 'react-router-dom'
 
-var arrayAnsers =
+var arrayAnswers =
 [{
   title:'Mindfulness',
-  score:'4',
+  score:'?',
   suggestion:'Meditation is a very important method to keep your mind clear and safe. You mght want to look at difference way of improving your skills.'
 },
 {
   title:'Sleep',
-  score:'2',
+  score:'?',
   suggestion:'Somewhere between 7 and 9 hours a night are a good guideline to regulate mood and cognitive functions; deep sleep is key to rest and recovery.'
 },
 {
   title:'Work',
-  score:'4',
+  score:'?',
   suggestion:'Work is where we spent most of our waking time, can be a main culprit of stress, and it often directs how and when we do everything else.'
 },
 {
   title:'Social',
-  score:'6',
+  score:'?',
   suggestion:'Social connectedness is perhaps the most powerful predictor of life outcomes, and anything you can do here to interact with others can help'
 },
 {
   title:'Exercise',
-  score:'3',
+  score:'?',
   suggestion:'Regular exercise can help prevent depression, reduce stress, and strengthen the mind just as much as it strengthens the body'
 },
 {
   title:'Nutrition',
-  score:'7',
+  score:'?',
   suggestion:'Clean food is a good rule, additionally there is tremendous healing, rebalancing and revitalising power in fruits, vegetables and superfoods'
 }]
 
@@ -45,9 +45,26 @@ class QuestionnaireResult extends React.Component {
     this.state={
       status:'loading...',
       key:19519167226,
-      profileStatus:''
+      profileStatus:'',
+      values:arrayAnswers
     }
     this.dataControl = this.dataControl.bind(this);
+
+  }
+  componentWillMount(){
+    // Values update from the updatedAnswersCount
+    for(let i=0; i<arrayAnswers.length; i++){
+      if(typeof this.props.scores !== 'undefined')
+      {
+        arrayAnswers[i].score = this.props.scores[i];
+      }
+      else
+      {
+        arrayAnswers[i].score = i;
+      }
+    }
+    this.setState({values:arrayAnswers})
+    console.log(this.state.values);
 
   }
 
@@ -71,6 +88,8 @@ class QuestionnaireResult extends React.Component {
         console.log('There has been a problem with your fetch operation: ' + error.message);
         });
     // this.setState({data:retrievedData});
+
+
   }
 
   dataControl(data){
@@ -101,7 +120,7 @@ class QuestionnaireResult extends React.Component {
 
         <div style={{background:'white', paddingTop:80, marginTop:-1}}>
 
-          {arrayAnsers.map(this.renderPillarTab)}
+          {this.state.values.map(this.renderPillarTab)}
           <Recommendation />
 
           <div style={{

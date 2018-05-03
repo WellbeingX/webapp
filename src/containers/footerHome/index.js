@@ -17,7 +17,7 @@ export default function FooterHome(){
           </Grid.Row>
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
-                <p className='landingTextFooterHow'> 1. Select from above and answer a few questions about yourself</p>
+                <p className='landingTextFooterHow'>1. Start to build your confidential wellbeing profile by answering 12 questions</p>
             </Grid.Column>
             <Grid.Column style={{width:'27%', padding:20, paddingTop:0, marginTop:10}}>
                 <Paper />
@@ -31,7 +31,7 @@ export default function FooterHome(){
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
 
-              <p className='landingTextFooterHow'> 2. Compare activities, apps, therapists and products</p>
+              <p className='landingTextFooterHow'> 2. See your wellbeing score, and personalised suggestions</p>
             </Grid.Column>
             <Grid.Column style={{width:'28%', padding:10, paddingTop:0, marginTop:20}}>
                   <List />
@@ -46,7 +46,7 @@ export default function FooterHome(){
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
 
-                <p className='landingTextFooterHow'> 3. Select from the personalized shortlist or choose the one you prefer!</p>
+                <p className='landingTextFooterHow'> 3. See availability and experiment as you learn to put your mind first! </p>
                 </Grid.Column>
                 <Grid.Column style={{width:'30%', padding:20, paddingTop:0, marginTop:20}}>
                   <People />
@@ -76,8 +76,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Local and personal to you</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Find out what resources are available just where you need them, close to your home, your work or where you are right now.  Whether it’s a proven mindfulness app, an energising social activity, some rewarding voluntary work or a conversation with a top coach, we will create personalised suggestions for you.</h3>
+                      Everything in one place</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We search the world and your local area for what works, from therapists to apps to exercise clubs.</h3>
                     </div>
                   </div>
 
@@ -99,34 +99,10 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Community</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Whatever journey you're on, someone can help. Being a part of our community allows you to share your personal experiences/strategies with other users and get rewarded in credits for helping the community get smarter.</h3>
+                      Personalised to you</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We’re proud of our ability to match, using the minimum questions and location data</h3>
                     </div>
                   </div>
-
-                  <div  className='homeFeatRow' style={{ width:'100%'}}>
-                    <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149 136" className='CalendarSVG'>
-                          <g id="Layer_2" data-name="Layer 2">
-                            <g id="Layer_1-2" data-name="Layer 1">
-                              <rect className="cls-1" x="5.5" y="18" width="138" height="113"/>
-                              <rect className="cls-2" x="0.5" y="13" width="148" height="25"/>
-                              <rect className="cls-3" x="14.5" y="6" width="19" height="29"/>
-                              <rect className="cls-3" x="111.5" y="5" width="19" height="29"/>
-                              <text className="cls-4" transform="translate(46.11 101.98)">23</text>
-                              </g>
-                            </g>
-                          </svg>
-                      </div>
-                    </div>
-                    <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Works around you</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>The first step to a better state of mind is finding time for mental activities.  Our integrated booking system supports Google Calendar, iCal and Outlook Calendar - ensuring that even if you're always busy or have lots of free time, you'll have a seamless experience fitting our recommendations into your schedule.</h3>
-                    </div>
-                  </div>
-
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
@@ -150,7 +126,7 @@ export default function FooterHome(){
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Set goals and track progress</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Need immediate feedback? Or do you just like seeing your growth on a chart? BetterSpace is the self-improvement hub for you - track sleep hours, time spent on social activities and more within our app. With support for Apple Health and Google Fit, our app is a centralised solution for all your health tracking needs. </h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Need immediate feedback? Or do you just like seeing your growth on a chart? BetterSpace is the self-improvement hub for you</h3>
                     </div>
                   </div>
 
@@ -168,8 +144,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Curated by experts</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>BetterSpace is your guide through an ever-expanding (and sometimes confusing) world of solutions to any mental health issues you may have. We work with charities  and research groups to recommend only the best resources and services. </h3>
+                      Social mission</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>By making it easier to have a healthy mind, we want to tackle rising levels or mental illness </h3>
                     </div>
                   </div>
 
@@ -193,8 +169,8 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Confidentiality</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Your privacy is our top priority. You can access your recommendations in anonymity and, more importantly, we will NEVER share your data without permission. We’ll only ask you to share information for your benefit, we exercise the highest levels of data protection. </h3>
+                      Protecting your data</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We get it. Winning and retaining your trust is everything for us - see our data policy </h3>
                     </div>
                   </div>
           </Grid.Row>

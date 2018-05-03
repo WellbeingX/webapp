@@ -77,32 +77,258 @@
 var questionRecover = [
 
     {
-        dialog: "DEPRESSIONHi, I’m Barbara! Can I ask you some questions to improve my suggestions?",
-        question: "What should I call you? (it doesn't need to be your real name)",
-        answerType: 'TextInput',
+        dialog: "Hi, I’m Barbara! Your personal wellbeing assistant",
+        question: "Did you know 1 in 10 people have depression? There are plenty of ways to recover, and I’ve got some questions to work out what could work for you",
+        answerType: 'Button',
         answers: [{
                 key: 0,
-                text: "Name..."
+                text: "continue"
             }
            ],
-        label:'name'
+        label:''
     },
   {
-      dialog: "Nice to meet you /name...",
-      question: "What is your email?",
-      answerType: 'TextInput',
+      dialog: "Firstly, two questions to understand where you’re at, and sorry if the wording feels overly negative.",
+      question: "During the past two weeks, how often have you felt down, depressed, irritable or hopeless?",
+      answerType:'Button',
       answers: [
           {
-                  key: 0,
-                  text: "Email..."
-              }
-         ],
-      label:'email'
+              key: 1,
+              text: "not at all"
+          },
+          {
+              key: 2,
+              text: "several days"
+          },
+          {
+              key: 3,
+              text: "over half the days"
+          },
+          {
+              key: 4,
+              text: "nearly every day"
+          },
+          {
+              key: 5,
+              text: "can't say"
+          }
+      ],
+      label:' '
+  },
+  {
+      dialog: "These questions help my advice. No need to answer if they’re uncomfortable",
+      question: "During the past two weeks, how often have you not been able to stop or control your worrying?",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "not at all"
+          },
+          {
+              key: 2,
+              text: "several days"
+          },
+          {
+              key: 3,
+              text: "over half the days"
+          },
+          {
+              key: 4,
+              text: "nearly every day"
+          },
+          {
+              key: 5,
+              text: "can't say"
+          }
+      ],
+      label:' '
+  },
+  {
+      dialog: "On to sleep, in the past week...",
+      question: "How many nights would you say you’ve had had a good night’s sleep?",
+      answerType:'Slider',
+      answers: [
+          {
+            min: 0,
+            max: 7,
+            key:0
+          }
+      ],
+      label:' '
+  },
+
+    {
+        dialog: "Thinking about the past week...",
+        question: "How many days did you do over 30 minutes of vigorous physical activity? (e.g. brisk walking, cycling, sports)",
+        answerType:'Slider',
+        answers: [
+            {
+                min: 0,
+                max: 7,
+                key:0
+            }
+        ],
+        label:' '
+    },
+  {
+      dialog: "That food question",
+      question: "In general, would you like to eat healthier?",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "never"
+          },
+          {
+              key: 2,
+              text: "rarely"
+          },
+          {
+              key: 3,
+              text: "sometimes"
+          },
+          {
+              key: 4,
+              text: "often"
+          },
+          {
+              key: 5,
+              text: "all the time"
+          }
+      ],
+      label:' '
+  },
+  {
+      dialog: "",
+      question: "Over the past 7 days, how often have you felt close to other people?",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "never"
+          },
+          {
+              key: 2,
+              text: "rarely"
+          },
+          {
+              key: 3,
+              text: "some of the time"
+          },
+          {
+              key: 4,
+              text: "often"
+          },
+          {
+              key: 5,
+              text: "all the time"
+          }
+      ],
+      label:' '
+  }
+  ,{
+      dialog: "",
+      question: "How satisfied are you with your sense of purpose in your life? Consider work, religion, raising children etc",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "extremely dissatisfied"
+          },
+          {
+              key: 2,
+              text: "dissatisfied"
+          },
+          {
+              key: 3,
+              text: "about OK"
+          },
+          {
+              key: 4,
+              text: "satisfied"
+          },
+          {
+              key: 5,
+              text: "very satisfied"
+          }
+      ],
+      label:' '
+  },
+  {
+      dialog: "",
+      question: "How often would you describe yourself as feeling relaxed and thinking clearly?",
+      answerType:'Button',
+      answers: [
+          {
+              key: 1,
+              text: "never"
+          },
+          {
+              key: 2,
+              text: "rarely"
+          },
+          {
+              key: 3,
+              text: "some of the time"
+          },
+          {
+              key: 4,
+              text: "often"
+          },
+          {
+              key: 5,
+              text: "all of the time"
+          }
+      ],
+      label:' '
+  },
+
+  {
+      dialog: "",
+      question: "Which of the following do you find useful or enjoyable?",
+      answerType:'Multiple',
+      answers: [ {
+        multiple: [
+          {
+              text: 'apps',
+              key:1
+          },
+          {
+              text: "meeting new people",
+              key:2
+          },
+          {
+              text: "time in nature",
+              key:3
+          },
+          {
+              text: "reading books",
+              key:4
+          },
+          {
+              text: "social activities",
+              key:5
+          },
+          {
+              text: "listening to podcasts",
+              key:6
+          },
+          {
+              text: "learning",
+              key:7
+          },
+          {
+              text: "exercise",
+              key:7
+          }
+      ],
+    }],
+      label:' '
   },
   {
       dialog: "",
       question: "What’s your gender?",
-      answerType: 'Button',
+      answerType: 'ButtonGender',
       answers: [
           {
               key: 0,
@@ -121,13 +347,15 @@ var questionRecover = [
               text: "prefer not to say"
           }
       ],
-      label:'gender'
+      label:''
   },
+
   {
       dialog: "",
       question: "...and your age?",
       answerType:'Spinner',
       answers: [ {
+        keySpinner :[1,2,3,4,5,6,7,8,9],
         spinner: [
           {
               text: '<18',
@@ -176,307 +404,6 @@ var questionRecover = [
           }
       ],
     }],
-      label:'age'
-  },
-
-
-
-  {
-      dialog: "Over the past two weeks...",
-      question: "How many times have you been bothered by having little interest or pleasure in doing things?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "not at all"
-          },
-          {
-              key: 2,
-              text: "several days"
-          },
-          {
-              key: 3,
-              text: "more than half the days"
-          },
-          {
-              key: 4,
-              text: "nearly every day"
-          }
-      ],
-      label:' '
-  },
-  {
-      dialog: "Over the past two weeks...",
-      question: "How many times have you been bothered by feeling down, depressed and hopeless?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "not at all"
-          },
-          {
-              key: 2,
-              text: "several days"
-          },
-          {
-              key: 3,
-              text: "more than half the days"
-          },
-          {
-              key: 4,
-              text: "nearly every day"
-          }
-      ],
-      label:' '
-  },
-  {
-      dialog: "Life is full of transitions...",
-      question: "Have any of the following happened to you recently?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "moved home"
-          },
-          {
-              key: 2,
-              text: "lost job"
-          },
-          {
-              key: 3,
-              text: "bereavement"
-          },
-          {
-              key: 2,
-              text: "not at all"
-          }
-      ],
-      label:' '
-  },
-  {
-      dialog: "On to sleep",
-      question: "In the past week, how many nights have you had a problem with your sleep?",
-      answerType:'Slider',
-      answers: [
-          {
-            min: 0,
-            max: 7
-          }
-      ],
-      label:' '
-  },
-  {
-      dialog: "That food question",
-      question: "In general, how healthy is your overall diet?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 5,
-              text: "very healthy"
-          },
-          {
-              key: 4,
-              text: "healthy"
-          },
-          {
-              key: 3,
-              text: "average"
-          },
-          {
-              key: 2,
-              text: "unhealthy"
-          },
-          {
-              key: 1,
-              text: "very unhealthy"
-          }
-      ],
-      label:' '
-  },
-
-  {
-      dialog: "Thinking about the past week, /name...",
-      question: "How many days did you engage in over 30 minutes of vigorous physical activity (e.g. brisk walking, cycling, sports)?",
-      answerType:'Slider',
-      answers: [
-          {
-              min: 0,
-              max: 7
-          }
-      ],
-      label:' '
-  }
-  ,
-
-  {
-      dialog: "Now for a nosey one!",
-      question: "How often do you wish you had more people to spend time with?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "never"
-          },
-          {
-              key: 2,
-              text: "rarely"
-          },
-          {
-              key: 3,
-              text: "sometimes"
-          },
-          {
-              key: 4,
-              text: "often"
-          },
-          {
-              key: 5,
-              text: "almost all the time"
-          },
-          {
-              key: 6,
-              text: "pass"
-          }
-      ],
-      label:' '
-  },
-  {
-      dialog: "",
-      question: "Which of the following are working at the moment? (Select as many as you want)",
-      answerType:'Multiple',
-      answers: [ {
-        multiple: [
-          {
-              text: 'money',
-              key:1
-          },
-          {
-              text: "sex",
-              key:2
-          },
-          {
-              text: "diet",
-              key:3
-          },
-          {
-              text: "exercise",
-              key:4
-          },
-          {
-              text: "work",
-              key:5
-          },
-          {
-              text: "family",
-              key:6
-          },
-          {
-              text: "health",
-              key:7
-          }
-      ],
-    }],
-      label:' '
-  },
-
-  {
-      dialog: "",
-      question: "Which of the following are NOT working at the moment?",
-      answerType:'Multiple',
-      answers: [ {
-        multiple: [
-          {
-              text: 'money',
-              key:1
-          },
-          {
-              text: "sex",
-              key:2
-          },
-          {
-              text: "diet",
-              key:3
-          },
-          {
-              text: "exercise",
-              key:4
-          },
-          {
-              text: "work",
-              key:5
-          },
-          {
-              text: "family",
-              key:6
-          },
-          {
-              text: "health",
-              key:7
-          }
-      ],
-    }],
-      label:' '
-  },
-  {
-      dialog: "",
-      question: "Which of the following do you enjoy doing?",
-      answerType:'Multiple',
-      answers: [ {
-        multiple: [
-          {
-              text: 'meeting new people',
-              key:1
-          },
-          {
-              text: "time in nature",
-              key:2
-          },
-          {
-              text: "using apps",
-              key:3
-          },
-          {
-              text: "reading books",
-              key:4
-          },
-          {
-              text: "social activities",
-              key:5
-          },
-          {
-              text: "music",
-              key:6
-          },
-          {
-              text: "dance",
-              key:7
-          },
-          {
-              text: "exercise",
-              key:7
-          }
-      ],
-    }],
-      label:' '
-  },
-  {
-      dialog: "",
-      question: "Would you like to hang out with people with similar objectives to you?",
-      answerType:'Button',
-      answers: [
-          {
-              key: 1,
-              text: "Yes"
-          },
-          {
-              key: 2,
-              text: "Maybe"
-          },
-          {
-              key: 3,
-              text: "Not really"
-          }
-      ],
       label:' '
   }
 ];

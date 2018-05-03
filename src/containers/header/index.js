@@ -12,6 +12,7 @@ import HeaderMenu from './headerMenu'
 import Buy from '../../assets/svg/buy'
 import Search from '../../assets/svg/search'
 import { Link } from 'react-router-dom'
+import {setResetQuestionnaire} from '../../actions/questionnaireActions'
 
 
 
@@ -90,7 +91,7 @@ import { Link } from 'react-router-dom'
                       <div style={{position:'absolute', left:0, width:this.state.widthCircle, height:120, top:0}}>
                         <div style={{position:'relative', width:'100%', height:'100%'}}>
                           <div style={styleCircle}>
-                            {this.state.menu ? <HeaderMenu close={this.burgerClose}/> : ''}
+                            {this.state.menu ? <HeaderMenu close={this.burgerClose} resetHome={this.props.setResetQuestionnaire}/> : ''}
                           </div>
                         </div>
                       </div>
@@ -105,15 +106,11 @@ import { Link } from 'react-router-dom'
 }
 const mapStateToProps = state => ({
   counter: state.counter,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
+  setResetQuestionnaire,
 }, dispatch)
 
 
