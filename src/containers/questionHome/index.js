@@ -40,10 +40,12 @@ class QuestionHome extends React.Component {
        width: 0,
        height: 0,
        answerType:'',
-       label:''
+       label:'',
+       overlay:false
       };
       this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+      this.setResults = this.setResults.bind(this);
     }
 
 
@@ -197,7 +199,8 @@ class QuestionHome extends React.Component {
        console.log('Qua tutti i print');
        console.log(this.state);
        console.log(this.props.counter);
-       setTimeout(() => this.setState({ result:true }), 3000);
+       this.setState({overlay:true})
+       setTimeout(() => this.setState({ result:true, overlay:false }), 3000);
        this.props.setResetQuestionnaire();
 
      }
@@ -254,7 +257,30 @@ class QuestionHome extends React.Component {
        return [3,5,4,7,1,8];
      }
 
+  renderOverlay(){
+    return(
+      <div style={{position:'absolute', zIndex:999, height:'100%', width:'100%', background:'white' }}>
+        <div className='classOverlay' >
 
+          <div className="loader loader--style2" title="1">
+            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+               width="40px" height="40px" viewBox="0 0 50 50" style={{enableBackground:'new 0 0 50 50'}}>
+            <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+              <animateTransform attributeType="xml"
+                attributeName="transform"
+                type="rotate"
+                from="0 25 25"
+                to="360 25 25"
+                dur="0.6s"
+                repeatCount="indefinite"/>
+              </path>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
   renderQuiz() {
     console.log(this.props.counter.questionId);
     return (
@@ -292,6 +318,7 @@ class QuestionHome extends React.Component {
       <div >
             <ScrollToTop>
                 <div  />
+                {this.state.overlay ? this.renderOverlay() : ''}
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
               </ScrollToTop>
         </div>

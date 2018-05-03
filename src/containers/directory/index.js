@@ -8,6 +8,7 @@ import DirectoryLocal from '../directoryLocal'
 import DirectoryProducts from '../directoryProducts'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+const timerPeriod = 5;
 
 var isActive =true;
   class Directory extends React.Component {
@@ -43,7 +44,7 @@ var isActive =true;
      tick() {
        console.log(this.state.count);
        this.setState({count: (this.state.count + 1)});
-       if (this.state.count == 3 ) this.stopTimer();
+       if (this.state.count == timerPeriod ) this.stopTimer();
      }
      componentWillMount () {
        this.startTimer();
@@ -85,7 +86,7 @@ var isActive =true;
       return(
         <ReactCSSTransitionGroup transitionName='fade'>
           <div className='classOverlay' >
-            <p>Thank you for answering the questions, the website is currently under construction and a placeholder page will appear next</p>
+            <p>'Wellness is the compete integration of body, mind, and spirit - the realization that everything we do, think, feel, and believe has an effect on our state of well-being'</p>
 
             <div className="loader loader--style2" title="1">
               <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"

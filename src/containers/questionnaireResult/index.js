@@ -108,6 +108,8 @@ class QuestionnaireResult extends React.Component {
     toDirectoryHandler(){
       console.log("click!");
     }
+
+
   render(){
     return(
 
@@ -138,7 +140,7 @@ class QuestionnaireResult extends React.Component {
             color:'#70CACC',
             borderStyle:'solid',
             marginTop:20,
-            marginBottom:20 }} onClick={this.toDirectoryHandler}>
+            marginBottom:40 }} onClick={this.toDirectoryHandler}>
             Create a profile
           </div>
 
