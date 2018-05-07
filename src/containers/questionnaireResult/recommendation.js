@@ -33,7 +33,7 @@ class Recommendation extends React.Component {
   render(){
     return(
 
-      <div style={{ position:'relative', padding:20, marginLeft:10, marginRight:20, height:160, borderRadius:20, overflow:'hidden', paddingTop:80}}>
+      <div style={{ position:'relative', padding:20, marginLeft:10, marginRight:20, height:200, borderRadius:20, overflow:'hidden', paddingTop:80}}>
         <div style={{paddingTop:10, textAlign:'left', width:'65%', height:'100%'}}>
           <h2 style={{color:'white', fontSize:'.8rem', marginBottom:0}}>Here your wellbeing summary! </h2>
           <p style={{fontSize:'.6rem'}}> {this.props.suggestion} </p>

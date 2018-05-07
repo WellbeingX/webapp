@@ -16,7 +16,7 @@ export default function SolutionRow(props){
       {props.title}
       <div style={{overflow:'hidden',background:'white', height:135, width:'100%', color:'black',paddingBottom:0, display: 'inline-block', marginTop:10}} >
         <div style={{fontSize: 0, whiteSpace: 'nowrap', height:'100%', overflow:'auto', overflowY:'hidden'}} >
-        {props.solutions[0].map(renderSolutions)}
+        {props.solutions.map(renderSolutions)}
         </div>
       </div>
       </div>

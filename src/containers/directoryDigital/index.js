@@ -18,55 +18,74 @@ const titles = [
   'For a nourished mind'
 ]
 
+var priorities
 
+class DirectoryDigital extends React.Component {
 
-function DirectoryDigital(props){
-  // 1/ Retrieve the data
+  constructor(props){
+    super(props);
+    this.state={
+      solutions:[
+                  {label: "Diet", title: "Nutrition", score: 1, suggestion: "Clean food is a good rule, additionally there is t…lising power in fruits, vegetables and superfoods"},
+                  {label: "Stress management", title: "Stress management", score: 2, suggestion: "Meditation is a very important method to keep your… look at difference way of improving your skills."},
+                  {label: "Purpose", title: "Work", score: 2, suggestion: "Work is where we spent most of our waking time, ca…often directs how and when we do everything else."},
+                  {label: "Social", title: "Social life", score: 2, suggestion: "Social connectedness is perhaps the most powerful … you can do here to interact with others can help"},
+                  {label: "Sleep", title: "Sleep", score: 4, suggestion: "Somewhere between 7 and 9 hours a night are a good…unctions; deep sleep is key to rest and recovery."},
+                  {label: "Exercise", title: "Exercise", score: 4, suggestion: "Regular exercise can help prevent depression, redu… the mind just as much as it strengthens the body"}
+                ]
+    }
+    }
 
+  componentDidMount(){console.log(this.props.counter.resultsOrder);
+    if ( this.props.counter.resultsOrder > 0 ) this.setState({solutions:this.props.counter.resultsOrder})
 
-  // 2/ Rank priorities
-  // 3/ Choose the right solution
-
-  function solutionMatching(){
-    var priorities = props.counter.answersArray;
-    // console.log('Vediamo se dice giusto');
-    console.log('Counter:');
-    console.log(props.counter );
-    if ( !!(priorities) ) priorities= [[1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], [1,1], ];
-    var results = Result(priorities);
-    return [
-      Resources.filter(data=>data.label===results[0][0]),
-      Resources.filter(data=>data.label===results[1][0]),
-      Resources.filter(data=>data.label===results[2][0]),
-    ];
   }
 
-  const renderSolutions = (key) => (
+
+  solutionMatching(label){
+    console.log(label);
+    console.log(Resources);
+    console.log(Resources.filter(data=>{
+      let result=false;
+      for(let i of data.labels) result = result || i===label;
+      return result
+    }))
+    
+    return (Resources.filter(data=>{
+      let result=false;
+      for(let i of data.labels) result = result || i===label;
+      return result
+    }))
+  }
+
+  renderSolutions = (key) => (
       <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].description} imageURL={key[0].imgURL} website={key[0].website} textColor='black'/>
     )
-  const renderSolutionsRec = (key) => (
+    renderSolutionsRec = (key) => (
 
         <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].comments} imageURL={key[0].imgURL} website={key[0].website} textColor='white'/>
       )
 
-  const renderRow = (key) =>(
-      <SolutionRow title={key} solutions={solutionMatching()} />
+   renderRow = (key) =>(
+      <SolutionRow title={key.title} solutions={this.solutionMatching(key.label)} />
     )
 
-  return(
 
-      <div >
-        <div id='top'> </div>
-        <div style={{paddingTop:10}}>
+  render(){
+    return(
+          <div >
+            <div id='top'> </div>
+            <div style={{paddingTop:10}}>
 
-              {titles.map(renderRow)}
+                  {this.state.solutions.map(this.renderRow)}
 
-        </div>
-      </div>
+            </div>
+          </div>
 
 
 
-  )
+    )
+  }
 }
 
 

@@ -1,4 +1,4 @@
-import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH, SET_SESSION_START, SET_BACK_BUTTON, SET_RESET_QUESTIONNAIRE} from '../actions/questionnaireActions.js'
+import {SET_EMAIL, SET_LAST_ANSWER, SET_NAME, SET_PATH, SET_SESSION_START, SET_BACK_BUTTON, SET_RESET_QUESTIONNAIRE, SET_RESULTS} from '../actions/questionnaireActions.js'
 
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
@@ -20,7 +20,8 @@ export const initialState = {
   answersArray:[],
   email: '',
   path:'',
-  pathQuestion:'/inforation/recover'
+  pathQuestion:'/inforation/recover',
+  resultsOrder:[]
 }
 
 export default (state = initialState, action) => {
@@ -65,12 +66,19 @@ export default (state = initialState, action) => {
           }}else{return{
             ...state,
             questionId: 0
-          }}
+          }
+        }
         case SET_RESET_QUESTIONNAIRE:
           return {
             ...state,
             questionId: -1
           }
+          case SET_RESULTS:
+            console.log(action.data);
+            return {
+              ...state,
+              resultsOrder: action.data
+            }
     default:
       return state
   }

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import Dialog from "../dialog";
 import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from '../../api/labels'
 import {Grid, Container} from 'semantic-ui-react'
+import {setResults} from '../../actions/questionnaireActions'
 
 
 var arrayAnswers =
@@ -99,7 +100,8 @@ class QuestionnaireResult extends React.Component {
         }
     }
     arrayAnswers.sort((a,b)=>a.score-b.score);
-    console.log(arrayAnswers);
+
+    this.props.setResults(arrayAnswers)
     this.setState({values:arrayAnswers})
 
   }
@@ -209,7 +211,7 @@ class QuestionnaireResult extends React.Component {
   })
 
   const mapDispatchToProps = dispatch => bindActionCreators({
-
+    setResults
   }, dispatch)
 
   export default connect(

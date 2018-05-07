@@ -10,6 +10,7 @@ export const SET_PATH = 'SET_PATH'
 export const SET_SESSION_START = 'SET_SESSION_START'
 export const SET_BACK_BUTTON = 'SET_BACK_BUTTON'
 export const SET_RESET_QUESTIONNAIRE = 'SET_RESET_QUESTIONNAIRE'
+export const SET_RESULTS = 'SET_RESULTS'
 
 
 
@@ -134,6 +135,14 @@ export function setSessionStart(data){
 export function setName(data){
     return (dispatch) => {
             dispatch({type: SET_NAME, data:data});
+
+    };
+}
+
+
+export function setResults(data){
+    return (dispatch) => {
+            dispatch({type: SET_RESULTS, data:data});
 
     };
 }
