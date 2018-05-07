@@ -29,7 +29,7 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
             <Route exact path="/directory" component={HeaderUs} />
             <Route exact path="/profile" component={HeaderUs}  />
             <Route path="/information/" component={HeaderWhite} />
-            <Route path="/result" component={HeaderUs} />
+            <Route path="/result" component={HeaderWhite} />
           </main>
 
             <div className="body">
