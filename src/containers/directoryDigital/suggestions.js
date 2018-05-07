@@ -19,7 +19,7 @@ const characterStyle = {
 export default function Suggestions(props){
 
   const renderSolutionsRec = (key) => (
-      <DirectorySolution title={key[0].title} price={key[0].price} categ={key[0].categ} description={key[0].comments} imageURL={key[0].imgURL} website={key[0].website} textColor='white'/>
+      <DirectorySolution title={key.title} price={key.price} categ={key.categ} description={key.comments} imageURL={key.imgURL} website={key.website} textColor='white'/>
     )
 
   return(
@@ -38,7 +38,7 @@ export default function Suggestions(props){
         </div>
         </div>
       <div className='directoryRecommendationSpace' />
-      {props.solutionMatching.map(renderSolutionsRec)}
+      {props.solutionMatching[0].map(renderSolutionsRec)}
     </div>
   )
 }

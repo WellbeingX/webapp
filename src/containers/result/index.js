@@ -10,9 +10,7 @@ import PropTypes from 'prop-types';
 		// 8 Sleep
 		// 0 is good, 7 is bad
 		index=7;
-		console.log('esame');
-		console.log(answers[index-1][1]);
-		console.log(answers[index-1][1]==='0');
+
 		switch (answers[index-1][1]){
 			case '0':
 				result=[...result, ['sleep',5]];
@@ -108,10 +106,8 @@ import PropTypes from 'prop-types';
 			default:
 				result=[...result, ['loneliness',1]];
 		}
-		console.log(result);
 
 		result.sort(function(a,b ){return a[1]-b[1]});
-		console.log(result[0] +" " + result[1] +" "+ result[2] )
 
 		return ( [ result[0],result[1],result[2] ]);
 	}

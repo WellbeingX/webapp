@@ -93,24 +93,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "not at all"
           },
           {
-              key: 2,
+              key: 1,
               text: "several days"
           },
           {
-              key: 3,
+              key: 2,
               text: "over half the days"
           },
           {
-              key: 4,
+              key: 3,
               text: "nearly every day"
-          },
-          {
-              key: 5,
-              text: "can't say"
           }
       ],
       label:' '
@@ -121,24 +117,20 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "not at all"
           },
           {
-              key: 2,
+              key: 1,
               text: "several days"
           },
           {
-              key: 3,
+              key: 2,
               text: "over half the days"
           },
           {
-              key: 4,
+              key: 3,
               text: "nearly every day"
-          },
-          {
-              key: 5,
-              text: "can't say"
           }
       ],
       label:' '
@@ -176,23 +168,23 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "never"
           },
           {
-              key: 2,
+              key: 1,
               text: "rarely"
           },
           {
-              key: 3,
+              key: 2,
               text: "sometimes"
           },
           {
-              key: 4,
+              key: 3,
               text: "often"
           },
           {
-              key: 5,
+              key: 4,
               text: "all the time"
           }
       ],
@@ -204,23 +196,23 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "never"
           },
           {
-              key: 2,
+              key: 1,
               text: "rarely"
           },
           {
-              key: 3,
+              key: 2,
               text: "some of the time"
           },
           {
-              key: 4,
+              key: 3,
               text: "often"
           },
           {
-              key: 5,
+              key: 4,
               text: "all the time"
           }
       ],
@@ -232,23 +224,23 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "extremely dissatisfied"
           },
           {
-              key: 2,
+              key: 1,
               text: "dissatisfied"
           },
           {
-              key: 3,
+              key: 2,
               text: "about OK"
           },
           {
-              key: 4,
+              key: 3,
               text: "satisfied"
           },
           {
-              key: 5,
+              key: 4,
               text: "very satisfied"
           }
       ],
@@ -260,23 +252,23 @@ var questionRecover = [
       answerType:'Button',
       answers: [
           {
-              key: 1,
+              key: 0,
               text: "never"
           },
           {
-              key: 2,
+              key: 1,
               text: "rarely"
           },
           {
-              key: 3,
+              key: 2,
               text: "some of the time"
           },
           {
-              key: 4,
+              key: 3,
               text: "often"
           },
           {
-              key: 5,
+              key: 4,
               text: "all of the time"
           }
       ],
@@ -341,10 +333,6 @@ var questionRecover = [
           {
               key: 2,
               text: "custom"
-          },
-          {
-              key: 3,
-              text: "prefer not to say"
           }
       ],
       label:''

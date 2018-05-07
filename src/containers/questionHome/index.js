@@ -18,7 +18,8 @@ import { connect } from 'react-redux'
 import {setLastAnswer, setName, setPath, setSessionStart, setBackButton, setResetQuestionnaire} from '../../actions/questionnaireActions'
 import ReactGA from 'react-ga';
 import ScrollToTop from '../scrollToTops'
-import {MatrixWeightsDepression, MatrixWeightsAnxiety, MatrixWeightsImprovement} from '../../api/matrixWeights';
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from '../../api/labels'
+import {MWsleep, MWexercise, MWdiet, MWsocial, MWpurpose, MWstress} from '../../api/matrixWeights';
 
 var quizQuestions =[];
 
@@ -209,52 +210,40 @@ class QuestionHome extends React.Component {
        let arrayScore=[];
        let answer;
        let i=0;
+       let arrayI=0;
        console.log(this.props.counter.answersArray);
-       switch(this.props.counter.path){
-         case '/information/improve':
-         console.log('sono in improve');
-         console.log(this.props.counter.answersArray.length)
-           for(i=0; i<this.props.counter.answersArray.length; i++){
-             let answer = this.props.counter.answersArray[i]
-             if(Number.isInteger(answer.entry.answerId-0)){
-               arrayScore[answer.entry.questionId] = (MatrixWeightsImprovement[answer.entry.questionId][answer.entry.answerId])
-               console.log(arrayScore);
-             }
-           }
-         break;
-         case '/information/depression':
-         for(i=0; i<this.props.counter.answersArray.length; i++){
-           let answer = this.props.counter.answersArray[i]
-           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
-           }
-         break;
-         case '/information/anxiety':
-         for(i=0; i<this.props.counter.answersArray.length; i++){
-           let answer = this.props.counter.answersArray[i]
-           arrayScore[answer.entry.questionId] = (MatrixWeightsAnxiety[answer.entry.questionId,answer.entry.answerId])
-           }
-         break;
-         case '/information/beta/improve':
-         for(i=0; i<this.props.counter.answersArray.length; i++){
-           let answer = this.props.counter.answersArray[i]
-           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
-           }
-         break;
-         case '/information/beta/depression':
-         for(i=0; i<this.props.counter.answersArray.length; i++){
-           let answer = this.props.counter.answersArray[i]
-           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
-           }
-         break;
-         case '/information/beta/anxiety':
-         for(i=0; i<this.props.counter.answersArray.length; i++){
-           let answer = this.props.counter.answersArray[i]
-           arrayScore[answer.entry.questionId] = (MatrixWeightsDepression[answer.entry.questionId,answer.entry.answerId])
-           }
-         break;
+       for(i=0; i<this.props.counter.answersArray.length; i++){
+         answer = this.props.counter.answersArray[i].entry;
+         console.log('Length:' + arrayScore.length);
+         switch(answer.questionLabel){
+           case SLEEP:
+           arrayScore[arrayI] = [SLEEP, MWsleep[answer.answerId]];
+           arrayI++;
+           break;
+           case EXERCISE:
+           arrayScore[arrayScore.length] = [EXERCISE, MWexercise[answer.answerId]]
+           arrayI++;
+           break;
+           case DIET:
+           arrayScore[arrayScore.length] = [DIET, MWdiet[answer.answerId]]
+           arrayI++;
+           break;
+           case SOCIAL:
+           arrayScore[arrayScore.length] = [SOCIAL, MWsocial[answer.answerId]]
+           arrayI++;
+           break;
+           case PURPOSE:
+           arrayScore[arrayScore.length] = [PURPOSE, MWpurpose[answer.answerId]]
+           arrayI++;
+           break;
+           case STRESS:
+           arrayScore[arrayScore.length] = [STRESS, MWstress[answer.answerId]]
+           arrayI++;
+           break;
+         }
        }
-       console.log(arrayScore);
-       return [3,5,4,7,1,8];
+
+       return arrayScore;
      }
 
   renderOverlay(){
