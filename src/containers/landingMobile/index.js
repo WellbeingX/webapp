@@ -61,7 +61,7 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
               <Route exact path="/" component={FooterHome} />
               <Route exact path="/information" component={FooterInfo} />
             </main>
-            <div style={{position:'fixed', height:30, width:'100%', fontSize:'.6rem', zIndex:999, background:'white', color:'grey', textAlign:'center', bottom:0}}> This website is in beta </div>
+            <div style={{position:'fixed', height:30, width:'100%', fontSize:'.6rem', zIndex:999, background:'#EEE', color:'grey', textAlign:'center', bottom:0}}> This website is in beta </div>
         </div>
       )
     }

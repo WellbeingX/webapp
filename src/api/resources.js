@@ -13,7 +13,7 @@ var Resources = [
     price:'Relevant Free',
     categ:['Website','App'],
     description:'Sleepio helps you improve your sleep with proven techniques developed over 35 years of research',
-    imgURL:'https://firebasestorage.googleapis.com/v0/b/website-973e0.appspot.com/o/images%2FSpleepio-logo-2016.png?alt=media&token=1feb215a-52cf-434a-8f25-16482412259f',
+    imgURL:'https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/08/29/9a/08299a79-d947-294d-7b99-d75d8ac7706f/mzl.vxhykzvc.png/246x0w.jpg',
     website:'https://www.sleepio.com',
     comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
   },
@@ -157,7 +157,7 @@ alternative: 'http://is5.mzstatic.com/image/thumb/Purple128/v4/d4/da/09/d4da09e5
     price:' 7 day free trial then $49.99/ month ',
     categ:'App',
     description:'Redefine your success. Look good. Feel great. Love life.',
-    imgURL:'https://ph360.me/wp-content/uploads/2014/12/PH360-Logo2014SMALL1.png',
+    imgURL:'https://pbs.twimg.com/profile_images/703299926797762560/hWaxutiE_400x400.jpg',
     website:'https://ph360.me/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -187,8 +187,8 @@ alternative: 'http://is5.mzstatic.com/image/thumb/Purple128/v4/d4/da/09/d4da09e5
     price:'Free',
     categ:'Website',
     description: 'We are a community of runners that combine getting fit with doing good',
-    imgURL:' https://www.catfordcentral.com/wp-content/uploads/goodgym.jpg',
-alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.png',
+    alternativeImg:'https://www.catfordcentral.com/wp-content/uploads/goodgym.jpg',
+imgURL:'https://jobs.theguardian.com/getasset/10e95a67-725c-4fbf-8511-ae8125ec720d/',
     website:'https://www.goodgym.org/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -220,7 +220,7 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
     price:'Free',
     categ:['Website','Podcast','App'],
     description:'A weekly podcast offering scientific tips and ideas on how to lead a happier, more meaningful life through interviews with medical professionals and wellbeing thought-leaders',
-    imgURL:' http://www.themix.org.uk/wp-content/themes/connected/images/TheMix_logo.png',
+    imgURL:'https://www.mediavillage.com/media/articles/live_happy_GHg46ps.png.1000x1000_q85_box-137%2C93%2C910%2C867_crop_detail.png',
     website:'https://www.livehappy.com/learn-/happiness',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -235,7 +235,7 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
     price:'Relevant Free',
     categ:['App','Website'],
     description: '7 Cups of Tea is an “online emotional support service.” Somewhere where you can anonymously connect with trained listeners in order to gain support for everyday issues, including mental health',
-    imgURL:'http://www.mhinnovation.net/sites/default/files/styles/large/public/images/innovation/7cupsoftea_1.jpg?itok=EYP0tMNP',
+    imgURL:'https://media.licdn.com/dms/image/C510BAQFaJ5zXojy7Aw/company-logo_200_200/0?e=2159024400&v=beta&t=gw_gkN4uGsMkI3F2xI_wEk4NqarL2Wj8XCC1npCKGCw',
     website:'https://www.7cups.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -284,7 +284,7 @@ AlternativeImg:' https://p.apk4fun.com/1e/01/c3/com.happify.happifyinc-featured.
     price:'Relevant Free',
     categ:['App','Website'],
     description: 'A few minutes could change your whole day. Meditation has been shown to help people stress less, focus more and even sleep better',
-imgURL:' https://napa.i.lithium.com/t5/image/serverpage/image-id/195750i8B82FBA850CF8F9C/image-size/small?v=1.0&px=200',
+imgURL:'https://becominghappydotblog.files.wordpress.com/2018/04/headspace-app-logo-fitted.jpg?w=1400',
 AlternativeImg:' http://www.womenofgrace.com/blog/wp-content/uploads/2018/04/headspace-logo.jpg',
     website:'https://www.headspace.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -361,7 +361,7 @@ imgURL:' http://lh3.googleusercontent.com/i36nsJS70_SXJYQkQV0VBw6J-2M-RwXd_l4qTC
     price:'Free',
     categ:['Website'],
     description: 'The Nuddge community consists of those people who want to enhance their emotional wellbeing. These are everyday people, friends, neighbours, uncles, brothers and sisters.',
-imgURL:' https://www.nuddge.com/assets/img/logo_white.png',
+imgURL:'https://www.spyro-soft.com/wp-content/uploads/2018/03/nuddge.png',
     website:'https://www.nuddge.com/index.html#',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },

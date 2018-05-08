@@ -8,6 +8,16 @@ export default function SolutionRow(props){
 
 
 
+  function orderAndRenderSolutions() {
+    let array = props.solutions;
+
+    // In this version only randomly shuffling
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array.map(renderSolutions);
+  }
 
   const renderSolutions = (key) => (
       <DirectorySolution title={key.title} price={key.price} categ={key.categ} description={key.description} imageURL={key.imgURL} website={key.website} textColor='black'/>
@@ -19,7 +29,7 @@ export default function SolutionRow(props){
       {props.title}
       <div style={{overflow:'hidden',background:'white', height:135, width:'100%', color:'black',paddingBottom:0, display: 'inline-block', marginTop:10}} >
         <div style={{fontSize: 0, whiteSpace: 'nowrap', height:'100%', overflow:'auto', overflowY:'hidden'}} >
-        {props.solutions.map(renderSolutions)}
+        {orderAndRenderSolutions()}
         </div>
       </div>
       </div>
