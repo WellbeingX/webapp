@@ -140,7 +140,7 @@ class QuestionnaireResult extends React.Component {
       <div style={{height:'100%'}}>
 
         <div style={{marginTop:-1}}>
-        <div style={{paddingBottom:50, zIndex:1}} >
+        <div style={{paddingBottom:50, zIndex:1, background:'linear-gradient(-20deg, #96D0A7, #249ECD)'}} >
           <Recommendation suggestion='Here your wellbeing summary!'/>
         </div>
         <div style={{width:'100%', background:'rgba(255,255,255,1)'}}>

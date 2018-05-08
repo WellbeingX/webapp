@@ -125,7 +125,7 @@ class PillarTab extends React.Component {
 
   render(){
     return(
-                  <div className='boxShadow' style={{width:this.props.width-20, background:this.state.color, position:'relative', margin:'auto', height:140, borderRadius:20,   overflow:'hidden', marginBottom:10, padding:15, zIndex:2 }}>
+                  <div className='boxShadow' style={{width:this.props.width-20, background:this.state.color, position:'relative', margin:'auto', height:145, borderRadius:20,   overflow:'hidden', marginBottom:10, padding:15, zIndex:2 }}>
 
                       <div style={{textAlign:'left'}}>
                         <h2 style={{color:'white', fontSize:'1rem', fontWeight:900, marginBottom:10}}>{this.state.title} </h2>

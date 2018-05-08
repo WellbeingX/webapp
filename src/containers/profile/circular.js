@@ -55,9 +55,11 @@ export default class CircularChart extends React.Component {
   render(){
 
     return(
-      <div style={{paddingTop:0, textAlign:'center', fontSize:'.6rem', fontFamily:'Quicksand', fontWeight:900}}>
+      <div style={{paddingTop:0, textAlign:'center', fontSize:'.6rem', fontFamily:'QuickSand', fontWeight:900}}>
       <Doughnut data={this.state.data} options={options} />
+      <div style={{marginTop:5}}>
         <span style={{ color:'white', fontSize:'1.5rem'}}>{this.props.score}</span><span style={{color:'white'}}>/10</span>
+      </div>
       </div>
     );}
 }
