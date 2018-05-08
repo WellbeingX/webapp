@@ -20,9 +20,9 @@ export default function DirectorySolution(props){
                   </div>
                 </div>
 
-                <p  style={{position:'absolute',bottom:20, left:110, color:'grey' , fontSize:'.4rem', margin:0, fontFamily:'Roboto', textTransform:'uppercase', width:100, whiteSpace: 'normal', textAlign:'left'}}>{props.categ}</p>
+                <p  style={{position:'absolute',bottom:20, left:110, color:'black' , fontSize:'.4rem', margin:0, fontFamily:'Roboto', textTransform:'uppercase', width:100, whiteSpace: 'normal', textAlign:'left'}}>{props.categ}</p>
 
-                <p   style={{position:'absolute',bottom:20, right:10, color:'grey' , fontSize:'.4rem', margin:0, fontFamily:'Roboto', textTransform:'uppercase', width:100, whiteSpace: 'normal', textAlign:'right'}}>{props.price}</p>
+                <p   style={{position:'absolute',bottom:20, right:10, color:'black' , fontSize:'.4rem', margin:0, fontFamily:'Roboto', textTransform:'uppercase', width:100, whiteSpace: 'normal', textAlign:'right'}}>{props.price}</p>
                 <div style={{height:0, width:'53%', margin:0, background:'#ddd', right:10, bottom:98, position:'absolute'}} />
 
             </div>
