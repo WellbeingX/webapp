@@ -141,8 +141,7 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     price:'Relevant Free',
     categ:'App',
     description:"Sleep at the push of a button! The world's most advanced sleep and power nap system to fall asleep fast, stay asleep, and wake up feeling refreshed.",
-    imgURL:'https://cdnp1.stackassets.com/4948f3dabddde6602a2768666dd7f866544c9392/store/opt/596/447/cad1458b42b2bab1418e05d76fa5c7decf4dd22c8f782caacd286c1b1689/product_21656_product_shots1_image.jpg',
-alternative: 'http://is5.mzstatic.com/image/thumb/Purple128/v4/d4/da/09/d4da09e5-70da-10e3-4283-972e3b0caad5/source/175x175bb.jpg',
+    imgURL:'http://is5.mzstatic.com/image/thumb/Purple128/v4/d4/da/09/d4da09e5-70da-10e3-4283-972e3b0caad5/source/175x175bb.jpg',
     website:'https://pzizz.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
