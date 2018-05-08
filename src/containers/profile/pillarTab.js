@@ -99,23 +99,25 @@ class PillarTab extends React.Component {
 
     switch(this.props.title){
       case 'Mindfulness':
-      return(<People />);
-      break;
+        return(<People />);
+        break;
       case 'Sleep':
-      return(<Moon />);
-      break;
+        return(<Moon />);
+        break;
       case 'Nutrition':
-      return(<Diet />);
-      break;
+        return(<Diet />);
+        break;
       case 'Exercise':
-      return(<Exercise />);
-      break;
+        return(<Exercise />);
+        break;
       case 'Social':
-      return(<Social />);
-      break;
+        return(<Social />);
+        break;
       case 'Work':
-      return(<Work />);
-      break;
+        return(<Work />);
+        break;
+      default:
+        break;
 
     }
 
@@ -123,33 +125,35 @@ class PillarTab extends React.Component {
 
   render(){
     return(
-            <Grid.Row key={this.props.key} >
                   <div className='boxShadow' style={{width:this.props.width-20, background:this.state.color, position:'relative', margin:'auto', height:140, borderRadius:20,   overflow:'hidden', marginBottom:10, padding:15, zIndex:2 }}>
+
                       <div style={{textAlign:'left'}}>
                         <h2 style={{color:'white', fontSize:'1rem', fontWeight:900, marginBottom:10}}>{this.state.title} </h2>
                       </div>
+
                       <div >
                         <div style={{ paddingTop:25, width:'25%', position:'absolute', right:0, height:'100%', bottom:0, overflow:'hidden',borderLeft: '1px solid rgba(255,255,255,.2) '}}>
                           <div style={{width:'30%', margin:'auto'}}>  </div>
                           <div style={{marginTop:10}}> <CircularChart score={this.state.score}/> </div>
                         </div>
                         <div style={{ width:'55%', position:'absolute', right:'25%', bottom:0, overflow:'hidden', height:'100%',  borderRadius:20}}>
-                          <p style={{fontSize:'.55rem', color:'rgba(255,255,255,.8)', paddingTop:45, paddingRight:10, fontWeight:100, fontFamily:'Roboto',whiteSpace: 'normal',overflow: 'hidden',height: 100, lineHeight:'.7rem'}}> {this.state.sentence} </p>
-                          <div style={{width:140,  bottom:10, left:0, position:'absolute', color:'white', fontSize:'.6rem', background:'rgba(0,0,0,0)', textAlign:'left', padding:0,  textDecoration: 'underline', cursor:'pointer'}}>
-                            Further questions
-                          </div>
+                          <p style={{fontSize:'.55rem', color:'rgba(255,255,255,.8)', paddingTop:50, paddingRight:10, fontWeight:100, fontFamily:'Roboto',whiteSpace: 'normal',overflow: 'hidden',height: 130, lineHeight:'.7rem'}}> {this.state.sentence} </p>
 
                         </div>
-
                       </div>
+
                       <div style={{width:this.state.width, marginTop:this.state.marginTop, marginLeft:this.state.marginLeft}}>
                         {this.handleImage()}
                       </div>
 
-                    </div>
-              </Grid.Row>
+                  </div>
     )
   };
 }
 
 export default PillarTab
+
+//
+// <div style={{width:140,  bottom:10, left:0, position:'absolute', color:'white', fontSize:'.6rem', background:'rgba(0,0,0,0)', textAlign:'left', padding:0,  textDecoration: 'underline', cursor:'pointer'}}>
+//   Learn more
+// </div>

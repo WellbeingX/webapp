@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import DirectoryHeader from '../directoryHeader'
-import ImageBarb from '../../assets/images/home/lady.png';
 import DirectoryDigital from '../directoryDigital'
 import DirectoryLocal from '../directoryLocal'
 import DirectoryProducts from '../directoryProducts'
@@ -10,7 +9,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const timerPeriod = 2;
 
-var isActive =true;
   class Directory extends React.Component {
     constructor(props){
       super(props);

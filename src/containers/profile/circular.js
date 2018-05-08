@@ -18,8 +18,6 @@ export default class CircularChart extends React.Component {
     this.state={
         score:'?',
         data :{
-            labels: ["Red", "Blue"],
-
             datasets: [{
               data: [10, 0],
               borderColor:['rgba(255,255,255,0.2)','rgba(255,255,255,0.2)'],
@@ -27,11 +25,13 @@ export default class CircularChart extends React.Component {
              }]
            }
     }
-    console.log(props.score);
     this.lancio = this.lancio.bind(this);
   };
 
+  componentWillMount(){
+    this.lancio();
 
+  }
   componentDidMount(){
 
   };
@@ -53,12 +53,13 @@ export default class CircularChart extends React.Component {
     }
   }
   render(){
-    this.lancio();
 
     return(
-      <div style={{textAlign:'center', fontSize:'.6rem'}}>
-        <Doughnut data={this.state.data} options={options} />
-        <span style={{color:'white', fontSize:'1.5rem'}}>{this.props.score}</span><span style={{color:'white'}}>/10</span>
+      <div style={{paddingTop:0, textAlign:'center', fontSize:'.6rem', fontFamily:'Quicksand', fontWeight:900}}>
+      <Doughnut data={this.state.data} options={options} />
+        <span style={{ color:'white', fontSize:'1.5rem'}}>{this.props.score}</span><span style={{color:'white'}}>/10</span>
       </div>
     );}
 }
+
+//

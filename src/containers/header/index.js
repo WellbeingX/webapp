@@ -1,15 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../reducers/counter'
 import BurgerIcon from './burger'
 import HeaderMenu from './headerMenu'
-import Buy from '../../assets/svg/buy'
 import Search from '../../assets/svg/search'
 import { Link } from 'react-router-dom'
 import {setResetQuestionnaire} from '../../actions/questionnaireActions'

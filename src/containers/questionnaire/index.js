@@ -4,15 +4,13 @@ import QuestionCount from '../questionCounter';
 import {AnswerButton,AnswerText, AnswerSpinner,AnswerSlider, AnswerFeedback, AnswerMultiple, FeedbackButton} from  '../answer';
 import PropTypes from 'prop-types';
 import Dialog from "../dialog";
-import {Grid,Container} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class Questionnaire extends React.Component {
-  constructor(props) {
-      super(props);
 
-    }
+
     componentWillMount() {
 
     }

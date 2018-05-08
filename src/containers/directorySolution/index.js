@@ -5,6 +5,7 @@ import {Image} from 'semantic-ui-react'
 
 export default function DirectorySolution(props){
 
+  
   return(
         <div href={props.website}  className='' style={{color:props.textColor, display:'inline-block', width:280, height:130, background:'white', borderRadius:20, position:'relative', marginRight:20, fontFamily:'Roboto'}}>
           <div style={{position:'absolute', width:280, height:130}}>
@@ -14,7 +15,7 @@ export default function DirectorySolution(props){
 
                 <div style={{ width:160, height:55, right:10, top:35 , lineHeight:'.6rem', color:'grey', fontSize:'.52rem', position:'absolute'}}>
                   <div style={{position:'relative', height:55, width:'100%',   whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto' }}>
-                  <p style={{width:160, lineHeight:'.6rem', color:'grey', fontSize:'.52rem',height:55,  whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto', overflow:'hidden', display:'block'}}> {props.description} </p>
+                  <p style={{width:160, lineHeight:'.6rem', color:'grey', fontSize:'.52rem',height:55,  whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto', overflow:'hidden', display:'block', fontWeight:100}}> {props.description} </p>
                   </div>
                 </div>
 

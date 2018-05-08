@@ -5,7 +5,6 @@ import DirectorySolution from '../directorySolution';
 import { bindActionCreators } from 'redux'
 import Result from '../result'
 import resources from '../../api/resources.js'
-import DirectoryHeader from '../directoryHeader'
 import ImageBarb from '../../assets/images/home/lady.png';
 
 const characterStyle = {

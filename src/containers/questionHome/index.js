@@ -197,11 +197,8 @@ class QuestionHome extends React.Component {
 
      setResults(result) {
        // loaderAppear();
-       console.log('Qua tutti i print');
-       console.log(this.state);
-       console.log(this.props.counter);
        this.setState({overlay:true})
-       setTimeout(() => this.setState({ result:true, overlay:false }), 3000);
+       setTimeout(() => this.setState({ result:true, overlay:false }), 3500);
        this.props.setResetQuestionnaire();
 
      }
@@ -211,10 +208,8 @@ class QuestionHome extends React.Component {
        let answer;
        let i=0;
        let arrayI=0;
-       console.log(this.props.counter.answersArray);
        for(i=0; i<this.props.counter.answersArray.length; i++){
          answer = this.props.counter.answersArray[i].entry;
-         console.log('Length:' + arrayScore.length);
          switch(answer.questionLabel){
            case SLEEP:
            arrayScore[arrayI] = [SLEEP, MWsleep[answer.answerId]];
@@ -271,7 +266,6 @@ class QuestionHome extends React.Component {
     )
   }
   renderQuiz() {
-    console.log(this.props.counter.questionId);
     return (
       <Questionnaire
         scrollUp={this.props.scrollUp}
@@ -291,10 +285,7 @@ class QuestionHome extends React.Component {
   }
 
   renderResult() {
-    // this.props.changePage('profile')
     return (
-      // <Profile />
-      // <Directory quizResult={this.state.result} />
       <QuestionnaireResult scores={this.scoresQuestionnaire()} />
     );
   }

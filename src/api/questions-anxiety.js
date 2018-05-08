@@ -72,6 +72,7 @@
 //     ],
 //     label:' '
 // }
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from './labels'
 
 
 var questionRecover = [
@@ -144,8 +145,8 @@ var questionRecover = [
       label:' '
   },
   {
-      dialog: "On to sleep, in the past week...",
-      question: "How many nights would you say you’ve had had a good night’s sleep?",
+      dialog: "Let's talk about sleep...",
+      question: "In the past week, how many nights have you a good night’s sleep?",
       answerType:'Slider',
       answers: [
           {
@@ -154,12 +155,12 @@ var questionRecover = [
             key:0
           }
       ],
-      label:' '
+      label:SLEEP
   },
 
     {
-        dialog: "Thinking about the past week...",
-        question: "How many days did you do over 30 minutes of vigorous physical activity? (e.g. brisk walking, cycling, sports)",
+        dialog: "",
+        question: "In a typical week, how many days do you do at least 30 minutes of exercise?",
         answerType:'Slider',
         answers: [
             {
@@ -168,39 +169,27 @@ var questionRecover = [
                 key:0
             }
         ],
-        label:' '
+        label:EXERCISE
     },
   {
       dialog: "That food question",
-      question: "In general, would you like to eat healthier?",
+      question: "In general, would you like to have an healthier diet?",
       answerType:'Button',
       answers: [
           {
+              key: 0,
+              text: "Yes"
+          },
+          {
               key: 1,
-              text: "never"
-          },
-          {
-              key: 2,
-              text: "rarely"
-          },
-          {
-              key: 3,
-              text: "sometimes"
-          },
-          {
-              key: 4,
-              text: "often"
-          },
-          {
-              key: 5,
-              text: "all the time"
+              text: "No"
           }
       ],
-      label:' '
+      label:DIET
   },
   {
-      dialog: "",
-      question: "Over the past 7 days, how often have you felt close to other people?",
+      dialog: "Nourishing social contact is one of the most important contributors to emotional wellbeing",
+      question: "How often do you feel like you need more nourishhing social contact?",
       answerType:'Button',
       answers: [
           {
@@ -224,11 +213,11 @@ var questionRecover = [
               text: "all the time"
           }
       ],
-      label:' '
+      label:SOCIAL
   }
   ,{
-      dialog: "",
-      question: "How satisfied are you with your sense of purpose in your life? Consider work, religion, raising children etc",
+      dialog: "Let's look at your daily activities, in respect to the activities you do during the day",
+      question: "Thinking about your daily activities, ",
       answerType:'Button',
       answers: [
           {
@@ -252,34 +241,77 @@ var questionRecover = [
               text: "very satisfied"
           }
       ],
-      label:' '
+      label:PURPOSE
   },
   {
       dialog: "",
-      question: "How often would you describe yourself as feeling relaxed and thinking clearly?",
+      question: "To what degree are you managing your stress levels well?",
       answerType:'Button',
       answers: [
           {
               key: 1,
-              text: "never"
+              text: "not at all"
           },
           {
               key: 2,
-              text: "rarely"
+              text: "somewhat"
           },
           {
               key: 3,
-              text: "some of the time"
+              text: "well"
           },
           {
               key: 4,
-              text: "often"
-          },
-          {
-              key: 5,
-              text: "all of the time"
+              text: "very well"
           }
       ],
+      label:STRESS
+  },
+
+  {
+      dialog: "",
+      question: "Which of the following areas of your life do you feel need improvement?",
+      answerType:'Multiple',
+      answers: [ {
+        multiple: [
+          {
+              text: 'relationships',
+              key:1
+          },
+          {
+              text: "financies",
+              key:2
+          },
+          {
+              text: "sex",
+              key:3
+          },
+          {
+              text: "books",
+              key:4
+          },
+          {
+              text: "social activities",
+              key:5
+          },
+          {
+              text: "listening to podcasts",
+              key:6
+          },
+          {
+              text: "learning",
+              key:7
+          },
+          {
+              text: "exercise",
+              key:7
+          },
+          {
+              text: "contributing to the community",
+              key:8
+          }
+      ],
+    }],
       label:' '
   },
 
@@ -320,6 +352,10 @@ var questionRecover = [
           {
               text: "exercise",
               key:7
+          },
+          {
+              text: "contributing to the community",
+              key:8
           }
       ],
     }],
@@ -340,11 +376,7 @@ var questionRecover = [
           },
           {
               key: 2,
-              text: "custom"
-          },
-          {
-              key: 3,
-              text: "prefer not to say"
+              text: "other"
           }
       ],
       label:''

@@ -71,7 +71,7 @@ class Home extends Component {
           this.setState({depression:this.state.depression+1, selected:arrayButton});
         }
         else {
-          arrayButton = this.state.selected.filter((val)=>val!=label);
+          arrayButton = this.state.selected.filter((val)=>val!==label);
           this.setState({depression:this.state.depression-1, selected:arrayButton});
         }
       break;
@@ -83,7 +83,7 @@ class Home extends Component {
           this.setState({anxiety:this.state.anxiety+1, selected:arrayButton});
         }
         else {
-          arrayButton = this.state.selected.filter((val)=>val!=label);
+          arrayButton = this.state.selected.filter((val)=>val!==label);
           this.setState({anxiety:this.state.anxiety-1, selected:arrayButton});
         }
       break;
@@ -94,9 +94,12 @@ class Home extends Component {
           this.setState({improve:this.state.improve+1, selected:arrayButton});
         }
         else{
-          arrayButton = this.state.selected.filter((val)=>val!=label);
+          arrayButton = this.state.selected.filter((val)=>val!==label);
           this.setState({improve:this.state.improve-1, selected:arrayButton});
         }
+
+      break;
+      default:
 
       break;
     }
