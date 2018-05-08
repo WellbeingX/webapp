@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import digitalSVG from '../../assets/svg/digital.js';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 
@@ -47,26 +48,52 @@ class DirectoryHeader extends React.Component {
     })
   }
   setLocal(selection){
-    this.setState({
-      digital:'rgba(255,255,255,.3)',
-      digitalSVG: 'white',
-      local:'rgba(255,255,255,1)',
-      localSVG: '#70c9cb',
-      products:'rgba(255,255,255,.3)',
-      productsSVG: 'white'
-    })
+    console.log('Click');
+    this.popupUnderConstruction();
+    // this.setState({
+    //   digital:'rgba(255,255,255,.3)',
+    //   digitalSVG: 'white',
+    //   local:'rgba(255,255,255,1)',
+    //   localSVG: '#70c9cb',
+    //   products:'rgba(255,255,255,.3)',
+    //   productsSVG: 'white'
+    // })
   }
   setProducts(selection){
-    this.setState({
-      digital:'rgba(255,255,255,.3)',
-      digitalSVG: 'white',
-      local:'rgba(255,255,255,.3)',
-      localSVG: 'white',
-      products:'rgba(255,255,255,1)',
-      productsSVG: '#70c9cb'
-    })
+    this.popupUnderConstruction();
+
+    // this.setState({
+    //   digital:'rgba(255,255,255,.3)',
+    //   digitalSVG: 'white',
+    //   local:'rgba(255,255,255,.3)',
+    //   localSVG: 'white',
+    //   products:'rgba(255,255,255,1)',
+    //   productsSVG: '#70c9cb'
+    // })
   }
 
+  popupUnderConstruction(){
+    this.setState({
+      popup:true
+    })
+    setTimeout(() => this.setState({ popup:false }), 2000);
+
+  }
+
+  renderPopupUnderConstruction(){return(
+    <ReactCSSTransitionGroup
+     component="div"
+     transitionName="dialog"
+     transitionEnterTimeout={10000}
+     transitionLeaveTimeout={50000}
+     transitionAppear
+     transitionAppearTimeout={1200}
+    >
+    <div style={{zIndex:1000, position:'absolute', top:70, color:'rgba(255,255,255,.6)', right:0, fontSize:'.6rem'}}>
+      UNDER DEVELOPMENT
+    </div>
+    </ReactCSSTransitionGroup>
+  )}
 
 
 
@@ -75,6 +102,7 @@ class DirectoryHeader extends React.Component {
       <div className='logoReplacementWrapper'>
       <Container>
 
+          {this.state.popup ? this.renderPopupUnderConstruction() : ''}
 
           <Grid columns={3} style={{paddingTop:75}}>
             <Grid.Column center style={{textAlign:'center', padding:'1rem 0'}} onClick={()=>{this.props.setDigital(); this.setDigital();}}>

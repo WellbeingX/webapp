@@ -1,9 +1,12 @@
 import React from 'react'
 import DirectorySolution from '../directorySolution';
 
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from '../../api/labels'
 
 
 export default function SolutionRow(props){
+
+
 
 
   const renderSolutions = (key) => (
@@ -20,7 +23,7 @@ export default function SolutionRow(props){
         </div>
       </div>
       </div>
-      <div style={{height:1, width:'90%', margin:20, marginTop:10, marginRight:20, background:'#ddd'}} />
+      <div style={{height:1, width:'90%', margin:20, marginTop:10, marginRight:20, background:'rgba(0,0,0,.2)'}} />
 
     </div>
   )

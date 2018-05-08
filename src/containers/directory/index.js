@@ -50,7 +50,7 @@ const timerPeriod = 2;
 
     setDigital(selection){
       this.setState({
-        selected:'digital'
+        selected:'Digital'
       })
     }
     setLocal(selection){
@@ -70,10 +70,10 @@ const timerPeriod = 2;
           return (<DirectoryDigital />)
           break;
         case 'Local':
-          return (<DirectoryLocal />)
+          return (<DirectoryDigital />)
           break;
         case 'Products':
-          return (<DirectoryProducts />)
+          return (<DirectoryDigital />)
           break;
         default:
           return (<DirectoryDigital />)

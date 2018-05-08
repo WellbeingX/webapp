@@ -13,7 +13,7 @@ import HeaderMenu from '../header/headerMenu'
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0, marginLeft:0, heightCircle:100, widthCircle:0, opacity:0, menu:false, position:'absolute'};
+      this.state = { width: 0, height: 0, marginLeft:0, heightCircle:100, widthCircle:0, opacity:0, menu:false, position:'fixed'};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.componentDidMount = this.componentDidMount.bind(this);
       this.burgerHandle = this.burgerHandle.bind(this);

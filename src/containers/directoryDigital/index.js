@@ -37,7 +37,9 @@ class DirectoryDigital extends React.Component {
     }
 
   componentDidMount(){console.log(this.props.counter.resultsOrder);
-    if ( this.props.counter.resultsOrder > 0 ) this.setState({solutions:this.props.counter.resultsOrder})
+    console.log('Qui i risultati ordinati');
+    console.log(this.props.counter.resultsOrder);
+    if ( this.props.counter.resultsOrder.length > 0 ) this.setState({solutions:this.props.counter.resultsOrder})
 
   }
 
@@ -50,7 +52,7 @@ class DirectoryDigital extends React.Component {
       for(let i of data.labels) result = result || i===label;
       return result
     }))
-    
+
     return (Resources.filter(data=>{
       let result=false;
       for(let i of data.labels) result = result || i===label;
@@ -67,7 +69,7 @@ class DirectoryDigital extends React.Component {
       )
 
    renderRow = (key) =>(
-      <SolutionRow title={key.title} solutions={this.solutionMatching(key.label)} />
+      <SolutionRow title={key.title} solutions={this.solutionMatching(key.label)} label={key.label} />
     )
 
 
