@@ -331,7 +331,7 @@ imgURL:' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-SuvIeUZfxYi2NNa
     price:'Free',
     categ:'Website',
     description: 'We take a 360 degree approach to wellness that incorporates mental, physical, spiritual, emotional, and environmental well-being—because we believe these pillars of wellness are vital and interconnected',
-imgURL:' http://traciebraylock.com/wp-content/uploads/2013/10/MindBodyGreen.png',
+    imgURL:'https://www.headpositivemom.com/wp-content/uploads/2015/10/mindbodygreen-logo-for-site.jpg',
     website:'https://www.mindbodygreen.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -391,7 +391,7 @@ imgURL:' http://thinkup.me/wp-content/uploads/2016/08/thinkuplogo-3.png',
     price:'Free',
     categ:'App',
     description: 'Meet amazing new friends. Private, Free and in groups of 3.',
-imgURL:' https://www.we3app.com/wp-content/uploads/2017/05/We3_App_Icon.png',
+    imgURL:'https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/68/d1/51/68d151d0-855f-d7e3-1bcc-52ee9d2e8dab/source/512x512bb.jpg',
     website:' https://www.we3app.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
