@@ -76,11 +76,14 @@ class QuestionnaireResult extends React.Component {
     // Values update from the updatedAnswersCount
     let i;
     let scores = this.props.scores;
-
+    console.log('Qui gli store');
+    console.log(scores);
     if (typeof scores !== 'undefined'){
       for(i in arrayAnswers){
         switch (arrayAnswers[i].label){
           case SLEEP:
+          console.log('SLEEP');
+          console.log(scores);
               arrayAnswers[i].score =  scores.filter((val) => val[0]===SLEEP)[0][1]
           break;
           case DIET:

@@ -7,7 +7,7 @@
 // TEXT INPUT
 // {
 //     dialog: "",
-//     question: " Hi, I’m Barbara, your personal assistant. What's your name?",
+//     question: " Hi, I’m Zoe, your personal assistant. What's your name?",
 //     answerType: 'TextInput',
 //     answers: [{
 //         type: 0,
@@ -89,7 +89,7 @@ var questionBetaImprove = [
       comments:''
   },
   {
-        dialog: "Hi, I’m Barbara! Your personal wellbeing assistant",
+        dialog: "Hi, I’m Zoe! Your personal wellbeing assistant",
         question: "I’m going to ask you some questions so we can get an idea of your strengths. Then we’ll make a wellbeing map and find what's best for you.",
         answerType: 'Button',
         answers: [{
@@ -137,7 +137,7 @@ var questionBetaImprove = [
                 text: "Yes"
             },
             {
-                key: 1,
+                key: 0,
                 text: "No"
             }
         ],
@@ -149,23 +149,23 @@ var questionBetaImprove = [
         answerType:'Button',
         answers: [
             {
-                key: 1,
+                key: 0,
                 text: "never"
             },
             {
-                key: 2,
+                key: 1,
                 text: "rarely"
             },
             {
-                key: 3,
+                key: 2,
                 text: "some of the time"
             },
             {
-                key: 4,
+                key: 3,
                 text: "often"
             },
             {
-                key: 5,
+                key: 4,
                 text: "all the time"
             }
         ],
@@ -177,23 +177,23 @@ var questionBetaImprove = [
         answerType:'Button',
         answers: [
             {
-                key: 1,
+                key: 0,
                 text: "extremely dissatisfied"
             },
             {
-                key: 2,
+                key: 1,
                 text: "dissatisfied"
             },
             {
-                key: 3,
+                key: 2,
                 text: "about OK"
             },
             {
-                key: 4,
+                key: 3,
                 text: "satisfied"
             },
             {
-                key: 5,
+                key: 4,
                 text: "very satisfied"
             }
         ],
@@ -205,19 +205,19 @@ var questionBetaImprove = [
         answerType:'Button',
         answers: [
             {
-                key: 1,
+                key: 0,
                 text: "not at all"
             },
             {
-                key: 2,
+                key: 1,
                 text: "somewhat"
             },
             {
-                key: 3,
+                key: 2,
                 text: "well"
             },
             {
-                key: 4,
+                key: 3,
                 text: "very well"
             }
         ],
@@ -232,39 +232,39 @@ var questionBetaImprove = [
           multiple: [
             {
                 text: 'relationships',
-                key:1
+                key:0
             },
             {
                 text: "financies",
-                key:2
+                key:1
             },
             {
                 text: "sex",
-                key:3
+                key:2
             },
             {
                 text: "books",
-                key:4
+                key:3
             },
             {
                 text: "social activities",
-                key:5
+                key:4
             },
             {
                 text: "listening to podcasts",
-                key:6
+                key:5
             },
             {
                 text: "learning",
-                key:7
+                key:6
             },
             {
                 text: "exercise",
-                key:7
+                key:6
             },
             {
                 text: "contributing to the community",
-                key:8
+                key:7
             }
         ],
       }],
@@ -279,39 +279,39 @@ var questionBetaImprove = [
           multiple: [
             {
                 text: 'apps',
-                key:1
+                key:0
             },
             {
                 text: "meeting new people",
-                key:2
+                key:1
             },
             {
                 text: "time in nature",
-                key:3
+                key:2
             },
             {
                 text: "reading books",
-                key:4
+                key:3
             },
             {
                 text: "social activities",
-                key:5
+                key:4
             },
             {
                 text: "listening to podcasts",
-                key:6
+                key:5
             },
             {
                 text: "learning",
-                key:7
+                key:6
             },
             {
                 text: "exercise",
-                key:7
+                key:6
             },
             {
                 text: "contributing to the community",
-                key:8
+                key:7
             }
         ],
       }],
@@ -348,52 +348,49 @@ var questionBetaImprove = [
             {
                 text: '<18',
                 value: '<18',
-                key:1
+                key:0
             },
             {
                 text: "18-24",
                 value: "18-24",
-                key:2
+                key:1
             },
             {
                 text: "25-34",
                 value: "25-34",
-                key:3
+                key:2
             },
             {
                 text: "35-44",
                 value: "35-44",
-                key:4
+                key:3
             },
             {
                 text: "45-54",
                 value: "45-54",
-                key:5
+                key:4
             },
             {
                 text: "55-64",
                 value: "55-64",
-                key:6
+                key:5
             },
             {
               text: "65-74",
               value: "65-74",
-                key:7
+                key:6
             },
             {
               value: "75-84",
               text: "75-84",
-                key:8
+                key:7
             },
             {
               text: ">85",
               value: ">85",
-                key:9
-            }
-        ],
-      }],
-        label:' '
-    },
+                key:8
+            },
+          ]}]},
   {
       dialog: "BETA-TEST Feedback",
       question: " Would you ask:",
@@ -498,10 +495,11 @@ var questionBetaImprove = [
           }
       ],
       comments:''
-  }];
+  }
+];
 
 export default questionBetaImprove;
-//
+
 // In the past week, how often have you been thinking clearly? (a five ways to wellbeing question)
 // None of the time
 // Rarely

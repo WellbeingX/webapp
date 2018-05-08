@@ -184,17 +184,17 @@ div.ui.grid.landingWrapper {
 
 .button.ui.button.landingButton{
   margin:auto;
-  width: 300px;
-  padding:15px 25px;
-  background: rgba(255,255,255,1);
+  padding:15px 15px;
+  background: rgba(255,255,255,.2);
   border-radius: 50px;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255,255,255,.4);
   border-style: solid;
-  color: #249ECD;
+  color: white;
   font-family: 'Quicksand',sans-serif ;
   margin-top: 20px;
-  font-size: .7rem;
+  font-size: .55rem;
+  margin-right: 5px;
   -webkit-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
   -moz-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
   box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
@@ -216,7 +216,8 @@ div.ui.grid.landingWrapper {
 }
 
 .button.ui.button.Active{
-  border-color: #249ECD;
+  background: rgba(255,255,255,1);
+  color: #249ECD;
   opacity:.7;
   /* color: orange; */
 

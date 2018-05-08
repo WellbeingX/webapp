@@ -150,34 +150,17 @@ class Home extends Component {
                           How can I help you today?
                         </p>
                     </Grid.Row>
+                    <div style={{textAlign:'center', width:'100%'}}>
+                          <HomeButton  label="sleep better" type="improve" click={this.handleButton}/>
+                        <HomeButton  label="healthier in body and mind" type="improve" click={this.handleButton}/>
+                          <HomeButton  label="improve performance" type="depression" click={this.handleButton}/>
+                          <HomeButton  label='overcome depression' type="depression" click={this.handleButton}/>
+                            <HomeButton  label="overcome anxiety" type="anxiety" click={this.handleButton}/>
+                          <HomeButton  label="manage stress" type="depression" click={this.handleButton}/>
 
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="sleep better" type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                    <HomeButton  label="be healthier in body and mind" type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="manage depression" type="depression" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label='manage stress' type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="manage anxiety" type="anxiety" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label='improve relationship' type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                        <HomeButton  label="feel less lonely" type="improve" click={this.handleButton}/>
-                    </Grid.Row>
-                    <Grid.Row   style={{margin:0, padding:0}}>
-                      <HomeButton  label="find meaningful hobbies" type="improve" click={this.handleButton}/>
-                    </Grid.Row>
+                      </div>
 
-                    <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > next </Button>
-
+                      <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > next </Button>
 
 
                 </Grid>

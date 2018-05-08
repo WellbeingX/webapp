@@ -7,7 +7,7 @@ import DirectoryLocal from '../directoryLocal'
 import DirectoryProducts from '../directoryProducts'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-const timerPeriod = 2;
+const timerPeriod = 4;
 
   class Directory extends React.Component {
     constructor(props){

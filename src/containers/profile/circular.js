@@ -38,7 +38,7 @@ export default class CircularChart extends React.Component {
 
   lancio(){
     if(this.props.score!='?'){
-      this.state={
+      this.setState({
           score:this.props.score-0,
           data :{
               labels: ["Red", "Blue"],
@@ -49,7 +49,7 @@ export default class CircularChart extends React.Component {
                 backgroundColor: ['rgba(255,255,255,0)','rgba(255,255,255,1)']
                }]
              }
-      }
+      })
     }
   }
   render(){
