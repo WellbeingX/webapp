@@ -57,7 +57,7 @@ h2{
     line-height: 1.2rem;
   }
   .desktopSectionSubTitle{
-    padding-bottom: .5rem;
+    padding-bottom: 1rem;
 
   }
 }
@@ -68,7 +68,7 @@ h2{
   }
   body, html{
     color: '#21ba45';
-    font-size:26px;
+    font-size:1em;
     overflow-x: hidden;
   }
   .body{
@@ -83,7 +83,7 @@ h2{
   }
   body, html{
     color: '#21ba45';
-    font-size:20px;
+    font-size:1em;
     overflow-x: hidden;
   }
 }
@@ -91,11 +91,12 @@ h2{
   h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
+    font-size: 1.3rem;
   }
 
   body, html{
     color: '#21ba45';
-    font-size:24px;
+    font-size:1em;
     overflow-x: hidden;
   }
   .quiz{
@@ -106,10 +107,11 @@ h2{
   h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
+    font-size:1.1rem;
   }
   body, html{
     color: '#21ba45';
-    font-size:22px;
+    font-size:1em;
     overflow-x: hidden;
   }
   .quiz{
@@ -119,13 +121,13 @@ h2{
 @media (max-width: 330px) {
   body, html{
     color: '#21ba45';
-    font-size:20px;
+    font-size:.9em;
     overflow-x: hidden;
   }
   h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
-    font-size:1rem;
+    font-size:1.1rem;
 
   }
   .quiz{
@@ -163,7 +165,7 @@ p{
 }
 .landingTitle{
    text-align:left;
-   font-size:.8rem;
+   font-size:1rem;
    font-weight: 600;
    color:white;
    padding: 25px;
@@ -185,32 +187,37 @@ div.ui.grid.landingWrapper {
 .button.ui.button.landingButton{
   margin:auto;
   padding:15px 12px;
-  background: rgba(255,255,255,.2);
+  background: rgba(0,0,0,.1);
   border-radius: 50px;
   border-width: 1px;
-  border-color: rgba(255,255,255,.4);
+  border-color: rgba(255,255,255,0);
   border-style: solid;
   color: white;
-  font-family: 'Quicksand',sans-serif ;
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 300;
   margin-top: 20px;
-  font-size: .6rem;
+  font-size: 1rem;
   margin-right: 5px;
-  -webkit-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
+  /* -webkit-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
   -moz-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
-  box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41);
+  box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.41); */
 }
 
 .button.ui.button.landingButtonNext{
   margin:auto;
-  width: 250px;
-  padding:15px 25px;
+  /* width: 100%; */
+  padding:15px 35px;
   text-align: center;
   color: white;
   font-family: 'Quicksand',sans-serif ;
   margin-top: 20px;
-  font-size: .8rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  border-width: 1px;
+  border-color: rgba(255,255,255,1);
+  border-style: solid;
   background: rgba(255,255,255,0);
-  text-decoration: underline;
+  /* text-decoration: underline; */
   opacity:1;
 
 }
@@ -218,8 +225,6 @@ div.ui.grid.landingWrapper {
 .button.ui.button.Active{
   background: rgba(255,255,255,1);
   color: #249ECD;
-  opacity:.7;
-  /* color: orange; */
 
 }
 
@@ -237,12 +242,15 @@ div.ui.grid.landingWrapper {
   color: white;
   background:#4E4E4E;
   text-align:left;
+  bottom: 20px;
 }
 
 .footerFooterHome p{
   color: white;
   padding: 1rem;
-  font-size: .6rem;
+  font-size: .8rem;
+  position: relative;
+  bottom: 20px;
 }
 .landingIntro:before{
 
@@ -282,9 +290,7 @@ div.homeFeatIcon{
 
 .homeFeatRow{
   display: flex;
-}
-.homeFeatRow{
-    padding:30px 20px;
+    padding:15px 20px;
 }
 .white:before{
   border-radius: 40px;
@@ -304,7 +310,7 @@ div.homeFeatIcon{
   bottom:0;
   padding: 10px;
   text-align: left;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 
@@ -315,14 +321,14 @@ div.homeFeatIcon{
 
 @media (min-width: 769px) {
   .container {
-    margin: 2.5rem auto;
+    margin: 21rem auto;
   }
 }
 
 /* Result Component */
 .result {
   height: 400px;
-  padding: 1.5rem 2.5rem;
+  padding: 11rem 21rem;
 }
 
 /* Quiz Component */
@@ -336,7 +342,7 @@ div.homeFeatIcon{
 
 /* QuestionCount Component */
 .questionCount {
-  padding: 1.5rem 2.5rem 0;
+  padding: 30px 0px 0 30px;
   font-size: .6rem;
   opacity: 1;
   text-align: left;
@@ -347,10 +353,16 @@ div.homeFeatIcon{
   margin-top: 70px;
 }
 /* Question Component */
-.question, .dialog {
+.question {
   margin: 0;
-  padding: 0.5rem 2.5rem 1.5rem 2.5rem;
-  font-size: .8rem;
+  padding:10px 30px 10px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.dialog {
+  margin: 0;
+  padding:10px 10px 10px 10px;
+  font-size: 1rem;
   font-weight: 700;
 }
 @media (max-width: 769px) {
@@ -388,7 +400,7 @@ div.homeFeatIcon{
     position: relative;
     width: 100%;
     margin: 0;
-    padding: 1.5rem 2.5rem 1.5rem 5rem;
+    padding: 11rem 21rem 11rem 5rem;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -426,7 +438,7 @@ div.homeFeatIcon{
   flex:auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-size: .8rem;
+  font-size: 1rem;
   margin:15px auto;
   text-align: center;
 }
@@ -461,14 +473,14 @@ Input{
   flex:auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: .8rem;
+  font-size: 1rem;
   margin:15px auto;
   text-align: center;
   }
 
   .button.ui.button.landingButton{
-    padding:10px 10px;
-    font-size: .55rem;
+    padding:15px 5px;
+    font-size: 1rem;
   }
 }
 
@@ -556,7 +568,7 @@ Input{
   display: inline-block;
   cursor: pointer;
   left: 20px;
-  top: 15px;
+  top: 20px;
   padding: 10px;
 
 }
@@ -565,7 +577,7 @@ Input{
 .bar2,
 .bar3 {
   width: 23px;
-  height: 1.5px;
+  height: 2px;
   background-color: grey;
   margin: 5px 0;
   transition: 0.4s;
@@ -642,7 +654,7 @@ div.ui.grid.directoryBarbaraDiv{
 
 
 .directoryCategory{
-  font-size: .5rem;
+  font-size: .8rem;
   font-weight: 900;
   text-transform: uppercase;
   padding: .2rem;
@@ -678,7 +690,7 @@ div.ui.grid.directoryBarbaraDiv{
 .directoryComment{
   color:'#484548';
   color:white;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 .directoryTitle{
   padding-top: 20px;
@@ -750,7 +762,7 @@ div.ui.grid.directoryBarbaraDiv{
 }
 .filterNormal{
   font-size: .6rem;
-  padding: .5rem;
+  padding: 1rem;
 }
 .filterHighlight{
     font-size: .7rem;
@@ -883,14 +895,14 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 .CalendarSVG, .AppSVG, .starSVG, .lockSVG{
-  width: 50px;
-  height: 50px;
-  margin-top: 15px;
-}
-.starSVG, .lockSVG{
   width: 40px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+.starSVG, .lockSVG{
+  width: 43px;
+  height: 30px;
+  margin-top: 15px;
 }
 .CalendarSVG .cls-1{fill:none;}
 .CalendarSVG  .cls-1,.cls-2,.cls-3,.cls-4{stroke:#70CACC;stroke-miterlimit:10;}
@@ -945,7 +957,7 @@ input[type=range]:focus::-ms-fill-upper {
     right: 3%;
     color: #aaa;
     font-weight: 300;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 .desktopHeaderHeaderRightElement{
   margin-left: 50px;
@@ -963,13 +975,13 @@ input[type=range]:focus::-ms-fill-upper {
   top:50%;
   left:25%;
   color: white;
-  font-size: 1.5rem;
+  font-size: 11rem;
   line-height: 2rem;
   font-weight: 500;
 }
 
 .desktopHeaderButton{
-  font-size: .8rem;
+  font-size: 1rem;
   line-height: 5rem;
   border-style: solid;
   border-width: 1px;
@@ -1005,7 +1017,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 10%;
   padding-left: 50px;
   margin-top: 50px;
-  font-size: 1.5rem;
+  font-size: 11rem;
   font-weight: 900;
   padding-bottom: 100px;
 }
@@ -1103,7 +1115,7 @@ input[type=range]:focus::-ms-fill-upper {
   width:100%;
   font-family: 'Helvetica';
   font-weight: 100;
-  font-size: .8rem;
+  font-size: 1rem;
   padding:10px;
 }
 
@@ -1118,7 +1130,7 @@ input[type=range]:focus::-ms-fill-upper {
 .desktopContactButton{
   margin-top: 25px;
   margin-left: 60px;
-  font-size: .8rem;
+  font-size: 1rem;
   padding:10px 55px;
   background: #70CACC;
   border-radius: 50px;
@@ -1148,12 +1160,12 @@ input[type=range]:focus::-ms-fill-upper {
     top: 50%;
     left: 25%;
     color: white;
-    font-size: 1.5rem;
+    font-size: 11rem;
     line-height: 2rem;
     font-weight: 500;
   }
   .desktopHeaderButton{
-    font-size: .8rem;
+    font-size: 1rem;
     line-height: 5rem;
     border-style: solid;
     border-width: 1px;
@@ -1178,7 +1190,7 @@ input[type=range]:focus::-ms-fill-upper {
     height: 500px;
   }
   .desktopSectionFirstRowCell{
-    font-size: .8rem;
+    font-size: 1rem;
   }
   .desktopIconArrows{
     width: 20px;
@@ -1200,7 +1212,7 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: -100px;
 }
 .classOverlay p{
-  font-size: .8rem;
+  font-size: 1rem;
   text-align: center;
 }
 .loader{

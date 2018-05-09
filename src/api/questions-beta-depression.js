@@ -129,7 +129,7 @@ var questionBetaDepression = [
     label:' '
 },
 {
-    dialog: "These questions help my advice. No need to answer if they’re uncomfortable",
+    dialog: "These questions improve my suggestions",
     question: "During the past two weeks, how often have you not been able to stop or control your worrying?",
     answerType:'Button',
     answers: [
@@ -201,8 +201,8 @@ var questionBetaDepression = [
     label:DIET
 },
 {
-    dialog: "Nourishing social contact is one of the most important contributors to emotional wellbeing",
-    question: "How often do you feel like you need more nourishhing social contact?",
+  dialog: "The quality of our social connections is a powerful predictor of mental wellbeing",
+  question: "How often do you feel your social connections should be more nourishing or fulfilling?",
     answerType:'Button',
     answers: [
         {

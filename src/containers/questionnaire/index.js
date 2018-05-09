@@ -10,10 +10,30 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Questionnaire extends React.Component {
 
-
-    componentWillMount() {
+  constructor(props) {
+      super(props);
+      this.state = {
+       height: 667,
+       marginTop:70
+      };
+      this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
     }
+
+
+        componentWillMount() {
+          // Listener to the screen size
+          this.updateWindowDimensions();
+          window.addEventListener('resize', this.updateWindowDimensions);
+        }
+
+        componentWillUnmount() {
+          window.removeEventListener('resize', this.updateWindowDimensions);
+        }
+
+        updateWindowDimensions() {
+          this.setState({ height: window.innerHeight});
+        }
 
   renderAnswerOptions(key) {
       switch(this.props.answerType) {
@@ -227,7 +247,7 @@ class Questionnaire extends React.Component {
             break;
           default:
             return(
-                    <div className="quiz">
+                    <div className="quiz" style={{marginTop:this.state.marginTop, minHeight:this.state.height-this.state.marginTop}}>
                       <Dialog
                         windowHeigth = {this.props.windowHeigth}
                         windowWidth = {this.props.windowWidth}

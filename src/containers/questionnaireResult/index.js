@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Recommendation from './recommendation'
-import PillarTab from '../profile/pillarTab'
+import PillarTab from './pillarTab'
 import { Link } from 'react-router-dom'
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from '../../api/labels'
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS,
+TITLE_SLEEP, TITLE_EXERCISE, TITLE_DIET, TITLE_SOCIAL, TITLE_PURPOSE, TITLE_STRESS} from '../../api/labels'
 import {setResults} from '../../actions/questionnaireActions'
 
 
@@ -12,42 +13,42 @@ var arrayAnswers =
 [{
   key:0,
   label:STRESS,
-  title:'Mindfulness',
+  title:TITLE_STRESS,
   score:'?',
   suggestion:'Meditation is a very important method to keep your mind clear and safe. You mght want to look at difference way of improving your skills.'
 },
 {
   key:1,
   label:SLEEP,
-  title:'Sleep',
+  title:TITLE_SLEEP,
   score:'?',
   suggestion:'Somewhere between 7 and 9 hours a night are a good guideline to regulate mood and cognitive functions; deep sleep is key to rest and recovery.'
 },
 {
   key:2,
   label:PURPOSE,
-  title:'Work',
+  title:TITLE_PURPOSE,
   score:'?',
   suggestion:'Work is where we spent most of our waking time, can be a main culprit of stress, and it often directs how and when we do everything else.'
 },
 {
   key:3,
   label:SOCIAL,
-  title:'Social',
+  title:TITLE_SOCIAL,
   score:'?',
   suggestion:'Social connectedness is perhaps the most powerful predictor of life outcomes, and anything you can do here to interact with others can help'
 },
 {
   key:4,
   label:EXERCISE,
-  title:'Exercise',
+  title:TITLE_EXERCISE,
   score:'?',
   suggestion:'Regular exercise can help prevent depression, reduce stress, and strengthen the mind just as much as it strengthens the body'
 },
 {
   key:5,
   label:DIET,
-  title:'Nutrition',
+  title:TITLE_DIET,
   score:'?',
   suggestion:'Clean food is a good rule, additionally there is tremendous healing, rebalancing and revitalising power in fruits, vegetables and superfoods'
 }]
@@ -109,7 +110,9 @@ class QuestionnaireResult extends React.Component {
         }
     }
     arrayAnswers.sort((a,b)=>a.score-b.score);
-
+    console.log('vediamo tutti i props');
+    console.log(this.props.counter);
+    console.log(arrayAnswers);
     this.props.setResults(arrayAnswers)
     this.setState({values:arrayAnswers})
 
@@ -129,8 +132,9 @@ class QuestionnaireResult extends React.Component {
 
 
     renderPillarTab(val){
-
-      return(<PillarTab title={val.title} score={val.score} suggestion={val.suggestion} width={this.state.width} key={val.key} id={val.key}/>)
+      console.log(val);
+      console.log('PRIMA');
+      return(<PillarTab label={val.label} title={val.title} score={val.score} suggestion={val.suggestion} width={this.state.width} key={val.key} id={val.key}/>)
     }
     toDirectoryHandler(){
       console.log("click!");
@@ -144,17 +148,17 @@ class QuestionnaireResult extends React.Component {
 
         <div style={{marginTop:-1}}>
         <div style={{paddingBottom:50, zIndex:1, background:'linear-gradient(-20deg, #96D0A7, #249ECD)'}} >
-          <Recommendation suggestion='Here your wellbeing summary!'/>
+          <Recommendation suggestion='Based on what you’ve told me, here’s your wellbeing summary'/>
         </div>
         <div style={{width:'100%', background:'rgba(255,255,255,1)'}}>
               <div style={{display:'inline-block', paddingBottom:0, width:'100%', marginTop:-60}}>
                 {this.state.values.map(this.renderPillarTab, this)}
                 <Link to='/Directory'>
-                  <div style={{
+                  <div className='boxShadow' style={{
                     position:'relative',
                     borderRadius:20,
                     borderWidth:1,
-                    fontSize:'.8rem',
+                    fontSize:'1rem',
                     background:'#70CACC',
                     margin:'auto',
                     width:200,
@@ -170,6 +174,8 @@ class QuestionnaireResult extends React.Component {
                   </div>
                 </Link>
           </div>
+          <br />
+          <br />
         </div>
 
 

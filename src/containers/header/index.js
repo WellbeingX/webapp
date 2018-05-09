@@ -16,7 +16,7 @@ import {setResetQuestionnaire} from '../../actions/questionnaireActions'
 
     constructor(props) {
       super(props);
-      this.state = { width: 0, height: 0, marginLeft:0, heightCircle:120, widthCircle:120, opacity:1, menu:false, position:'absolute', zIndex:4};
+      this.state = { width: 0, height: 0, marginLeft:0, heightCircle:110, widthCircle:110, opacity:0, menu:false, position:'absolute', zIndex:4};
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
       this.componentDidMount = this.componentDidMount.bind(this);
       this.burgerHandle = this.burgerHandle.bind(this);
@@ -57,9 +57,9 @@ import {setResetQuestionnaire} from '../../actions/questionnaireActions'
 
     burgerClose(){
       this.setState({
-        heightCircle:120,
-        widthCircle:120,
-        opacity:1,
+        heightCircle:10,
+        widthCircle:10,
+        opacity:0,
         menu:!this.state.menu,
         position:'absolute',
         zIndex:4
@@ -75,12 +75,12 @@ import {setResetQuestionnaire} from '../../actions/questionnaireActions'
 
         return(
                 <div style={styleWrapper}>
-                  <div style={{position:'absolute',left:15, opacity:0, top:15, zIndex:5}}>
-                    <BurgerIcon onClick={this.burgerHandle}/>
+                  <div style={{position:'absolute',left:15, top:10, zIndex:5}}>
+                    <BurgerIcon onClick={this.burgerHandle} color='rgba(255,255,255,1)'/>
                   </div>
                   <div style={{textAlign:'center', width:'100%', position:'relative'}}>
 
-                      <h2 className="logo" style={{ fontSize:'1.2rem', fontWeight:'900', zIndex:this.state.zIndex, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
+                      <h2 className="logo" style={{ fontSize:'1.5rem', fontWeight:'900', zIndex:this.state.zIndex, color:'white', padding:20, textAlign:'center'}}>BetterSpace</h2>
                       <div style={{position:'absolute', left:0, width:this.state.widthCircle, height:120, top:0}}>
                         <div style={{position:'relative', width:'100%', height:'100%'}}>
                           <div style={styleCircle}>
@@ -89,7 +89,7 @@ import {setResetQuestionnaire} from '../../actions/questionnaireActions'
                         </div>
                       </div>
                       <div style={{position:'absolute', top:27, right:20, width:20, height:20, zIndex:201, cursor:'pointer'}}>
-                        <Link to='/directorySelector'> <Search /> </Link>
+
                       </div>
                   </div>
 

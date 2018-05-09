@@ -200,8 +200,8 @@ var questionBetaAnxiety = [
     label:DIET
 },
 {
-    dialog: "Nourishing social contact is one of the most important contributors to emotional wellbeing",
-    question: "How often do you feel like you need more nourishhing social contact?",
+  dialog: "The quality of our social connections is a powerful predictor of mental wellbeing",
+  question: "How often do you feel your social connections should be more nourishing or fulfilling?",
     answerType:'Button',
     answers: [
         {

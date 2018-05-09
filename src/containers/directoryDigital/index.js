@@ -10,13 +10,6 @@ import Suggestions from './suggestions'
 import SolutionRow from './solutionRow'
 import FilterBar from './filterBar'
 
-const titles = [
-  'For a rested mind',
-  'For a stronger mind',
-  'For a relaxed mind',
-  'For a focused mind',
-  'For a nourished mind'
-]
 
 var priorities
 
@@ -26,12 +19,12 @@ class DirectoryDigital extends React.Component {
     super(props);
     this.state={
       solutions:[
-                  {label: "Sleep", title: "Sleep", score: 4, suggestion: "Somewhere between 7 and 9 hours a night are a good…unctions; deep sleep is key to rest and recovery."},
+                  {label: "Sleep", title: "Better sleep", score: 4, suggestion: "Somewhere between 7 and 9 hours a night are a good…unctions; deep sleep is key to rest and recovery."},
                   {label: "Stress management", title: "Stress management", score: 2, suggestion: "Meditation is a very important method to keep your… look at difference way of improving your skills."},
-                  {label: "Diet", title: "Nutrition", score: 1, suggestion: "Clean food is a good rule, additionally there is t…lising power in fruits, vegetables and superfoods"},
-                  {label: "Purpose", title: "Work", score: 2, suggestion: "Work is where we spent most of our waking time, ca…often directs how and when we do everything else."},
-                  {label: "Social", title: "Social life", score: 2, suggestion: "Social connectedness is perhaps the most powerful … you can do here to interact with others can help"},
-                  {label: "Exercise", title: "Exercise", score: 4, suggestion: "Regular exercise can help prevent depression, redu… the mind just as much as it strengthens the body"}
+                  {label: "Diet", title: "Healthier nutrition", score: 1, suggestion: "Clean food is a good rule, additionally there is t…lising power in fruits, vegetables and superfoods"},
+                  {label: "Purpose", title: "Find purpose", score: 2, suggestion: "Work is where we spent most of our waking time, ca…often directs how and when we do everything else."},
+                  {label: "Social", title: "Nourished social life", score: 2, suggestion: "Social connectedness is perhaps the most powerful … you can do here to interact with others can help"},
+                  {label: "Exercise", title: "More exercise", score: 4, suggestion: "Regular exercise can help prevent depression, redu… the mind just as much as it strengthens the body"}
                 ]
     }
     }

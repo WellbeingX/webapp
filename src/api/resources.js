@@ -1,4 +1,4 @@
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from './labels'
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, ANXIETY, DEPRESSION} from './labels'
 
 
 var Resources = [
@@ -50,7 +50,7 @@ var Resources = [
 {
     solutionId:'0004',
     label:SLEEP,
-    labels:[SLEEP,STRESS,PURPOSE,DIET,'anxiety'],
+    labels:[SLEEP,STRESS,PURPOSE,DIET,ANXIETY],
     genderTag:['male', 'female', 'other'],
     ageTag:['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS'],
@@ -67,7 +67,7 @@ alternativeImg:' http://img.wennermedia.com/620-width/mj-618_348_meditation-stud
 {
     solutionId:'0005',
     label:SLEEP,
-    labels:[SLEEP,'anxiety',STRESS],
+    labels:[SLEEP,ANXIETY,STRESS],
     genderTag:['male','female','other'],
     ageTag:[ '<18','18-24'],
     platform:['iOS','Android'],
@@ -163,7 +163,7 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
 {
     solutionId:'0011',
     label:SLEEP,
-    labels:[PURPOSE,STRESS,EXERCISE,DIET,SOCIAL,'anxiety','depression'],
+    labels:[PURPOSE,STRESS,EXERCISE,SOCIAL,ANXIETY,DEPRESSION],
     genderTag:['male','female','other'],
     ageTag: ['<18','18-24'],
     platform:['iOS' , 'Android'],
@@ -226,7 +226,7 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
 {
     solutionId:'0015',
     label:SLEEP,
-    labels:[STRESS,'anxiety','depression'],
+    labels:[STRESS,ANXIETY,DEPRESSION],
     genderTag:['male','female','other'],
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS' , 'Android'],
@@ -242,7 +242,7 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
 {
     solutionId:'0016',
     label:SLEEP,
-    labels:[STRESS,'anxiety','depression',SOCIAL,PURPOSE],
+    labels:[STRESS,ANXIETY,DEPRESSION,SOCIAL,PURPOSE],
     genderTag:['male','female','other'],
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS' , 'Android'],
@@ -259,7 +259,7 @@ AlternativeImg:'https://i2.wp.com/www.inkwellarts.org.uk/wpcontent/uploads/2013/
 {
     solutionId:'0017',
     label:SLEEP,
-    labels:[STRESS,DIET,'depression',SOCIAL,PURPOSE],
+    labels:[STRESS,DIET,DEPRESSION,SOCIAL,PURPOSE],
     genderTag:['male','female','other'],
     ageTag: ['18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS' , 'Android'],
@@ -275,7 +275,7 @@ AlternativeImg:' https://p.apk4fun.com/1e/01/c3/com.happify.happifyinc-featured.
 {
     solutionId:'0018',
     label:SLEEP,
-    labels:[STRESS,SOCIAL,PURPOSE,SLEEP,'anxiety','depression'],
+    labels:[STRESS,SOCIAL,PURPOSE,SLEEP,ANXIETY,DEPRESSION],
     genderTag:['male','female','other'],
     ageTag: ['<18', '18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS' , 'Android'],
@@ -352,7 +352,7 @@ imgURL:' http://lh3.googleusercontent.com/i36nsJS70_SXJYQkQV0VBw6J-2M-RwXd_l4qTC
 {
     solutionId:'0023',
     label:SLEEP,
-    labels:['depression','anxiety',STRESS,SOCIAL],
+    labels:[DEPRESSION,ANXIETY,STRESS,SOCIAL],
     genderTag:['female','male','other'],
     ageTag: ['<18','18-24'],
     platform:['iOS' , 'Android'],
@@ -415,7 +415,7 @@ alternativeImg:' https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/8c/ba/c1/
 {
     solutionId:'0027',
     label:SLEEP,
-    labels:['anxiety',STRESS],
+    labels:[ANXIETY,STRESS],
     genderTag:['female','male','other'],
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS','Android'],
@@ -430,7 +430,7 @@ website:'https://www.anxietyuk.org.uk/about-us/',
 {
     solutionId:'0028',
     label:SLEEP,
-    labels:['depression','anxiety',STRESS],
+    labels:[DEPRESSION,ANXIETY,STRESS],
     genderTag:['female','male','other'],
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS','Android'],
@@ -495,7 +495,7 @@ website:'https://www.5rhythms.com/',
 {
     solutionId:'0032',
     label:SLEEP,
-    labels:[STRESS,'depression','anxiety'],
+    labels:[STRESS,DEPRESSION,ANXIETY],
     genderTag:['female','male','other'],
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
     platform:['iOS','Android'],

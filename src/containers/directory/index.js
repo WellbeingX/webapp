@@ -23,7 +23,6 @@ const timerPeriod = 4;
       this.tick = this.tick.bind(this);
       this.startTimer = this.startTimer.bind(this);
       this.stopTimer = this.stopTimer.bind(this);
-
     }
 
 

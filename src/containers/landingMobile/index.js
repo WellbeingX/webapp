@@ -11,6 +11,8 @@ import DirectorySelector from '../directorySelector'
 import FooterInfo from '../footerInfo'
 import ScrollToTop from '../scrollToTops'
 import Profile from '../profile'
+import About from '../about'
+import Mission from '../mission'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -23,13 +25,15 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
       return(
         <div >
 
-          <div style={{backgroundImage: 'linear-gradient(-20deg, #96D0A7, #249ECD)'}}>
+          <div style={{backgroundImage: 'linear-gradient(-20deg, rgb(199, 234, 160), rgb(36, 158, 205))'}}>
           <main>
             <Route exact path="/" component={HeaderUs} />
             <Route exact path="/directory" component={HeaderUs} />
             <Route exact path="/profile" component={HeaderUs}  />
             <Route path="/information/" component={HeaderWhite} />
             <Route path="/result" component={HeaderWhite} />
+            <Route path="/about" component={HeaderUs} />
+            <Route path="/mission" component={HeaderUs} />
           </main>
 
             <div className="body">
@@ -47,6 +51,8 @@ import {setBackButton, setResetQuestionnaire} from '../../actions/questionnaireA
                           <Route exact path="/profile" component={Profile}  />
                           <Route exact path="/result" component={QuestionnaireResult}  />
                           <Route exact path="/directorySelector" component={DirectorySelector}  />
+                          <Route exact path="/about" component={About}  />
+                          <Route exact path="/mission" component={Mission}  />
                           <Redirect to="/" />
                         </Switch>
                       </ScrollToTop>

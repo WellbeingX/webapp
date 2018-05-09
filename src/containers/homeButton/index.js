@@ -23,7 +23,7 @@ export default class HomeButton extends Component {
     let className = this.state.active ? 'landingButton':'landingButton Active' ;
 
       return(
-          <Button className={className} onClick={this.handleClick}>{this.props.label}</Button>
+          <Button className={className} onClick={this.handleClick}>{this.props.text}</Button>
         )
 
   }

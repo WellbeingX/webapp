@@ -31,7 +31,7 @@ class Recommendation extends React.Component {
   render(){
     return(
 
-      <div style={{ position:'relative', padding:20, marginLeft:10, marginRight:20, height:200, borderRadius:20, overflow:'hidden', paddingTop:80}}>
+      <div style={{ position:'relative', padding:20, marginLeft:10, marginRight:10, height:200, borderRadius:20, overflow:'hidden', paddingTop:80}}>
         <div style={{paddingTop:10, textAlign:'left', width:'65%', height:'100%'}}>
         <ReactCSSTransitionGroup
          component="h2"
@@ -41,7 +41,7 @@ class Recommendation extends React.Component {
          transitionAppear
          transitionAppearTimeout={1200}
         >
-        <h2 style={{color:'white', fontSize:'.8rem', marginBottom:0}}> {this.props.suggestion} </h2>
+        <h2 style={{color:'white',  marginBottom:0}}> {this.props.suggestion} </h2>
 
         </ReactCSSTransitionGroup>
 

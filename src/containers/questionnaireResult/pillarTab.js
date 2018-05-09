@@ -131,7 +131,7 @@ class PillarTab extends React.Component {
                   <div className='boxShadow' style={{width:this.props.width-20, background:this.state.color, position:'relative', margin:'auto', height:145, borderRadius:20,   overflow:'hidden', marginBottom:10, padding:15, zIndex:2 }}>
 
                       <div style={{textAlign:'left'}}>
-                        <h2 style={{color:'white', fontSize:'1rem', fontWeight:900, marginBottom:10}}>{this.state.title} </h2>
+                        <h2 style={{color:'white', fontWeight:900, marginBottom:10}}>{this.state.title} </h2>
                       </div>
 
                       <div >
@@ -140,7 +140,7 @@ class PillarTab extends React.Component {
                           <div style={{marginTop:10}}> <CircularChart score={this.state.score}/> </div>
                         </div>
                         <div style={{ width:'55%', position:'absolute', right:'25%', bottom:0, overflow:'hidden', height:'100%',  borderRadius:20}}>
-                          <p style={{fontSize:'.55rem', color:'rgba(255,255,255,.8)', paddingTop:50, paddingRight:10, fontWeight:100, fontFamily:'Roboto',whiteSpace: 'normal',overflow: 'hidden',height: 130, lineHeight:'.7rem'}}> {this.state.sentence} </p>
+                          <p style={{fontSize:'.8rem', color:'rgba(255,255,255,.8)', paddingTop:50, paddingRight:10, fontWeight:100, fontFamily:'Roboto',whiteSpace: 'normal',overflow: 'hidden', lineHeight:'1rem'}}> {this.state.sentence} </p>
 
                         </div>
                       </div>

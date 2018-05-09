@@ -31,7 +31,7 @@ export default function FooterHome(){
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
 
-              <p className='landingTextFooterHow'> 2. See your wellbeing score, and personalised suggestions</p>
+              <p className='landingTextFooterHow'> 2. See your wellbeing scores and your personalised suggestions</p>
             </Grid.Column>
             <Grid.Column style={{width:'28%', padding:10, paddingTop:0, marginTop:20}}>
                   <List />
@@ -46,7 +46,7 @@ export default function FooterHome(){
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
 
-                <p className='landingTextFooterHow'> 3. See availability and experiment as you learn to put your mind first! </p>
+                <p className='landingTextFooterHow'> 3. Check availability and see how it feels to put your mind first! </p>
                 </Grid.Column>
                 <Grid.Column style={{width:'30%', padding:20, paddingTop:0, marginTop:20}}>
                   <People />
@@ -58,13 +58,13 @@ export default function FooterHome(){
 
 
           <Grid.Row style={{background:'#70CACC', marginTop:20, width:'100%'}}>
-                  <h3 style={{fontFamily:'Quicksand', paddingTop:20, color:'white', fontSize:'1.2rem', width:'100%', textAlign:'center'}}><span style={{opacity:1}}>
+                  <h3 style={{fontFamily:'Quicksand', paddingTop:20, color:'white', fontSize:'1.2rem', width:'100%', textAlign:'center', marginBottom:0}}><span style={{opacity:1}}>
                   Features </span> </h3>
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.27 166.5" style={{ fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10 , width:50, height:50, marginTop:15}}>
+                      <div style={{background:'white', borderRadius:'100%', width:60, height:60}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.27 166.5" style={{ fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10 , width:40, height:40, marginTop:15}}>
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
                               <path class="cls-1" d="M11.75,11.51h0a37.59,37.59,0,0,1,55.39,2.44h0a32.69,32.69,0,0,1,7.2,26.33S37.8,166,37.29,166h0C36.8,166,1,44.92,1,44.92A38.4,38.4,0,0,1,11.75,11.51Z"/>
@@ -75,17 +75,17 @@ export default function FooterHome(){
                       </div>
                     </div>
                     <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Everything in one place</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We search the world and your local area for what works, from therapists to apps to exercise clubs.</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We search the world and your local area for what works, from life coaches to apps to exercise clubs.</h3>
                     </div>
                   </div>
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
+                      <div style={{background:'white', borderRadius:'100%', width:60, height:60}}>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 168.5" style={{fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10, width:50, height:50, marginTop:15}} >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 168.5" style={{fill:'#70CACC', stroke:'#70CACC', strokeMiterlimit:10, width:40, height:40, marginTop:15}} >
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
                               <circle class="cls-1" cx="34" cy="19.5" r="19"/>
@@ -98,15 +98,15 @@ export default function FooterHome(){
                       </div>
                     </div>
                     <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Personalised to you</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We’re proud of our ability to match, using the minimum questions and location data</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We take pride in our ability to make good suggestions from the minimum information.</h3>
                     </div>
                   </div>
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
+                      <div style={{background:'white', borderRadius:'100%', width:60, height:60}}>
                         <svg xmlns="http://www.w3.org/2000/svg" className='AppSVG' viewBox="0 0 166.53 92.71">
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
@@ -124,15 +124,15 @@ export default function FooterHome(){
                       </div>
                     </div>
                     <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Set goals and track progress</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> Need immediate feedback? Or do you just like seeing your growth on a chart? BetterSpace is the self-improvement hub for you</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> Need immediate feedback? Or do you just like seeing your growth on a chart? BetterSpace is the self-improvement hub for you</h3>
                     </div>
                   </div>
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
+                      <div style={{background:'white', borderRadius:'100%', width:60, height:60}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.25 92.49" className='starSVG'>
                           <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
@@ -143,15 +143,15 @@ export default function FooterHome(){
                        </div>
                     </div>
                     <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Social mission</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}>By making it easier to have a healthy mind, we want to tackle rising levels or mental illness </h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}>By making it easier to have a healthy mind, we want to tackle rising levels or mental illness </h3>
                     </div>
                   </div>
 
                   <div  className='homeFeatRow' style={{ width:'100%'}}>
                     <div   className='homeFeatIcon' >
-                      <div style={{background:'white', borderRadius:'100%', width:80, height:80}}>
+                      <div style={{background:'white', borderRadius:'100%', width:60, height:60}}>
 
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.61 110.5" className='lockSVG'>
                         <g id="Layer_2" data-name="Layer 2">
@@ -168,9 +168,9 @@ export default function FooterHome(){
                        </div>
                     </div>
                     <div  className='homeFeatText' >
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Protecting your data</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'.6rem', margin:0}}> We get it. Winning and retaining your trust is everything for us - see our data policy </h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
+                      Your data</span></h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We get it. Winning and retaining your trust is everything for us - see our data policy </h3>
                     </div>
                   </div>
           </Grid.Row>

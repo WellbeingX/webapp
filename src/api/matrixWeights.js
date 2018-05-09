@@ -1,6 +1,6 @@
-export var MWsleep =      [0,	 0,	 0,	 2,	 3,	 8,	10]        //0. SLEEP
-export var MWexercise =   [0,	 3,	 8,	10,	10,	10,	10]        //0. EXERCISE
-export var MWdiet =       [5,	 10]                           //0. DIET
-export var MWsocial =     [10, 7,	 5,	 3,	 1]                //0. SOCIAL
-export var MWpurpose =    [0,	 2,	 8,	 10]        //0. PURPOSE 
-export var MWstress =     [0,	 1,	 2,	 3,	 4,	 5,	 6]        //0. STRESS
+export const MWsleep =      [0,	 0,	 0,	 2,	 3,	 8,	10, 10]        //0. SLEEP
+export const MWexercise =   [0,	 3,	 8,	10,	10,	10,	10, 10]        //0. EXERCISE
+export const MWdiet =       [5,	 10]                               //0. DIET
+export const MWsocial =     [10, 7,	 5,	 3,	 1]                    //0. SOCIAL
+export const MWpurpose =    [0,	 2,	 8,	 10]                       //0. PURPOSE
+export const MWstress =     [0,	 3,	 10, 10]                       //0. STRESS

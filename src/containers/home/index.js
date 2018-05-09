@@ -7,7 +7,7 @@ import {setPath, setSessionStart, setLastAnswer} from '../../actions/questionnai
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactGA from 'react-ga';
 import HomeButton from '../homeButton'
-
+import {SLEEP, PERFORMANCE, HEALTHIER, STRESS, DEPRESSION, ANXIETY, THINK} from '../../api/labels'
 
 
 class Home extends Component {
@@ -61,6 +61,7 @@ class Home extends Component {
   }
 
   handleButton(id, state, label){
+    console.log(label);
     let arrayButton=[];
     switch(id){
       case 'depression':
@@ -131,7 +132,7 @@ class Home extends Component {
 
 
       return(
-          <Container >
+        <div >
           <ReactCSSTransitionGroup
            component="div"
            transitionName="fade"
@@ -140,36 +141,35 @@ class Home extends Component {
            transitionAppear
            transitionAppearTimeout={500}
           >
-                <Grid  className='landingWrapper' >
+                <Grid  className='landingWrapper' style={{margin:0, padding:0}} >
                     <Grid.Row   style={{margin:0, padding:0}}>
                         <p className='landingTitle' style={{ paddingTop:50, marginRight:20}}>
                           There are millions of ways to build a healthy mind. Our job is to help you find what will work best for you.
                         </p>
 
                         <p className='landingTitle' >
-                          How can I help you today?
+                          What would you like to achieve?
                         </p>
                     </Grid.Row>
+                    </Grid>
+
                     <div style={{textAlign:'center', width:'100%'}}>
-                          <HomeButton  label="sleep better" type="improve" click={this.handleButton}/>
-                        <HomeButton  label="healthier in body and mind" type="improve" click={this.handleButton}/>
-                          <HomeButton  label="improve performance" type="depression" click={this.handleButton}/>
-                          <HomeButton  label="manage stress" type="depression" click={this.handleButton}/>
-                          <HomeButton  label='overcome depression' type="depression" click={this.handleButton}/>
-                            <HomeButton  label="overcome anxiety" type="anxiety" click={this.handleButton}/>
-
+                          <HomeButton  label={SLEEP} text="sleep better" type="improve" click={this.handleButton}/>
+                          <HomeButton  label={HEALTHIER} text="healthier in body and mind" type="improve" click={this.handleButton}/>
+                          <HomeButton  label={PERFORMANCE} text="improve performance" type="improve" click={this.handleButton}/>
+                          <HomeButton  label={STRESS} text="manage stress" type="depression" click={this.handleButton}/>
+                          <HomeButton  label={DEPRESSION} text='overcome depression' type="depression" click={this.handleButton}/>
+                          <HomeButton  label={ANXIETY} text="overcome anxiety" type="anxiety" click={this.handleButton}/>
+                          <HomeButton  label={THINK} text="think more clearly" type="improve" click={this.handleButton}/>
                       </div>
-
+                      <div style={{width:'100%', textAlign:'center'}}>
                       <Button className='landingButtonNext'  onClick={this.handleButtonNext.bind(this)} > next </Button>
+                      </div>
+            </ReactCSSTransitionGroup>
 
+                <Checkbox onChange={this.handleBeta} label='Beta' style={{color:'white', fontSize:'.8rem', opacity:.7, paddingBottom:25, left:10}} />
 
-                </Grid>
-
-                </ReactCSSTransitionGroup>
-
-                <Checkbox style={{margin:10}} onChange={this.handleBeta} label='Beta' style={{color:'white', fontSize:'.8rem', opacity:.7, paddingBottom:25}} />
-
-          </Container>
+          </div>
         )
 
   }

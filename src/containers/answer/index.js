@@ -53,12 +53,12 @@ export class AnswerText extends React.Component {
     render(){
       return (
         <div>
-          <Input onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20}} focus placeholder={this.props.answerContent}/>
+          <Input onChange ={this.handleName} flex  style={{fontSize:'1rem', paddingBottom:20}} focus placeholder={this.props.answerContent}/>
           <input
             type="button"
             className="customButton"
             name="radioGroup"
-            value="Next"
+            value="next"
             checked={this.props.answerType === this.props.answer}
             id={this.state.name}
             disabled={this.props.answer}
@@ -66,7 +66,7 @@ export class AnswerText extends React.Component {
             onClick={this.props.onAnswerSelected}
           />
 
-          <a onClick={this.props.onAnswerSelected} id={this.state.name} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
+          <a onClick={this.props.onAnswerSelected} id={this.state.name} style={{fontSize:'1rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
 
           </div>
       );
@@ -93,12 +93,12 @@ export class AnswerSpinner extends React.Component {
     return (
       <div>
 
-        <Dropdown style={{ color:'black', borderRadius:50, fontSize:'.8rem', background:'white', padding:15}} placeholder='Select...' onChange={this.renderSpinner} fluid selection options={this.props.answerContent.spinner} key={this.props.answerContent.keySpinner}/>
+        <Dropdown style={{ color:'black', borderRadius:50, fontSize:'1rem', background:'white', padding:15}} placeholder='Select...' onChange={this.renderSpinner} fluid selection options={this.props.answerContent.spinner} key={this.props.answerContent.keySpinner}/>
         <input
           type="button"
           className="customButton"
           name="radioGroup"
-          value="Next"
+          value="next"
           id={this.state.value}
           disabled={this.props.answer}
           onClick={this.props.onAnswerSelected}
@@ -139,6 +139,7 @@ export class AnswerSlider extends React.Component {
                   <input
                    className="inputRange"
                    type="range"
+                   value={this.state.value}
                    min={this.props.min}
                    max={this.props.max}
                    onChange={this.handleValue}
@@ -151,7 +152,7 @@ export class AnswerSlider extends React.Component {
                       type="button"
                       className="customButton"
                       name="radioGroup"
-                      value="Next"
+                      value="next"
                       id={this.state.value}
                       disabled={this.props.answer}
                       onClick={this.props.onAnswerSelected}
@@ -195,10 +196,10 @@ export class AnswerFeedback extends React.Component {
 
 
 
-          <TextArea onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20, width:250, height: 100, marginBottom:50, borderStyle:'none', marginTop:-10 }} focus placeholder='Comment'/>
+          <TextArea onChange ={this.handleName} flex  style={{fontSize:'1rem', paddingBottom:20, width:250, height: 100, marginBottom:50, borderStyle:'none', marginTop:-10 }} focus placeholder='Comment'/>
           <br />
           <div style={{textAlign:'left', padding: '0rem 1.5rem 0rem 1.5rem', lineHeight:'1rem' }}>
-            <span style={{fontSize: '.8rem', textAlign:'left', fontSize:'.8rem', fontWeight: 700}}>
+            <span style={{fontSize: '1rem', textAlign:'left', fontSize:'1rem', fontWeight: 700}}>
             How clear was/were the last page/pages?
             </span>
           </div>
@@ -240,7 +241,7 @@ export class AnswerFeedback extends React.Component {
             style={{marginTop:50}}
           />
 
-          <a onClick={this.props.onAnswerSelected} id={'Skipped'} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
+          <a onClick={this.props.onAnswerSelected} id={'Skipped'} style={{fontSize:'1rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>skip</a>
 
           </div>
       );
@@ -320,9 +321,11 @@ export class AnswerMultiple extends React.Component {
         <div >
 
           {this.props.answerContent.multiple.map(this.renderButtons, this)}
-
-          <a onClick={this.props.onAnswerSelected} id={this.state.multiple} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>next</a>
-
+          <br />
+          <a onClick={this.props.onAnswerSelected} id={this.state.multiple} style={{fontSize:'1rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white', borderStyle:'solid', borderRadius: '100%', background: 'white', padding: '10px 20px 15px 19px'}}>
+          <div style={{border: 'solid #70CACC',borderWidth:'0 3px 3px 0', display: 'inline-block', padding: 3, transform: 'rotate(-45deg)', webkitTransform: 'rotate(-45deg)' }} />
+          </a>
+          <br /><br />
 
         </div>
       );
@@ -381,9 +384,9 @@ handleName(event, data){
 
         {this.props.answerContent.multiple.map(this.renderButtons, this)}
         <br />
-        <Input onChange ={this.handleName} flex  style={{fontSize:'.8rem', paddingBottom:20}} focus placeholder='Why?'/>
+        <Input onChange ={this.handleName} flex  style={{fontSize:'1rem', paddingBottom:20}} focus placeholder='Why?'/>
         <br />
-        <a onClick={this.props.onAnswerSelected} id={this.state.multiple + " // comment: " +this.state.text} style={{fontSize:'.8rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>next</a>
+        <a onClick={this.props.onAnswerSelected} id={this.state.multiple + " // comment: " +this.state.text} style={{fontSize:'1rem', padding:'20px 0', textDecoration:'underline',cursor:'pointer', color:'white'}}>next</a>
 
 
       </div>

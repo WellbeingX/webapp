@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 export default ({ open, ...props }) => (
-  <div style={{color:'black', position:'fixed', top:20 ,left:-10, fontSize:'1rem', zIndex:204}}>
+  <div style={{color:'black', position:'fixed', top:20 ,left:-10, fontSize:'1.5rem', zIndex:204}}>
   <ReactCSSTransitionGroup
    component="div"
    transitionName="fade"
@@ -20,9 +20,9 @@ export default ({ open, ...props }) => (
     <div style={{position:'relative', left:100, top:100, textAlign:'left' }} >
     <List link>
     <List.Item as='a'><Link to='/' onClick={()=>this.props.resetHome}>Home</Link></List.Item>
-    <List.Item as='a'><Link to='/Directory'>Directory</Link></List.Item>
-      <List.Item as='a'>Mission</List.Item>
-      <List.Item as='a'>About</List.Item>
+    <List.Item as='a'><Link to='/directory'>Directory</Link></List.Item>
+      <List.Item as='a'><Link to='/mission'>Mission</Link></List.Item>
+      <List.Item as='a'><Link to='/about'>About</Link></List.Item>
     </List>
     </div>
     </ReactCSSTransitionGroup>

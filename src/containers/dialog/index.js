@@ -62,7 +62,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
       }
       middle(){
         return(
-          <div style={{borderRadius:'80%', position:'absolute', width:800, height:500, background:'white', top:this.state.bubbleTop, overflow:'hidden', left:-200, color:'rgb(36, 158, 205)'}}>
+          <div style={{borderRadius:'80%', position:'absolute', width:800, height:470, background:'white', top:this.state.bubbleTop, overflow:'hidden', left:-200, color:'rgb(36, 158, 205)'}}>
             <div style={{position: 'absolute', bottom: this.state.bottomDialog, width:this.state.dialogWidth, left: this.state.dialogLeftMargin}}>
             </div>
             <div style={{height:200, background:'no-repeat', backgroundImage: `url(${ImageBarb})`,backgroundSize: this.state.characterWidth,right:this.state.characterRightCenter,backgroundPosition:'bottom right',position:'absolute', bottom:-6, width:this.state.characterWidth}}>

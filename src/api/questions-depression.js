@@ -79,7 +79,7 @@ var questionRecover = [
 
     {
         dialog: "Hi, I’m Zoe! Your personal wellbeing assistant",
-        question: "Did you know 1 in 10 people have depression? There are plenty of ways to recover, and I’ve got some questions to work out what could work for you",
+        question: "Did you know 1 in 10 people have depression? There are plenty of ways to recover, and I’ve got some questions to to personalise them to you.",
         answerType: 'Button',
         answers: [{
                 key: 0,
@@ -89,7 +89,7 @@ var questionRecover = [
         label:''
     },
   {
-      dialog: "Firstly, two questions to understand where you’re at, and sorry if the wording feels overly negative.",
+      dialog: "Firstly, two questions to understand where you’re at, and sorry if the wording feels overly negative",
       question: "During the past two weeks, how often have you felt down, depressed, irritable or hopeless?",
       answerType:'Button',
       answers: [
@@ -113,7 +113,7 @@ var questionRecover = [
       label:' '
   },
   {
-      dialog: "These questions help my advice. No need to answer if they’re uncomfortable",
+      dialog: "These questions improve my suggestions",
       question: "During the past two weeks, how often have you not been able to stop or control your worrying?",
       answerType:'Button',
       answers: [
@@ -180,8 +180,8 @@ var questionRecover = [
       label:DIET
   },
   {
-      dialog: "Nourishing social contact is one of the most important contributors to emotional wellbeing",
-      question: "How often do you feel like you need more nourishhing social contact?",
+      dialog: "The quality of our social connections is a powerful predictor of mental wellbeing",
+      question: "How often do you feel your social connections should be more nourishing or fulfilling?",
       answerType:'Button',
       answers: [
           {
