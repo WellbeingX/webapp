@@ -91,7 +91,7 @@ class DirectoryHeader extends React.Component {
      transitionAppear
      transitionAppearTimeout={1200}
     >
-    <div style={{zIndex:1000, position:'absolute', top:70, color:'rgba(255,255,255,.6)', right:0, fontSize:'.6rem'}}>
+    <div style={{zIndex:1000, position:'absolute', top:70, color:'rgba(255,255,255,.6)', right:0, fontSize:'1rem'}}>
       UNDER DEVELOPMENT
     </div>
     </ReactCSSTransitionGroup>
@@ -118,7 +118,7 @@ class DirectoryHeader extends React.Component {
 
             <Grid.Column style={{textAlign:'center', padding:'1rem 0'}}  onClick={()=>{this.props.setLocal(); this.setLocal();}}>
             <div className='directoryIcon directoryNotSelected' style={{ background: this.state.local}} >
-            <div style={{width:30, margin:'auto'}}>
+            <div style={{width:25, margin:'auto', top:5, position:'relative'}}>
 
               <Location />
               </div>
@@ -131,7 +131,7 @@ class DirectoryHeader extends React.Component {
 
             <Grid.Column style={{textAlign:'center', padding:'1rem 0'}} onClick={()=>{this.props.setProducts(); this.setProducts();}}>
             <div className='directoryIcon directoryNotSelected' style={{ background: this.state.products}} >
-            <div style={{width:40, margin:'auto'}}>
+            <div style={{width:35, margin:'auto', top:10, position:'relative'}}>
 
               <Cart />
               </div>

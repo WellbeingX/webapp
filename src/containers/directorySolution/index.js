@@ -9,7 +9,7 @@ export default function DirectorySolution(props){
   return(
         <div href={props.website}  className='' style={{color:props.textColor, display:'inline-block', width:280, height:130, background:'white', borderRadius:20, position:'relative', marginLeft:10, fontFamily:'Roboto'}}>
           <div style={{position:'absolute', width:280, height:130}}>
-                <h2 style={{fontSize:'1rem', left:100, top:10, color:'black', fontSize:'1rem', position: 'absolute', fontFamily:'Roboto', fontWeight:400}}>{props.title}</h2>
+                <h2 style={{fontSize:'1rem', left:100, top:10, color:'black', fontSize:'1rem', position: 'absolute', fontFamily:'Roboto', fontWeight:600}}>{props.title}</h2>
 
                 <div className='boxShadow' style={{width:80, height:80, display:'inline-block', verticalAlign:'middle', background:'rgba(0,0,0,0)', left:10, borderRadius:20, bottom:25, position: 'absolute', overflow:'hidden'}}>
                   <Image src={props.imageURL} style={{width:'auto', height:'auto', maxWidth:'100%', top:'50%',transform: 'translateY(-50%)', maxHeight:'100%', display:'inline-block', verticalAlign:'middle'}} />
