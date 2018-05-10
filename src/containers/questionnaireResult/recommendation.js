@@ -31,7 +31,7 @@ class Recommendation extends React.Component {
   render(){
     return(
 
-      <div style={{ position:'relative', padding:20, marginLeft:0, marginRight:10, height:200, borderRadius:20, overflow:'hidden', paddingTop:80}}>
+      <div style={{ position:'relative', padding:20, marginLeft:0, marginRight:10, height:220, borderRadius:20, overflow:'hidden', paddingTop:80}}>
         <div style={{paddingTop:10, textAlign:'left', width:'65%', height:'100%'}}>
         <ReactCSSTransitionGroup
          component="h2"
@@ -47,7 +47,7 @@ class Recommendation extends React.Component {
 
 
         </div>
-        <div style={{ width:100, position:'absolute', right:10, height:100, bottom:30, overflow:'hidden',  borderRadius:'100%', background:'white'}}>
+        <div style={{ width:100, position:'absolute', right:10, height:100, bottom:40, overflow:'hidden',  borderRadius:'100%', background:'white'}}>
           <div style={characterStyle} />
         </div>
       </div>

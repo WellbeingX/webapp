@@ -32,6 +32,7 @@ class DirectoryDigital extends React.Component {
   componentDidMount(){console.log(this.props.counter.resultsOrder);
     console.log('Qui i risultati ordinati');
     console.log(this.props.counter.resultsOrder);
+    console.log(this.props.counter);
     if ( this.props.counter.resultsOrder.length > 0 ) this.setState({solutions:this.props.counter.resultsOrder})
 
   }

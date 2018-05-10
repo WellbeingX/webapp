@@ -82,8 +82,8 @@ const timerPeriod = 5;
     renderOverlay(){
       return(
         <ReactCSSTransitionGroup transitionName='fade'>
-          <div className='classOverlay' >
-            <p>'Wellness is the complete integration of body, mind, and spirit - the realization that everything we do, think, feel, and believe has an effect on our state of well-being'</p>
+          <div className='classOverlay'  >
+            <p style={{fontSize:'1.5rem'}}>'Wellness is the complete integration of body, mind, and spirit - the realization that everything we do, think, feel, and believe has an effect on our state of well-being'</p>
 
             <div className="loader loader--style2" title="1">
               <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"

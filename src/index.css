@@ -51,7 +51,7 @@ h2{
 }
 @media (min-width: 1401px) {
   body{
-    font-size: 22px;
+    font-size: 1em;
   }
   .desktopSectionFirstRowCell{
     line-height: 1.2rem;
@@ -142,7 +142,7 @@ h3{
   color: #444;
 }
 p{
-  font-size: .9rem;
+  font-size: 1rem;
   color: #444;
 }
 .backgroundColor{
@@ -248,7 +248,7 @@ div.ui.grid.landingWrapper {
 .footerFooterHome p{
   color: white;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: 1rem;
   position: relative;
   bottom: 20px;
 }
@@ -977,7 +977,7 @@ input[type=range]:focus::-ms-fill-upper {
   top:50%;
   left:25%;
   color: white;
-  font-size: 11rem;
+  font-size: 2rem;
   line-height: 2rem;
   font-weight: 500;
 }
@@ -1019,7 +1019,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 10%;
   padding-left: 50px;
   margin-top: 50px;
-  font-size: 11rem;
+  font-size: 2rem;
   font-weight: 900;
   padding-bottom: 100px;
 }
@@ -1162,7 +1162,7 @@ input[type=range]:focus::-ms-fill-upper {
     top: 50%;
     left: 25%;
     color: white;
-    font-size: 11rem;
+    font-size: 2rem;
     line-height: 2rem;
     font-weight: 500;
   }
