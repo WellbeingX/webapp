@@ -590,7 +590,7 @@ Input{
 }
 
 .logoReplacementWrapper{
-  margin-top:-130px;
+  margin-top:-115px;
   background: linear-gradient(-20deg, #96D0A7, #249ECD );
   height: 200px;
   width: 100%;
@@ -674,7 +674,9 @@ div.ui.grid.directoryBarbaraDiv{
   box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.2);
 }
 .directoryNotSelected{
-  background: rgba(255,255,255,.3)
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0);
+  box-shadow: 0px 2px 21px -4px rgba(0,0,0,0);
 }
 .directoryCommentWrapper{
   border-radius: 40px;

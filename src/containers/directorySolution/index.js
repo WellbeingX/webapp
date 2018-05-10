@@ -16,7 +16,7 @@ export default function DirectorySolution(props){
                 </div>
                 <div style={{ width:170, right:10, top:35 , lineHeight:'.6rem', color:'grey', fontSize:'.52rem', position:'absolute'}}>
                   <div style={{position:'relative',  width:'100%',   whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto' }}>
-                  <p style={{width:170, lineHeight:'.8rem', color:'grey', fontSize:'.7rem',height:60,  whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto', overflow:'hidden', display:'block', fontWeight:100}}> {props.description} </p>
+                  <p style={{width:170, lineHeight:'.8rem', color:'grey', fontSize:'.7rem', maxHeight:60,  whiteSpace: 'normal', textOverflow:'ellipsis',fontFamily:'Roboto', overflow:'hidden', display:'block', fontWeight:100}}> {props.description} </p>
                   </div>
                 </div>
 
