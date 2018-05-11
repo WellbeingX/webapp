@@ -26,7 +26,7 @@ export default function SolutionRow(props){
   return(
     <div style={{width:'100%'}}>
     <div style={{paddingLeft:0, color:'black', fontWeight:900}}>
-      <span style={{paddingLeft:20, color:'black', fontSize:'1rem', textTransform:'uppercase'}}>{props.title}</span>
+      <div style={{paddingLeft:20, color:'black', fontSize:'1rem', textTransform:'uppercase', whiteSpace:'nowrap', textOverflow:'ellipsis'}}>{props.title}</div>
       <div style={{overflow:'hidden',background:'white', height:135, width:'100%', color:'black',paddingBottom:0, display: 'inline-block', marginTop:10}} >
         <div style={{fontSize: 0, whiteSpace: 'nowrap', height:'100%', overflow:'auto', overflowY:'hidden'}} >
         {orderAndRenderSolutions()}

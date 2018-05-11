@@ -20,7 +20,7 @@ var stateSolutions = [
             {label: "Social", title: "Nourished social life", score: 2, suggestion: "Social connectedness is perhaps the most powerful … you can do here to interact with others can help"},
             {label: "Exercise", title: "More exercise", score: 4, suggestion: "Regular exercise can help prevent depression, redu… the mind just as much as it strengthens the body"}
           ]
-var landingSolutions = {label: "Landing", score:-1, title: "", suggestion: ""}
+var landingSolutions = {label:"Landing", score:-1, title: "", suggestion: ""}
 
 class DirectoryDigital extends React.Component {
 
@@ -34,15 +34,19 @@ class DirectoryDigital extends React.Component {
   componentDidMount(){
 
     if ( this.props.counter.resultsOrder.length > 0 ) this.setState({solutions:this.props.counter.resultsOrder})
-    // TODO: Now I want to add the landing page solution if exists so it gets represented as a Row
-    console.log('vediamo tutti i props');
-    console.log(this.props.counter);
 
+    // Now I want to add the landing page solution if exists so it gets represented as a Row
     if (this.props.counter.answersArray.length > 0 ){
-      console.log('qui entra');
       if (this.props.counter.answersArray[0].questionLabel === 'Landing') {
-        console.log('qui abbiamo qualcosa da mostrare');
+        // Creating the title aligning the various button texts one after the other
         this.props.counter.answersArray[0].entry.answer.map((val)=>{landingSolutions.title = landingSolutions.title + val + ', ';})
+        // Trim the last comma
+        landingSolutions.title = landingSolutions.title.substring(0, landingSolutions.title.length-2);
+        //In case it is too bif for the screen width
+        if(landingSolutions.title.length>32){landingSolutions.title = landingSolutions.title.substring(0, 32)+'...'}
+
+        // Put the labels of the landing in the right place
+        landingSolutions.label = this.props.counter.answersArray[0].entry.answer;
         // landingSolutions.label.push(this.props.counter.answersArray[0].entry.answer)
         let temp = this.state.solutions
         temp.push(landingSolutions);
@@ -53,14 +57,39 @@ class DirectoryDigital extends React.Component {
   }
 
 
-  solutionMatching(label){
+  solutionMatching(labels){
 
+    let arraySolutions =[];
+    // If there are more than one labels per row (first row, presented row
+    console.log('vediamo tutte le stringhe');
+    console.log(labels);
+    console.log(typeof labels !== 'string');
+    if(typeof labels !== 'string'){
+      console.log('non è una string');
 
-    return (Resources.filter(data=>{
+      for(let label in labels){
+        console.log('qui la nostra label');
+        console.log(labels);
+        console.log(labels[label]);
+        console.log();
+        let resources = Resources.filter(data=>{
+          let result=false;
+          for(let resourceLabel of data.labels) result = result || resourceLabel===labels[label];
+          return result
+          })
+          console.log(resources);
+        for(let val in resources) arraySolutions.push(resources[val])
+      }
+    }
+    // Otherwise, for each pillar page
+    else arraySolutions = Resources.filter(data=>{
       let result=false;
-      for(let i of data.labels) result = result || i===label;
+      for(let resourceLabel of data.labels) result = result || resourceLabel===labels;
       return result
-    }))
+      })
+      console.log(arraySolutions);
+
+    return arraySolutions;
   }
 
   renderSolutions = (key) => (
