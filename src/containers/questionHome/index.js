@@ -132,6 +132,7 @@ class QuestionHome extends React.Component {
      handleAnswerSelected(event) {
        // This is the handler that is sent as prop to all the questions, it manages what happens after the user clicks the button that will bring to the next question
 
+
        // HERE IT PUTS THE ANSWER IN THE STORE and in FIREBASE
        let data2firebase = {sessionName: this.props.counter.sessionName ,
                             entry:{

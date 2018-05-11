@@ -76,7 +76,7 @@ export default function FooterHome(){
                     </div>
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
-                      Everything in one place</span></h3>
+                      All in one place</span></h3>
                       <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We search the world and your local area for what works, from life coaches to apps to exercise clubs.</h3>
                     </div>
                   </div>

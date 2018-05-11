@@ -77,14 +77,12 @@ class QuestionnaireResult extends React.Component {
     // Values update from the updatedAnswersCount
     let i;
     let scores = this.props.scores;
-    console.log('Qui gli store');
+    console.log('SCORES');
     console.log(scores);
     if (typeof scores !== 'undefined'){
       for(i in arrayAnswers){
         switch (arrayAnswers[i].label){
           case SLEEP:
-          console.log('SLEEP');
-          console.log(scores);
               arrayAnswers[i].score =  scores.filter((val) => val[0]===SLEEP)[0][1]
           break;
           case DIET:
@@ -109,12 +107,15 @@ class QuestionnaireResult extends React.Component {
           }
         }
     }
-    arrayAnswers.sort((a,b)=>a.score-b.score);
-    console.log('vediamo tutti i props');
-    console.log(this.props.counter);
     console.log(arrayAnswers);
-    this.props.setResults(arrayAnswers)
+    arrayAnswers.sort((a,b)=>a.score-b.score);
+    console.log(arrayAnswers);
+
+
+    // I send to the state the answers I want to be represnted in the pillarTabs
     this.setState({values:arrayAnswers})
+
+    this.props.setResults(arrayAnswers)
 
   }
 
@@ -131,14 +132,12 @@ class QuestionnaireResult extends React.Component {
 
 
 
-    renderPillarTab(val){
-      console.log(val);
-      console.log('PRIMA');
-      return(<PillarTab label={val.label} title={val.title} score={val.score} suggestion={val.suggestion} width={this.state.width} key={val.key} id={val.key}/>)
-    }
-    toDirectoryHandler(){
-      console.log("click!");
-    }
+  renderPillarTab(val){
+    return(<PillarTab label={val.label} title={val.title} score={val.score} suggestion={val.suggestion} width={this.state.width} key={val.key} id={val.key}/>)
+  }
+  toDirectoryHandler(){
+    console.log("click!");
+  }
 
 
   render(){

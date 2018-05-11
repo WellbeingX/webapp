@@ -17,6 +17,9 @@ html{
   overflow: auto;
   height: 100%;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke:1px transparent;
 }
 body {
   height: 100%;

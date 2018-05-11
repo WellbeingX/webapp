@@ -113,7 +113,8 @@ class Home extends Component {
                            questionId: 0,
                            question: 'How can I help you today?',
                            answerId: this.state.recover,
-                           answer: this.state.selected}
+                           answer: this.state.selected},
+                           questionLabel:'Landing'
                          };
     this.props.setLastAnswer(data2firebase)
     if(this.state.depression>0)
