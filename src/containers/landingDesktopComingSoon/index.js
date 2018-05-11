@@ -98,7 +98,7 @@ render() {
               </span>
               </a>
               <a href='#contact'>
-              <span className='desktopHeaderHeaderRightElement' onClick={this.contactClick}>Contact</span>
+              <span className='desktopHeaderHeaderRightElement' onClick={this.contactClick}>Mission</span>
               </a>
             </span>
           </div>
@@ -108,7 +108,7 @@ render() {
             {this.renderContent()}
           </div>
 
-          <div style={{bottom:100, width:'75%', textAlign:'center', fontSize:'1rem', position:'absolute', lineHeight:'1.2rem', width:'100%'}}>
+          <div style={{bottom:50, width:'75%', textAlign:'center', fontSize:'1rem', position:'absolute', lineHeight:'1.2rem', width:'100%'}}>
              View <span style={{textDecoration:'underline'}}>betterspace.uk  </span>on a mobile device to see how we can help you
           </div>
 
