@@ -7,6 +7,7 @@ export const STRESS = 'Stress management'
 export const ANXIETY = 'Anxiety'
 export const DEPRESSION = 'Depression'
 export const THINK = 'Think'
+export const AGE = 'Age'
 
 
 

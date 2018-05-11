@@ -73,7 +73,7 @@
 //     label:' '
 // }
 
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from './labels'
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, AGE} from './labels'
 
 var questionRecover = [
 
@@ -428,7 +428,7 @@ var questionRecover = [
           }
       ],
     }],
-      label:' '
+      label:AGE
   }
 ];
 

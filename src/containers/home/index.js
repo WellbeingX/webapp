@@ -158,7 +158,7 @@ class Home extends Component {
                           <HomeButton  label={SLEEP} text="sleep better" type="improve" click={this.handleButton}/>
                           <HomeButton  label={HEALTHIER} text="healthier in body and mind" type="improve" click={this.handleButton}/>
                           <HomeButton  label={PERFORMANCE} text="improve performance" type="improve" click={this.handleButton}/>
-                          <HomeButton  label={STRESS} text="manage stress" type="depression" click={this.handleButton}/>
+                          <HomeButton  label={STRESS} text="manage stress" type="improve" click={this.handleButton}/>
                           <HomeButton  label={DEPRESSION} text='overcome depression' type="depression" click={this.handleButton}/>
                           <HomeButton  label={ANXIETY} text="overcome anxiety" type="anxiety" click={this.handleButton}/>
                           <HomeButton  label={THINK} text="think more clearly" type="improve" click={this.handleButton}/>

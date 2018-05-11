@@ -72,7 +72,7 @@
 //     ],
 //     comments:' '
 // }
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from './labels'
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, AGE} from './labels'
 
 
 var questionBetaAnxiety = [
@@ -445,8 +445,11 @@ var questionBetaAnxiety = [
           text: ">85",
           value: ">85",
             key:8
-        },
-        ]}]},
+          }
+      ],
+    }],
+      label:AGE
+    },
   {
       dialog: "BETA-TEST Feedback",
       question: " Would you ask:",

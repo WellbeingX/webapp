@@ -10,6 +10,9 @@ import Suggestions from './suggestions'
 import SolutionRow from './solutionRow'
 import FilterBar from './filterBar'
 
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, AGE,
+TITLE_SLEEP, TITLE_EXERCISE, TITLE_DIET, TITLE_SOCIAL, TITLE_PURPOSE, TITLE_STRESS} from '../../api/labels'
+
 
 var priorities
 var stateSolutions = [
@@ -48,9 +51,11 @@ class DirectoryDigital extends React.Component {
         // Put the labels of the landing in the right place
         landingSolutions.label = this.props.counter.answersArray[0].entry.answer;
         // landingSolutions.label.push(this.props.counter.answersArray[0].entry.answer)
-        let temp = this.state.solutions
+        let temp = this.props.counter.resultsOrder
         temp.push(landingSolutions);
+        console.log(temp);
         temp.sort((a,b)=>a.score-b.score);
+        console.log(temp);
         this.setState({solutions: temp})
       }
     }
@@ -60,24 +65,16 @@ class DirectoryDigital extends React.Component {
   solutionMatching(labels){
 
     let arraySolutions =[];
-    // If there are more than one labels per row (first row, presented row
-    console.log('vediamo tutte le stringhe');
-    console.log(labels);
-    console.log(typeof labels !== 'string');
-    if(typeof labels !== 'string'){
-      console.log('non è una string');
 
+    // LABEL FILTERING
+    // If there are more than one labels per row (first row, presented row)
+    if(typeof labels !== 'string'){
       for(let label in labels){
-        console.log('qui la nostra label');
-        console.log(labels);
-        console.log(labels[label]);
-        console.log();
         let resources = Resources.filter(data=>{
           let result=false;
           for(let resourceLabel of data.labels) result = result || resourceLabel===labels[label];
           return result
           })
-          console.log(resources);
         for(let val in resources) arraySolutions.push(resources[val])
       }
     }
@@ -86,8 +83,31 @@ class DirectoryDigital extends React.Component {
       let result=false;
       for(let resourceLabel of data.labels) result = result || resourceLabel===labels;
       return result
-      })
-      console.log(arraySolutions);
+    })
+
+    // Addiotional filtering based on the answers
+    let answers = this.props.counter.answersArray
+    if (answers.length > 0 ){
+      // AGE FILTERING
+      console.log('AGE FILTERING');
+      console.log(arraySolutions.length);
+      for(let indexAnswer in answers){
+        if(answers[indexAnswer].entry.questionLabel === AGE){
+          arraySolutions = arraySolutions.filter(data=>{
+            let result=false;
+            for(let ageTag of data.ageTag) {
+              result = result || ageTag===answers[indexAnswer].entry.answerId;}
+            return result
+            })
+        }
+      }
+      console.log(arraySolutions.length);
+
+      // SEX FILTERING
+
+
+      // PREFERENCES SORTING
+    }
 
     return arraySolutions;
   }

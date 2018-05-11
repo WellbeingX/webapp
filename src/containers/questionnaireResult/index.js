@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import Recommendation from './recommendation'
 import PillarTab from './pillarTab'
 import { Link } from 'react-router-dom'
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS,
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, 
 TITLE_SLEEP, TITLE_EXERCISE, TITLE_DIET, TITLE_SOCIAL, TITLE_PURPOSE, TITLE_STRESS} from '../../api/labels'
 import {setResults} from '../../actions/questionnaireActions'
 
