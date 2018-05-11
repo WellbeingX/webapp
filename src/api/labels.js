@@ -11,12 +11,12 @@ export const AGE = 'Age'
 
 
 
-export const TITLE_SLEEP = 'Better sleep'
-export const TITLE_EXERCISE = 'More exercise'
-export const TITLE_DIET = 'Healthier diet'
-export const TITLE_SOCIAL = 'Nourished social life'
-export const TITLE_PURPOSE = 'Find purpose'
-export const TITLE_STRESS = 'Manage stress'
+export const TITLE_SLEEP = 'Sleep'
+export const TITLE_EXERCISE = 'Exercise'
+export const TITLE_DIET = 'Nutrition'
+export const TITLE_SOCIAL = 'Social connectedness'
+export const TITLE_PURPOSE = 'Occupation'
+export const TITLE_STRESS = 'Stress management'
 export const TITLE_ANXIETY = 'Overcome anxiety'
 export const TITLE_DEPRESSION = 'Overcome depression'
 

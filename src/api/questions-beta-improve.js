@@ -144,7 +144,7 @@ var questionBetaImprove = [
         label:DIET
     },
     {
-      dialog: "The quality of our social connections is a powerful predictor of mental wellbeing",
+      dialog: "The quality of our social connections is a powerful predictor of mental and physical wellbeing",
       question: "How often do you feel your social connections should be more nourishing or fulfilling?",
         answerType:'Button',
         answers: [
@@ -172,29 +172,29 @@ var questionBetaImprove = [
         label:SOCIAL
     }
     ,{
-        dialog: "Let's look at your daily activities, in respect to the activities you do during the day",
-        question: "Thinking about your daily activities, ",
+        dialog: "Let's look at your daily activities...",
+        question: "With respect the activities you do over the course of a typical day - whether it be work, study, pastimes, taking care of children or anything else - How often do you wish that these could be more satisfying or enjoyable?",
         answerType:'Button',
         answers: [
             {
                 key: 0,
-                text: "extremely dissatisfied"
+                text: "never"
             },
             {
                 key: 1,
-                text: "dissatisfied"
+                text: "rarely"
             },
             {
                 key: 2,
-                text: "about OK"
+                text: "some of the time"
             },
             {
                 key: 3,
-                text: "satisfied"
+                text: "often"
             },
             {
                 key: 4,
-                text: "very satisfied"
+                text: "all the time"
             }
         ],
         label:PURPOSE
@@ -231,7 +231,7 @@ var questionBetaImprove = [
         answers: [ {
           multiple: [
             {
-                text: 'relationships',
+                text: 'family or other relationships',
                 key:0
             },
             {
@@ -243,7 +243,42 @@ var questionBetaImprove = [
                 key:2
             },
             {
-                text: "books",
+                text: "living arrengement/housing issues",
+                key:3
+            },
+            {
+                text: "mental health",
+                key:4
+            },
+            {
+                text: "pleasurable activities",
+                key:5
+            }
+        ],
+      }],
+        label:' '
+    },
+
+    {
+        dialog: "",
+        question: "Which of the following do you find useful or enjoyable?",
+        answerType:'Multiple',
+        answers: [ {
+          multiple: [
+            {
+                text: 'apps',
+                key:0
+            },
+            {
+                text: "meeting new people",
+                key:1
+            },
+            {
+                text: "time in nature",
+                key:2
+            },
+            {
+                text: "reading books",
                 key:3
             },
             {
@@ -265,6 +300,93 @@ var questionBetaImprove = [
             {
                 text: "contributing to the community",
                 key:7
+            }
+        ],
+      }],
+        label:' '
+    },
+    ,{
+        dialog: "Let's look at your daily activities...",
+        question: "With respect the activities you do over the course of a typical day - whether it be work, study, pastimes, taking care of children or anything else - How often do you wish that these could be more satisfying or enjoyable?",
+        answerType:'Button',
+        answers: [
+            {
+                key: 0,
+                text: "never"
+            },
+            {
+                key: 1,
+                text: "rarely"
+            },
+            {
+                key: 2,
+                text: "some of the time"
+            },
+            {
+                key: 3,
+                text: "often"
+            },
+            {
+                key: 4,
+                text: "all the time"
+            }
+        ],
+        label:PURPOSE
+    },
+    {
+        dialog: "",
+        question: "To what degree are you managing your stress levels well?",
+        answerType:'Button',
+        answers: [
+            {
+                key: 0,
+                text: "not at all"
+            },
+            {
+                key: 1,
+                text: "somewhat"
+            },
+            {
+                key: 2,
+                text: "well"
+            },
+            {
+                key: 3,
+                text: "very well"
+            }
+        ],
+        label:STRESS
+    },
+
+    {
+        dialog: "",
+        question: "Which of the following areas of your life do you feel need improvement?",
+        answerType:'Multiple',
+        answers: [ {
+          multiple: [
+            {
+                text: 'family or other relationships',
+                key:0
+            },
+            {
+                text: "financies",
+                key:1
+            },
+            {
+                text: "sex",
+                key:2
+            },
+            {
+                text: "living arrengement/housing issues",
+                key:3
+            },
+            {
+                text: "mental health",
+                key:4
+            },
+            {
+                text: "pleasurable activities",
+                key:5
             }
         ],
       }],

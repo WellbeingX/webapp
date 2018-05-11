@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import Recommendation from './recommendation'
 import PillarTab from './pillarTab'
 import { Link } from 'react-router-dom'
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, 
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS,
 TITLE_SLEEP, TITLE_EXERCISE, TITLE_DIET, TITLE_SOCIAL, TITLE_PURPOSE, TITLE_STRESS} from '../../api/labels'
 import {setResults} from '../../actions/questionnaireActions'
 
@@ -15,28 +15,28 @@ var arrayAnswers =
   label:STRESS,
   title:TITLE_STRESS,
   score:'?',
-  suggestion:'Meditation is a very important method to keep your mind clear and safe. You mght want to look at difference way of improving your skills.'
+  suggestion:'We al have stress in our lives. Stress affects our minds and bodies. It is important to find ways to manage your stress so that you can thrive.'
 },
 {
   key:1,
   label:SLEEP,
   title:TITLE_SLEEP,
   score:'?',
-  suggestion:'Somewhere between 7 and 9 hours a night are a good guideline to regulate mood and cognitive functions; deep sleep is key to rest and recovery.'
+  suggestion:'Sleep is fundamental to physical and mental wellbeing. If you have sleep problems, improving your sleep may be the most helpful thing you can do for your overall wellbeing.'
 },
 {
   key:2,
   label:PURPOSE,
   title:TITLE_PURPOSE,
   score:'?',
-  suggestion:'Work is where we spent most of our waking time, can be a main culprit of stress, and it often directs how and when we do everything else.'
+  suggestion:'Finding enjoyment, meaning and purpose in the way you spend your time - whether in work or play - can greatly effect physical and mental wellbeing.'
 },
 {
   key:3,
   label:SOCIAL,
   title:TITLE_SOCIAL,
   score:'?',
-  suggestion:'Social connectedness is perhaps the most powerful predictor of life outcomes, and anything you can do here to interact with others can help'
+  suggestion:'Nourishing relationships are vital to general wellbeing. Focusing on this part of your life can greatly improve mental and physical wellbeing.'
 },
 {
   key:4,
@@ -50,7 +50,7 @@ var arrayAnswers =
   label:DIET,
   title:TITLE_DIET,
   score:'?',
-  suggestion:'Clean food is a good rule, additionally there is tremendous healing, rebalancing and revitalising power in fruits, vegetables and superfoods'
+  suggestion:'It makes sense that what you put into your body has an effect on wellbeing. There are many ways to find the righht nutrition for you.'
 }]
 
 class QuestionnaireResult extends React.Component {
