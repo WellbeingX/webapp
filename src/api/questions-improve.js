@@ -89,13 +89,28 @@ var questionRecover = [
   },
   {
       dialog: "Let's talk about sleep...",
-      question: "In the past week, how many nights have you a good night’s sleep?",
-      answerType:'Slider',
+      question: "How often do you have difficulty getting asleep, staying asleep, or getting enough sleep?",
+      answerType:'Button',
       answers: [
           {
-            min: 0,
-            max: 7,
-            key:0
+              key: 0,
+              text: "not at all"
+          },
+          {
+              key: 1,
+              text: "several days"
+          },
+          {
+              key: 2,
+              text: "over half the days"
+          },
+          {
+              key: 3,
+              text: "nearly every day"
+          },
+          {
+              key: 4,
+              text: "can't say"
           }
       ],
       label:SLEEP
