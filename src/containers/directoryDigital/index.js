@@ -103,7 +103,7 @@ class DirectoryDigital extends React.Component {
       }
       console.log(arraySolutions.length);
 
-      // SEX FILTERING
+      // GENDER FILTERING
 
 
       // PREFERENCES SORTING
