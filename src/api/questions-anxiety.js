@@ -294,7 +294,7 @@ var questionRecover = [
               key:0
           },
           {
-              text: "financies",
+              text: "finances",
               key:1
           },
           {
@@ -302,7 +302,7 @@ var questionRecover = [
               key:2
           },
           {
-              text: "living arrengement/housing issues",
+              text: "housing issues",
               key:3
           },
           {
@@ -325,7 +325,7 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              text: 'apps',
+              text: 'reading books',
               key:0
           },
           {
@@ -337,7 +337,7 @@ var questionRecover = [
               key:2
           },
           {
-              text: "reading books",
+              text: "apps",
               key:3
           },
           {

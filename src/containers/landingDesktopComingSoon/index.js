@@ -89,7 +89,7 @@ render() {
     return (
       <div style={{height:this.state.height}}>
         <div style={{height:this.state.height, backgroundSize:'cover', background: 'url(/static/media/desktopBkg.fc7c195b.jpg)', backgroundRepeat:'no-repeat'}}>
-          <div className = 'desktopHeaderHeader' style={{position:'absolute', height:'3rem', top:0 }} >
+          <div className = 'desktopHeaderHeader' style={{position:'absolute', height:'2.8rem', top:0 }} >
             <span onClick={this.logoClick}>BetterSpace</span>
             <span className='desktopHeaderHeaderRight'>
               <a href='#whatwedo'>

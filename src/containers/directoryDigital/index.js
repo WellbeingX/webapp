@@ -23,7 +23,7 @@ var stateSolutions = [
             {label: "Social", title: "Nourished social life", score: 2, suggestion: "Social connectedness is perhaps the most powerful … you can do here to interact with others can help"},
             {label: "Exercise", title: "More exercise", score: 4, suggestion: "Regular exercise can help prevent depression, redu… the mind just as much as it strengthens the body"}
           ]
-var landingSolutions = {label:"Landing", score:-1, title: "", suggestion: ""}
+var landingSolutions = {label:"Landing", score:-1, title: "Your initial request: ", suggestion: ""}
 
 class DirectoryDigital extends React.Component {
 

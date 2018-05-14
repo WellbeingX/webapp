@@ -305,7 +305,7 @@ var questionBetaAnxiety = [
             key:0
         },
         {
-            text: "financies",
+            text: "finances",
             key:1
         },
         {
@@ -336,7 +336,7 @@ var questionBetaAnxiety = [
     answers: [ {
       multiple: [
         {
-            text: 'apps',
+            text: 'reading books',
             key:0
         },
         {
@@ -348,7 +348,7 @@ var questionBetaAnxiety = [
             key:2
         },
         {
-            text: "reading books",
+            text: "apps",
             key:3
         },
         {

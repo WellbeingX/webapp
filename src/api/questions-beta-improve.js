@@ -249,7 +249,7 @@ var questionBetaImprove = [
                 key:0
             },
             {
-                text: "financies",
+                text: "finances",
                 key:1
             },
             {
@@ -280,7 +280,7 @@ var questionBetaImprove = [
         answers: [ {
           multiple: [
             {
-                text: 'apps',
+                text: 'reading books',
                 key:0
             },
             {
@@ -292,7 +292,7 @@ var questionBetaImprove = [
                 key:2
             },
             {
-                text: "reading books",
+                text: "apps",
                 key:3
             },
             {
@@ -383,7 +383,7 @@ var questionBetaImprove = [
                 key:0
             },
             {
-                text: "financies",
+                text: "finances",
                 key:1
             },
             {
