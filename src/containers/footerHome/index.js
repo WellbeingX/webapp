@@ -46,7 +46,7 @@ export default function FooterHome(){
           <Grid.Row style={{ padding:0}}>
             <Grid.Column style={{width:'70%', padding:0}}>
 
-                <p className='landingTextFooterHow'> 3. Check availability and see how it feels to put your mind first! </p>
+                <p className='landingTextFooterHow'> 3. See how it feels to put your mind first </p>
                 </Grid.Column>
                 <Grid.Column style={{width:'30%', padding:20, paddingTop:0, marginTop:20}}>
                   <People />
