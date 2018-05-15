@@ -113,7 +113,8 @@ class Home extends Component {
                            questionId: 0,
                            question: 'How can I help you today?',
                            answerId: this.state.recover,
-                           answer: this.state.selected}
+                           answer: this.state.selected},
+                           questionLabel:'Landing'
                          };
     this.props.setLastAnswer(data2firebase)
     if(this.state.depression>0)
@@ -157,7 +158,7 @@ class Home extends Component {
                           <HomeButton  label={SLEEP} text="sleep better" type="improve" click={this.handleButton}/>
                           <HomeButton  label={HEALTHIER} text="healthier in body and mind" type="improve" click={this.handleButton}/>
                           <HomeButton  label={PERFORMANCE} text="improve performance" type="improve" click={this.handleButton}/>
-                          <HomeButton  label={STRESS} text="manage stress" type="depression" click={this.handleButton}/>
+                          <HomeButton  label={STRESS} text="manage stress" type="improve" click={this.handleButton}/>
                           <HomeButton  label={DEPRESSION} text='overcome depression' type="depression" click={this.handleButton}/>
                           <HomeButton  label={ANXIETY} text="overcome anxiety" type="anxiety" click={this.handleButton}/>
                           <HomeButton  label={THINK} text="think more clearly" type="improve" click={this.handleButton}/>

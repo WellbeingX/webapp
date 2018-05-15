@@ -139,7 +139,7 @@ class PillarTab extends React.Component {
                           <div style={{width:'30%', margin:'auto'}}>  </div>
                           <div style={{marginTop:10}}> <CircularChart score={this.state.score}/> </div>
                         </div>
-                        <div style={{ width:'55%', position:'absolute', right:'25%', bottom:0, overflow:'hidden', height:'100%',  borderRadius:20}}>
+                        <div style={{ width:'55%', position:'absolute', right:'25%', bottom:0, overflow:'hidden', height:'100%'}}>
                           <p style={{fontSize:'.8rem', color:'rgba(255,255,255,.8)', paddingTop:50, paddingRight:10, fontWeight:100, fontFamily:'Roboto',whiteSpace: 'normal',overflow: 'hidden', lineHeight:'1rem'}}> {this.state.sentence} </p>
 
                         </div>

@@ -33,7 +33,7 @@ render() {
             </span>
           </div>
           <div className = 'desktopHeaderTitle'>
-            Get a better emotional and mental state of mind
+            Get a better emotional and mental wellbeing
             <br />
             <a href='#whatwedo'>
             <span className='desktopHeaderButton'> Learn more</span>

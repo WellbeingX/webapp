@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeDesktop from '../landingDesktop'
+import HomeDesktop from '../landingDesktopComingSoon'
 import HomeMobile from '../landingMobile'
 import ReactGA from 'react-ga'
 
@@ -27,14 +27,13 @@ class App extends React.Component {
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight })
-    console.log(window.innerHeight);
   }
 
   render() {
     return(
   <div >
 
-    {this.state.width>750 ? <HomeDesktop /> : <HomeMobile />}
+    {this.state.width>750 ? <HomeDesktop height={this.state.height}/> : <HomeMobile />}
   </div>
 )};
 }

@@ -73,7 +73,7 @@
 //     label:' '
 // }
 
-import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS} from './labels'
+import {SLEEP, EXERCISE, DIET, SOCIAL, PURPOSE, STRESS, AGE} from './labels'
 
 var questionRecover = [
 
@@ -135,16 +135,30 @@ var questionRecover = [
           }
       ],
       label:' '
-  },
-  {
+  },{
       dialog: "Let's talk about sleep...",
-      question: "In the past week, how many nights have you a good night’s sleep?",
-      answerType:'Slider',
+      question: "How often do you have difficulty getting asleep, staying asleep, or getting enough sleep?",
+      answerType:'Button',
       answers: [
           {
-            min: 0,
-            max: 7,
-            key:0
+              key: 0,
+              text: "not at all"
+          },
+          {
+              key: 1,
+              text: "several days"
+          },
+          {
+              key: 2,
+              text: "over half the days"
+          },
+          {
+              key: 3,
+              text: "nearly every day"
+          },
+          {
+              key: 4,
+              text: "can't say"
           }
       ],
       label:SLEEP
@@ -180,7 +194,7 @@ var questionRecover = [
       label:DIET
   },
   {
-      dialog: "The quality of our social connections is a powerful predictor of mental wellbeing",
+      dialog: "The quality of our social connections is a powerful predictor of mental and physical wellbeing",
       question: "How often do you feel your social connections should be more nourishing or fulfilling?",
       answerType:'Button',
       answers: [
@@ -208,29 +222,29 @@ var questionRecover = [
       label:SOCIAL
   }
   ,{
-      dialog: "Let's look at your daily activities, in respect to the activities you do during the day",
-      question: "Thinking about your daily activities, ",
+      dialog: "Let's look at your daily activities...",
+      question: "With respect the activities you do over the course of a typical day - whether it be work, study, pastimes, taking care of children or anything else - How often do you wish that these could be more satisfying or enjoyable?",
       answerType:'Button',
       answers: [
           {
               key: 0,
-              text: "extremely dissatisfied"
+              text: "never"
           },
           {
               key: 1,
-              text: "dissatisfied"
+              text: "rarely"
           },
           {
               key: 2,
-              text: "about OK"
+              text: "some of the time"
           },
           {
               key: 3,
-              text: "satisfied"
+              text: "often"
           },
           {
               key: 4,
-              text: "very satisfied"
+              text: "all the time"
           }
       ],
       label:PURPOSE
@@ -267,11 +281,11 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              text: 'relationships',
+              text: 'family or other relationships',
               key:0
           },
           {
-              text: "financies",
+              text: "finances",
               key:1
           },
           {
@@ -279,28 +293,16 @@ var questionRecover = [
               key:2
           },
           {
-              text: "books",
+              text: "living arrengement/housing issues",
               key:3
           },
           {
-              text: "social activities",
+              text: "mental health",
               key:4
           },
           {
-              text: "listening to podcasts",
+              text: "pleasurable activities",
               key:5
-          },
-          {
-              text: "learning",
-              key:6
-          },
-          {
-              text: "exercise",
-              key:6
-          },
-          {
-              text: "contributing to the community",
-              key:7
           }
       ],
     }],
@@ -314,7 +316,7 @@ var questionRecover = [
       answers: [ {
         multiple: [
           {
-              text: 'apps',
+              text: 'reading books',
               key:0
           },
           {
@@ -326,7 +328,7 @@ var questionRecover = [
               key:2
           },
           {
-              text: "reading books",
+              text: "apps",
               key:3
           },
           {
@@ -428,7 +430,7 @@ var questionRecover = [
           }
       ],
     }],
-      label:' '
+      label:AGE
   }
 ];
 
