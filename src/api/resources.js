@@ -28,19 +28,11 @@ var Resources = [
     platform:['iOS' , 'Android'],
     title:'Sleep Better',
     price:'Partially Free',
-<<<<<<< HEAD
     categ:['App'],
     description:' The Sleep Better sleep cycle alarm clock app lets you track your sleep, monitor your dreams and improve your bedtime habits',
     shortDes:'Track your sleep, monitor your dreams and improve your bedtime habits',
     tags:['Sleep'],
     imgURL:'https://www.spoofee.com/images/dealofday/original/915351.jpg',
-=======
-    categ:'App',
-    description:' The Sleep Better sleep cycle alarm clock app lets you track your sleep, monitor your dreams and improve your bedtime habits',
-  shortDes:'Track your sleep, monitor your dreams and improve your bedtime habits',
-  tags:['Sleep'],
-  imgURL:'https://www.spoofee.com/images/dealofday/original/915351.jpg',
->>>>>>> local-filipat-patch-1
     website:' https://www.runtastic.com/en/apps/sleepbetter',
     comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
   },
@@ -55,15 +47,9 @@ var Resources = [
     price:'$4.99',
     categ:['App'],
     description:' The Sleep Genius Relaxation Program was scientifically¬ created to reduce stress and anxiety by calming both the mind and the body.',
-<<<<<<< HEAD
     shortDes:'Reduce stress and anxiety by calming both the mind and the body',
     tags:['Sleep'],
     imgURL:'http://sleepgenius.com/universe/wp-content/uploads/2014/04/app-icon.png',
-=======
-  shortDes:'Reduce stress and anxiety by calming both the mind and the body',
-  tags:['Sleep']  
-  imgURL:'http://sleepgenius.com/universe/wp-content/uploads/2014/04/app-icon.png',
->>>>>>> local-filipat-patch-1
     website:' http://sleepgenius.com/',
     comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
   },
@@ -76,17 +62,10 @@ var Resources = [
     platform:['iOS'],
     title:'Meditation Studio',
     price:'Partially Free',
-<<<<<<< HEAD
     categ:['App'],
     description:"The mind is complicated, but meditation doesn't have to be. Welcome to Meditation Studio. We make meditation simple.",
     alternativeDesc: "Whether you want to reduce stress, ease anxiety, improve sleep or boost confidence, we've got meditations for you!",
     shortDes:"The mind is complicated, but meditation doesn't have to be. Meditation Studio makes meditation simple",
-=======
-    categ:'App',
-    description:"The mind is complicated, but meditation doesn't have to be. Welcome to Meditation Studio. We make meditation simple.",
-alternativeDesc: "Whether you want to reduce stress, ease anxiety, improve sleep or boost confidence, we've got meditations for you!",
-  shortDes:"The mind is complicated, but meditation doesn't have to be. Meditation Studio makes meditation simple",
->>>>>>> local-filipat-patch-1
     tags:['Mindfulness','Sleep','Stress','Anxiety','Mindful eating'],
     imgURL:'https://i1.sndcdn.com/avatars-000278434986-sgsfu7-t500x500.jpg',
     alternativeImg:' http://img.wennermedia.com/620-width/mj-618_348_meditation-studio-meditation-apps-that-work.jpg',
@@ -101,7 +80,6 @@ alternativeDesc: "Whether you want to reduce stress, ease anxiety, improve sleep
     ageTag:[ '<18','18-24'],
     platform:['iOS','Android'],
     title:'Mindshift',
-<<<<<<< HEAD
     price:' Free',
     categ:['App'],
     description:' Think of MindShift™ as your portable coach helping you face challenging situations and take charge of your life.',
@@ -109,15 +87,6 @@ alternativeDesc: "Whether you want to reduce stress, ease anxiety, improve sleep
     shortDes:"Your portable coach helping you face challenging situations and take charge of your life",
     tags:['Anxiety','Sleep','Stress'],
     imgURL:'https://lh3.ggpht.com/S3A1v4uapjyVVNmta-OUDQ63EG0q6FZKVNJNbZzWKFzevdxLODoLbBE64ctxs3xiJw=s180',
-=======
-    price:'Free',
-    categ:'App',
-    description:' Think of MindShift™ as your portable coach helping you face challenging situations and take charge of your life.',
-alternativeDesc:' MindShift™ will help you learn how to relax, develop more helpful ways of thinking, and identify active steps that will help you take charge of your anxiety.',
-   shortDes:"Your portable coach helping you face challenging situations and take charge of your life",
-    tags:['Anxiety','Sleep','Stress'],
-  imgURL:'https://lh3.ggpht.com/S3A1v4uapjyVVNmta-OUDQ63EG0q6FZKVNJNbZzWKFzevdxLODoLbBE64ctxs3xiJw=s180',
->>>>>>> local-filipat-patch-1
 alternativeImg:'https://www.sharonselby.com/wp-content/uploads/2013/07/Screen-Shot-2015-11-07-at-5.44.23-PM.png',
     website:' https://www.anxietybc.com/resources/mindshift-app',
 
@@ -133,19 +102,11 @@ alternativeImg:'https://www.sharonselby.com/wp-content/uploads/2013/07/Screen-Sh
     platform:['iOS','Android'],
     title:'Brain.fm',
     price:'Partially Free',
-<<<<<<< HEAD
     categ:['App','Website'],
     description:"Music for brain stimulation – focus, meditation, relaxation, sleep. Unlock music's potential to influence cognitive states",
     shortDes:"Music for brain stimulation – focus, meditation, relaxation, sleep",
     tags:['Music','Sleep','Stress','Focus','Mindfulness'],
     imgURL: 'https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/1d/7e/69/1d7e692c-bff1-f656-38cc-caf2136a9ef5/mzl.tiupyrjx.png/246x0w.jpg',
-=======
-    categ:['Website','App'],
-    description:"Music for brain stimulation – focus, meditation, relaxation, sleep. Unlock music's potential to influence cognitive states",
-  shortDes:"Music for brain stimulation – focus, meditation, relaxation, sleep.",
-    tags:['Music','Sleep','Stress','Focus','Mindfulness'],  
-  imgURL: 'https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/1d/7e/69/1d7e692c-bff1-f656-38cc-caf2136a9ef5/mzl.tiupyrjx.png/246x0w.jpg',
->>>>>>> local-filipat-patch-1
 alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.png',
     website:' https://www1.brain.fm/app',
 
@@ -160,14 +121,10 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     platform:['iOS' , 'Android'],
     title:'Calm',
     price:'Partially Free',
-<<<<<<< HEAD
     categ:['App','Website'],
-=======
-    categ:['Website','App'],
->>>>>>> local-filipat-patch-1
     description:'We help people to relax, meditate and sleep. Our mission is to make the world happier and healthier.',
   shortDes:"We help people to relax, meditate and sleep.",
-    tags:['Mindfulness','Sleep','Stress'],  
+    tags:['Mindfulness','Sleep','Stress'],
     imgURL: 'https://images-na.ssl-images-amazon.com/images/I/71DP3hD7K8L.png',
     website:' https://www.calm.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -184,7 +141,7 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     categ:['Website','App'],
     description:'Improve focus and boost your productivity. Mix different sounds and create your perfect environment.',
   shortDes:"Improve focus and boost your productivity.",
-    tags:['Music','Mindfulness','Focus','Stress'],  
+    tags:['Music','Mindfulness','Focus','Stress'],
     imgURL: 'https://dl1.cbsistatic.com/i/2016/07/03/ead00803-7826-4a90-9f57-6851749e8848/aa5c8e6ace3460da2a4a3ca55694a656/imgingest-399061660629536481.png',
     website:'https://www.noisli.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -194,22 +151,14 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     label:SLEEP,
     labels:[SLEEP,STRESS],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
     title:'pzizz- deep sleep & power nap',
     price:'Partially Free',
     categ:['App'],
-=======
-    ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
-    title:'pzizz- deep sleep & power nap',
-    price:'Partially Free',
-    categ:'App',
->>>>>>> local-filipat-patch-1
     description:"Sleep at the push of a button! The world's most advanced sleep and power nap system to fall asleep fast, stay asleep, and wake up feeling refreshed.",
     shortDes:"Fall asleep fast, stay asleep, and wake up feeling refreshed.",
-    tags:['Sleep','Stress','Music'],  
+    tags:['Sleep','Stress','Music'],
   imgURL:'http://is5.mzstatic.com/image/thumb/Purple128/v4/d4/da/09/d4da09e5-70da-10e3-4283-972e3b0caad5/source/175x175bb.jpg',
     website:'https://pzizz.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -243,7 +192,7 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     categ:['Website'],
     description:"Leading support service for young people. The Mix will help you take on any challenge you're facing - from mental health to money, from homelessness to finding a job, from break-ups to drugs.",
   shortDes:"Leading support service for young people that will help you take on any challenge you're facing.",
-    tags:['Sleep','Stress','Exercise','Social','Anxiety','Depression'],  
+    tags:['Sleep','Stress','Exercise','Social','Anxiety','Depression'],
   imgURL:' http://www.themix.org.uk/wp-content/themes/connected/images/TheMix_logo.png',
     website:'http://www.themix.org.uk/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -253,13 +202,8 @@ alternativeImg: ' http://www.stashq.com/wp-content/uploads/2017/01/logo-brainfm.
     label:SLEEP,
     labels:[PURPOSE,EXERCISE,SOCIAL],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag:['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
-=======
-    ageTag:['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
->>>>>>> local-filipat-patch-1
     title:'Goodgym',
     price:'Free',
     categ:['Website'],
@@ -277,13 +221,8 @@ imgURL:'https://jobs.theguardian.com/getasset/10e95a67-725c-4fbf-8511-ae8125ec72
     label:SLEEP,
     labels:[EXERCISE],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag:['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
-=======
-    ageTag:['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
->>>>>>> local-filipat-patch-1
     title:'Couch to 5k',
     price:'Free',
     categ:['Website','App'],
@@ -300,19 +239,14 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
     label:SLEEP,
     labels:[PURPOSE,STRESS,EXERCISE, DIET],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
-=======
-    ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
->>>>>>> local-filipat-patch-1
     title:'Live Happy',
     price:'Free',
     categ:['Website','App','Podcasts'],
     description:'A weekly podcast offering scientific tips and ideas on how to lead a happier, more meaningful life through interviews with medical professionals and wellbeing thought-leaders',
   shortDes:"Scientific tips and ideas on how to lead a happier, more meaningful life.",
-    tags:['Stress','Exercise','Nutrition','Purpose'],  
+    tags:['Stress','Exercise','Nutrition','Purpose'],
   imgURL:'https://www.mediavillage.com/media/articles/live_happy_GHg46ps.png.1000x1000_q85_box-137%2C93%2C910%2C867_crop_detail.png',
     website:'https://www.livehappy.com/learn-/happiness',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -322,22 +256,14 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
     label:SLEEP,
     labels:[STRESS,ANXIETY,DEPRESSION],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
     title:'7 cups of Tea',
     price:'Partially Free',
     categ:['App','Website'],
-=======
-    ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
-    title:'7 cups of Tea',
-    price:'Partially Free',
-    categ:['Website','App'],
->>>>>>> local-filipat-patch-1
     description: '7 Cups of Tea is an “online emotional support service.” Somewhere where you can anonymously connect with trained listeners in order to gain support for everyday issues, including mental health',
   shortDes:'7 Cups of Tea is an online emotional support service.',
-    tags:['Stress','Anxiety','Depression','Therapy','Community'],  
+    tags:['Stress','Anxiety','Depression','Therapy','Community'],
   imgURL:'https://media.licdn.com/dms/image/C510BAQFaJ5zXojy7Aw/company-logo_200_200/0?e=2159024400&v=beta&t=gw_gkN4uGsMkI3F2xI_wEk4NqarL2Wj8XCC1npCKGCw',
     website:'https://www.7cups.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -348,13 +274,8 @@ alternativeImg:' https://www.changemakers.com/sites/default/files/goodgym_red.pn
     label:SLEEP,
     labels:[STRESS,ANXIETY,DEPRESSION,SOCIAL,PURPOSE],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
-=======
-    ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
->>>>>>> local-filipat-patch-1
     title:'Elefriends',
     price:'Free',
     categ:['Website'],
@@ -390,11 +311,7 @@ AlternativeImg:' https://p.apk4fun.com/1e/01/c3/com.happify.happifyinc-featured.
     label:SLEEP,
     labels:[STRESS,SOCIAL,PURPOSE,SLEEP,ANXIETY,DEPRESSION],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['<18', '18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
-=======
-    ageTag: ['<18','18-24','25-34','35-44','45-54','55-64','65+'],
->>>>>>> local-filipat-patch-1
     platform:['iOS' , 'Android'],
     title:'HeadSpace',
     price:'Partially Free',
@@ -412,25 +329,15 @@ AlternativeImg:' http://www.womenofgrace.com/blog/wp-content/uploads/2018/04/hea
     label:SLEEP,
     labels:[SOCIAL],
     genderTag:['male','female','other'],
-<<<<<<< HEAD
     ageTag: ['18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
     title:'Huggle',
     price:'Free',
     categ:['App'],
+    shortDes:'Connect with the people who go to the places you go',
+     tags:['Social connections'],
     description: 'Huggle lets you discover and connect with the people who go to the places you go, and shows you the places you have in common.',
 imgURL:'https://lh3.googleusercontent.com/Q2JKsfqyaUFGBlDy5olcVRijs0NXRy0ZduzRCCe756eQ8l5QdewI7ZvNBjCKMUik0oL5',
-=======
-    ageTag: ['18-24','25-34','35-44','45-54','55-64','65+'],
-    platform:['iOS','Android'],
-    title:'Huggle',
-    price:'Free',
-    categ:'App',
-    description:'Huggle lets you discover and connect with the people who go to the places you go, and shows you the places you have in common.',
-shortDes:'Connect with the people who go to the places you go',
- tags:['Social connections'],
- imgURL:'https://lh3.googleusercontent.com/Q2JKsfqyaUFGBlDy5olcVRijs0NXRy0ZduzRCCe756eQ8l5QdewI7ZvNBjCKMUik0oL5',
->>>>>>> local-filipat-patch-1
     website:'https://huggle.com/en/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
 },
@@ -440,13 +347,8 @@ shortDes:'Connect with the people who go to the places you go',
     label:SLEEP,
     labels:[SOCIAL,PURPOSE],
     genderTag:['male'],
-<<<<<<< HEAD
     ageTag: ['55-64','65-74','75-84','85+'],
     platform:['iOS' , 'Android'],
-=======
-    ageTag: ['55-64','65+'],
-    platform:['iOS','Android'],
->>>>>>> local-filipat-patch-1
     title:'Mens Sheds',
     price:'Free',
     categ:['Website'],
@@ -469,7 +371,7 @@ shortDes:"They're community spaces for men to connect, converse and create.",
     categ:['Website'],
     description: 'We take a 360 degree approach to wellness that incorporates mental, physical, spiritual, emotional, and environmental well-being—because we believe these pillars of wellness are vital and interconnected',
   shortDes:"Approach to wellness that incorporates mental, physical, spiritual, emotional, and environmental well-being.",
- tags:['Exercise','Nutrition','Mindfulness','Spirituality','Stress'], 
+ tags:['Exercise','Nutrition','Mindfulness','Spirituality','Stress'],
   imgURL:'https://www.headpositivemom.com/wp-content/uploads/2015/10/mindbodygreen-logo-for-site.jpg',
     website:'https://www.mindbodygreen.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -486,7 +388,7 @@ shortDes:"They're community spaces for men to connect, converse and create.",
     categ:['Website','App'],
     description: 'Lose weight the healthy way, We believe — and medical studies prove — that the best way to lose weight and keep it off is to simply keep track of the foods you eat.',
 shortDes:"Lose weight the healthy way by keeping track of the foods you eat",
- tags:['Nutrition','Exercise'], 
+ tags:['Nutrition','Exercise'],
   imgURL:' http://lh3.googleusercontent.com/i36nsJS70_SXJYQkQV0VBw6J-2M-RwXd_l4qTC9owa-IwDE3Ej7BIb0bnz1Bcm-SY20=w300',
     website:'https://www.myfitnesspal.com/',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
@@ -503,7 +405,7 @@ shortDes:"Lose weight the healthy way by keeping track of the foods you eat",
     categ:['Website'],
     description: 'The Nuddge community consists of those people who want to enhance their emotional wellbeing. These are everyday people, friends, neighbours, uncles, brothers and sisters.',
 shortDes:"Community of those people who want to enhance their emotional wellbeing",
- tags:['Community','Anxiety','Depression','Stress'], 
+ tags:['Community','Anxiety','Depression','Stress'],
   imgURL:'https://www.spyro-soft.com/wp-content/uploads/2018/03/nuddge.png',
     website:'https://www.nuddge.com/index.html#',
  comments:'B: "This app has worked to improve sleep for people similar to you, I hope you do not mind the professor!"'
