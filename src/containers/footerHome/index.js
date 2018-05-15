@@ -100,7 +100,7 @@ export default function FooterHome(){
                     <div  className='homeFeatText' >
                       <h3 style={{fontFamily:'Quicksand', color:'white', fontSize:'1.2rem',margin:0, paddingBottom:10}}><span style={{opacity:1}}>
                       Personalised to you</span></h3>
-                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We take pride in our ability to make good suggestions from the minimum information.</h3>
+                      <h3 style={{fontFamily:'Quicksand', color:'rgba(255,255,255,.8)', fontSize:'1rem', margin:0}}> We take pride in our ability to make good suggestions tailored around your needs</h3>
                     </div>
                   </div>
 

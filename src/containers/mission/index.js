@@ -19,10 +19,8 @@ const Mission = props => (
           Our mission is to make mental health available to everyone at the lowest cost. We believe it is increasingly necessary for each of us to prioritise our state of mind, and by using technology we can help each other to make the best use of the available resources.
 
             </p>
-            <p style={{color:'white'}}>Achieving a healthy mind shouldn’t be expensive. The BetterSpace app will help you understand where your status factors such as sleep, exercise and social connections. And we’ll go the extra mile to find the free things that will work for you.
+            <p style={{color:'white'}}>Achieving a healthy mind should be as easy as recovering from a cold. Life is full of ups and downs. What's important is to recognize it and know what to do. We are here to help you.
             </p>
-            <p style={{color:'white'}}>BetterSpace was founded when three entrepreneurs, Alfredo, Filipa and Jim, asked “What would the Tesla for mental health look like?"
-          </p>
           </div>
       </ReactCSSTransitionGroup>
 
